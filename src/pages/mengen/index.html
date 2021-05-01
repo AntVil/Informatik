@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title></title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+        <link rel="stylesheet" href="../../generic-styles/style.css">
+        <link rel="stylesheet" href="../../generic-styles/layout.css">
+
+        <link rel="stylesheet" href="../../lib/katex/katex.min.css">
+        <script src="../../lib/katex/katex.min.js"></script>
+
+        <link rel="stylesheet" href="./style.css">
+        <script src="./script.js"></script>
+    </head>
+
+    <body>
+        <header><h1><a href="../_home/index.html">Informatik</a></h1></header>
+        <input id="nav_checkbox" type="checkbox">
+        <nav class="scroll">
+            <ul>
+                <li><a href="../_home/index.html">Home</a></li>
+                <li><a href="../_about/index.html">About</a></li>
+                <li><a href="../_quellen/index.html">Quellen</a></li>
+                <br>
+                <li><a href="../abbildungen/index.html">Abbildungen</a></li>
+                <li><a href="../algebraische_strukturen/index.html">Algebraische Strukturen</a></li>
+                <li><a href="../algorithmen/index.html"></a>Algorithmen</li>
+                <li><a href="../aussagen_logik/index.html">Aussagen Logik</a></li>
+                <li><a href="../automaten/index.html"></a>Automaten</li>
+                <li><a href="../baeume/index.html"></a>Bäume</li>
+                <li><a href="../codierungen/index.html">Codierungen</a></li>
+                <li><a href="../flipflops/index.html">Flipflops</a></li>
+                <li><a href="../folgen_und_reihen/index.html">Folgen und Reihen</a></li>
+                <li><a href="../formale_sprachen/index.html">Formale Sprachen</a></li>
+                <li><a href="../ganze_zahlen/index.html"></a>Ganze Zahlen</li>
+                <li><a href="../graphen/index.html"></a>Graphen</li>
+                <li><a href="../hash_funktionen/index.html">Hash Funktionen</a></li>
+                <li><a href="../listen/index.html">Listen</a></li>
+                <li><a href="../matrizen_rechnung/index.html">Matrizen Rechnung</a></li>
+                <li><a href="../mengen/index.html">Mengen</a></li>
+                <li><a href="../modulo_arithmetik/index.html">Modulo Arithmetik</a></li>
+                <li><a href="../natuerliche_zahlen/index.html">Natürliche Zahlen</a></li>
+                <li><a href="../praedikaten_logik/index.html">Prädikaten Logik</a></li>
+                <li><a href="../rationale_zahlen/index.html">Rationale Zahlen</a></li>
+                <li><a href="../reele_zahlen/index.html">Reele Zahlen</a></li>
+                <li><a href="../relationen/index.html">Relationen</a></li>
+                <li><a href="../schaltungen/index.html">Schaltungen</a></li>
+                <li><a href="../symboltabellen/index.html">Symboltabellen</a></li>
+                <li><a href="../vektor_rechnung/index.html">Vektor Rechnung</a>
+            </ul>
+        </nav>
+        <main class="scroll">
+            <h2>Mengen</h2>
+            <h3>Beschreibung</h3>
+            <section class="container">
+                <section style="grid-column: 1 / span 80">
+                    <p>
+                        Eine Menge ist eine <b>ungeordnete</b> Sammlung von Objekten, den Elementen. Man schreibt <span class="equation">m \in M</span> um auszudrücken, dass das Objekt <span class="equation">m</span> ein Element der Menge <span class="equation">M</span> ist. Mengen können auch andere Mengen enthalten, jedoch nicht sich selbst. Mengen können auf zwei verschiedene Arten definiert werden. Durch Aufzählung der Elemente oder durch deren Charakteristische Eigenschaft. Zweimal die <b>gleiche</b> Menge:
+                        <div class="equation">\left\{1, 2, 4, 8, 16,...\right\} = \left\{x \in \mathbb{N}_0 | \exists k \in \mathbb{N}_0: x = 2^k\right\}</div>
+                        Die Menge, welche keine Elemente enthält wird mit <span class="equation">\emptyset</span> bezeichnet.
+                        <div class="equation">\{\} = \emptyset</div>
+                    </p>
+                </section>
+                <section style="grid-column: 81 / span 100">
+                    <canvas></canvas>
+                </section>
+            </section>
+            
+            <span class="equation">M = N</span>
+            <span class="equation">M \subseteq N</span>
+            <span class="equation">M \subset N</span>
+            <span class="equation"></span>
+
+            <span class="equation">M \cup N</span>
+            <span class="equation">M \cap N</span>
+            <span class="equation">M \setminus N</span>
+            <span class="equation">M^C</span>
+        </main>
+        <footer><h6>created by Anton Böhler</h6></footer>
+    </body>
+</html>

@@ -12,12 +12,12 @@
 /* dark theme */
 @media (prefers-color-scheme: dark) {
     :root{
-        --background-color: #333333;
-        --theme-color-1: #666666;
-        --theme-color-2: #555555;
-        --theme-color-3: #333333;
-        --theme-color-4: #222222;
-        --theme-color-5: #111111;
+        --background-color: #222222;
+        --theme-color-1: #444444;
+        --theme-color-2: #333333;
+        --theme-color-3: #222222;
+        --theme-color-4: #111111;
+        --theme-color-5: #000000;
         --text-color-1: #0099FF;
         --text-color-2: #FF9900;
     }
@@ -35,6 +35,14 @@ header{
 a{
     color: var(--text-color-1);
     text-decoration: none;
+}
+
+#nav_checkbox_label{
+    color: var(--theme-color-5);
+}
+
+#nav_checkbox_label:hover{
+    background-color: var(--theme-color-2);
 }
 
 nav{

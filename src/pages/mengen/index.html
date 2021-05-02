@@ -18,7 +18,8 @@
 
     <body>
         <header><h1><a href="../_home/index.html">Informatik</a></h1></header>
-        <input id="nav_checkbox" type="checkbox">
+        <input id="nav_checkbox" type="checkbox" name="nav_checkbox">
+        <label id="nav_checkbox_label" for="nav_checkbox">≡</label>
         <nav class="scroll">
             <ul>
                 <li><a href="../_home/index.html">Home</a></li>
@@ -56,7 +57,7 @@
             <h2>Mengen</h2>
             <h3>Beschreibung</h3>
             <section class="container">
-                <section style="grid-column: 1 / span 80">
+                <section style="grid-column: 1 / span 80;">
                     <p>
                         Eine Menge ist eine <b>ungeordnete</b> Sammlung von Objekten, den Elementen. Man schreibt <span class="equation">m \in M</span> um auszudrücken, dass das Objekt <span class="equation">m</span> ein Element der Menge <span class="equation">M</span> ist. Mengen können auch andere Mengen enthalten, jedoch nicht sich selbst. Mengen können auf zwei verschiedene Arten definiert werden. Durch Aufzählung der Elemente oder durch deren Charakteristische Eigenschaft. Zweimal die <b>gleiche</b> Menge:
                         <div class="equation">\left\{1, 2, 4, 8, 16,...\right\} = \left\{x \in \mathbb{N}_0 | \exists k \in \mathbb{N}_0: x = 2^k\right\}</div>
@@ -64,20 +65,90 @@
                         <div class="equation">\{\} = \emptyset</div>
                     </p>
                 </section>
-                <section style="grid-column: 81 / span 100">
-                    <canvas></canvas>
+                <section style="grid-column: 81 / span 19;">
+                    <div class="graphic-container">
+                        <canvas class="graphic" id="beispiel_menge"></canvas>
+                    </div>
                 </section>
             </section>
             
-            <span class="equation">M = N</span>
-            <span class="equation">M \subseteq N</span>
-            <span class="equation">M \subset N</span>
-            <span class="equation"></span>
+            <h3>Relationen</h3>
+            <section class="container">
+                <section style="grid-column: 1 / span 24;">
+                    
+                    <div class="equation">M = N</div>
+                </section>
+                <section style="grid-column: 25 / span 24;">
+                    
+                    <div class="equation">M \subseteq N</div>
+                </section>
+                <section style="grid-column: 50 / span 24;">
+                    
+                    <div class="equation">M \subset N</div>
+                </section>
+                <section style="grid-column: 75 / span 24;">
+                    
+                    <div>
+                        <span class="equation">M</span> und <span class="equation">N</span> sind disjunkt
+                    </div>
+                </section>
+            </section>
+            
+            <h3>Operationen</h3>
+            <section class="container">
+                <section style="grid-column: 1 / span 24;">
+                    <div class="graphic-container">
+                        <canvas class="graphic"></canvas>
+                    </div>
+                    <div class="equation">M \cup N</div>
+                </section>
+                <section style="grid-column: 25 / span 24;">
+                    <div class="graphic-container">
+                        <canvas class="graphic"></canvas>
+                    </div>
+                    <div class="equation">M \cap N</div>
+                </section>
+                <section style="grid-column: 50 / span 24;">
+                    <div class="graphic-container">
+                        <canvas class="graphic"></canvas>
+                    </div>
+                    <div class="equation">M \setminus N</div>
+                </section>
+                <section style="grid-column: 75 / span 24;">
+                    <div class="graphic-container">
+                        <canvas class="graphic"></canvas>
+                    </div>
+                    <div class="equation">M^C</div>
+                </section>
+            </section>
+            
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <h3>Kardinalität</h3>
+                    Mächtigkeit einer Menge
+                    <div class="equation">|M| \in \mathbb{N}_0</div>
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <h3>Potenzmenge</h3>
+                    Menge aller Teilmengen
+                    <div class="equation">P(M)=\{m \in U m \subseteq M\}</div>
+                </section>
+            </section>
 
-            <span class="equation">M \cup N</span>
-            <span class="equation">M \cap N</span>
-            <span class="equation">M \setminus N</span>
-            <span class="equation">M^C</span>
+            <section class="container">
+                <section style="grid-column: 1 / span 79;">
+                    <h3>Kartesisches Produkt</h3>
+                    Mit <span class="equation">(a, b, ...)</span> bezeichnet man ein Tupel, eine <b>geordnete</b> Sammlung an Objekten. Beim Kartesischen Produkt entsteht eine Menge aus Tupeln.
+                    <div class="equation">M \times N = \{(m,n) | m \in M, n \in N\}</div>
+                    <div class="equation">M^n = M \times M \times ...</div>
+                </section>
+                <section style="grid-column: 80 / span 19;">
+                    <h4>Kleenscher Abschluss</h4>
+                    <div class="equation">M^* = M^0 \cup M^1 \cup ...</div>
+                    <h4>Positive Hülle</h4>
+                    <div class="equation">M^+ = M^1 \cup M^2 \cup ...</div>
+                </section>
+            </section>
         </main>
         <footer><h6>created by Anton Böhler</h6></footer>
     </body>

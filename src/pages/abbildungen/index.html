@@ -3,7 +3,7 @@
     <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title></title>
+        <title>Abbildungen</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
 
         <link rel="stylesheet" href="../../generic-styles/style.css">
@@ -53,7 +53,137 @@
                 <li><a href="../vektor_rechnung/index.html">Vektor Rechnung</a>
             </ul>
         </nav>
-        <main class="scroll"></main>
+        <main class="scroll">
+            \subsection{Abbildungen}
+            \label{sec:Abbildungen}
+            \subsubsection*{Beschreibung}
+            Eine Abbildung weist jedem Element aus einer Menge, dem Definitionsbereich, ein Element aus einer Menge, dem Bildbereich, zu.
+            $$f:M \rightarrow N$$
+            $$m_1 \mapsto n_1$$
+            $$m_2 \mapsto n_2$$
+            $$...$$
+            Die Abbildung $id_M$ ist die Identität auf einer Menge $M$. Sie Bildet jedes Element der Menge auf das gleiche Element ab.\\
+            Mit $f \circ g$ drückt man aus, dass $f$ nach $g$ ausgeführt wird. Wenn $f \circ g = id_N$ und  $g \circ f = id_M$ dann sind $f$ und $g$ invers zu einander.\\
+            \noindent
+            \begin{minipage}{\textwidth}
+                \begin{center}
+                    \begin{minipage}{0.33\textwidth}
+                        $$f:M \rightarrow N$$
+                        $$m_1 \mapsto n_1$$
+                        $$m_2 \mapsto n_2$$
+                        $$...$$
+                    \end{minipage}
+                    \begin{minipage}{0.33\textwidth}
+                        $$g:N \rightarrow M$$
+                        $$n_1 \mapsto m_1$$
+                        $$n_2 \mapsto m_2$$
+                        $$...$$
+                    \end{minipage}
+                \end{center}
+            \end{minipage}
+            \noindent
+            Der Bildbereich ist so definiert:
+            $$Bild(f) = \{f(m) | \forall m \in M\}$$
+            Mit $Abb(M, N)$ erhält man eine Menge aller Abbildungen von der Menge $M$ zur Menge $N$.
+
+            \subsubsection*{Eigenschaften}
+            \begin{minipage}{0.97\textwidth}
+                \begin{center}
+                    \begin{minipage}{0.49\textwidth}
+                        \begin{center}
+                            \textbf{Injektiv}\\
+                            \begin{tikzpicture}
+                                \fill[cyan, opacity=0.5, rounded corners] (-1.5cm, -0.5cm) rectangle (-0.5cm, 2.5cm);
+                                
+                                \fill[orange, opacity=0.5, rounded corners] (0.5cm, -0.5cm) rectangle (1.5cm, 2.5cm);
+                                
+                                \node[node] (node1) at (-1cm, 2cm) {a};
+                                \node[node] (node2) at (-1cm, 1cm) {b};
+                                
+                                \node[node] (node4) at (1cm, 2cm) {d};
+                                \node[node] (node5) at (1cm, 1cm) {e};
+                                \node[node] (node6) at (1cm, 0cm) {f};
+                                
+                                \path[->] (node1) edge (node4);
+                                \path[->] (node2) edge (node5);
+                            \end{tikzpicture}\\
+                            Jedes Element aus dem Bildbereich wird \textbf{maximal einmal} getroffen
+                            $$\forall a,b \in M: f(a) = f(b) \Rightarrow a = b$$
+                        \end{center}
+                    \end{minipage}
+                    \begin{minipage}{0.49\textwidth}
+                        \begin{center}
+                            \textbf{Surjektiv}\\
+                            \begin{tikzpicture}
+                                \fill[cyan, opacity=0.5, rounded corners] (-1.5cm, -0.5cm) rectangle (-0.5cm, 2.5cm);
+                                
+                                \fill[orange, opacity=0.5, rounded corners] (0.5cm, -0.5cm) rectangle (1.5cm, 2.5cm);
+                                
+                                \node[node] (node1) at (-1cm, 2cm) {a};
+                                \node[node] (node2) at (-1cm, 1cm) {b};
+                                \node[node] (node3) at (-1cm, 0cm) {c};
+                                
+                                \node[node] (node4) at (1cm, 2cm) {d};
+                                \node[node] (node5) at (1cm, 1cm) {e};
+                                
+                                
+                                \path[->] (node1) edge (node4);
+                                \path[->] (node2) edge (node5);
+                                \path[->] (node3) edge (node5);
+                            \end{tikzpicture}\\
+                            Jedes Element aus dem Bildbereich wird \textbf{minimal einmal} getroffen
+                            $$\forall b \in N: \exists a \in M: f(a) = b$$
+                        \end{center}
+                    \end{minipage}
+                    
+                    \vspace{0.1cm}
+                    
+                    \textbf{Bijektiv}\\
+                    \begin{tikzpicture}
+                        \fill[cyan, opacity=0.5, rounded corners] (-1.5cm, -0.5cm) rectangle (-0.5cm, 2.5cm);
+                                
+                        \fill[orange, opacity=0.5, rounded corners] (0.5cm, -0.5cm) rectangle (1.5cm, 2.5cm);
+                                
+                        \node[node] (node1) at (-1cm, 2cm) {a};
+                        \node[node] (node2) at (-1cm, 1cm) {b};
+                        \node[node] (node3) at (-1cm, 0cm) {c};
+                                
+                        \node[node] (node4) at (1cm, 2cm) {d};
+                        \node[node] (node5) at (1cm, 1cm) {e};
+                        \node[node] (node6) at (1cm, 0cm) {f};
+                                
+                        \path[->] (node1) edge (node4);
+                        \path[->] (node2) edge (node5);
+                        \path[->] (node3) edge (node6);
+                    \end{tikzpicture}\\
+                    Jedes Element aus dem Bildbereich wird \textbf{genau einmal} getroffen\\
+                    Bijektive Abbildungen sind immer invertierbar
+                \end{center}
+            \end{minipage}
+
+            \vspace{0.1cm}
+
+            \subsubsection*{Zusatz}
+            \begin{minipage}{\textwidth}
+                \begin{minipage}{0.49\textwidth}
+                    \textbf{Abgeänderte Abbildungen}\\
+                    Eine abgeänderte Abbildung bei der $x$ auf $y$ abbilden soll kann so erstellt werden:
+                    $$f_{x}^{y}: M \rightarrow N$$
+                    $$x \mapsto y$$
+                    $$m_1 \mapsto n_1$$
+                    $$...$$
+                \end{minipage}
+                \hspace{0.15cm}
+                \begin{minipage}{0.49\textwidth}
+                    \textbf{Partielle Abbildungen}\\
+                    Eine Partielle Abbildung ist nicht für alle Werte definiert.
+                    $$f: M \rightarrow N$$
+                    $$x \mapsto \perp$$
+                    $$m_1 \mapsto n_1$$
+                    $$...$$
+                \end{minipage}
+            \end{minipage}
+        </main>
         <footer><h6>created by Anton Böhler</h6></footer>
     </body>
 </html>

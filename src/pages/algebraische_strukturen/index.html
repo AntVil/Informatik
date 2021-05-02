@@ -3,7 +3,7 @@
     <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title></title>
+        <title>Algebraische Strukturen</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
 
         <link rel="stylesheet" href="../../generic-styles/style.css">
@@ -53,7 +53,143 @@
                 <li><a href="../vektor_rechnung/index.html">Vektor Rechnung</a>
             </ul>
         </nav>
-        <main class="scroll"></main>
+        <main class="scroll">
+            \subsection{Algebraische Strukturen}
+            \subsubsection*{Beschreibung}
+            Algebraische Strukturen ermöglichen es Gesetze für Operationen auf bestimmten Mengen zu formen. Sie bestehen aus einer Menge und einer oder zwei Operationen.
+            $$(M, \oplus)$$
+            $$(M, \oplus, \odot)$$
+
+            \subsubsection*{Eigenschaften}
+            \begin{minipage}{\textwidth}
+                \begin{minipage}{0.49\textwidth}
+                    \begin{center}
+                        \textbf{Abgeschlossenheit}
+                    \end{center}
+                    $$\forall a, b \in M: \exists c \in M: a \oplus b = c$$
+                \end{minipage}
+                \begin{minipage}{0.49\textwidth}
+                    \begin{center}
+                        \textbf{Assoziativ}
+                    \end{center}
+                    $$\forall a, b, c \in M: a \oplus (b \oplus c) = (a \oplus b) \oplus c$$
+                \end{minipage}
+            \end{minipage}
+
+            \vspace{0.3cm}
+
+            \noindent
+            \begin{minipage}{\textwidth}
+                \begin{minipage}{0.49\textwidth}
+                    \begin{center}
+                        \textbf{Neutral Element}
+                    \end{center}
+                    $$\exists n \in M: \forall e \in M: e \oplus n = e$$
+                \end{minipage}
+                \begin{minipage}{0.49\textwidth}
+                    \begin{center}
+                        \textbf{Inverse Elemente}
+                    \end{center}
+                    $$\exists n \in M: \forall e \in M: \exists e^{-1} \in M: e \oplus e^{-1} = n$$
+                \end{minipage}
+            \end{minipage}
+
+            \vspace{0.3cm}
+
+            \noindent
+            \begin{minipage}{\textwidth}
+                \begin{minipage}{0.49\textwidth}
+                    \begin{center}
+                        \textbf{Kommutativ}
+                    \end{center}
+                    $$\forall a,b \in M: a \oplus b = b \oplus a$$
+                \end{minipage}
+                \begin{minipage}{0.49\textwidth}
+                    \begin{center}
+                        \textbf{Distributiv}
+                    \end{center}
+                    $$\forall a,b,c \in M: a \odot (b \oplus c) = (a \odot b) \oplus (a \odot c)$$
+                \end{minipage}
+            \end{minipage}
+
+            \subsubsection*{Algebraische Strukturen}
+            Die Eigenschaften der Operationen auf der Menge bestimmen die Algebraische Struktur.
+            \begin{center}
+                \begin{tikzpicture}
+                    \fill[purple!20, rounded corners] (-4.7cm, 1cm) rectangle (12.3cm, -3.5cm);
+                    
+                    \fill[orange!20, rounded corners] (-4.6cm, 0.9cm) rectangle (12.2cm, -2.4cm);
+                    \fill[orange!20, rounded corners] (-4.6cm, 0.9cm) rectangle (3.5cm, -3.3cm);
+                    
+                    \fill[cyan!20, rounded corners] (-4.5cm, 0.8cm) rectangle (12.1cm, -1.65cm);
+                    \fill[cyan!20, rounded corners] (-4.5cm, 0.8cm) rectangle (3.4cm, -3.2cm);
+                    
+                    \fill[green!20, rounded corners] (-4.4cm, 0.7cm) rectangle (3.3cm, -3.1cm);
+                    
+                    \fill[red!20, rounded corners] (-4.3cm, 0.6cm) rectangle (3.2cm, -2.4cm);
+                    
+                    \fill[gray!20, rounded corners] (-4.2cm, 0.5cm) rectangle (3.1cm, -1.65cm);
+                    
+                    \fill[brown!40, rounded corners] (-4.1cm, 0.4cm) rectangle (3cm, -0.8cm);
+                    
+                    \fill[brown!40, rounded corners] (3.4cm, 0.4cm) rectangle (12cm, -0.8cm);
+                    
+                    
+                    \node [brown, anchor=west] at (0cm, 0cm) {$\oplus$ Abgeschlossen};
+                    \node [brown, anchor=west] at (0cm, -0.5cm) {$\oplus$ Assoziativ};
+                    \node [gray, anchor=west] at (0cm, -1.25cm) {$\oplus$ Neutral Element};
+                    \node [red, anchor=west] at (0cm, -2cm) {$\oplus$ Inverse Elemente};
+                    \node [green, anchor=west] at (0cm, -2.75cm) {$\oplus$ Kommutativ};
+                    
+                    \node [brown, anchor=west] at (3.5cm, 0cm) {$\odot$ Abgeschlossen};
+                    \node [brown, anchor=west] at (3.5cm, -0.5cm) {$\odot$ Assoziativ};
+                    \node [cyan, anchor=west] at (3.5cm, -1.25cm) {$\oplus, \odot$ Distributiv};
+                    \node [orange, anchor=west] at (3.5cm, -2cm) {$\odot$ Kommutativ};
+                    \node [purple, anchor=west] at (3.5cm, -2.75cm) {$\odot$ Neutral Element};
+                    \node [purple, anchor=west] at (3.5cm, -3.25cm) {$\odot$ Inverse Elemente (außer 0)};
+                    
+                    
+                    \node [brown, anchor=west] at (-4cm, 0cm) {\textit{Halb Gruppe}};
+                    \node [gray, anchor=west] at (-4cm, -1.25cm) {\textit{Monoid}};
+                    \node [red, anchor=west] at (-4cm, -2cm) {\textit{Gruppe}};
+                    \node [green, anchor=west] at (-4cm, -2.75cm) {\textit{Kommutative Gruppe}};
+                    
+                    \node [brown, anchor=west] at (8.8cm, 0cm) {\textit{Halb Gruppe}};
+                    \node [cyan, anchor=west] at (8.8cm, -1.25cm) {\textit{Ring}};
+                    \node [orange, anchor=west] at (8.8cm, -2cm) {\textit{Kommutativer Ring}};
+                    \node [purple, anchor=west] at (8.8cm, -2.75cm) {\textit{Körper}};
+                    
+                \end{tikzpicture}
+            \end{center}
+
+
+            \subsubsection*{Vektorraum}
+            Über einem Körper $M$ kann ein Vektorraum $M^n (n \in \mathbb{N})$ definiert werden. In diesem Vektorraum sind zwei Operationen definiert.
+
+            \noindent
+            \begin{minipage}{\textwidth}
+                \begin{minipage}{0.49\textwidth}
+                    \begin{center}
+                        \textbf{Addition}
+                        $$\oplus: M^n \times M^n \rightarrow M$$
+                        $$\Vec{a} \oplus \Vec{b} \mapsto \Vec{c}$$
+                        \textit{(Komponentenweise addiert wie im Körper)}
+                    \end{center}
+                \end{minipage}
+                \begin{minipage}{0.49\textwidth}
+                    \begin{center}
+                        \textbf{Skalarmultiplikation}
+                        $$\odot: M \times M^n \rightarrow M$$
+                        $$a \odot \Vec{b} \mapsto \Vec{c}$$
+                        \textit{(Komponenten skaliert wie im Körper)}
+                    \end{center}
+                \end{minipage}
+            \end{minipage}
+
+            \subsubsection*{Untervektorraum}
+            Ein Untervektorraum ist eine Teilmenge eines Vektorraums, welche selbst ein Vektorraum ist.
+            
+        </main>
         <footer><h6>created by Anton Böhler</h6></footer>
     </body>
 </html>

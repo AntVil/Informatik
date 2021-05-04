@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="../../lib/katex/katex.min.css">
         <script src="../../lib/katex/katex.min.js"></script>
 
+        <script src="../../generic-scripts/script.js"></script>
+
         <link rel="stylesheet" href="./style.css">
         <script src="./script.js"></script>
     </head>
@@ -98,25 +100,25 @@
             <section class="container">
                 <section style="grid-column: 1 / span 24;">
                     <div class="graphic-container">
-                        <canvas class="graphic"></canvas>
+                        <canvas class="graphic" id="vereinigung"></canvas>
                     </div>
                     <div class="equation">M \cup N</div>
                 </section>
                 <section style="grid-column: 25 / span 24;">
                     <div class="graphic-container">
-                        <canvas class="graphic"></canvas>
+                        <canvas class="graphic" id="schnitt"></canvas>
                     </div>
                     <div class="equation">M \cap N</div>
                 </section>
                 <section style="grid-column: 50 / span 24;">
                     <div class="graphic-container">
-                        <canvas class="graphic"></canvas>
+                        <canvas class="graphic" id="differenz"></canvas>
                     </div>
                     <div class="equation">M \setminus N</div>
                 </section>
                 <section style="grid-column: 75 / span 24;">
                     <div class="graphic-container">
-                        <canvas class="graphic"></canvas>
+                        <canvas class="graphic" id="komplement"></canvas>
                     </div>
                     <div class="equation">M^C</div>
                 </section>

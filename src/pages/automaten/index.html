@@ -17,27 +17,27 @@
     </head>
 
     <body>
-        <header><h1><a href="../_home/index.html">About</a></h1></header>
+        <header><h1><a href="../home/index.html">Informatik</a></h1></header>
         <input id="nav_checkbox" type="checkbox" name="nav_checkbox">
-        <label id="nav_checkbox_label" for="nav_checkbox">≡</label>
+        <label id="nav_checkbox_label" for="nav_checkbox">&#8801;</label>
         <nav class="scroll">
             <ul>
-                <li><a href="../_home/index.html">Home</a></li>
-                <li><a href="../_about/index.html">About</a></li>
-                <li><a href="../_quellen/index.html">Quellen</a></li>
+                <li><a href="../home/index.html">Home</a></li>
+                <li><a href="../about/index.html">About</a></li>
+                <li><a href="../quellen/index.html">Quellen</a></li>
                 <br>
                 <li><a href="../abbildungen/index.html">Abbildungen</a></li>
                 <li><a href="../algebraische_strukturen/index.html">Algebraische Strukturen</a></li>
-                <li><a href="../algorithmen/index.html"></a>Algorithmen</li>
+                <li><a href="../algorithmen/index.html">Algorithmen</a></li>
                 <li><a href="../aussagen_logik/index.html">Aussagen Logik</a></li>
-                <li><a href="../automaten/index.html"></a>Automaten</li>
-                <li><a href="../baeume/index.html"></a>Bäume</li>
+                <li><a href="../automaten/index.html">Automaten</a></li>
+                <li><a href="../baeume/index.html">Bäume</a></li>
                 <li><a href="../codierungen/index.html">Codierungen</a></li>
                 <li><a href="../flipflops/index.html">Flipflops</a></li>
                 <li><a href="../folgen_und_reihen/index.html">Folgen und Reihen</a></li>
                 <li><a href="../formale_sprachen/index.html">Formale Sprachen</a></li>
-                <li><a href="../ganze_zahlen/index.html"></a>Ganze Zahlen</li>
-                <li><a href="../graphen/index.html"></a>Graphen</li>
+                <li><a href="../ganze_zahlen/index.html">Ganze Zahlen</a></li>
+                <li><a href="../graphen/index.html">Graphen</a></li>
                 <li><a href="../hash_funktionen/index.html">Hash Funktionen</a></li>
                 <li><a href="../listen/index.html">Listen</a></li>
                 <li><a href="../matrizen_rechnung/index.html">Matrizen Rechnung</a></li>
@@ -50,10 +50,161 @@
                 <li><a href="../relationen/index.html">Relationen</a></li>
                 <li><a href="../schaltungen/index.html">Schaltungen</a></li>
                 <li><a href="../symboltabellen/index.html">Symboltabellen</a></li>
-                <li><a href="../vektor_rechnung/index.html">Vektor Rechnung</a>
+                <li><a href="../vektor_rechnung/index.html">Vektor Rechnung</a></li>
             </ul>
         </nav>
-        <main class="scroll"></main>
+        <main class="scroll">
+
+
+            
+
+
+<h2>Endliche Automaten (Schaltwerk)}
+    <h3>Beschreibung}
+    <section class="container">
+        <section style="grid-column: 1 / span 99;">{0.74\textwidth}
+            In der Technischen Informatik werden Automaten verwendet um Schaltwerke zu entwerfen. Ein Automat <span class="equation">A</span> besteht aus der Menge der Eingangskombinationen <span class="equation">X</span>, der Ausgangskombinationen <span class="equation">Y</span>, der Zustandskombinationen <span class="equation">Z</span> und der Abbildung der Zustandsübergangsfunktion <span class="equation">\delta</span> und der Ausgabefunktion <span class="equation">\lambda</span>.
+            <div class="equation">A = (X, Y, Z, \delta, \lambda)</div>
+            Ein Automat ist ein Modell für Taktgesteuerte FlipFlops, da Automaten schrittweise arbeiten.
+            Bei der graphischen Darstellung werden Zustände über Übergänge verknüpft. Ein Übergang besteht aus den Eingängen welche anliegen müssen getrennt durch Kommas, danach folgen die Ausgänge.
+        </section>
+        <section style="grid-column: 1 / span 99;">{0.25\textwidth}
+            \begin{center}
+                \begin{tikzpicture}
+                    \node[empty] (node1) at (-0.5cm, 0cm) {};
+                    \node[node] (node2) at (0cm, 0cm) {$z_0$};
+                    \node[node] (node3) at (2cm, 1.25cm) {$z_1$};
+                    \node[node] (node4) at (2cm, -1.25cm) {$z_2$};
+                    
+                    \path[->, thick] (node1) edge (node2);
+                    
+                    \path[->] (node2) edge[bend left] node[align=left, above] {$0,1/0$} (node3);
+                    \path[->] (node2) edge[bend right] node[align=left, below] {$1,0/1$} (node4);
+                    
+                    \path[->] (node3) edge[loop above] node[align=left, above] {$0,1/0$} (node3);
+                    \path[->] (node3) edge[bend left] node[align=left, right] {$1,0/1$} (node4);
+                    
+                    \path[->] (node4) edge[bend left] node[align=left, left] {$0,1/0$} (node3);
+                    \path[->] (node4) edge[loop below] node[align=left, below] {$1,0/1$} (node4);
+                \end{tikzpicture}\\
+                \footnotesize
+                \textit{(RS-FlipFlop)}
+            \end{center}
+        </section>
+    </section>
+    
+    
+    <h3>Eigenschaften}
+    <section class="container">
+        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+            \textbf{Mealy-Automat}\\
+            Die Ausgabe kann sich ändern während <span class="equation">T \equiv 0</span>.\\
+            Der Automat ist \textbf{ereignisorientiert}.
+            <div class="equation">\delta: X \times Z \rightarrow Z</div>
+            <div class="equation">\lambda: X \times Z \rightarrow Y</div>
+        </section>
+        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+            \textbf{Moore-Automat}\\
+            Die Ausgabe ist nur durch den Zustand bestimmt.\\
+            Der Automat ist \textbf{zustandsorientiert}.
+            <div class="equation">\delta: X \times Z \rightarrow Z</div>
+            <div class="equation">\lambda: Z \rightarrow Y</div>
+        </section>
+    </section>
+    
+    \vspace{0.1cm}
+    
+    \noindent
+    <section class="container">
+        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+            \textbf{Medwedjew-Automat}\\
+            Die Ausgabe ist der Zustand.
+            <div class="equation">\delta: X \times Z \rightarrow Z</div>
+            <div class="equation">\lambda = id_{Z}</div>
+        </section>
+        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+            \textbf{Autonomer-Automat}\\
+            Es gibt keine Eingänge.
+            <div class="equation">X = \left\{()\right\}</div>
+            <div class="equation">\delta: X \times Z \rightarrow Z</div>
+            <div class="equation">\lambda: Z \rightarrow Y</div>
+        </section>
+    </section>
+    
+    \noindent
+    <section class="container">
+        <section style="grid-column: 1 / span 99;">{0.75\textwidth}
+            <h3>Zustandsübergangs-Tabelle}
+            Eine Zustandsübergangs-Tabelle ist eine abgewandelte Wahrheitstabelle um einen Automaten zu charakterisieren.\\
+            Das Beispiel rechts ist ein Automat, welcher entscheiden kann, ob eine Eingabe <span class="equation">e \in \{0, 1\}^*</span> eine gerade Anzahl an <span class="equation">1</span> enthält.
+        </section>
+        <section style="grid-column: 1 / span 99;">{0.24\textwidth}
+            \begin{center}
+                \begin{tikzpicture}
+                    \begin{scope}[scale=0.75]
+                        \draw[gray] (0cm, 5cm) -- (0cm, 6cm) -- (3cm, 6cm) -- (3cm, 5cm);
+                        \draw[gray] (2cm, 5cm) -- (2cm, 6cm);
+                        
+                        \draw[gray] (0cm, 0cm) grid (3cm, 5cm);
+                        
+                        \draw (0cm, 4cm) -- (3cm, 4cm);
+                        \draw (2cm, 0cm) -- (2cm, 6cm);
+                        
+                        \node at (1cm, 5.5cm) {$t_{n}$};
+                        \node at (2.5cm, 5.5cm) {$t_{n+1}$};
+                            
+                        \node at (0.5cm, 4.5cm) {$X_0$};
+                        \node at (1.5cm, 4.5cm) {$Z_n$};
+                        \node at (2.5cm, 4.5cm) {$Z_{n+1}$};
+                        
+                        \node[WildStrawberry] at (0.5cm, 3.5cm) {0};
+                        \node at (1.5cm, 3.5cm) {$z_0$};
+                        \node at (2.5cm, 3.5cm) {$z_0$};
+                        
+                        \node[LimeGreen] at (0.5cm, 2.5cm) {1};
+                        \node at (1.5cm, 2.5cm) {$z_0$};
+                        \node at (2.5cm, 2.5cm) {$z_1$};
+                        
+                        \node[WildStrawberry] at (0.5cm, 1.5cm) {0};
+                        \node at (1.5cm, 1.5cm) {$z_1$};
+                        \node at (2.5cm, 1.5cm) {$z_0$};
+                        
+                        \node[LimeGreen] at (0.5cm, 0.5cm) {1};
+                        \node at (1.5cm, 0.5cm) {$z_1$};
+                        \node at (2.5cm, 0.5cm) {$z_1$};
+                    \end{scope}
+                \end{tikzpicture}
+            \end{center}
+        </section>
+    </section>
+    
+    <h3>Synchrone Zähler}
+    Um einen Automaten mit mehreren Zuständen zu realisieren, bildet man, für ein gewähltes FlipFlop, die Charakteristische Gleichung, also die Normalform. Danach bildet man die Normalform von jedem Ausgang einzeln, wobei man bei jedem die Ausgangs-variable nicht kürzen darf.\\
+    Im nächsten Schritt wird für jede Normalform der Ausgänge ein Koeffizientenvergleich mit der Normalform des FlipFlops durchgeführt. Dadurch erhält man die Kombination aus Eingängen, welche an den jeweiligen Eingang der FlipFlops kommt.\\
+    Um die Schaltung zu realisieren, werden die Eingänge der FlipFlops entsprechend verknüpft und die Clock wird mit allen FlipFlops verbunden.
+    
+    \noindent
+    <section class="container">
+        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+            <div class="equation">Q_{n+1} = D</div>
+            \begin{center}
+                \footnotesize
+                \textit{(Gleichung D-FlipFlop)}
+            \end{center}
+        </section>
+        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+            <div class="equation">Q_{n+1} = ((J \land \neg Q_n) \lor (\neg K \land Q_n))</div>
+            \begin{center}
+                \footnotesize
+                \textit{(Gleichung JK-FlipFlop)}
+            \end{center}
+        </section>
+    </section>
+        
+    
+
+    
+        </main>
         <footer><h6>created by Anton Böhler</h6></footer>
     </body>
 </html>

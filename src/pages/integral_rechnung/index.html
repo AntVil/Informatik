@@ -55,65 +55,69 @@
         </nav>
         <main class="scroll">
 
-
-
             
-<h2>Algorithmen}
+<h2>Integralrechnung}
     <h3>Beschreibung}
-    Ein Algorithmus beschreibt den Weg, wie man für eine Eingabe <span class="equation">e \in E</span> eine Ausgabe <span class="equation">a \in A</span> erhält. Er löst alle Probleme einer bestimmten Klasse an Problemen. Ein Algorithmus funktioniert wie eine Partielle Abbildung, da nicht alle Eingaben nach endlicher Zeit zu einer Ausgabe führen.
-    <div class="equation">f: E \rightarrow A</div>
-    <div class="equation">x \mapsto \perp</div>
-    <div class="equation">e_1 \mapsto a_1</div>
-    <div class="equation">...</div>
+    Das unbestimmte Integral einer Funktion ist einfach die Stammfunktion. (<span class="equation">C \in \mathbb{R}</span>)
+    <div class="equation">\int f(x) dx = F(x) + C</div>
+    Das bestimmte Integral einer Funktion zwischen zwei Werten ist ein Wert. Der Wert gibt den Flächeninhalt zwischen der Funktion und der x-Achse an (kann auch negativ sein). Das Integral wird mit Hilfe der Stammfunktion berechnet.
+    <div class="equation">\int_{x_0}^{x_n} f(x) dx = \left[F(x)\right]_{x_0}^{x_n} = F(x_n) - F(x_0)</div>
     
-    
-    
-    <h3>Registermaschinen}
-    Eine Registermaschine hat sehr wenige Operationen, kann aber mit genug Zeit jedes berechenbare Problem lösen. Eine Registermaschine besitzt für jede Natürliche Zahl <span class="equation">n \in \mathbb{N}_0</span> ein Register, in dem eine Natürliche Zahl <span class="equation">m \in \mathbb{N}_0</span> gespeichert werden kann.
-    \begin{center}
-        \begin{tikzpicture}
-            \foreach \n in {0,...,8}
-                \node[box] at (\n, 0cm) {\n};
-            
-            \node[box, opacity=0.5] at (9cm, 0cm) {...};
-            \node[box, opacity=0.5] at (10cm, 0cm) {$n \in \mathbb{N}_0$};
-        \end{tikzpicture}
-    \end{center}
+    \noindent
     <section class="container">
         <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-            \textbf{Increment}\\
-            Erhöht das Register <span class="equation">x</span> um <span class="equation">1</span>
-            <div class="equation">a_x</div>
-            \textbf{Decrement}\\
-            Verringert das Register <span class="equation">x</span> um <span class="equation">1</span> (wenn der Wert nicht <span class="equation">0</span> ist)
-            <div class="equation">s_x</div>
+            \textbf{Substitution}
+            <div class="equation">F(x) = \int f(x)dx</div>
+            <div class="equation">u := g(x)</div>
+            <div class="equation">F^*(u) = \int f^*(x, u) \cdot \frac{1}{g'(x)} du = \int f^*(u) du</div>
+            \begin{center}
+                \textit{(Rücksubstitution nicht vergessen)}
+            \end{center}
         </section>
         <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-            \textbf{Konkatenation}\\
-            <span class="equation">B</span> wird nach <span class="equation">A</span> ausgeführt
-            <div class="equation">AB</div>
-            \textbf{Iteration}\\
-            Führt <span class="equation">B</span> aus bis Register <span class="equation">x</span> den Wert 0 hat
-            <div class="equation">(B)_x</div>
+            \textbf{Partielle Integration}
+            <div class="equation">F(x) = \int u(x) \cdot v(x)dx</div>
+            <div class="equation">F(x) = U(x) \cdot v(x) - \int U(x) \cdot v'(x) dx + C</div>
         </section>
     </section>
     
     
-    <h3>Komplexität}
-    Die Komplexität beschreibt das Laufzeitverhalten eines Programms, wenn sich die Größe <span class="equation">n</span> der Eingabe ändert. Man kann dies als eine Abbildung <span class="equation">f: \mathbb{N} \rightarrow \mathbb{N}</span> mit zum Beispiel <span class="equation">n \mapsto n^2</span> auffassen.\\
-    Mit <span class="equation">O(f)</span> wird eine Menge beschrieben, welche alle Laufzeiten enthält, welche etwa gleich oder langsamer sind als <span class="equation">f</span>.\\
-    Mit <span class="equation">\Omega(f)</span> wird eine Menge beschrieben, welche alle Laufzeiten enthält, welche etwa gleich oder schneller sind als <span class="equation">f</span>.\\
-    Mit <span class="equation">\Theta(f)</span> wird eine Menge beschrieben, welche alle Laufzeiten enthält, welche etwa gleich-schnell sind wie <span class="equation">f</span>.
-    <div class="equation">f_1: \mathbb{N} \rightarrow \mathbb{N}</div>
-    <div class="equation">n \mapsto n^2 + \lceil \log(n)\rceil</div>
-    <div class="equation">f_1 \in \Theta(n \mapsto n^2)</div>
+    
+    \noindent
+    \textbf{Partialbruchzerlegung}\\
+    Darstellung einer echt gebrochen rationalen Funktion als Summe. Mit <span class="equation">n_i</span> werden alle Nullstellen von <span class="equation">v(x)</span> bezeichnet von denen es <span class="equation">N</span> viele verschiedene gibt. Der Grad jeder Nullstelle von <span class="equation">v(x)</span> wird mit <span class="equation">g_i</span> bezeichnet. Mit <span class="equation">a_{i,j}</span> wird eine Konstante beschrieben.
+    <div class="equation">f(x) = \frac{u(x)}{v(x)}</div>
+    <div class="equation">v(x) = \prod_{i=0}^{N}(x-n_i)^{g_i} = \sum_{i=0}^{N}\left(\sum_{j=0}^{g_i}\left(\frac{a_{i,j}}{(x-n_i)^{j+1}}\right)\right)</div>
+    Es wird mit <span class="equation">v(x)</span> Multipliziert und auf der rechten Seite werden gemeinsame Exponenten zusammengefasst.
+    <div class="equation">f(x) \cdot v(x) = u(x) = (...) + x\cdot (...) + x^2 \cdot (...) + ...</div>
+    Nun kann ein Gleichungssystem aufgestellt werden mit trivialen Werten für <span class="equation">(...)</span>.\\
+    Nachdem die Werte für <span class="equation">a_{i,j}</span> bekannt sind kann die Funktion leicht Integriert werden.
+    
+    \noindent
+    \textbf{Trapez-regel}
+    <div class="equation">\int_{x_0}^{x_n}f(x)dx \approx \left(f(x_0) + f(x_n) + 2\cdot \sum_{i=1}^{n-1}f(x_i)\right) \cdot \frac{x_n - x_0}{2n}</div>
+    \textbf{Simpson-regel}
+    <div class="equation">\int_{x_0}^{x_n}f(x)dx \approx \left(f(x_0) + f(x_n) + 4\cdot \sum_{i=1}^{n-1}f\left(\frac{x_{i-1} + x_{i}}{2}\right) + 2\cdot \sum_{i=1}^{n-1}f(x_i)\right) \cdot \frac{x_n - x_0}{6n}</div>
+    
+    <h3>Uneigentliches integral}
+    <div class="equation">f(k) \notin \mathbb{R}</div>
+    <div class="equation">\int_{x_0}^{k}f(x)dx = \lim_{n \rightarrow k}\left(\int_{x_0}^{n}f(x)dx\right)</div>
+    <h3>Rotationskörper}
+    <section class="container">
+        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+            \textbf{x-Achse}
+            <div class="equation">V_x = \pi \cdot \int_{x_0}^{x_n}f(x)^2dx</div>
+        </section>
+        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+            \textbf{y-Achse}
+            <div class="equation">V_y = \pi \cdot \int_{f^{-1}(x_0)}^{f^{-1}(x_n)}f^{-1}(x)^2dx</div>
+        </section>
+    </section>
     
     
-    <h3>Berechenbarkeit}
-    Eine Abbildung heißt berechenbar, wenn es mindestens einen Algorithmus gibt, welcher für jede Eingabe aus dem Wertebereich eine Ausgabe aus dem Bildbereich liefert.
     
     
-
+    
     
     
         </main>

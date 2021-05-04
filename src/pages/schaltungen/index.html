@@ -17,27 +17,27 @@
     </head>
 
     <body>
-        <header><h1><a href="../_home/index.html">About</a></h1></header>
+        <header><h1><a href="../home/index.html">Informatik</a></h1></header>
         <input id="nav_checkbox" type="checkbox" name="nav_checkbox">
-        <label id="nav_checkbox_label" for="nav_checkbox">≡</label>
+        <label id="nav_checkbox_label" for="nav_checkbox">&#8801;</label>
         <nav class="scroll">
             <ul>
-                <li><a href="../_home/index.html">Home</a></li>
-                <li><a href="../_about/index.html">About</a></li>
-                <li><a href="../_quellen/index.html">Quellen</a></li>
+                <li><a href="../home/index.html">Home</a></li>
+                <li><a href="../about/index.html">About</a></li>
+                <li><a href="../quellen/index.html">Quellen</a></li>
                 <br>
                 <li><a href="../abbildungen/index.html">Abbildungen</a></li>
                 <li><a href="../algebraische_strukturen/index.html">Algebraische Strukturen</a></li>
-                <li><a href="../algorithmen/index.html"></a>Algorithmen</li>
+                <li><a href="../algorithmen/index.html">Algorithmen</a></li>
                 <li><a href="../aussagen_logik/index.html">Aussagen Logik</a></li>
-                <li><a href="../automaten/index.html"></a>Automaten</li>
-                <li><a href="../baeume/index.html"></a>Bäume</li>
+                <li><a href="../automaten/index.html">Automaten</a></li>
+                <li><a href="../baeume/index.html">Bäume</a></li>
                 <li><a href="../codierungen/index.html">Codierungen</a></li>
                 <li><a href="../flipflops/index.html">Flipflops</a></li>
                 <li><a href="../folgen_und_reihen/index.html">Folgen und Reihen</a></li>
                 <li><a href="../formale_sprachen/index.html">Formale Sprachen</a></li>
-                <li><a href="../ganze_zahlen/index.html"></a>Ganze Zahlen</li>
-                <li><a href="../graphen/index.html"></a>Graphen</li>
+                <li><a href="../ganze_zahlen/index.html">Ganze Zahlen</a></li>
+                <li><a href="../graphen/index.html">Graphen</a></li>
                 <li><a href="../hash_funktionen/index.html">Hash Funktionen</a></li>
                 <li><a href="../listen/index.html">Listen</a></li>
                 <li><a href="../matrizen_rechnung/index.html">Matrizen Rechnung</a></li>
@@ -50,10 +50,235 @@
                 <li><a href="../relationen/index.html">Relationen</a></li>
                 <li><a href="../schaltungen/index.html">Schaltungen</a></li>
                 <li><a href="../symboltabellen/index.html">Symboltabellen</a></li>
-                <li><a href="../vektor_rechnung/index.html">Vektor Rechnung</a>
+                <li><a href="../vektor_rechnung/index.html">Vektor Rechnung</a></li>
             </ul>
         </nav>
-        <main class="scroll"></main>
+        <main class="scroll">
+
+
+            
+<h2>Schaltungen (Schaltnetz)}
+    <h3>Beschreibung}
+    <section class="container">
+        <section style="grid-column: 1 / span 99;">{0.67\textwidth}
+            <span class="equation">\textcolor{WildStrawberry}{F}</span> und <span class="equation">\textcolor{LimeGreen}{W}</span> werden definiert durch Bereiche statt durch einzelne Werte.\\
+            <span class="equation">\textcolor{WildStrawberry}{F}</span> (<span class="equation">\textcolor{WildStrawberry}{LOW}</span>) ist der Bereich, welcher näher an <span class="equation">-\infty</span> liegt.\\
+            <span class="equation">\textcolor{LimeGreen}{W}</span> (<span class="equation">\textcolor{LimeGreen}{HIGH}</span>) ist der Bereich, welcher näher an <span class="equation">+\infty</span> liegt.\\
+            Die beiden Bereiche werden von einander getrennt durch einen Sicherheitsabstand in welchem nicht entschieden werden kann ob der Wert <span class="equation">\textcolor{WildStrawberry}{F}</span> oder <span class="equation">\textcolor{LimeGreen}{W}</span> ist.
+        </section>
+        <section style="grid-column: 1 / span 99;">{0.32\textwidth}
+            \begin{center}
+                \begin{tikzpicture}
+                    \begin{scope}[scale=0.8]
+                        \draw[very thin, color=gray] (0cm, 1.5cm) -- (0cm, -1.5cm);
+                            
+                        \draw[->, very thick, color=LimeGreen] (0cm, 0.5cm) -- (0cm, 1.5cm);
+                                    
+                        \draw[very thick, color=WildStrawberry] (0cm, -0.5cm) -- (0cm, -1.5cm);
+                                    
+                        \node at (2cm, 0cm) [gray] {Sicherheitsabstand};
+                        \draw[<->, very thin, color=gray] (0.2cm, 0.5cm) -- (0.2cm, -0.5cm);
+                        
+                        \node at (1cm, 1cm) [LimeGreen] {$HIGH$};
+                        \node at (-0.4cm, 1.5cm) [LimeGreen] {5V};
+                        
+                        \node at (1cm, -1cm) [WildStrawberry] {$LOW$};
+                        \node at (-0.4cm, -1.4cm) [WildStrawberry] {0V};
+                    \end{scope}
+                \end{tikzpicture}
+            \end{center}
+        </section>
+    </section>
+    
+    
+    \noindent            
+    <h3>Logische-Gatter}
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{scope}[shift={(0cm, 1cm)}]
+                \node at (0.5cm, 1.5cm) {\textbf{not-Gatter}};
+                \draw (-0.3cm, 0.5cm) -- (0cm, 0.5cm);
+                \node[boxRing] at (1.125cm, 0.5cm) {};
+                \draw (1.25cm, 0.5cm) -- (1.3cm, 0.5cm);
+                \node[box] at (0.5cm, 0.5cm) {$1$};
+                \node at (0.5cm, -0.5cm) {Gegenteil};
+            \end{scope}
+                
+            \begin{scope}[shift={(2.5cm, 1cm)}]
+                \node at (0.5cm, 1.5cm) {\textbf{and-Gatter}};
+                \draw (-0.3cm, 0.25cm) -- (0cm, 0.25cm);
+                \draw (-0.3cm, 0.75cm) -- (0cm, 0.75cm);
+                \draw (1cm, 0.5cm) -- (1.3cm, 0.5cm);
+                \node[box] at (0.5cm, 0.5cm) {$\And$};
+                \node at (0.5cm, -0.5cm) {alle <span class="equation">\textcolor{LimeGreen}{W}$};
+            \end{scope}
+                    
+            \begin{scope}[shift={(5cm, 1cm)}]
+                \node at (0.5cm, 1.5cm) {\textbf{or-Gatter}};
+                \draw (-0.3cm, 0.25cm) -- (0cm, 0.25cm);
+                \draw (-0.3cm, 0.75cm) -- (0cm, 0.75cm);
+                \draw (1cm, 0.5cm) -- (1.3cm, 0.5cm);
+                \node[box] at (0.5cm, 0.5cm) {$\geq 1$};
+                \node at (0.5cm, -0.5cm) {mind. eins <span class="equation">\textcolor{LimeGreen}{W}$};
+            \end{scope}
+                    
+            \begin{scope}[shift={(7.5cm, 1cm)}]
+                \node at (0.5cm, 1.5cm) {\textbf{xor-Gatter}};
+                \draw (-0.3cm, 0.25cm) -- (0cm, 0.25cm);
+                \draw (-0.3cm, 0.75cm) -- (0cm, 0.75cm);
+                \draw (1cm, 0.5cm) -- (1.3cm, 0.5cm);
+                \node[box] at (0.5cm, 0.5cm) {$= 1$};
+                \node at (0.5cm, -0.5cm) {genau eins <span class="equation">\textcolor{LimeGreen}{W}$};
+            \end{scope}
+                        
+            \begin{scope}[shift={(10cm, 1cm)}]
+                \node at (0.5cm, 1.5cm) {\textbf{nand-Gatter}};
+                \draw (-0.3cm, 0.25cm) -- (0cm, 0.25cm);
+                \draw (-0.3cm, 0.75cm) -- (0cm, 0.75cm);
+                \node[boxRing] at (1.125cm, 0.5cm) {};
+                \draw (1.25cm, 0.5cm) -- (1.3cm, 0.5cm);
+                \node[box] at (0.5cm, 0.5cm) {$\And$};
+                \node at (0.5cm, -0.5cm) {nicht alle <span class="equation">\textcolor{LimeGreen}{W}$};
+            \end{scope}
+                    
+            \begin{scope}[shift={(12.5cm, 1cm)}]
+                \node at (0.5cm, 1.5cm) {\textbf{nor-Gatter}};
+                \draw (-0.3cm, 0.25cm) -- (0cm, 0.25cm);
+                \draw (-0.3cm, 0.75cm) -- (0cm, 0.75cm);
+                \node[boxRing] at (1.125cm, 0.5cm) {};
+                \draw (1.25cm, 0.5cm) -- (1.3cm, 0.5cm);
+                \node[box] at (0.5cm, 0.5cm) {$\geq 1$};
+                \node at (0.5cm, -0.5cm) {alle <span class="equation">\textcolor{WildStrawberry}{F}$};
+            \end{scope}
+                        
+            \begin{scope}[shift={(15cm, 1cm)}]
+                \node at (0.5cm, 1.5cm) {\textbf{xnor-Gatter}};
+                \draw (-0.3cm, 0.25cm) -- (0cm, 0.25cm);
+                \draw (-0.3cm, 0.75cm) -- (0cm, 0.75cm);
+                \node[boxRing] at (1.125cm, 0.5cm) {};
+                \draw (1.25cm, 0.5cm) -- (1.3cm, 0.5cm);
+                \node[box] at (0.5cm, 0.5cm) {$= 1$};
+                \node at (0.5cm, -0.5cm) {alle gleich};
+            \end{scope}
+        \end{tikzpicture}
+    \end{center}
+    
+    \noindent
+    <h3>Vollständiges System}
+    Ein vollständiges System ist eine Menge an Logischen Gattern mit denen man jede Schaltung Realisieren kann. Die Menge <span class="equation">\{nand\}</span> wäre ein mögliches Vollständiges System.
+    
+    \vspace{0.1cm}
+    
+    \noindent
+    <h3>Schaltnetz}
+    Eingänge und Ausgänge ohne Speicher (Zeitunabhängig)
+    <div class="equation">f(A, B, ...) = (Y_1, Y_2, ...)</div>
+    
+    \noindent
+    <section class="container">
+        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+            \textbf{Halbaddierer (HA)}\\
+            Addiert zwei Bits\\
+            <span class="equation">S$: Sum, <span class="equation">C$: Carry
+            \begin{center}
+                \begin{tikzpicture}
+                    \node[clear] (node1) at (0cm, 2cm) {$A$};
+                    \node[clear] (node2) at (0cm, 0cm) {$B$};
+                    \node[dot] (node3) at (1cm, 2cm) {};
+                    \node[empty] (node4) at (1.5cm, 2cm) {};
+                    \node[empty] (node5) at (1cm, 0.5cm) {};
+                    \node[empty] (node6) at (1.5cm, 0.5cm) {};
+                    
+                    \node[dot] (node7) at (0.5cm, 0cm) {};
+                    \node[empty] (node8) at (0.5cm, 1.5cm) {};
+                    \node[empty] (node9) at (1.5cm, 1.5cm) {};
+                    \node[empty] (node10) at (1.5cm, 0cm) {};
+                    
+                    
+                    \node[box] (node11) at (2cm, 1.75cm) {$=1$};
+                    \node[box] (node12) at (2cm, 0.25cm) {$\And$};
+                    
+                    \node[clear] (node13) at (3cm, 1.75cm) {$S$};
+                    \node[clear] (node14) at (3cm, 0.25cm) {$C$};
+                    
+                    \path (node1) edge (node3);
+                    \path (node3) edge (node4);
+                    \path (node3) edge (node5);
+                    \path (node5) edge (node6);
+                    
+                    \path (node2) edge (node7);
+                    \path (node7) edge (node8);
+                    \path (node8) edge (node9);
+                    \path (node7) edge (node10);
+                    
+                    \path (node11) edge (node13);
+                    \path (node12) edge (node14);
+                \end{tikzpicture}
+            \end{center}
+        </section>
+        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+            \textbf{Volladdierer (VA)}\\
+            Addiert drei Bits\\
+            <span class="equation">S$: Sum, <span class="equation">C$: Carry
+            \begin{center}
+                \begin{tikzpicture}
+                    \node[clear] (node1) at (0cm, 1.25cm) {$A$};
+                    \node[clear] (node2) at (0cm, 0.75cm) {$B$};
+                    \node[clear] (node3) at (0cm, 0.25cm) {$C$};
+                    
+                    \node[empty] (node4) at (0.5cm, 0.75cm) {};
+                    \node[empty] (node5) at (0.5cm, 0.25cm) {};
+                    
+                    \node[empty] (node6) at (2cm, 1.25cm) {};
+                    
+                    \node[empty] (node7) at (1.5cm, 0.75cm) {};
+                    \node[empty] (node8) at (2cm, 0.75cm) {};
+                    
+                    \node[empty] (node9) at (1.5cm, 0.25cm) {};
+                    \node[empty] (node10) at (3.5cm, 0.25cm) {};
+                    
+                    \node[empty] (node11) at (3cm, 0.75cm) {};
+                    \node[empty] (node12) at (3.5cm, 0.75cm) {};
+                    
+                    \node[empty] (node13) at (3cm, 1.25cm) {};
+                    
+                    \node[box] (node14) at (1cm, 0.5cm) {$HA$};
+                    \node[box] (node15) at (2.5cm, 1cm) {$HA$};
+                    \node[box] (node16) at (4cm, 0.5cm) {$\geq 1$};
+                    
+                    
+                    \node[clear] (node17) at (5cm, 1.25cm) {$S$};
+                    \node[clear] (node18) at (5cm, 0.5cm) {$C$};
+                    
+                    \path (node2) edge (node4);
+                    \path (node3) edge (node5);
+                    
+                    \path (node1) edge (node6);
+                    
+                    \path (node7) edge (node8);
+                    
+                    \path (node9) edge (node10);
+                    
+                    \path (node11) edge (node12);
+                    
+                    \path (node13) edge (node17);
+                    
+                    \path (node16) edge (node18);
+                \end{tikzpicture}
+            \end{center}
+        </section>
+    </section>
+    
+    \vspace{0.1cm}
+    
+    \noindent
+    Mit beliebig vielen Volladdierern kann man eine beliebig große Additions-Schaltung bauen, indem man sie in einer Reihe zusammen schließt und die Eingänge C mit den Ausgängen C verbindet.\\
+    Mit dem fast-carry-Verfahren kann man die Gatterlaufzeit beschränken, welche durch die in Reihe Schließung auftritt.
+    
+    
+
+    
+        </main>
         <footer><h6>created by Anton Böhler</h6></footer>
     </body>
 </html>

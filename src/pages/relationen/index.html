@@ -17,27 +17,27 @@
     </head>
 
     <body>
-        <header><h1><a href="../_home/index.html">Informatik</a></h1></header>
+        <header><h1><a href="../home/index.html">Informatik</a></h1></header>
         <input id="nav_checkbox" type="checkbox" name="nav_checkbox">
-        <label id="nav_checkbox_label" for="nav_checkbox">≡</label>
+        <label id="nav_checkbox_label" for="nav_checkbox">&#8801;</label>
         <nav class="scroll">
             <ul>
-                <li><a href="../_home/index.html">Home</a></li>
-                <li><a href="../_about/index.html">About</a></li>
-                <li><a href="../_quellen/index.html">Quellen</a></li>
+                <li><a href="../home/index.html">Home</a></li>
+                <li><a href="../about/index.html">About</a></li>
+                <li><a href="../quellen/index.html">Quellen</a></li>
                 <br>
                 <li><a href="../abbildungen/index.html">Abbildungen</a></li>
                 <li><a href="../algebraische_strukturen/index.html">Algebraische Strukturen</a></li>
-                <li><a href="../algorithmen/index.html"></a>Algorithmen</li>
+                <li><a href="../algorithmen/index.html">Algorithmen</a></li>
                 <li><a href="../aussagen_logik/index.html">Aussagen Logik</a></li>
-                <li><a href="../automaten/index.html"></a>Automaten</li>
-                <li><a href="../baeume/index.html"></a>Bäume</li>
+                <li><a href="../automaten/index.html">Automaten</a></li>
+                <li><a href="../baeume/index.html">Bäume</a></li>
                 <li><a href="../codierungen/index.html">Codierungen</a></li>
                 <li><a href="../flipflops/index.html">Flipflops</a></li>
                 <li><a href="../folgen_und_reihen/index.html">Folgen und Reihen</a></li>
                 <li><a href="../formale_sprachen/index.html">Formale Sprachen</a></li>
-                <li><a href="../ganze_zahlen/index.html"></a>Ganze Zahlen</li>
-                <li><a href="../graphen/index.html"></a>Graphen</li>
+                <li><a href="../ganze_zahlen/index.html">Ganze Zahlen</a></li>
+                <li><a href="../graphen/index.html">Graphen</a></li>
                 <li><a href="../hash_funktionen/index.html">Hash Funktionen</a></li>
                 <li><a href="../listen/index.html">Listen</a></li>
                 <li><a href="../matrizen_rechnung/index.html">Matrizen Rechnung</a></li>
@@ -50,238 +50,241 @@
                 <li><a href="../relationen/index.html">Relationen</a></li>
                 <li><a href="../schaltungen/index.html">Schaltungen</a></li>
                 <li><a href="../symboltabellen/index.html">Symboltabellen</a></li>
-                <li><a href="../vektor_rechnung/index.html">Vektor Rechnung</a>
+                <li><a href="../vektor_rechnung/index.html">Vektor Rechnung</a></li>
             </ul>
         </nav>
         <main class="scroll">
-            \subsubsection*{Beschreibung}
-            Eine Relation gibt eine Beziehung zwischen Objekten an. Sie ist eine Teilmenge eines Kartesischen Produkts.
-            $$R \subseteq M^n$$
-            Mit $(a, b) \in R$ bezeichnet man, dass $a$ mit $b$ in Relation steht. Eine Relation $R$ kann auf verschiedene Mengen bezogen sein und verschiedene Eigenschaften auf den jeweiligen Mengen besitzen.
-            \subsubsection*{Eigenschaften}
-            \begin{minipage}{\textwidth}
-                \begin{minipage}{0.24\textwidth}
-                    \begin{center}
-                        \textbf{Reflexiv}\\
-                        \vspace{0.1cm}
-                        \begin{tikzpicture}
-                            \node[node] (node1) at (0cm, 0cm) {a};
-                            \node[node] (node2) at (1cm, 0cm) {b};
-                            \node[node] (node3) at (2cm, 0cm) {c};
-                            \node[node] (node4) at (3cm, 0cm) {d};
+            
+            <h2>Relationen}
+                <h3>Beschreibung}
+                Eine Relation gibt eine Beziehung zwischen Objekten an. Sie ist eine Teilmenge eines Kartesischen Produkts.
+                <div class="equation">R \subseteq M^n</div>
+                Mit <span class="equation">(a, b) \in R</span> bezeichnet man, dass <span class="equation">a</span> mit <span class="equation">b</span> in Relation steht. Eine Relation <span class="equation">R</span> kann auf verschiedene Mengen bezogen sein und verschiedene Eigenschaften auf den jeweiligen Mengen besitzen.
+                <h3>Eigenschaften}
+                <section class="container">
+                    <section style="grid-column: 1 / span 99;">{0.24\textwidth}
+                        \begin{center}
+                            \textbf{Reflexiv}\\
+                            \vspace{0.1cm}
+                            \begin{tikzpicture}
+                                \node[node] (node1) at (0cm, 0cm) {a};
+                                \node[node] (node2) at (1cm, 0cm) {b};
+                                \node[node] (node3) at (2cm, 0cm) {c};
+                                \node[node] (node4) at (3cm, 0cm) {d};
+                                
+                                \path[->] (node1) edge [loop above] ();
+                                \path[->] (node2) edge [loop above] ();
+                                \path[->] (node3) edge [loop above] ();
+                                \path[->] (node4) edge [loop above] ();
+                            \end{tikzpicture}\\
+                            Alles steht mit sich selbst in Relation
+                            <div class="equation">\forall a \in M: (a, a) \in R</div>
+                        \end{center}
+                    </section>
+                    <section style="grid-column: 1 / span 99;">{0.24\textwidth}
+                        \begin{center}
+                            \textbf{Symmetrisch}\\
+                            \vspace{0.4cm}
+                            \begin{tikzpicture}
+                                \node[node] (node1) at (0cm, 0cm) {a};
+                                \node[node] (node2) at (1cm, 0cm) {b};
+                                \node[node] (node3) at (2cm, 0cm) {c};
+                                \node[node] (node4) at (3cm, 0cm) {d};
+                                
+                                \path[<->] (node1) edge (node2);
+                            \end{tikzpicture}\\
+                            Alle Relationen sind Beidseitig.
+                            <div class="equation">(a,b) \in R \Rightarrow (b,a) \in R</div>
+                        \end{center}
+                    </section>
+                    <section style="grid-column: 1 / span 99;">{0.24\textwidth}
+                        \begin{center}
+                            \textbf{Antisymmetrisch}\\
+                            \vspace{0.4cm}
+                            \begin{tikzpicture}
+                                \node[node] (node1) at (0cm, 0cm) {a};
+                                \node[node] (node2) at (1cm, 0cm) {b};
+                                \node[node] (node3) at (2cm, 0cm) {c};
+                                \node[node] (node4) at (3cm, 0cm) {d};
+                                
+                                \path[->] (node1) edge (node2);
+                            \end{tikzpicture}\\
+                            Alle Relationen sind Einseitig.
+                            <div class="equation">(a,b), (b,a) \in R \Rightarrow a = b</div>
+                        \end{center}
+                    </section>
+                    <section style="grid-column: 1 / span 99;">{0.24\textwidth}
+                        \begin{center}
+                            \textbf{Transitiv}\\
+                            \vspace{0.1cm}
+                            \begin{tikzpicture}
+                                \node[node] (node1) at (0cm, 0cm) {a};
+                                \node[node] (node2) at (1cm, 0cm) {b};
+                                \node[node] (node3) at (2cm, 0cm) {c};
+                                \node[node] (node4) at (3cm, 0cm) {d};
+                                
+                                \path[->] (node1) edge (node2);
+                                \path[->] (node2) edge (node3);
+                                \path[->] (node1) edge[bend left] (node3);
+                            \end{tikzpicture}\\
+                            Über zwei Relationen verknüpfte Objekte sind auch direkt verknüpft.
+                            <div class="equation">(a,b),(b,c)\in R \Rightarrow (a,c)\in R</div>
+                        \end{center}
+                    </section>
+                </section>
+                
+                \vspace{0.5cm}
+                
+                \noindent
+                <section class="container">
+                    <section style="grid-column: 1 / span 99;">{0.33\textwidth}
+                        \begin{center}
+                            \textbf{Total}\\
+                            \vspace{0.1cm}
+                            \begin{tikzpicture}
+                                \node[node] (node1) at (0cm, 2cm) {a};
+                                \node[node] (node2) at (2cm, 2cm) {b};
+                                \node[node] (node3) at (0cm, 0cm) {c};
+                                \node[node] (node4) at (2cm, 0cm) {d};
+                                
+                                \path[->] (node1) edge [loop left] ();
+                                \path[->] (node2) edge [loop right] ();
+                                \path[->] (node3) edge [loop left] ();
+                                \path[->] (node4) edge [loop right] ();
+                                
+                                \path[<->] (node1) edge (node2);
+                                \path[<->] (node1) edge (node3);
+                                \path[<-] (node1) edge (node4);
+                                
+                                \path[->] (node2) edge (node3);
+                                \path[<-] (node2) edge (node4);
+                                
+                                \path[->] (node3) edge (node4);
+                            \end{tikzpicture}\\
+                            Alles steht mit allem mindestens Einseitig in Relation.
+                            <div class="equation">\forall a,b \in M: (a,b) \in R \text{ oder } (b,a) \in R</div>
+                        \end{center}
+                    </section>
+                    <section style="grid-column: 1 / span 99;">{0.33\textwidth}
+                        \begin{center}
+                            \textbf{Halbordnung}\\
+                            \vspace{0.1cm}
+                            \begin{tikzpicture}
+                                \node[node] (node1) at (0cm, 0cm) {a};
+                                \node[node] (node2) at (1cm, 0cm) {b};
+                                \node[node] (node3) at (2cm, 0cm) {c};
+                                \node[node] (node4) at (3cm, 0cm) {d};
+                                
+                                \path[->] (node1) edge [loop above] ();
+                                \path[->] (node2) edge [loop above] ();
+                                \path[->] (node3) edge [loop above] ();
+                                \path[->] (node4) edge [loop above] ();
+                                
+                                \path[->] (node1) edge (node2);
+                                \path[->] (node2) edge (node3);
+                                \path[->] (node1) edge[bend right] (node3);
+                            \end{tikzpicture}\\
+                            Reflexiv, \textbf{Antisymmetrisch} und Transitiv.
+                        \end{center}
+                    </section>
+                    <section style="grid-column: 1 / span 99;">{0.33\textwidth}
+                        \begin{center}
+                            \textbf{Totalordnung}\\
+                            \vspace{0.1cm}
+                            \begin{tikzpicture}
+                                \node[node] (node1) at (0cm, 2cm) {a};
+                                \node[node] (node2) at (2cm, 2cm) {b};
+                                \node[node] (node3) at (0cm, 0cm) {c};
+                                \node[node] (node4) at (2cm, 0cm) {d};
+                                
+                                \path[->] (node1) edge [loop left] ();
+                                \path[->] (node2) edge [loop right] ();
+                                \path[->] (node3) edge [loop left] ();
+                                \path[->] (node4) edge [loop right] ();
+                                
+                                \path[->] (node1) edge (node2);
+                                \path[->] (node1) edge (node3);
+                                \path[->] (node1) edge (node4);
+                                
+                                \path[->] (node2) edge (node3);
+                                \path[->] (node2) edge (node4);
+                                
+                                \path[->] (node3) edge (node4);
+                            \end{tikzpicture}\\
+                            Reflexiv, \textbf{Antisymmetrisch}, Transitiv und Total.
+                        \end{center}
+                    </section>
+                </section>
+                
+                \vspace{0.5cm}
+                
+                \noindent
+                <section class="container">
+                    <section style="grid-column: 1 / span 99;">{0.46\textwidth}
+                        \begin{center}
+                            \textbf{Äquivalenzrelation}\\
+                            \vspace{0.1cm}
+                            \begin{tikzpicture}
+                                \node[node, draw=orange, fill=orange!80] (node1) at (0cm, 2cm) {a};
+                                \node[node, draw=orange, fill=orange!80] (node2) at (2cm, 2cm) {b};
+                                \node[node, draw=orange, fill=orange!80] (node3) at (0cm, 0cm) {c};
+                                \node[node, draw=cyan, fill=cyan!80] (node4) at (2cm, 0cm) {d};
+                                
+                                \path[->] (node1) edge [loop left] ();
+                                \path[->] (node2) edge [loop right] ();
+                                \path[->] (node3) edge [loop left] ();
+                                \path[->] (node4) edge [loop right] ();
+                                
+                                \path[<->] (node1) edge (node2);
+                                \path[<->] (node1) edge (node3);
+                                \path[<->] (node2) edge (node3);
+                                
+                            \end{tikzpicture}\\
+                            Reflexiv, \textbf{Symmetrisch} und Transitiv
+                        \end{center}
+                        Die Relation unterteilt eine Menge in Äquivalenzklassen.
+                    </section>
+                    <section style="grid-column: 1 / span 99;">{0.05\textwidth}
+                        <div class="equation">\Rightarrow</div>
+                    </section>
+                    <section style="grid-column: 1 / span 99;">{0.46\textwidth}
+                        \begin{center}
+                            \textbf{Äquivalenzklassen}\\
+                            <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+                                \begin{center}
+                                    \begin{tikzpicture}
+                                        \fill[orange, opacity=0.5, rounded corners] (-0.5cm, -0.5cm) rectangle (2.5cm, 2.5cm);
+                                        
+                                        \node[node] (node1) at (0cm, 2cm) {a};
+                                        \node[node] (node2) at (2cm, 2cm) {b};
+                                        \node[node] (node3) at (0cm, 0cm) {c};
+                                    \end{tikzpicture}
+                                \end{center}
+                                <div class="equation">[a]_R = [b]_R = [c]_R</div>
+                                <div class="equation">[a]_R = \{a, b, c\}</div>
+                            </section>
+                            <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+                                \begin{center}
+                                    \begin{tikzpicture}
+                                        \fill[cyan, opacity=0.5, rounded corners] (-0.5cm, -0.5cm) rectangle (2.5cm, 2.5cm);
+                                        
+                                        \node[node] (node4) at (1cm, 1cm) {d};
+                                    \end{tikzpicture}
+                                \end{center}
+                                <div class="equation">[d]_R</div>
+                                <div class="equation">[d]_R = \{d\}</div>
+                            </section>
                             
-                            \path[->] (node1) edge [loop above] ();
-                            \path[->] (node2) edge [loop above] ();
-                            \path[->] (node3) edge [loop above] ();
-                            \path[->] (node4) edge [loop above] ();
-                        \end{tikzpicture}\\
-                        Alles steht mit sich selbst in Relation
-                        $$\forall a \in M: (a, a) \in R$$
-                    \end{center}
-                \end{minipage}
-                \begin{minipage}{0.24\textwidth}
-                    \begin{center}
-                        \textbf{Symmetrisch}\\
-                        \vspace{0.4cm}
-                        \begin{tikzpicture}
-                            \node[node] (node1) at (0cm, 0cm) {a};
-                            \node[node] (node2) at (1cm, 0cm) {b};
-                            \node[node] (node3) at (2cm, 0cm) {c};
-                            \node[node] (node4) at (3cm, 0cm) {d};
+                            \vspace{0.3cm}
                             
-                            \path[<->] (node1) edge (node2);
-                        \end{tikzpicture}\\
-                        Alle Relationen sind Beidseitig.
-                        $$(a,b) \in R \Rightarrow (b,a) \in R$$
-                    \end{center}
-                \end{minipage}
-                \begin{minipage}{0.24\textwidth}
-                    \begin{center}
-                        \textbf{Antisymmetrisch}\\
-                        \vspace{0.4cm}
-                        \begin{tikzpicture}
-                            \node[node] (node1) at (0cm, 0cm) {a};
-                            \node[node] (node2) at (1cm, 0cm) {b};
-                            \node[node] (node3) at (2cm, 0cm) {c};
-                            \node[node] (node4) at (3cm, 0cm) {d};
+                            Alle Elemente einer Äquivalenzklasse sind Äquivalent.\\
+                            Die Menge der Äquivalenzklassen lautet:
+                            <div class="equation">M/R = \{\{a, b, c\}, \{d\}\}</div>
                             
-                            \path[->] (node1) edge (node2);
-                        \end{tikzpicture}\\
-                        Alle Relationen sind Einseitig.
-                        $$(a,b), (b,a) \in R \Rightarrow a = b$$
-                    \end{center}
-                \end{minipage}
-                \begin{minipage}{0.24\textwidth}
-                    \begin{center}
-                        \textbf{Transitiv}\\
-                        \vspace{0.1cm}
-                        \begin{tikzpicture}
-                            \node[node] (node1) at (0cm, 0cm) {a};
-                            \node[node] (node2) at (1cm, 0cm) {b};
-                            \node[node] (node3) at (2cm, 0cm) {c};
-                            \node[node] (node4) at (3cm, 0cm) {d};
+                        \end{center}
+                    </section>
+                </section>
                             
-                            \path[->] (node1) edge (node2);
-                            \path[->] (node2) edge (node3);
-                            \path[->] (node1) edge[bend left] (node3);
-                        \end{tikzpicture}\\
-                        Über zwei Relationen verknüpfte Objekte sind auch direkt verknüpft.
-                        $$(a,b),(b,c)\in R \Rightarrow (a,c)\in R$$
-                    \end{center}
-                \end{minipage}
-            \end{minipage}
-
-            \vspace{0.5cm}
-
-            \noindent
-            \begin{minipage}{\textwidth}
-                \begin{minipage}{0.33\textwidth}
-                    \begin{center}
-                        \textbf{Total}\\
-                        \vspace{0.1cm}
-                        \begin{tikzpicture}
-                            \node[node] (node1) at (0cm, 2cm) {a};
-                            \node[node] (node2) at (2cm, 2cm) {b};
-                            \node[node] (node3) at (0cm, 0cm) {c};
-                            \node[node] (node4) at (2cm, 0cm) {d};
-                            
-                            \path[->] (node1) edge [loop left] ();
-                            \path[->] (node2) edge [loop right] ();
-                            \path[->] (node3) edge [loop left] ();
-                            \path[->] (node4) edge [loop right] ();
-                            
-                            \path[<->] (node1) edge (node2);
-                            \path[<->] (node1) edge (node3);
-                            \path[<-] (node1) edge (node4);
-                            
-                            \path[->] (node2) edge (node3);
-                            \path[<-] (node2) edge (node4);
-                            
-                            \path[->] (node3) edge (node4);
-                        \end{tikzpicture}\\
-                        Alles steht mit allem mindestens Einseitig in Relation.
-                        $$\forall a,b \in M: (a,b) \in R \text{ oder } (b,a) \in R$$
-                    \end{center}
-                \end{minipage}
-                \begin{minipage}{0.33\textwidth}
-                    \begin{center}
-                        \textbf{Halbordnung}\\
-                        \vspace{0.1cm}
-                        \begin{tikzpicture}
-                            \node[node] (node1) at (0cm, 0cm) {a};
-                            \node[node] (node2) at (1cm, 0cm) {b};
-                            \node[node] (node3) at (2cm, 0cm) {c};
-                            \node[node] (node4) at (3cm, 0cm) {d};
-                            
-                            \path[->] (node1) edge [loop above] ();
-                            \path[->] (node2) edge [loop above] ();
-                            \path[->] (node3) edge [loop above] ();
-                            \path[->] (node4) edge [loop above] ();
-                            
-                            \path[->] (node1) edge (node2);
-                            \path[->] (node2) edge (node3);
-                            \path[->] (node1) edge[bend right] (node3);
-                        \end{tikzpicture}\\
-                        Reflexiv, \textbf{Antisymmetrisch} und Transitiv.
-                    \end{center}
-                \end{minipage}
-                \begin{minipage}{0.33\textwidth}
-                    \begin{center}
-                        \textbf{Totalordnung}\\
-                        \vspace{0.1cm}
-                        \begin{tikzpicture}
-                            \node[node] (node1) at (0cm, 2cm) {a};
-                            \node[node] (node2) at (2cm, 2cm) {b};
-                            \node[node] (node3) at (0cm, 0cm) {c};
-                            \node[node] (node4) at (2cm, 0cm) {d};
-                            
-                            \path[->] (node1) edge [loop left] ();
-                            \path[->] (node2) edge [loop right] ();
-                            \path[->] (node3) edge [loop left] ();
-                            \path[->] (node4) edge [loop right] ();
-                            
-                            \path[->] (node1) edge (node2);
-                            \path[->] (node1) edge (node3);
-                            \path[->] (node1) edge (node4);
-                            
-                            \path[->] (node2) edge (node3);
-                            \path[->] (node2) edge (node4);
-                            
-                            \path[->] (node3) edge (node4);
-                        \end{tikzpicture}\\
-                        Reflexiv, \textbf{Antisymmetrisch}, Transitiv und Total.
-                    \end{center}
-                \end{minipage}
-            \end{minipage}
-
-            \vspace{0.5cm}
-
-            \noindent
-            \begin{minipage}{\textwidth}
-                \begin{minipage}{0.46\textwidth}
-                    \begin{center}
-                        \textbf{Äquivalenzrelation}\\
-                        \vspace{0.1cm}
-                        \begin{tikzpicture}
-                            \node[node, draw=orange, fill=orange!80] (node1) at (0cm, 2cm) {a};
-                            \node[node, draw=orange, fill=orange!80] (node2) at (2cm, 2cm) {b};
-                            \node[node, draw=orange, fill=orange!80] (node3) at (0cm, 0cm) {c};
-                            \node[node, draw=cyan, fill=cyan!80] (node4) at (2cm, 0cm) {d};
-                            
-                            \path[->] (node1) edge [loop left] ();
-                            \path[->] (node2) edge [loop right] ();
-                            \path[->] (node3) edge [loop left] ();
-                            \path[->] (node4) edge [loop right] ();
-                            
-                            \path[<->] (node1) edge (node2);
-                            \path[<->] (node1) edge (node3);
-                            \path[<->] (node2) edge (node3);
-                            
-                        \end{tikzpicture}\\
-                        Reflexiv, \textbf{Symmetrisch} und Transitiv
-                    \end{center}
-                    Die Relation unterteilt eine Menge in Äquivalenzklassen.
-                \end{minipage}
-                \begin{minipage}{0.05\textwidth}
-                    $$\Rightarrow$$
-                \end{minipage}
-                \begin{minipage}{0.46\textwidth}
-                    \begin{center}
-                        \textbf{Äquivalenzklassen}\\
-                        \begin{minipage}{0.49\textwidth}
-                            \begin{center}
-                                \begin{tikzpicture}
-                                    \fill[orange, opacity=0.5, rounded corners] (-0.5cm, -0.5cm) rectangle (2.5cm, 2.5cm);
-                                    
-                                    \node[node] (node1) at (0cm, 2cm) {a};
-                                    \node[node] (node2) at (2cm, 2cm) {b};
-                                    \node[node] (node3) at (0cm, 0cm) {c};
-                                \end{tikzpicture}
-                            \end{center}
-                            $$[a]_R = [b]_R = [c]_R$$
-                            $$[a]_R = \{a, b, c\}$$
-                        \end{minipage}
-                        \begin{minipage}{0.49\textwidth}
-                            \begin{center}
-                                \begin{tikzpicture}
-                                    \fill[cyan, opacity=0.5, rounded corners] (-0.5cm, -0.5cm) rectangle (2.5cm, 2.5cm);
-                                    
-                                    \node[node] (node4) at (1cm, 1cm) {d};
-                                \end{tikzpicture}
-                            \end{center}
-                            $$[d]_R$$
-                            $$[d]_R = \{d\}$$
-                        \end{minipage}
-                        
-                        \vspace{0.3cm}
-                        
-                        Alle Elemente einer Äquivalenzklasse sind Äquivalent.\\
-                        Die Menge der Äquivalenzklassen lautet:
-                        $$M/R = \{\{a, b, c\}, \{d\}\}$$
-                        
-                    \end{center}
-                \end{minipage}
-            \end{minipage}
         </main>
         <footer><h6>created by Anton Böhler</h6></footer>
     </body>

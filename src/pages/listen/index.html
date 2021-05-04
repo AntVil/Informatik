@@ -17,27 +17,27 @@
     </head>
 
     <body>
-        <header><h1><a href="../_home/index.html">About</a></h1></header>
+        <header><h1><a href="../home/index.html">Informatik</a></h1></header>
         <input id="nav_checkbox" type="checkbox" name="nav_checkbox">
-        <label id="nav_checkbox_label" for="nav_checkbox">≡</label>
+        <label id="nav_checkbox_label" for="nav_checkbox">&#8801;</label>
         <nav class="scroll">
             <ul>
-                <li><a href="../_home/index.html">Home</a></li>
-                <li><a href="../_about/index.html">About</a></li>
-                <li><a href="../_quellen/index.html">Quellen</a></li>
+                <li><a href="../home/index.html">Home</a></li>
+                <li><a href="../about/index.html">About</a></li>
+                <li><a href="../quellen/index.html">Quellen</a></li>
                 <br>
                 <li><a href="../abbildungen/index.html">Abbildungen</a></li>
                 <li><a href="../algebraische_strukturen/index.html">Algebraische Strukturen</a></li>
-                <li><a href="../algorithmen/index.html"></a>Algorithmen</li>
+                <li><a href="../algorithmen/index.html">Algorithmen</a></li>
                 <li><a href="../aussagen_logik/index.html">Aussagen Logik</a></li>
-                <li><a href="../automaten/index.html"></a>Automaten</li>
-                <li><a href="../baeume/index.html"></a>Bäume</li>
+                <li><a href="../automaten/index.html">Automaten</a></li>
+                <li><a href="../baeume/index.html">Bäume</a></li>
                 <li><a href="../codierungen/index.html">Codierungen</a></li>
                 <li><a href="../flipflops/index.html">Flipflops</a></li>
                 <li><a href="../folgen_und_reihen/index.html">Folgen und Reihen</a></li>
                 <li><a href="../formale_sprachen/index.html">Formale Sprachen</a></li>
-                <li><a href="../ganze_zahlen/index.html"></a>Ganze Zahlen</li>
-                <li><a href="../graphen/index.html"></a>Graphen</li>
+                <li><a href="../ganze_zahlen/index.html">Ganze Zahlen</a></li>
+                <li><a href="../graphen/index.html">Graphen</a></li>
                 <li><a href="../hash_funktionen/index.html">Hash Funktionen</a></li>
                 <li><a href="../listen/index.html">Listen</a></li>
                 <li><a href="../matrizen_rechnung/index.html">Matrizen Rechnung</a></li>
@@ -50,10 +50,120 @@
                 <li><a href="../relationen/index.html">Relationen</a></li>
                 <li><a href="../schaltungen/index.html">Schaltungen</a></li>
                 <li><a href="../symboltabellen/index.html">Symboltabellen</a></li>
-                <li><a href="../vektor_rechnung/index.html">Vektor Rechnung</a>
+                <li><a href="../vektor_rechnung/index.html">Vektor Rechnung</a></li>
             </ul>
         </nav>
-        <main class="scroll"></main>
+        <main class="scroll">
+
+            
+
+
+<h2>Listen}
+    <h3>Array}
+    Ein Array ist eine geordnete Sammlung, wobei jedes Element schnell über einen Index abgerufen oder verändert werden kann. Arrays können mehrere Dimensionen haben, jedoch muss die Größe eines Arrays bei seiner Erstellung vorgegeben werden und kann nicht verändert werden.
+    
+    <h3>Liste}
+    Eine Liste ist eine flexiblere Datenstruktur, da die Größe dynamisch verringert oder erweitert werden kann. Listen basieren auf Knoten und Pointern, welche leichter verändert werden können. Die Pointer eines Listen Elements zeigen immer auf den Nachfolger in der Liste, so kann diese iterativ durchlaufen werden.
+    \begin{center}
+        \begin{tikzpicture}
+            \fill[cyan!20, rounded corners] (0cm, 0cm) rectangle (1.5cm, 1cm);
+            \fill[orange!20, rounded corners] (0cm, 0cm) rectangle (1cm, 1cm);
+            
+            \fill[cyan!20, rounded corners] (2.5cm, 0cm) rectangle (4cm, 1cm);
+            \fill[orange!20, rounded corners] (2.5cm, 0cm) rectangle (3.5cm, 1cm);
+            
+            \fill[cyan!20, rounded corners] (5cm, 0cm) rectangle (6.5cm, 1cm);
+            \fill[orange!20, rounded corners] (5cm, 0cm) rectangle (6cm, 1cm);
+            
+            \draw[cyan, ->] (1.25cm, 0.5cm) -- (2.5cm, 0.5cm);
+            \draw[cyan, ->] (3.75cm, 0.5cm) -- (5cm, 0.5cm);
+            \draw[cyan, ->] (6.25cm, 0.5cm) -- (7.5cm, 0.5cm);
+        \end{tikzpicture}
+    \end{center}
+    Eine Liste kann auch bidirektional sein, die Pointer gehen in beide Richtungen. Dadurch kann die Listen einfach in beide Richtungen durchgegangen werden und wird noch flexibler.
+    \begin{center}
+        \begin{tikzpicture}
+            \fill[cyan!20, rounded corners] (0cm, 0cm) rectangle (2cm, 1cm);
+            \fill[orange!20, rounded corners] (0.5cm, 0cm) rectangle (1.5cm, 1cm);
+            
+            \fill[cyan!20, rounded corners] (3cm, 0cm) rectangle (5cm, 1cm);
+            \fill[orange!20, rounded corners] (3.5cm, 0cm) rectangle (4.5cm, 1cm);
+            
+            \fill[cyan!20, rounded corners] (6cm, 0cm) rectangle (8cm, 1cm);
+            \fill[orange!20, rounded corners] (6.5cm, 0cm) rectangle (7.5cm, 1cm);
+            
+            \draw[cyan, ->] (1.75cm, 0.75cm) -- (3cm, 0.75cm);
+            \draw[cyan, ->] (4.75cm, 0.75cm) -- (6cm, 0.75cm);
+            \draw[cyan, ->] (7.75cm, 0.75cm) -- (9cm, 0.75cm);
+            
+            \draw[cyan, ->] (0.25cm, 0.25cm) -- (-1cm, 0.25cm);
+            \draw[cyan, ->] (3.25cm, 0.25cm) -- (2cm, 0.25cm);
+            \draw[cyan, ->] (6.25cm, 0.25cm) -- (5cm, 0.25cm);
+        \end{tikzpicture}
+    \end{center}
+    
+    
+    <h3>Stack}
+    <section class="container">
+        <section style="grid-column: 1 / span 99;">{0.66\textwidth}
+            Ein Stack (auch Stapel oder Keller) ist eine sonder Form einer Liste, bei der nur am Anfang und Ende eingefügt und entfernt werden kann. Er funktioniert nach dem Last-in-First-out Prinzip (LIFO)
+        </section>
+        <section style="grid-column: 1 / span 99;">{0.33\textwidth}
+            \begin{center}
+                \begin{tikzpicture}
+                    \fill[purple!20, rounded corners] (0cm, -0.5cm) rectangle (1cm, 1.3cm);
+                    \node[purple] at (0.5cm, -0.25cm) {Stack};
+                    
+                    \fill[orange!20, rounded corners] (0.1cm, 0.1cm) rectangle (0.9cm, 0.4cm);
+                    \fill[orange!20, rounded corners] (0.1cm, 0.5cm) rectangle (0.9cm, 0.8cm);
+                    \fill[orange!20, rounded corners] (0.1cm, 0.9cm) rectangle (0.9cm, 1.2cm);
+                    
+                    \node[purple] at (-0.8cm, 1.25cm) {push};
+                    \node[purple] at (1.8cm, 1.25cm) {pop};
+                    
+                    \fill[orange!20, rounded corners] (-1.25cm, 1.5cm) rectangle (-0.45cm, 1.8cm);
+                    \fill[orange!20, rounded corners] (1.4cm, 1.5cm) rectangle (2.2cm, 1.8cm);
+                    
+                    \draw[purple, ->] (-0.2cm, 1.6cm) -- (0.15cm, 1.45cm);
+                    \draw[purple, ->] (0.8cm, 1.45cm) -- (1.15cm, 1.6cm);
+                \end{tikzpicture}
+            \end{center}
+        </section>
+    </section>
+    
+    
+    
+    <h3>Queue}
+    <section class="container">
+        <section style="grid-column: 1 / span 99;">{0.66\textwidth}
+            Eine Queue (auch Schlange) ist eine sonder Form einer Liste, bei der nur am Ende eingefügt und am Anfang entfernt werden kann. Sie funktioniert nach dem First-in-First-out Prinzip (FIFO). Eine priority Queue funktioniert ähnlich wie eine normale Queue, jedoch haben Elemente eine Priorität, welche benutzt wird um beim Einfügen manche Elemente weiter vor zu ziehen, damit diese schneller bearbeitet werden.
+        </section>
+        <section style="grid-column: 1 / span 99;">{0.33\textwidth}
+            \begin{center}
+                \begin{tikzpicture}
+                    \fill[purple!20, rounded corners] (0cm, 0cm) rectangle (1.7cm, 1.5cm);
+                    \node[purple] at (0.8cm, 1.25cm) {Queue};
+                    
+                    \fill[orange!20, rounded corners] (0.1cm, 0.1cm) rectangle (0.4cm, 0.9cm);
+                    \fill[orange!20, rounded corners] (0.5cm, 0.1cm) rectangle (0.8cm, 0.9cm);
+                    \fill[orange!20, rounded corners] (0.9cm, 0.1cm) rectangle (1.2cm, 0.9cm);
+                    \fill[orange!20, rounded corners] (1.3cm, 0.1cm) rectangle (1.6cm, 0.9cm);
+                    
+                    \node[purple] at (-0.8cm, 0cm) {enqueue};
+                    \node[purple] at (2.5cm, 0cm) {dequeue};
+                    
+                    \fill[orange!20, rounded corners] (-1cm, 0.3cm) rectangle (-0.7cm, 1.1cm);
+                    \fill[orange!20, rounded corners] (2.5cm, 0.3cm) rectangle (2.8cm, 1.1cm);
+                    
+                    \draw[purple, ->] (-0.6cm, 0.65cm) -- (-0.2cm, 0.5cm);
+                    \draw[purple, ->] (1.9cm, 0.5cm) -- (2.3cm, 0.65cm);
+                \end{tikzpicture}
+            \end{center}
+        </section>
+    </section>
+
+    
+        </main>
         <footer><h6>created by Anton Böhler</h6></footer>
     </body>
 </html>

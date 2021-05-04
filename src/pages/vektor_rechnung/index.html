@@ -17,27 +17,27 @@
     </head>
 
     <body>
-        <header><h1><a href="../_home/index.html">About</a></h1></header>
+        <header><h1><a href="../home/index.html">Informatik</a></h1></header>
         <input id="nav_checkbox" type="checkbox" name="nav_checkbox">
-        <label id="nav_checkbox_label" for="nav_checkbox">≡</label>
+        <label id="nav_checkbox_label" for="nav_checkbox">&#8801;</label>
         <nav class="scroll">
             <ul>
-                <li><a href="../_home/index.html">Home</a></li>
-                <li><a href="../_about/index.html">About</a></li>
-                <li><a href="../_quellen/index.html">Quellen</a></li>
+                <li><a href="../home/index.html">Home</a></li>
+                <li><a href="../about/index.html">About</a></li>
+                <li><a href="../quellen/index.html">Quellen</a></li>
                 <br>
                 <li><a href="../abbildungen/index.html">Abbildungen</a></li>
                 <li><a href="../algebraische_strukturen/index.html">Algebraische Strukturen</a></li>
-                <li><a href="../algorithmen/index.html"></a>Algorithmen</li>
+                <li><a href="../algorithmen/index.html">Algorithmen</a></li>
                 <li><a href="../aussagen_logik/index.html">Aussagen Logik</a></li>
-                <li><a href="../automaten/index.html"></a>Automaten</li>
-                <li><a href="../baeume/index.html"></a>Bäume</li>
+                <li><a href="../automaten/index.html">Automaten</a></li>
+                <li><a href="../baeume/index.html">Bäume</a></li>
                 <li><a href="../codierungen/index.html">Codierungen</a></li>
                 <li><a href="../flipflops/index.html">Flipflops</a></li>
                 <li><a href="../folgen_und_reihen/index.html">Folgen und Reihen</a></li>
                 <li><a href="../formale_sprachen/index.html">Formale Sprachen</a></li>
-                <li><a href="../ganze_zahlen/index.html"></a>Ganze Zahlen</li>
-                <li><a href="../graphen/index.html"></a>Graphen</li>
+                <li><a href="../ganze_zahlen/index.html">Ganze Zahlen</a></li>
+                <li><a href="../graphen/index.html">Graphen</a></li>
                 <li><a href="../hash_funktionen/index.html">Hash Funktionen</a></li>
                 <li><a href="../listen/index.html">Listen</a></li>
                 <li><a href="../matrizen_rechnung/index.html">Matrizen Rechnung</a></li>
@@ -50,10 +50,121 @@
                 <li><a href="../relationen/index.html">Relationen</a></li>
                 <li><a href="../schaltungen/index.html">Schaltungen</a></li>
                 <li><a href="../symboltabellen/index.html">Symboltabellen</a></li>
-                <li><a href="../vektor_rechnung/index.html">Vektor Rechnung</a>
+                <li><a href="../vektor_rechnung/index.html">Vektor Rechnung</a></li>
             </ul>
         </nav>
-        <main class="scroll"></main>
+        <main class="scroll">
+
+
+            
+<h2>Vektorrechnung}
+    <h3>Beschreibung}
+    <section class="container">
+        <section style="grid-column: 1 / span 99;">{0.74\textwidth}
+            Vektoren sind Teil eines Vektorraums und werden als Tupel dargestellt. Geometrisch können Vektoren auch als Pfeile im Raum verstanden werden.
+            <div class="equation">\Vec{v} = \begin{array}({c})v_0\\v_1\\\vdots\end{array}</div>
+            Sie können addiert und skaliert werden. Das Skalarprodukt zwischen zwei Vektoren ergibt einen Skalar.
+            <div class="equation">\Vec{v_1} \cdot \Vec{v_2} = \sum_{i=0}^{n}v_{1_i} \cdot v_{2_i}</div>
+        </section>
+        <section style="grid-column: 1 / span 99;">{0.25\textwidth}
+            \begin{center}
+                \begin{tikzpicture}
+                    \draw[very thin, color=gray] (-2cm, -2cm) grid (2cm, 2cm);
+                    
+                    \draw[->] (0cm, -2cm) -- (0cm, 2cm);
+                    \draw[->] (-2cm, 0cm) -- (2cm, 0cm);
+                    
+                    \draw[->, very thick, cyan] (0cm, 0cm) -- (1cm, 0.75cm);
+                \end{tikzpicture}
+            \end{center}
+        </section>
+    </section>
+    
+    
+    <h3>Lineare Gleichungssysteme}
+    Ein Lineares Gleichungssystem besteht aus mehreren Gleichungen, welche alle zusammen erfüllt sein müssen. 
+    Es kann durch die erweiterte Koeffizientenmatrix dargestellt werden und mit Gauß verfahren gelöst werden.
+    </div>
+    \begin{array}({cc|c})
+      1 & 1 & 2\\
+      2 & 0 & 2
+    \end{array}
+    </div>
+    
+    
+    <h3>Linearkombination}
+    <section class="container">
+        <section style="grid-column: 1 / span 99;">{0.74\textwidth}
+            Eine Linearkombination ist eine Summe von vielfachen Vektoren.
+            <div class="equation">\Vec{y} = \sum_{i=0}^{n}a_i \cdot \Vec{v_i}</div>
+            Wenn ein Vektor durch andere Vektoren darstellbar ist, ist dieser Vektor linear abhängig von den anderen Vektoren.
+            <div class="equation">1 \cdot \textcolor{cyan}{\begin{array}({c})1\\2\end{array}} + 2 \cdot \textcolor{green}{\begin{array}({c})\frac{1}{2}\\-\frac{1}{2}\end{array}} = \textcolor{purple}{\begin{array}({c})2\\1\end{array}}</div>
+            Ansonsten sind die Vektoren linear unabhängig.
+        </section>
+        <section style="grid-column: 1 / span 99;">{0.25\textwidth}
+            \begin{center}
+                \begin{tikzpicture}
+                    \draw[very thin, color=gray] (-2cm, -2cm) grid (2cm, 2cm);
+                    
+                    \draw[->] (0cm, -2cm) -- (0cm, 2cm);
+                    \draw[->] (-2cm, 0cm) -- (2cm, 0cm);
+                    
+                    \draw[->, very thick, cyan] (0cm, 0cm) -- (1cm, 2cm);
+                    \draw[->, very thick, green] (0cm, 0cm) -- (0.5cm, -0.5cm);
+                    
+                    \draw[->, very thick, green, dashed] (1cm, 2cm) -- (1.5cm, 1.5cm);
+                    \draw[->, very thick, green, dashed] (1.5cm, 1.5cm) -- (2cm, 1cm);
+                    
+                    \draw[->, very thick, green, dashed] (0.5cm, -0.5cm) -- (1cm, -1cm);
+                    \draw[->, very thick, cyan, dashed] (1cm, -1cm) -- (2cm, 1cm);
+                    
+                    \draw[->, very thick, purple] (0cm, 0cm) -- (2cm, 1cm);
+                \end{tikzpicture}
+            \end{center}
+        </section>
+    </section>
+    
+    
+    
+    <h3>Lineare Hülle (span)}
+    <section class="container">
+        <section style="grid-column: 1 / span 99;">{0.66\textwidth}
+            Die Lineare Hülle ist die Menge aller Linearkombinationen von Vektoren eines Vektorraums. Damit kann Geometrisch gesehen ein Punkt, eine Gerade, eine Ebene, etc. durch den Ursprung beschrieben werden.
+            <div class="equation">\text{span}(\Vec{v_0}, \Vec{v_1}, ..., \Vec{v_m}) = \left\{\Vec{v} \in K^n \left| \Vec{v} = \sum_{i=0}^{m} a_i \cdot \Vec{v_i}\right.\right\}</div>
+        </section>
+        <section style="grid-column: 1 / span 99;">{0.33\textwidth}
+            \begin{center}
+                \begin{tikzpicture}
+                    \draw[very thin, color=gray] (-2cm, -2cm) grid (2cm, 2cm);
+                    
+                    \draw[->] (0cm, -2cm) -- (0cm, 2cm);
+                    \draw[->] (-2cm, 0cm) -- (2cm, 0cm);
+                    
+                    
+                    \draw[orange, very thin] (-2cm, -1.5cm) -- (2cm, 1.5cm);
+                    
+                    \draw[->, very thick, cyan] (0cm, 0cm) -- (1cm, 0.75cm);
+                \end{tikzpicture}
+            \end{center}
+        </section>
+    </section>
+    
+    
+    <h3>Basis}
+    Die Basis ist eine Teilmenge eines Vektorraums, wobei jeder Vektor eindeutig durch Linearkombinationen gebildet werden kann. Bei nicht Eindeutigkeit ist es nur ein Erzeugendensystem. Die Dimension ist die Mächtigkeit der Basis. Aus einem Erzeugendensystem kann man eine Basis errechnen, indem man die Vektoren wie folgt aufschreibt.
+    </div>
+    \begin{array}({c|c|c})
+      v_0 & v_1 & v_2\\
+      \hline
+      1 & 0 & 0\\
+      0 & 1 & 0\\
+      0 & 0 & 1
+    \end{array}
+    </div>
+    Mit Hilfe des Gauß Verfahrens jedoch auf \textbf{Spalten} bezogen, können nun die Vektoren oben zu Nullvektoren umgeformt werden, so weit es geht. Danach kann man unten ablesen, welche Linearkombinationen aus den anfangs Vektoren zu Nullvektoren geführt haben. Daraus kann man schließen, welche Vektoren eine Basis bilden.
+    
+    
+        </main>
         <footer><h6>created by Anton Böhler</h6></footer>
     </body>
 </html>

@@ -17,27 +17,27 @@
     </head>
 
     <body>
-        <header><h1><a href="../_home/index.html">About</a></h1></header>
+        <header><h1><a href="../home/index.html">Informatik</a></h1></header>
         <input id="nav_checkbox" type="checkbox" name="nav_checkbox">
-        <label id="nav_checkbox_label" for="nav_checkbox">≡</label>
+        <label id="nav_checkbox_label" for="nav_checkbox">&#8801;</label>
         <nav class="scroll">
             <ul>
-                <li><a href="../_home/index.html">Home</a></li>
-                <li><a href="../_about/index.html">About</a></li>
-                <li><a href="../_quellen/index.html">Quellen</a></li>
+                <li><a href="../home/index.html">Home</a></li>
+                <li><a href="../about/index.html">About</a></li>
+                <li><a href="../quellen/index.html">Quellen</a></li>
                 <br>
                 <li><a href="../abbildungen/index.html">Abbildungen</a></li>
                 <li><a href="../algebraische_strukturen/index.html">Algebraische Strukturen</a></li>
-                <li><a href="../algorithmen/index.html"></a>Algorithmen</li>
+                <li><a href="../algorithmen/index.html">Algorithmen</a></li>
                 <li><a href="../aussagen_logik/index.html">Aussagen Logik</a></li>
-                <li><a href="../automaten/index.html"></a>Automaten</li>
-                <li><a href="../baeume/index.html"></a>Bäume</li>
+                <li><a href="../automaten/index.html">Automaten</a></li>
+                <li><a href="../baeume/index.html">Bäume</a></li>
                 <li><a href="../codierungen/index.html">Codierungen</a></li>
                 <li><a href="../flipflops/index.html">Flipflops</a></li>
                 <li><a href="../folgen_und_reihen/index.html">Folgen und Reihen</a></li>
                 <li><a href="../formale_sprachen/index.html">Formale Sprachen</a></li>
-                <li><a href="../ganze_zahlen/index.html"></a>Ganze Zahlen</li>
-                <li><a href="../graphen/index.html"></a>Graphen</li>
+                <li><a href="../ganze_zahlen/index.html">Ganze Zahlen</a></li>
+                <li><a href="../graphen/index.html">Graphen</a></li>
                 <li><a href="../hash_funktionen/index.html">Hash Funktionen</a></li>
                 <li><a href="../listen/index.html">Listen</a></li>
                 <li><a href="../matrizen_rechnung/index.html">Matrizen Rechnung</a></li>
@@ -50,10 +50,273 @@
                 <li><a href="../relationen/index.html">Relationen</a></li>
                 <li><a href="../schaltungen/index.html">Schaltungen</a></li>
                 <li><a href="../symboltabellen/index.html">Symboltabellen</a></li>
-                <li><a href="../vektor_rechnung/index.html">Vektor Rechnung</a>
+                <li><a href="../vektor_rechnung/index.html">Vektor Rechnung</a></li>
             </ul>
         </nav>
-        <main class="scroll"></main>
+        <main class="scroll">
+
+            
+
+<h2>Bäume}
+    <h3>Beschreibung}
+    <section class="container">
+        <section style="grid-column: 1 / span 99;">{0.69\textwidth}
+            Ein Baum ist eine Erweiterung der Liste. Wie bei der Liste hat jedes Element Nachfolger, jedoch kann ein Baum mehr als nur einen Nachfolger haben. Die maximale Anzahl an Nachfolgern wird mit der Ordnung angegeben. Die Tiefe beschreibt die Länge des größten Pfads im Baum. Der Anfang des Baums wird als Wurzel bezeichnet. Alle Knoten mit Nachfolger werden als Innere Knoten bezeichnet. Der Rest als Blätter.
+        </section>
+        <section style="grid-column: 1 / span 99;">{0.3\textwidth}
+            \begin{center}
+                \begin{tikzpicture}
+                    \fill[purple!20, rounded corners] (-1.1cm, 0.1cm) rectangle (3.5cm, -0.85cm);
+                    \fill[purple!20, rounded corners] (-1.1cm, -0.9cm) rectangle (3.5cm, -1.85cm);
+                    \fill[purple!20, rounded corners] (-1.1cm, -1.9cm) rectangle (3.5cm, -2.85cm);
+                    
+                    \node[purple] at (2.75cm, -0.375cm) {Ebene 0};
+                    \node[purple] at (2.75cm, -1.375cm) {Ebene 1};
+                    \node[purple] at (2.75cm, -2.375cm) {Ebene 2};
+                
+                    \fill[cyan!20, rounded corners] (0cm, 0cm) rectangle (0.5cm, -0.75cm);
+                    \fill[orange!20, rounded corners] (0cm, 0cm) rectangle (0.5cm, -0.5cm);
+                    
+                    \fill[cyan!20, rounded corners] (-1cm, -1cm) rectangle (-0.5cm, -1.75cm);
+                    \fill[orange!20, rounded corners] (-1cm, -1cm) rectangle (-0.5cm, -1.5cm);
+                    
+                    \fill[cyan!20, rounded corners] (0cm, -1cm) rectangle (0.5cm, -1.75cm);
+                    \fill[orange!20, rounded corners] (0cm, -1cm) rectangle (0.5cm, -1.5cm);
+                    
+                    \fill[cyan!20, rounded corners] (1cm, -1cm) rectangle (1.5cm, -1.75cm);
+                    \fill[orange!20, rounded corners] (1cm, -1cm) rectangle (1.5cm, -1.5cm);
+                    
+                    \fill[cyan!20, rounded corners] (0.5cm, -2cm) rectangle (1cm, -2.75cm);
+                    \fill[orange!20, rounded corners] (0.5cm, -2cm) rectangle (1cm, -2.5cm);
+                    
+                    \fill[cyan!20, rounded corners] (1.5cm, -2cm) rectangle (2cm, -2.75cm);
+                    \fill[orange!20, rounded corners] (1.5cm, -2cm) rectangle (2cm, -2.5cm);
+                    
+                    \draw[cyan, ->] (0.25cm, -0.625cm) -- (-0.75cm, -1cm);
+                    \draw[cyan, ->] (0.25cm, -0.625cm) -- (0.25cm, -1cm);
+                    \draw[cyan, ->] (0.25cm, -0.625cm) -- (1.25cm, -1cm);
+                    \draw[cyan, ->] (1.25cm, -1.625cm) -- (0.75cm, -2cm);
+                    \draw[cyan, ->] (1.25cm, -1.625cm) -- (1.75cm, -2cm);
+                \end{tikzpicture}\\
+                \textit{Baum der Ordnung 3 und Tiefe 2}
+            \end{center}
+        </section>
+    </section>
+    
+    <h3>Eigenschaften}
+    <section class="container">
+        <section style="grid-column: 1 / span 99;">{0.33\textwidth}
+            \textbf{balanciert}\\
+            Für jeden Knoten gilt, die Höhe des linken und rechten Teilbaum unterscheidet sich höchstens um eins.
+        </section>
+        <section style="grid-column: 1 / span 99;">{0.33\textwidth}
+            \textbf{vollständig}\\
+            Jede Ebene ist entweder leer oder komplett befüllt.
+        </section>
+        <section style="grid-column: 1 / span 99;">{0.33\textwidth}
+            \textbf{fast vollständig}\\
+            Beim Zeilenweise ablesen trifft man nicht auf Lücken.
+        </section>
+    </section>
+    
+    
+    
+    
+    %<h3>AVL-Baum}
+    
+    
+    <h3>Traversierung}
+    <section class="container">
+        <section style="grid-column: 1 / span 99;">{0.33\textwidth}
+            \textbf{Pre-Order}
+            \begin{center}
+                \begin{tikzpicture}
+                    \node[node] (node1) at (0cm, 0cm) {0};
+                    
+                    \node[node] (node2) at (-1cm, -0.75cm) {1};
+                    \node[node] (node3) at (1cm, -0.75cm) {4};
+                    
+                    \node[node] (node4) at (-1.5cm, -1.5cm) {2};
+                    \node[node] (node5) at (-0.5cm, -1.5cm) {3};
+                    \node[node] (node6) at (0.5cm, -1.5cm) {5};
+                    \node[node] (node7) at (1.5cm, -1.5cm) {6};
+                    
+                    \path[->] (node1) edge (node2);
+                    \path[->] (node1) edge (node3);
+                    
+                    \path[->] (node2) edge (node4);
+                    \path[->] (node2) edge (node5);
+                    \path[->] (node3) edge (node6);
+                    \path[->] (node3) edge (node7);
+                \end{tikzpicture}
+            \end{center}
+        </section>
+        <section style="grid-column: 1 / span 99;">{0.33\textwidth}
+            \textbf{In-Order}
+            \begin{center}
+                \begin{tikzpicture}
+                    \node[node] (node1) at (0cm, 0cm) {3};
+                    
+                    \node[node] (node2) at (-1cm, -0.75cm) {1};
+                    \node[node] (node3) at (1cm, -0.75cm) {5};
+                    
+                    \node[node] (node4) at (-1.5cm, -1.5cm) {0};
+                    \node[node] (node5) at (-0.5cm, -1.5cm) {2};
+                    \node[node] (node6) at (0.5cm, -1.5cm) {4};
+                    \node[node] (node7) at (1.5cm, -1.5cm) {6};
+                    
+                    \path[->] (node1) edge (node2);
+                    \path[->] (node1) edge (node3);
+                    
+                    \path[->] (node2) edge (node4);
+                    \path[->] (node2) edge (node5);
+                    \path[->] (node3) edge (node6);
+                    \path[->] (node3) edge (node7);
+                \end{tikzpicture}
+            \end{center}
+        </section>
+        <section style="grid-column: 1 / span 99;">{0.33\textwidth}
+            \textbf{Post-Order}
+            \begin{center}
+                \begin{tikzpicture}
+                    \node[node] (node1) at (0cm, 0cm) {6};
+                    
+                    \node[node] (node2) at (-1cm, -0.75cm) {2};
+                    \node[node] (node3) at (1cm, -0.75cm) {5};
+                    
+                    \node[node] (node4) at (-1.5cm, -1.5cm) {0};
+                    \node[node] (node5) at (-0.5cm, -1.5cm) {1};
+                    \node[node] (node6) at (0.5cm, -1.5cm) {3};
+                    \node[node] (node7) at (1.5cm, -1.5cm) {4};
+                    
+                    \path[->] (node1) edge (node2);
+                    \path[->] (node1) edge (node3);
+                    
+                    \path[->] (node2) edge (node4);
+                    \path[->] (node2) edge (node5);
+                    \path[->] (node3) edge (node6);
+                    \path[->] (node3) edge (node7);
+                \end{tikzpicture}
+            \end{center}
+        </section>
+    </section>
+    
+    
+    <h3>Array darstellung}
+    Der Baum wird Ebenen-weise abgelesen inklusive Lücken. Das Array ermöglicht schnellere Tauschoperationen im Baum, jedoch ist die Struktur statisch.
+    \vspace{0.1cm}
+    
+    \noindent
+    <section class="container">
+        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+            \begin{center}
+                \begin{tikzpicture}
+                    \fill[purple!20, rounded corners] (-1.85cm, 0.35cm) rectangle (1.85cm, -0.35cm);
+                    \fill[purple!20, rounded corners] (-1.85cm, -0.4cm) rectangle (1.85cm, -1.1cm);
+                    \fill[purple!20, rounded corners] (-1.85cm, -1.15cm) rectangle (1.85cm, -1.85cm);
+                    
+                    \node[node] (node1) at (0cm, 0cm) {0};
+                    
+                    \node[node] (node2) at (-1cm, -0.75cm) {1};
+                    \node[node] (node3) at (1cm, -0.75cm) {2};
+                    
+                    \node[node] (node4) at (-1.5cm, -1.5cm) {-};
+                    \node[node] (node5) at (-0.5cm, -1.5cm) {-};
+                    \node[node] (node6) at (0.5cm, -1.5cm) {5};
+                    \node[node] (node7) at (1.5cm, -1.5cm) {6};
+                    
+                    \path[->] (node1) edge (node2);
+                    \path[->] (node1) edge (node3);
+                    
+                    \path[->, dashed] (node2) edge (node4);
+                    \path[->, dashed] (node2) edge (node5);
+                    \path[->] (node3) edge (node6);
+                    \path[->] (node3) edge (node7);
+                \end{tikzpicture}
+            \end{center}
+        </section>
+        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+            \begin{center}
+                \begin{tikzpicture}
+                    \foreach \n in {0, 1, 2, 5, 6}
+                        \node[box] at (\n, 0cm) {\n};
+                    \node[box] at (3cm, 0cm) {-};
+                    \node[box] at (4cm, 0cm) {-};
+                \end{tikzpicture}
+            \end{center}
+        </section>
+    </section>
+    
+    
+    <h3>Heap}
+    Ein Heap ist ein fast vollständiger Binärbaum (Baum der Ordnung 2), bei dem alle Nachfolger eines Knotens entweder kleiner (Max Heap) oder größer (Min Heap) sind. Er bildet eine effizientere priority Queue. Elemente werden an das Ende eingefügt und nach oben vertauscht bei Bedarf. Elemente können nur vom Anfang entfernt werden, wonach immer das Element mit dem größeren Wert hoch rutscht. Das Sortierverfahren Heapsort fügt alle Elemente in einen Heap ein. Danach werden die Elemente vom Heap entfernt, wodurch eine sortierte Folge entsteht.
+    
+    
+    <h3>AVL-Baum}
+    Ein AVL-Baum ist ein Baum, welcher nach jeder Operation balanciert wird, wodurch dieser besonders effizient arbeitet. Jeder Knoten speichert die Höhendifferenz der Teilbäume ab. Wenn der Betrag der Höhendifferenz größer als 1 ist wird eine Rotationsoperation durchgeführt.
+    
+    \noindent
+    <section class="container">
+        <section style="grid-column: 1 / span 99;">{0.33\textwidth}
+            \begin{center}
+                \begin{tikzpicture}
+                    \node[node] (node1) at (0cm, 0cm) {a};
+                    
+                    \node[node] (node2) at (1cm, -0.75cm) {b};
+                    
+                    \node[node] (node3) at (1.5cm, -1.5cm) {c};
+                    
+                    \node (node4) at (-1cm, -0.75cm) {};
+                    
+                    \path[->] (node1) edge (node2);
+                    \path[->] (node2) edge (node3);
+                    
+                    \path[->, dashed, orange] (node2) edge[bend right] (node1);
+                    \path[->, dashed, orange] (node3) edge[bend right] (node2);
+                    \path[->, dashed, orange] (node1) edge[bend right] (node4);
+                \end{tikzpicture}
+            \end{center}
+        </section>
+        <span class="equation">\rightarrow</span>
+        <section style="grid-column: 1 / span 99;">{0.30\textwidth}
+            \begin{center}
+                \begin{tikzpicture}
+                    \node[node] (node1) at (0cm, 0cm) {b};
+                    
+                    \node[node] (node2) at (1cm, -0.75cm) {c};
+                    
+                    \node[node] (node3) at (-1cm, -0.75cm) {a};
+                    
+                    \path[->] (node1) edge (node2);
+                    \path[->] (node1) edge (node3);
+                \end{tikzpicture}
+            \end{center}
+        </section>
+        <span class="equation">\leftarrow</span>
+        <section style="grid-column: 1 / span 99;">{0.33\textwidth}
+            \begin{center}
+                \begin{tikzpicture}
+                    \node[node] (node1) at (0cm, 0cm) {a};
+                    
+                    \node[node] (node2) at (1cm, -0.75cm) {c};
+                    
+                    \node[node] (node3) at (0.5cm, -1.5cm) {b};
+                    
+                    \node (node4) at (-1cm, -0.75cm) {};
+                    
+                    \path[->] (node1) edge (node2);
+                    \path[->] (node2) edge (node3);
+                    
+                    \path[->, dashed, orange] (node1) edge[bend right] (node4);
+                    \path[->, dashed, orange] (node3) edge (node1);
+                \end{tikzpicture}
+            \end{center}
+        </section>
+    </section>
+    
+
+    
+        </main>
         <footer><h6>created by Anton Böhler</h6></footer>
     </body>
 </html>

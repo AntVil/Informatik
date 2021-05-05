@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="../../lib/katex/katex.min.css">
         <script src="../../lib/katex/katex.min.js"></script>
 
+        <script src="../../generic-scripts/script.js"></script>
+
         <link rel="stylesheet" href="./style.css">
         <script src="./script.js"></script>
     </head>
@@ -54,116 +56,69 @@
             </ul>
         </nav>
         <main class="scroll">
-
-
-            
-<h2>Vektorrechnung}
-    <h3>Beschreibung}
-    <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.74\textwidth}
-            Vektoren sind Teil eines Vektorraums und werden als Tupel dargestellt. Geometrisch können Vektoren auch als Pfeile im Raum verstanden werden.
-            <div class="equation">\Vec{v} = \begin{array}({c})v_0\\v_1\\\vdots\end{array}</div>
-            Sie können addiert und skaliert werden. Das Skalarprodukt zwischen zwei Vektoren ergibt einen Skalar.
-            <div class="equation">\Vec{v_1} \cdot \Vec{v_2} = \sum_{i=0}^{n}v_{1_i} \cdot v_{2_i}</div>
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.25\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \draw[very thin, color=gray] (-2cm, -2cm) grid (2cm, 2cm);
-                    
-                    \draw[->] (0cm, -2cm) -- (0cm, 2cm);
-                    \draw[->] (-2cm, 0cm) -- (2cm, 0cm);
-                    
-                    \draw[->, very thick, cyan] (0cm, 0cm) -- (1cm, 0.75cm);
-                \end{tikzpicture}
-            \end{center}
-        </section>
-    </section>
-    
-    
-    <h3>Lineare Gleichungssysteme}
-    Ein Lineares Gleichungssystem besteht aus mehreren Gleichungen, welche alle zusammen erfüllt sein müssen. 
-    Es kann durch die erweiterte Koeffizientenmatrix dargestellt werden und mit Gauß verfahren gelöst werden.
-    </div>
-    \begin{array}({cc|c})
-      1 & 1 & 2\\
-      2 & 0 & 2
-    \end{array}
-    </div>
-    
-    
-    <h3>Linearkombination}
-    <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.74\textwidth}
-            Eine Linearkombination ist eine Summe von vielfachen Vektoren.
-            <div class="equation">\Vec{y} = \sum_{i=0}^{n}a_i \cdot \Vec{v_i}</div>
-            Wenn ein Vektor durch andere Vektoren darstellbar ist, ist dieser Vektor linear abhängig von den anderen Vektoren.
-            <div class="equation">1 \cdot \textcolor{cyan}{\begin{array}({c})1\\2\end{array}} + 2 \cdot \textcolor{green}{\begin{array}({c})\frac{1}{2}\\-\frac{1}{2}\end{array}} = \textcolor{purple}{\begin{array}({c})2\\1\end{array}}</div>
-            Ansonsten sind die Vektoren linear unabhängig.
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.25\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \draw[very thin, color=gray] (-2cm, -2cm) grid (2cm, 2cm);
-                    
-                    \draw[->] (0cm, -2cm) -- (0cm, 2cm);
-                    \draw[->] (-2cm, 0cm) -- (2cm, 0cm);
-                    
-                    \draw[->, very thick, cyan] (0cm, 0cm) -- (1cm, 2cm);
-                    \draw[->, very thick, green] (0cm, 0cm) -- (0.5cm, -0.5cm);
-                    
-                    \draw[->, very thick, green, dashed] (1cm, 2cm) -- (1.5cm, 1.5cm);
-                    \draw[->, very thick, green, dashed] (1.5cm, 1.5cm) -- (2cm, 1cm);
-                    
-                    \draw[->, very thick, green, dashed] (0.5cm, -0.5cm) -- (1cm, -1cm);
-                    \draw[->, very thick, cyan, dashed] (1cm, -1cm) -- (2cm, 1cm);
-                    
-                    \draw[->, very thick, purple] (0cm, 0cm) -- (2cm, 1cm);
-                \end{tikzpicture}
-            \end{center}
-        </section>
-    </section>
-    
-    
-    
-    <h3>Lineare Hülle (span)}
-    <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.66\textwidth}
-            Die Lineare Hülle ist die Menge aller Linearkombinationen von Vektoren eines Vektorraums. Damit kann Geometrisch gesehen ein Punkt, eine Gerade, eine Ebene, etc. durch den Ursprung beschrieben werden.
-            <div class="equation">\text{span}(\Vec{v_0}, \Vec{v_1}, ..., \Vec{v_m}) = \left\{\Vec{v} \in K^n \left| \Vec{v} = \sum_{i=0}^{m} a_i \cdot \Vec{v_i}\right.\right\}</div>
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.33\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \draw[very thin, color=gray] (-2cm, -2cm) grid (2cm, 2cm);
-                    
-                    \draw[->] (0cm, -2cm) -- (0cm, 2cm);
-                    \draw[->] (-2cm, 0cm) -- (2cm, 0cm);
-                    
-                    
-                    \draw[orange, very thin] (-2cm, -1.5cm) -- (2cm, 1.5cm);
-                    
-                    \draw[->, very thick, cyan] (0cm, 0cm) -- (1cm, 0.75cm);
-                \end{tikzpicture}
-            \end{center}
-        </section>
-    </section>
-    
-    
-    <h3>Basis}
-    Die Basis ist eine Teilmenge eines Vektorraums, wobei jeder Vektor eindeutig durch Linearkombinationen gebildet werden kann. Bei nicht Eindeutigkeit ist es nur ein Erzeugendensystem. Die Dimension ist die Mächtigkeit der Basis. Aus einem Erzeugendensystem kann man eine Basis errechnen, indem man die Vektoren wie folgt aufschreibt.
-    </div>
-    \begin{array}({c|c|c})
-      v_0 & v_1 & v_2\\
-      \hline
-      1 & 0 & 0\\
-      0 & 1 & 0\\
-      0 & 0 & 1
-    \end{array}
-    </div>
-    Mit Hilfe des Gauß Verfahrens jedoch auf \textbf{Spalten} bezogen, können nun die Vektoren oben zu Nullvektoren umgeformt werden, so weit es geht. Danach kann man unten ablesen, welche Linearkombinationen aus den anfangs Vektoren zu Nullvektoren geführt haben. Daraus kann man schließen, welche Vektoren eine Basis bilden.
-    
-    
+            <h2>Vektorrechnung</h2>
+            <h3>Beschreibung</h3>
+            <section class="container">
+                <section style="grid-column: 1 / span 74;">
+                    <p>Vektoren sind Teil eines Vektorraums und werden als Tupel dargestellt. Geometrisch können Vektoren auch als Pfeile im Raum verstanden werden.</p>
+                    <div class="equation">\vec{v} = \begin{pmatrix}v_0\\v_1\\\vdots\end{pmatrix}</div>
+                    <p>Sie können addiert und skaliert werden. Das Skalarprodukt zwischen zwei Vektoren ergibt einen Skalar.</p>
+                    <div class="equation">\vec{v_1} \cdot \vec{v_2} = \displaystyle\sum_{i=0}^{n}v_{1_i} \cdot v_{2_i}</div>
+                </section>
+                <section style="grid-column: 75 / span 24;">
+                    <canvas id="beispiel_vektor"></canvas>
+                </section>
+            </section>
+            <h3>Lineare Gleichungssysteme</h3>
+            <p>
+                Ein Lineares Gleichungssystem besteht aus mehreren Gleichungen, welche alle zusammen erfüllt sein müssen. 
+                Es kann durch die erweiterte Koeffizientenmatrix dargestellt werden und mit dem Gauß verfahren gelöst werden.
+            </p>
+            <div class="equation">
+                \left(
+                \begin{array}{cc|c}
+                    1 & 1 & 2\\
+                    2 & 0 & 2
+                \end{array}
+                \right)
+            </div>
+            <h3>Linearkombination</h3>
+            <section class="container">
+                <section style="grid-column: 1 / span 74;">
+                    <p>Eine Linearkombination ist eine Summe von vielfachen Vektoren.</p>
+                    <div class="equation">\vec{y} = \displaystyle\sum_{i=0}^{n}a_i \cdot \vec{v_i}</div>
+                    <p>Wenn ein Vektor durch andere Vektoren darstellbar ist, ist dieser Vektor linear abhängig von den anderen Vektoren.</p>
+                    <div class="equation">1 \cdot \textcolor{cyan}{\left(\begin{array}{c}1\\2\end{array}\right)} + 2 \cdot \textcolor{green}{\left(\begin{array}{c}\frac{1}{2}\\-\frac{1}{2}\end{array}\right)} = \textcolor{purple}{\left(\begin{array}{c}2\\1\end{array}\right)}</div>
+                    <p>Ansonsten sind die Vektoren linear unabhängig.</p>
+                </section>
+                <section style="grid-column: 75 / span 24;">
+                    <canvas id="beispiel_linearkombination"></canvas>
+                </section>
+            </section>
+            <h3>Lineare Hülle (span)</h3>
+            <section class="container">
+                <section style="grid-column: 1 / span 66;">
+                    Die Lineare Hülle ist die Menge aller Linearkombinationen von Vektoren eines Vektorraums. Damit kann Geometrisch gesehen ein Punkt, eine Gerade, eine Ebene, etc. durch den Ursprung beschrieben werden.
+                    <div class="equation">\text{span}(\vec{v_0}, \vec{v_1}, ..., \vec{v_m}) = \left\{\vec{v} \in K^n \left| \vec{v} = \displaystyle\sum_{i=0}^{m} a_i \cdot \vec{v_i}\right.\right\}</div>
+                </section>
+                <section style="grid-column: 67 / span 33;">
+                    <canvas id="beispiel_span"></canvas>
+                </section>
+            </section>
+            <h3>Basis</h3>
+            <p>Die Basis ist eine Teilmenge eines Vektorraums, wobei jeder Vektor eindeutig durch Linearkombinationen gebildet werden kann. Bei nicht Eindeutigkeit ist es nur ein Erzeugendensystem. Die Dimension ist die Mächtigkeit der Basis. Aus einem Erzeugendensystem kann man eine Basis errechnen, indem man die Vektoren wie folgt aufschreibt.</p>
+            <div class="equation">
+                \left(
+                \begin{array}{c|c|c}
+                v_0 & v_1 & v_2\\
+                \hline
+                1 & 0 & 0\\
+                0 & 1 & 0\\
+                0 & 0 & 1
+                \end{array}
+                \right)
+            </div>
+            <p>Mit Hilfe des Gauß Verfahrens jedoch auf <b>Spalten</b> bezogen, können nun die Vektoren oben zu Nullvektoren umgeformt werden, so weit es geht. Danach kann man unten ablesen, welche Linearkombinationen aus den anfangs Vektoren zu Nullvektoren geführt haben. Daraus kann man schließen, welche Vektoren eine Basis bilden.</p>
         </main>
         <footer><h6>created by Anton Böhler</h6></footer>
     </body>

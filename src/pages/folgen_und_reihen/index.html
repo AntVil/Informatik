@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="../../lib/katex/katex.min.css">
         <script src="../../lib/katex/katex.min.js"></script>
 
+        <script src="../../generic-scripts/script.js"></script>
+
         <link rel="stylesheet" href="./style.css">
         <script src="./script.js"></script>
     </head>
@@ -68,100 +70,52 @@
             <h3>Kategorien</h3>
             <section class="container">
                 <section style="grid-column: 1 / span 24;">
-                    \begin{center}
-                        \textbf{Arithmetische Folge}
-                        <div class="equation">\textcolor{orange}{a_{n+1}} = \textcolor{orange}{a_n} + k</div>
-                        \begin{tikzpicture}
-                            \draw[very thin, color=gray] (0cm, -1cm) grid (3cm, 2cm);
-                            
-                            \draw[->] (0cm, -1cm) -- (0cm, 2cm);
-                            \draw[->] (0cm, 0cm) -- (3cm, 0cm);
-                                
-                            \foreach \x in {0, 0.25, ..., 3}{
-                                \draw[orange, very thin] (\x, 0cm) -- (\x, {0.75 * \x - 0.75});
-                                \fill[orange] (\x, {0.75 * \x - 0.75}) circle (0.05cm);
-                            }
-                        \end{tikzpicture}
-                    \end{center}
+                    <h4>Arithmetische Folge</h4>
+                    <div class="equation">\textcolor{orange}{a_{n+1}} = \textcolor{orange}{a_n} + k</div>
+                    <canvas id="beispiel_arithmetische_folge"></canvas>
                 </section>
                 <section style="grid-column: 25 / span 24;">
-                    \begin{center}
-                        \textbf{Geometrische Folge}
-                        <div class="equation">\textcolor{cyan}{g_{n+1}} = \textcolor{cyan}{g_n} \cdot \textcolor{purple}{q}</div>
-                        \begin{tikzpicture}
-                            \draw[very thin, color=gray] (0cm, -1cm) grid (3cm, 2cm);
-                            
-                            \draw[->] (0cm, -1cm) -- (0cm, 2cm);
-                            \draw[->] (0cm, 0cm) -- (3cm, 0cm);
-                                
-                            \foreach \x in {0, 0.25, ..., 3}{
-                                \draw[cyan, very thin] (\x, 0cm) -- (\x, {(1/3)^\x * 1.75});
-                                \fill[cyan] (\x, {(1/3)^\x * 1.75}) circle (0.05cm);
-                            }
-                        \end{tikzpicture}
-                    \end{center}
+                    <h4>Geometrische Folge</h4>
+                    <div class="equation">\textcolor{cyan}{g_{n+1}} = \textcolor{cyan}{g_n} \cdot \textcolor{purple}{q}</div>
+                    <canvas id="beispiel_geometrische_folge"></canvas>
                 </section>
                 <section style="grid-column: 50 / span 24;">
-                    \begin{center}
-                        \textbf{Arithmetische Reihe}
-                        <div class="equation">\sum_{i=0}^{n}\textcolor{orange}{a_i} = \frac{n \cdot (\textcolor{orange}{a_1} + \textcolor{orange}{a_n})}{2}</div>
-                        \begin{tikzpicture}
-                            \draw[very thin, color=gray] (0cm, -1cm) grid (3cm, 2cm);
-                            
-                            \draw[->] (0cm, -1cm) -- (0cm, 2cm);
-                            \draw[->] (0cm, 0cm) -- (3cm, 0cm);
-                                
-                            \foreach \x in {0, 0.25, ..., 3}{
-                                \draw[orange!60!black, very thin] (\x, 0cm) -- (\x, {0.3 * (\x * (1 + \x))/2});
-                                \fill[orange!60!black] (\x, {0.3 * (\x * (1 + \x))/2}) circle (0.05cm);
-                            }
-                        \end{tikzpicture}
-                    \end{center}
+                    <h4>Arithmetische Reihe</h4>
+                    <div class="equation">\displaystyle\sum_{i=0}^{n}\textcolor{orange}{a_i} = \frac{n \cdot (\textcolor{orange}{a_1} + \textcolor{orange}{a_n})}{2}</div>
+                    <canvas id="beispiel_arithmetische_reihe"></canvas>
                 </section>
                 <section style="grid-column: 75 / span 24;">
-                    \begin{center}
-                        \textbf{Geometrische Reihe}
-                        <div class="equation">\sum_{i=0}^{n}\textcolor{cyan}{g_i} = \textcolor{cyan}{g_1} \cdot \frac{\textcolor{purple}{q}^n - 1}{\textcolor{purple}{q} - 1}</div>
-                        \begin{tikzpicture}
-                            \draw[very thin, color=gray] (0cm, -1cm) grid (3cm, 2cm);
-                            
-                            \draw[->] (0cm, -1cm) -- (0cm, 2cm);
-                            \draw[->] (0cm, 0cm) -- (3cm, 0cm);
-                                
-                            \foreach \x in {0, 0.25, ..., 3}{
-                                \draw[cyan!60!black, very thin] (\x, 0cm) -- (\x, {(0.3^\x - 1)/(0.3 - 1)});
-                                \fill[cyan!60!black] (\x, {(0.3^\x - 1)/(0.3 - 1)}) circle (0.05cm);
-                            }
-                        \end{tikzpicture}
-                    \end{center}
+                    <h4>Geometrische Reihe</h4>
+                    <div class="equation">\displaystyle\sum_{i=0}^{n}\textcolor{cyan}{g_i} = \textcolor{cyan}{g_1} \cdot \frac{\textcolor{purple}{q}^n - 1}{\textcolor{purple}{q} - 1}</div>
+                    <canvas id="beispiel_geometrische_reihe"></canvas>
                 </section>
             </section>
             
             
             <h3>Konvergenz</h3>
-            Mit Konvergenz kann man Grenzwert-Betrachtungen einer Folge oder Funktion für undefinierte Werte anstellen, wie zum Beispiel welchen Wert eine Folge <span class="equation">a_n</span> hat, wenn man für <span class="equation">n</span> gegen unendlich strebt. Der Grenzwert wird meist mit <span class="equation">g</span> bezeichnet.
-            <div class="equation">\lim_{n \rightarrow \infty} (a_n) = g</div>
+            <p>Mit Konvergenz kann man Grenzwert-Betrachtungen einer Folge oder Funktion für undefinierte Werte anstellen, wie zum Beispiel welchen Wert eine Folge <span class="equation">a_n</span> hat, wenn man für <span class="equation">n</span> gegen unendlich strebt. Der Grenzwert wird meist mit <span class="equation">g</span> bezeichnet.</p>
+            <div class="equation">\displaystyle\lim_{n \rightarrow \infty} (a_n) = g</div>
             <h3>Reihen Konvergenz}
             <section class="container">
-                <section style="grid-column: 1 / span 33;">{0.33\textwidth}
-                    \textbf{Notwendiges Kriterium}
-                    <div class="equation">\lim_{n \rightarrow \infty}(\textcolor{cyan}{g_n}) = 0</div>
+                <section style="grid-column: 1 / span 33;">
+                    <h4>Notwendiges Kriterium</h4>
+                    <div class="equation">\displaystyle\lim_{n \rightarrow \infty}(\textcolor{cyan}{g_n}) = 0</div>
                 </section>
-                <section style="grid-column: 34 / span 33;">{0.33\textwidth}
-                    \textbf{Hinreichendes Kriterium}
-                    <div class="equation">\lim_{n \rightarrow \infty}\left(\left|\frac{\textcolor{cyan}{g_{n+1}}}{\textcolor{cyan}{g_n}}\right|\right) < 1</div>
+                <section style="grid-column: 34 / span 33;">
+                    <h4>Hinreichendes Kriterium</h4>
+                    <div class="equation">\displaystyle\lim_{n \rightarrow \infty}\left(\left|\frac{\textcolor{cyan}{g_{n+1}}}{\textcolor{cyan}{g_n}}\right|\right) < 1</div>
                 </section>
-                <section style="grid-column: 67 / span 33;">{0.33\textwidth}
-                    \textbf{Hinreichendes Kriterium}
-                    <div class="equation">\lim_{n \rightarrow \infty}\left(\left|\sqrt[n]{\textcolor{cyan}{g_n}}\right|\right) < 1</div>
+                <section style="grid-column: 67 / span 33;">
+                    <h4>Hinreichendes Kriterium</h4>
+                    <div class="equation">\displaystyle\lim_{n \rightarrow \infty}\left(\left|\sqrt[n]{\textcolor{cyan}{g_n}}\right|\right) < 1</div>
                 </section>
             </section>
             
             <h3>Potenzreihen</h3>
-            Eine Potenzreihe ist ein Polynom, bei dem die Koeffizienten <span class="equation">a_n</span> Werte einer Folge oder Reihe sind.
-            <div class="equation">p(x) = \sum_{n=0}^{\infty}a_n(x-x_0)^n</div>
-            Potenzreihen konvergieren meist nur in einem bestimmten Wertebereich um <span class="equation">x_0</span>, dieser ist bestimmt durch dem Konvergenzradius <span class="equation">r</span>.
-            <div class="equation">r = \lim_{n \rightarrow \infty}\left(\left|\frac{a_n}{a_{n+1}}\right|\right)</div>
+            <p>Eine Potenzreihe ist ein Polynom, bei dem die Koeffizienten <span class="equation">a_n</span> Werte einer Folge oder Reihe sind.</p>
+            <div class="equation">p(x) = \displaystyle\sum_{n=0}^{\infty}a_n(x-x_0)^n</div>
+            <p>Potenzreihen konvergieren meist nur in einem bestimmten Wertebereich um <span class="equation">x_0</span>, dieser ist bestimmt durch dem Konvergenzradius <span class="equation">r</span>.</p>
+            <div class="equation">r = \displaystyle\lim_{n \rightarrow \infty}\left(\left|\frac{a_n}{a_{n+1}}\right|\right)</div>
         </main>
         <footer><h6>created by Anton Böhler</h6></footer>
     </body>

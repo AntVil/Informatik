@@ -1,4 +1,4 @@
-function line(ctxt, x1, y1, x2, y2, arrow_size_start=0, arrow__size_end=0, radius=0, lineWidth=1, dashed=false, stroke="#000000FF", opacity=1){
+function line(ctxt, x1, y1, x2, y2, stroke="#000000FF", lineWidth=1, radius=0, arrow_size_end=0, arrow_size_start=0, dashed=false, opacity=1){
     ctxt.strokeStyle = stroke;
     ctxt.lineWidth = lineWidth;
     ctxt.globalAlpha = opacity;
@@ -10,11 +10,33 @@ function line(ctxt, x1, y1, x2, y2, arrow_size_start=0, arrow__size_end=0, radiu
     ctxt.beginPath();
     ctxt.moveTo(x1, y1);
     let angle = Math.asin((x2 - x1) / Math.hypot(x1-x2, y1-y2));
-    ctxt.bezierCurveTo(x1, y1, (x1+x2)/2 + radius * Math.cos(angle), (y1+y2)/2 + radius * Math.sin(angle), x2, y2);
+    let middleX = (x1+x2)/2 + radius * Math.cos(angle);
+    let middleY = (y1+y2)/2 + radius * Math.sin(angle);
+    ctxt.bezierCurveTo(x1, y1, middleX, middleY, x2, y2);
     ctxt.stroke();
+    if(arrow_size_end > 0){
+        angle = Math.asin((y2 - middleY) / Math.hypot(middleX-x2, middleY-y2));
+        ctxt.setLineDash([]);
+        ctxt.beginPath();
+        ctxt.moveTo(x2, y2);
+        ctxt.lineTo(x2 - arrow_size_end * Math.cos(angle - Math.PI/4), y2 - arrow_size_end * Math.sin(angle - Math.PI/4));
+        ctxt.moveTo(x2, y2);
+        ctxt.lineTo(x2 - arrow_size_end * Math.cos(angle + Math.PI/4), y2 - arrow_size_end * Math.sin(angle + Math.PI/4));
+        ctxt.stroke();
+    }
+    if(arrow_size_start > 0){
+        angle = Math.asin((y1 - middleY) / Math.hypot(middleX-x1, middleY-y1));
+        ctxt.setLineDash([]);
+        ctxt.beginPath();
+        ctxt.moveTo(x1, y1);
+        ctxt.lineTo(x1 + arrow_size_end * Math.cos(angle - Math.PI/4), y1 + arrow_size_end * Math.sin(angle - Math.PI/4));
+        ctxt.moveTo(x1, y1);
+        ctxt.lineTo(x1 + arrow_size_end * Math.cos(angle + Math.PI/4), y1 + arrow_size_end * Math.sin(angle + Math.PI/4));
+        ctxt.stroke();
+    }
 }
 
-function rect(ctxt, x, y, width, height, radius=0, lineWidth=1, dashed=false, fill="#00000077", stroke="#000000FF", opacity=1){
+function rect(ctxt, x, y, width, height, fill="#00000000", stroke="#000000FF", lineWidth=1, radius=0, dashed=false, opacity=1){
     ctxt.fillStyle = fill;
     ctxt.strokeStyle = stroke;
     ctxt.lineWidth = lineWidth;
@@ -35,7 +57,7 @@ function rect(ctxt, x, y, width, height, radius=0, lineWidth=1, dashed=false, fi
     ctxt.stroke();
 }
 
-function circle(ctxt, x, y, radius, lineWidth=1, dashed=false, fill="#00000077", stroke="#000000FF", opacity=1){
+function circle(ctxt, x, y, radius, fill="#00000000", stroke="#000000FF", lineWidth=1, dashed=false, opacity=1){
     ctxt.fillStyle = fill;
     ctxt.strokeStyle = stroke;
     ctxt.lineWidth = lineWidth;
@@ -52,7 +74,7 @@ function circle(ctxt, x, y, radius, lineWidth=1, dashed=false, fill="#00000077",
     ctxt.stroke();
 }
 
-function text(ctxt, text, x, y, align="center", textBaseline="middle", font=12, fill="#00000077", opacity=1){
+function text(ctxt, text, x, y, font=12, fill="#000000FF", align="center", textBaseline="middle", opacity=1){
     ctxt.fillStyle = fill;
     ctxt.globalAlpha = opacity;
     ctxt.font = font + "px Arial";

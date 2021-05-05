@@ -7,6 +7,7 @@
     --theme-color-5: #a3a3a3;
     --text-color-1: #0099FF;
     --text-color-2: #FF9900;
+    --text-color-3: #00AAFF;
 }
 
 /* dark theme */
@@ -20,6 +21,7 @@
         --theme-color-5: #000000;
         --text-color-1: #0099FF;
         --text-color-2: #FF9900;
+        --text-color-3: #00AAFF;
     }
 }
 
@@ -34,7 +36,12 @@ header{
 
 a{
     color: var(--text-color-1);
-    text-decoration: none;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+a:hover{
+    color: var(--text-color-2);
 }
 
 #nav_checkbox_label{
@@ -87,4 +94,9 @@ div.equation{
 
 b{
     color: var(--text-color-2)
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: var(--text-color-3);
+    text-decoration: underline;
 }

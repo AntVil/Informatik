@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="../../lib/katex/katex.min.css">
         <script src="../../lib/katex/katex.min.js"></script>
 
+        <script src="../../generic-scripts/script.js"></script>
+
         <link rel="stylesheet" href="./style.css">
         <script src="./script.js"></script>
     </head>
@@ -54,138 +56,83 @@
             </ul>
         </nav>
         <main class="scroll">
-            <h2>Abbildungen}
-                \label{sec:Abbildungen}
-                <h3>Beschreibung}
-                Eine Abbildung weist jedem Element aus einer Menge, dem Definitionsbereich, ein Element aus einer Menge, dem Bildbereich, zu.
-                <div class="equation">f:M \rightarrow N</div>
-                <div class="equation">m_1 \mapsto n_1</div>
-                <div class="equation">m_2 \mapsto n_2</div>
-                <div class="equation">...</div>
-                Die Abbildung <span class="equation">id_M</span> ist die Identität auf einer Menge <span class="equation">M</span>. Sie Bildet jedes Element der Menge auf das gleiche Element ab.\\
-                Mit <span class="equation">f \circ g</span> drückt man aus, dass <span class="equation">f</span> nach <span class="equation">g</span> ausgeführt wird. Wenn <span class="equation">f \circ g = id_N</span> und  <span class="equation">g \circ f = id_M</span> dann sind <span class="equation">f</span> und <span class="equation">g</span> invers zu einander.\\
-                \noindent
-                <section class="container">
-                    \begin{center}
-                        <section style="grid-column: 1 / span 99;">{0.33\textwidth}
-                            <div class="equation">f:M \rightarrow N</div>
-                            <div class="equation">m_1 \mapsto n_1</div>
-                            <div class="equation">m_2 \mapsto n_2</div>
-                            <div class="equation">...</div>
-                        </section>
-                        <section style="grid-column: 1 / span 99;">{0.33\textwidth}
-                            <div class="equation">g:N \rightarrow M</div>
-                            <div class="equation">n_1 \mapsto m_1</div>
-                            <div class="equation">n_2 \mapsto m_2</div>
-                            <div class="equation">...</div>
-                        </section>
-                    \end{center}
+            <h2>Abbildungen</h2>
+            <h3>Beschreibung</h3>
+            <p>
+                Eine Abbildung ist eine spezielle Relation. Eine Abbildung weist jedem Element aus einer Menge, dem Definitionsbereich, ein Element aus einer Menge, dem Bildbereich, zu.
+            </p>
+            <div class="equation">f:M \rightarrow N</div>
+            <div class="equation">m_1 \mapsto n_1</div>
+            <div class="equation">m_2 \mapsto n_2</div>
+            <div class="equation">...</div>
+            <p>
+                Die Abbildung <span class="equation">id_M</span> ist die Identität auf einer Menge <span class="equation">M</span>. Sie bildet jedes Element der Menge auf das gleiche Element ab.
+                Mit <span class="equation">f \circ g</span> drückt man aus, dass <span class="equation">f</span> nach <span class="equation">g</span> ausgeführt wird. Wenn <span class="equation">f \circ g = id_N</span> und  <span class="equation">g \circ f = id_M</span> dann sind <span class="equation">f</span> und <span class="equation">g</span> invers zu einander.
+            </p>
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <div class="equation">f:M \rightarrow N</div>
+                    <div class="equation">m_1 \mapsto n_1</div>
+                    <div class="equation">m_2 \mapsto n_2</div>
+                    <div class="equation">...</div>
                 </section>
-                \noindent
+                <section style="grid-column: 50 / span 49;">
+                    <div class="equation">g:N \rightarrow M</div>
+                    <div class="equation">n_1 \mapsto m_1</div>
+                    <div class="equation">n_2 \mapsto m_2</div>
+                    <div class="equation">...</div>
+                </section>
+            </section>
+            <p>
                 Der Bildbereich ist so definiert:
-                <div class="equation">Bild(f) = \{f(m) | \forall m \in M\}</div>
+            </p>
+            <div class="equation">Bild(f) = \{f(m) | \forall m \in M\}</div>
+            <p>
                 Mit <span class="equation">Abb(M, N)</span> erhält man eine Menge aller Abbildungen von der Menge <span class="equation">M</span> zur Menge <span class="equation">N</span>.
-                
-                <h3>Eigenschaften}
-                <section style="grid-column: 1 / span 99;">{0.97\textwidth}
-                    \begin{center}
-                        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-                            \begin{center}
-                                \textbf{Injektiv}\\
-                                \begin{tikzpicture}
-                                    \fill[cyan, opacity=0.5, rounded corners] (-1.5cm, -0.5cm) rectangle (-0.5cm, 2.5cm);
-                                    
-                                    \fill[orange, opacity=0.5, rounded corners] (0.5cm, -0.5cm) rectangle (1.5cm, 2.5cm);
-                                    
-                                    \node[node] (node1) at (-1cm, 2cm) {a};
-                                    \node[node] (node2) at (-1cm, 1cm) {b};
-                                    
-                                    \node[node] (node4) at (1cm, 2cm) {d};
-                                    \node[node] (node5) at (1cm, 1cm) {e};
-                                    \node[node] (node6) at (1cm, 0cm) {f};
-                                    
-                                    \path[->] (node1) edge (node4);
-                                    \path[->] (node2) edge (node5);
-                                \end{tikzpicture}\\
-                                Jedes Element aus dem Bildbereich wird \textbf{maximal einmal} getroffen
-                                <div class="equation">\forall a,b \in M: f(a) = f(b) \Rightarrow a = b</div>
-                            \end{center}
-                        </section>
-                        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-                            \begin{center}
-                                \textbf{Surjektiv}\\
-                                \begin{tikzpicture}
-                                    \fill[cyan, opacity=0.5, rounded corners] (-1.5cm, -0.5cm) rectangle (-0.5cm, 2.5cm);
-                                    
-                                    \fill[orange, opacity=0.5, rounded corners] (0.5cm, -0.5cm) rectangle (1.5cm, 2.5cm);
-                                    
-                                    \node[node] (node1) at (-1cm, 2cm) {a};
-                                    \node[node] (node2) at (-1cm, 1cm) {b};
-                                    \node[node] (node3) at (-1cm, 0cm) {c};
-                                    
-                                    \node[node] (node4) at (1cm, 2cm) {d};
-                                    \node[node] (node5) at (1cm, 1cm) {e};
-                                    
-                                    
-                                    \path[->] (node1) edge (node4);
-                                    \path[->] (node2) edge (node5);
-                                    \path[->] (node3) edge (node5);
-                                \end{tikzpicture}\\
-                                Jedes Element aus dem Bildbereich wird \textbf{minimal einmal} getroffen
-                                <div class="equation">\forall b \in N: \exists a \in M: f(a) = b</div>
-                            \end{center}
-                        </section>
-                        
-                        \vspace{0.1cm}
-                        
-                        \textbf{Bijektiv}\\
-                        \begin{tikzpicture}
-                            \fill[cyan, opacity=0.5, rounded corners] (-1.5cm, -0.5cm) rectangle (-0.5cm, 2.5cm);
-                                    
-                            \fill[orange, opacity=0.5, rounded corners] (0.5cm, -0.5cm) rectangle (1.5cm, 2.5cm);
-                                    
-                            \node[node] (node1) at (-1cm, 2cm) {a};
-                            \node[node] (node2) at (-1cm, 1cm) {b};
-                            \node[node] (node3) at (-1cm, 0cm) {c};
-                                    
-                            \node[node] (node4) at (1cm, 2cm) {d};
-                            \node[node] (node5) at (1cm, 1cm) {e};
-                            \node[node] (node6) at (1cm, 0cm) {f};
-                                    
-                            \path[->] (node1) edge (node4);
-                            \path[->] (node2) edge (node5);
-                            \path[->] (node3) edge (node6);
-                        \end{tikzpicture}\\
-                        Jedes Element aus dem Bildbereich wird \textbf{genau einmal} getroffen\\
-                        Bijektive Abbildungen sind immer invertierbar
-                    \end{center}
+            </p>
+            <h3>Eigenschaften</h3>
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <h4>Injektiv</h4>
+                    <canvas class="graphic" id="beispiel_injektiv"></canvas>
+                    <p>Jedes Element aus dem Bildbereich wird <b>maximal einmal</b> getroffen</p>
+                    <div class="equation">\forall a,b \in M: f(a) = f(b) \Rightarrow a = b</div>
                 </section>
-                
-                \vspace{0.1cm}
-                
-                <h3>Zusatz}
-                <section class="container">
-                    <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-                        \textbf{Abgeänderte Abbildungen}\\
-                        Eine abgeänderte Abbildung bei der <span class="equation">x</span> auf <span class="equation">y</span> abbilden soll kann so erstellt werden:
-                        <div class="equation">f_{x}^{y}: M \rightarrow N</div>
-                        <div class="equation">x \mapsto y</div>
-                        <div class="equation">m_1 \mapsto n_1</div>
-                        <div class="equation">...</div>
-                    </section>
-                    \hspace{0.15cm}
-                    <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-                        \textbf{Partielle Abbildungen}\\
-                        Eine Partielle Abbildung ist nicht für alle Werte definiert.
-                        <div class="equation">f: M \rightarrow N</div>
-                        <div class="equation">x \mapsto \perp</div>
-                        <div class="equation">m_1 \mapsto n_1</div>
-                        <div class="equation">...</div>
-                    </section>
+                <section style="grid-column: 50 / span 49;">
+                    <h4>Surjektiv</h4>
+                    <canvas class="graphic" id="beispiel_surjektiv"></canvas>
+                    <p>Jedes Element aus dem Bildbereich wird <b>minimal einmal</b> getroffen</p>
+                    <div class="equation">\forall b \in N: \exists a \in M: f(a) = b</div>
                 </section>
-                
-                
-                
+            </section>
+            <h4>Bijektiv</h4>
+            <canvas class="graphic" id="beispiel_bijektiv"></canvas>
+            <p>
+                Jedes Element aus dem Bildbereich wird <b>genau einmal</b> getroffen.
+                Bijektive Abbildungen sind immer invertierbar
+            </p>
+            <h3>Zusatz</h3>
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <h4>Abgeänderte Abbildungen</h4>
+                    Eine abgeänderte Abbildung bei der <span class="equation">x</span> auf <span class="equation">y</span> abbilden soll kann so erstellt werden:
+                    <div class="equation">f_{x}^{y}: M \rightarrow N</div>
+                    <div class="equation">x \mapsto y</div>
+                    <div class="equation">m_1 \mapsto n_1</div>
+                    <div class="equation">...</div>
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <h4>Partielle Abbildungen</h4>
+                    Eine Partielle Abbildung ist nicht für alle Werte definiert.
+                    <div class="equation">f: M \rightarrow N</div>
+                    <div class="equation">x \mapsto \perp</div>
+                    <div class="equation">m_1 \mapsto n_1</div>
+                    <div class="equation">...</div>
+                </section>
+            </section>
+            
+            
+            
                 
         </main>
         <footer><h6>created by Anton Böhler</h6></footer>

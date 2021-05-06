@@ -1,4 +1,8 @@
+let loaded = false;
+
 window.onload = function(){
+    loaded = true;
+    
     let equations = document.getElementsByClassName("equation");
     for(let i=0;i<equations.length;i++){
         katex.render(equations[i].innerText, equations[i], {
@@ -6,17 +10,18 @@ window.onload = function(){
         });
     }
 
-    setup()
+    setup();
 }
 
-window.onresize = setup;
-
+window.onresize = setup();
 
 function setup(){
-    beispiel_arithmetische_folge();
-    beispiel_geometrische_folge();
-    beispiel_arithmetische_reihe();
-    beispiel_geometrische_reihe();
+    if(loaded){
+        beispiel_arithmetische_folge();
+        beispiel_geometrische_folge();
+        beispiel_arithmetische_reihe();
+        beispiel_geometrische_reihe();
+    }
 }
 
 function beispiel_arithmetische_folge(){
@@ -85,7 +90,7 @@ function beispiel_geometrische_reihe(){
     for(let i=0;i<points;i++){
         let x = can.width/5 + can.width*3/5 * (i/points);
         let y = can.height*2/3 - can.width/10 * (Math.pow(0.7, i) - 1) / (0.7 - 1);
-        line(ctxt, x, can.height*2/3, x, y, "#AA00AAFF")
-        circle(ctxt, x, y, can.width/60, "#AA00AAFF", "#00000000");
+        line(ctxt, x, can.height*2/3, x, y, "#00AAAAFF")
+        circle(ctxt, x, y, can.width/60, "#006666FF", "#00000000");
     }
 }

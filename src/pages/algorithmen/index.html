@@ -58,8 +58,8 @@
 
 
             
-<h2>Algorithmen}
-    <h3>Beschreibung}
+<h2>Algorithmen</h2>
+    <h3>Beschreibung</h3>
     Ein Algorithmus beschreibt den Weg, wie man für eine Eingabe <span class="equation">e \in E</span> eine Ausgabe <span class="equation">a \in A</span> erhält. Er löst alle Probleme einer bestimmten Klasse an Problemen. Ein Algorithmus funktioniert wie eine Partielle Abbildung, da nicht alle Eingaben nach endlicher Zeit zu einer Ausgabe führen.
     <div class="equation">f: E \rightarrow A</div>
     <div class="equation">x \mapsto \perp</div>
@@ -70,17 +70,9 @@
     
     <h3>Registermaschinen}
     Eine Registermaschine hat sehr wenige Operationen, kann aber mit genug Zeit jedes berechenbare Problem lösen. Eine Registermaschine besitzt für jede Natürliche Zahl <span class="equation">n \in \mathbb{N}_0</span> ein Register, in dem eine Natürliche Zahl <span class="equation">m \in \mathbb{N}_0</span> gespeichert werden kann.
-    \begin{center}
-        \begin{tikzpicture}
-            \foreach \n in {0,...,8}
-                \node[box] at (\n, 0cm) {\n};
-            
-            \node[box, opacity=0.5] at (9cm, 0cm) {...};
-            \node[box, opacity=0.5] at (10cm, 0cm) {$n \in \mathbb{N}_0$};
-        \end{tikzpicture}
-    \end{center}
+    <canvas id="beispiel_registermaschine"></canvas>
     <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+        <section style="grid-column: 1 / span 49;">{0.49\textwidth}
             \textbf{Increment}\\
             Erhöht das Register <span class="equation">x</span> um <span class="equation">1</span>
             <div class="equation">a_x</div>
@@ -88,7 +80,7 @@
             Verringert das Register <span class="equation">x</span> um <span class="equation">1</span> (wenn der Wert nicht <span class="equation">0</span> ist)
             <div class="equation">s_x</div>
         </section>
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+        <section style="grid-column: 50 / span 49;">{0.49\textwidth}
             \textbf{Konkatenation}\\
             <span class="equation">B</span> wird nach <span class="equation">A</span> ausgeführt
             <div class="equation">AB</div>

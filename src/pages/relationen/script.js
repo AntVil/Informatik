@@ -1,4 +1,8 @@
+let loaded = false;
+
 window.onload = function(){
+    loaded = true;
+    
     let equations = document.getElementsByClassName("equation");
     for(let i=0;i<equations.length;i++){
         katex.render(equations[i].innerText, equations[i], {
@@ -6,23 +10,24 @@ window.onload = function(){
         });
     }
 
-    setup()
+    setup();
 }
 
-window.onresize = setup;
-
+window.onresize = setup();
 
 function setup(){
-    beispiel_reflexiv();
-    beispiel_symmetrisch();
-    beispiel_antisymmetrisch();
-    beispiel_transitiv();
-    beispiel_total();
-    beispiel_halbordnung();
-    beispiel_totalordnung();
-    beispiel_aequivalenzrelation();
-    beispiel_aequivalenzklasse_1();
-    beispiel_aequivalenzklasse_2();
+    if(loaded){
+        beispiel_reflexiv();
+        beispiel_symmetrisch();
+        beispiel_antisymmetrisch();
+        beispiel_transitiv();
+        beispiel_total();
+        beispiel_halbordnung();
+        beispiel_totalordnung();
+        beispiel_aequivalenzrelation();
+        beispiel_aequivalenzklasse_1();
+        beispiel_aequivalenzklasse_2();
+    }
 }
 
 function beispiel_reflexiv(){

@@ -1,4 +1,8 @@
+let loaded = false;
+
 window.onload = function(){
+    loaded = true;
+    
     let equations = document.getElementsByClassName("equation");
     for(let i=0;i<equations.length;i++){
         katex.render(equations[i].innerText, equations[i], {
@@ -9,12 +13,14 @@ window.onload = function(){
     setup();
 }
 
-window.onresize = setup;
+window.onresize = setup();
 
 function setup(){
-    beispiel_vektor();
-    beispiel_linearkombination();
-    beispiel_span();
+    if(loaded){
+        beispiel_vektor();
+        beispiel_linearkombination();
+        beispiel_span();
+    }
 }
 
 function beispiel_vektor(){

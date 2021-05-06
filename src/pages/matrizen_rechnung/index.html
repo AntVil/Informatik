@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="../../lib/katex/katex.min.css">
         <script src="../../lib/katex/katex.min.js"></script>
 
+        <script src="../../generic-scripts/script.js"></script>
+
         <link rel="stylesheet" href="./style.css">
         <script src="./script.js"></script>
     </head>
@@ -58,7 +60,7 @@
             <h3>Beschreibung</h3>
             <p>Matrizen sind Ansammlungen von Vektoren und können genau so addiert und skaliert werden wie Vektoren.</p>
             <div class="equation">
-            M =
+            A =
             \begin{pmatrix}
             \vec{m_1} & \vec{m_2}
             \end{pmatrix}
@@ -69,22 +71,53 @@
             \end{pmatrix}
             </div>
             <p>Zwischen Matrizen und Vektoren ist eine Multiplikation definiert, jedoch nur einseitig.</p>
-            <div class="equation">M \cdot \vec{x} = 
+            <div class="equation">A \cdot \vec{x} = 
             \begin{pmatrix}
                 \vec{m_1} \cdot \vec{x}\\
                 \vec{m_2} \cdot \vec{x}\\
             \end{pmatrix}</div>
             <p>Zudem ist zwischen Matrizen eine Multiplikation definiert.</p>
-            <div class="equation">M \cdot N = 
+            <div class="equation">A \cdot B = 
             \begin{pmatrix}
-                M \cdot \vec{n_1} & M \cdot \vec{n_2}
+                A \cdot \vec{b_1} & A \cdot \vec{b_2}
             \end{pmatrix}</div>
             
             <h3>Lineare Abbildung (linear transformation)</h3>
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <p>Eine lineare Abbildung ist eine transformation, welche auf einem Vektor bzw. Vektorraum angewendet wird.</p>
+                    <div class="equation">D \rightarrow W</div>
+                    <div class="equation">d_0 \mapsto w_0</div>
+                    <div class="equation">\vdots</div>
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <canvas id="beispiel_lineare_abbildung"></canvas>
+                </section>
+            </section>
             <p>Eine lineare Abbildung ist eine Matrixmultiplikation. Für sie gilt, dass der Ursprung im Definitionsbereich gleich dem im Bildbereich ist und dass Linear Kombinationen im Definitionsbereich transformiert im Bildbereich erhalten bleiben.</p>
-            
-            <h3>Invertierbarkeit</h3>
-            Eine Matrix ist invertierbar, wenn die Spalten eine Basis bilden.    
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <div class="equation">f\left(\lambda \cdot \begin{pmatrix}x\\ y\end{pmatrix}\right) = \lambda \cdot f\left(\begin{pmatrix}x\\ y\end{pmatrix}\right)</div>
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <div class="equation">f\left(\begin{pmatrix}x_1\\ y_1\end{pmatrix} + \begin{pmatrix}x_2\\ y_2\end{pmatrix}\right) = f\left(\begin{pmatrix}x_1\\ y_1\end{pmatrix}\right) + f\left(\begin{pmatrix}x_2\\ y_2\end{pmatrix}\right)</div>
+                </section>
+            </section>
+            <h3>Kern und Bild</h3>
+            <p>Der Kern einer linearen Abbildung ist die Menge aller Vektoren, welche auf den Ursprung abgebildet werden. Das Bild einer linearen Abbildung sind alle möglichen Vek</p>
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <div class="equation">Kern(A) = \left\{A \cdot \vec{v}= \begin{pmatrix}0\\0\end{pmatrix}\right\}</div>
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <div class="equation">Bild(A) = span(\vec{m_1}, \vec{m_2}))</div>
+                </section>
+            </section>
+            <p>Die Dimension der Ausgangsmenge entspricht der Dimension des Kerns und Bildes. Die Dimension des Bildes wird auch Rang genannt.</p>
+            <div class="equation">dim(D) = dim(Kern(A)) + dim(Bild(A)) = dim(Kern(A)) + Rang(A)</div>
+            <h3>Inverse</h3>
+            <p>Eine Matrix ist invertierbar, wenn die Spalten eine Basis bilden und die Matrix quadratisch ist. Um das inverse zu erhalten wendet man wieder das Gauß Verfahren an. Danach kann die Lösung auf der rechten Seite ablesen.</p>
+            <div class="equation">\left(\begin{array}{cc|cc}a & b & 1 & 0\\c & d & 0 & 1\end{array}\right)</div>
         </main>
         <footer><h6>created by Anton Böhler</h6></footer>
     </body>

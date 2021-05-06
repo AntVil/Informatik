@@ -1,4 +1,8 @@
+let loaded = false;
+
 window.onload = function(){
+    loaded = true;
+    
     let equations = document.getElementsByClassName("equation");
     for(let i=0;i<equations.length;i++){
         katex.render(equations[i].innerText, equations[i], {
@@ -6,18 +10,19 @@ window.onload = function(){
         });
     }
 
-    setup()
+    setup();
 }
 
-window.onresize = setup;
-
+window.onresize = setup();
 
 function setup(){
-    beispiel_menge();
-    beispiel_vereinigung();
-    beispiel_schnitt();
-    beispiel_differenz();
-    beispiel_komplement();
+    if(loaded){
+        beispiel_menge();
+        beispiel_vereinigung();
+        beispiel_schnitt();
+        beispiel_differenz();
+        beispiel_komplement();
+    }
 }
 
 

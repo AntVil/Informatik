@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="../../lib/katex/katex.min.css">
         <script src="../../lib/katex/katex.min.js"></script>
 
+        <script src="../../generic-scripts/script.js"></script>
+
         <link rel="stylesheet" href="./style.css">
         <script src="./script.js"></script>
     </head>
@@ -57,54 +59,54 @@
 
 
 
+                    
+            <h2>Algorithmen</h2>
+            <h3>Beschreibung</h3>
+            Ein Algorithmus beschreibt den Weg, wie man für eine Eingabe <span class="equation">e \in E</span> eine Ausgabe <span class="equation">a \in A</span> erhält. Er löst alle Probleme einer bestimmten Klasse an Problemen. Ein Algorithmus funktioniert wie eine Partielle Abbildung, da nicht alle Eingaben nach endlicher Zeit zu einer Ausgabe führen.
+            <div class="equation">f: E \rightarrow A</div>
+            <div class="equation">x \mapsto \perp</div>
+            <div class="equation">e_1 \mapsto a_1</div>
+            <div class="equation">...</div>
             
-<h2>Algorithmen</h2>
-    <h3>Beschreibung</h3>
-    Ein Algorithmus beschreibt den Weg, wie man für eine Eingabe <span class="equation">e \in E</span> eine Ausgabe <span class="equation">a \in A</span> erhält. Er löst alle Probleme einer bestimmten Klasse an Problemen. Ein Algorithmus funktioniert wie eine Partielle Abbildung, da nicht alle Eingaben nach endlicher Zeit zu einer Ausgabe führen.
-    <div class="equation">f: E \rightarrow A</div>
-    <div class="equation">x \mapsto \perp</div>
-    <div class="equation">e_1 \mapsto a_1</div>
-    <div class="equation">...</div>
-    
-    
-    
-    <h3>Registermaschinen}
-    Eine Registermaschine hat sehr wenige Operationen, kann aber mit genug Zeit jedes berechenbare Problem lösen. Eine Registermaschine besitzt für jede Natürliche Zahl <span class="equation">n \in \mathbb{N}_0</span> ein Register, in dem eine Natürliche Zahl <span class="equation">m \in \mathbb{N}_0</span> gespeichert werden kann.
-    <canvas id="beispiel_registermaschine"></canvas>
-    <section class="container">
-        <section style="grid-column: 1 / span 49;">{0.49\textwidth}
-            \textbf{Increment}\\
-            Erhöht das Register <span class="equation">x</span> um <span class="equation">1</span>
-            <div class="equation">a_x</div>
-            \textbf{Decrement}\\
-            Verringert das Register <span class="equation">x</span> um <span class="equation">1</span> (wenn der Wert nicht <span class="equation">0</span> ist)
-            <div class="equation">s_x</div>
-        </section>
-        <section style="grid-column: 50 / span 49;">{0.49\textwidth}
-            \textbf{Konkatenation}\\
-            <span class="equation">B</span> wird nach <span class="equation">A</span> ausgeführt
-            <div class="equation">AB</div>
-            \textbf{Iteration}\\
-            Führt <span class="equation">B</span> aus bis Register <span class="equation">x</span> den Wert 0 hat
-            <div class="equation">(B)_x</div>
-        </section>
-    </section>
-    
-    
-    <h3>Komplexität}
-    Die Komplexität beschreibt das Laufzeitverhalten eines Programms, wenn sich die Größe <span class="equation">n</span> der Eingabe ändert. Man kann dies als eine Abbildung <span class="equation">f: \mathbb{N} \rightarrow \mathbb{N}</span> mit zum Beispiel <span class="equation">n \mapsto n^2</span> auffassen.\\
-    Mit <span class="equation">O(f)</span> wird eine Menge beschrieben, welche alle Laufzeiten enthält, welche etwa gleich oder langsamer sind als <span class="equation">f</span>.\\
-    Mit <span class="equation">\Omega(f)</span> wird eine Menge beschrieben, welche alle Laufzeiten enthält, welche etwa gleich oder schneller sind als <span class="equation">f</span>.\\
-    Mit <span class="equation">\Theta(f)</span> wird eine Menge beschrieben, welche alle Laufzeiten enthält, welche etwa gleich-schnell sind wie <span class="equation">f</span>.
-    <div class="equation">f_1: \mathbb{N} \rightarrow \mathbb{N}</div>
-    <div class="equation">n \mapsto n^2 + \lceil \log(n)\rceil</div>
-    <div class="equation">f_1 \in \Theta(n \mapsto n^2)</div>
-    
-    
-    <h3>Berechenbarkeit}
-    Eine Abbildung heißt berechenbar, wenn es mindestens einen Algorithmus gibt, welcher für jede Eingabe aus dem Wertebereich eine Ausgabe aus dem Bildbereich liefert.
-    
-    
+            
+            
+            <h3>Registermaschinen</h3>
+            Eine Registermaschine hat sehr wenige Operationen, kann aber mit genug Zeit jedes berechenbare Problem lösen. Eine Registermaschine besitzt für jede Natürliche Zahl <span class="equation">n \in \mathbb{N}_0</span> ein Register, in dem eine Natürliche Zahl <span class="equation">m \in \mathbb{N}_0</span> gespeichert werden kann.
+            <div><canvas id="beispiel_registermaschine"></canvas></div>
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <h4>Increment</h4>
+                    Erhöht das Register <span class="equation">x</span> um <span class="equation">1</span>
+                    <div class="equation">a_x</div>
+                    <h4>Decrement</h4>
+                    Verringert das Register <span class="equation">x</span> um <span class="equation">1</span> (wenn der Wert nicht <span class="equation">0</span> ist)
+                    <div class="equation">s_x</div>
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <h4>Konkatenation</h4>
+                    <span class="equation">B</span> wird nach <span class="equation">A</span> ausgeführt
+                    <div class="equation">AB</div>
+                    <h4>Iteration</h4>
+                    Führt <span class="equation">B</span> aus bis Register <span class="equation">x</span> den Wert 0 hat
+                    <div class="equation">(B)_x</div>
+                </section>
+            </section>
+            
+            
+            <h3>Komplexität</h3>
+            Die Komplexität beschreibt das Laufzeitverhalten eines Programms, wenn sich die Größe <span class="equation">n</span> der Eingabe ändert. Man kann dies als eine Abbildung <span class="equation">f: \mathbb{N} \rightarrow \mathbb{N}</span> mit zum Beispiel <span class="equation">n \mapsto n^2</span> auffassen.
+            Mit <span class="equation">O(f)</span> wird eine Menge beschrieben, welche alle Laufzeiten enthält, welche etwa gleich oder langsamer sind als <span class="equation">f</span>.
+            Mit <span class="equation">\Omega(f)</span> wird eine Menge beschrieben, welche alle Laufzeiten enthält, welche etwa gleich oder schneller sind als <span class="equation">f</span>.
+            Mit <span class="equation">\Theta(f)</span> wird eine Menge beschrieben, welche alle Laufzeiten enthält, welche etwa gleich-schnell sind wie <span class="equation">f</span>.
+            <div class="equation">f_1: \mathbb{N} \rightarrow \mathbb{N}</div>
+            <div class="equation">n \mapsto n^2 + \lceil \log(n)\rceil</div>
+            <div class="equation">f_1 \in \Theta(n \mapsto n^2)</div>
+            
+            
+            <h3>Berechenbarkeit</h3>
+            Eine Abbildung heißt berechenbar, wenn es mindestens einen Algorithmus gibt, welcher für jede Eingabe aus dem Wertebereich eine Ausgabe aus dem Bildbereich liefert.
+            
+            
 
     
     

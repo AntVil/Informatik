@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="../../lib/katex/katex.min.css">
         <script src="../../lib/katex/katex.min.js"></script>
 
+        <script src="../../generic-scripts/script.js"></script>
+
         <link rel="stylesheet" href="./style.css">
         <script src="./script.js"></script>
     </head>
@@ -56,143 +58,75 @@
         <main class="scroll">
             
 
-<h2>Algebraische Strukturen}
-    <h3>Beschreibung}
-    Algebraische Strukturen ermöglichen es Gesetze für Operationen auf bestimmten Mengen zu formen. Sie bestehen aus einer Menge und einer oder zwei Operationen.
-    <div class="equation">(M, \oplus)</div>
-    <div class="equation">(M, \oplus, \odot)</div>
-    
-    <h3>Eigenschaften}
-    <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-            \begin{center}
-                \textbf{Abgeschlossenheit}
-            \end{center}
-            <div class="equation">\forall a, b \in M: \exists c \in M: a \oplus b = c</div>
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-            \begin{center}
-                \textbf{Assoziativ}
-            \end{center}
-            <div class="equation">\forall a, b, c \in M: a \oplus (b \oplus c) = (a \oplus b) \oplus c</div>
-        </section>
-    </section>
-    
-    \vspace{0.3cm}
-    
-    \noindent
-    <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-            \begin{center}
-                \textbf{Neutral Element}
-            \end{center}
-            <div class="equation">\exists n \in M: \forall e \in M: e \oplus n = e</div>
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-            \begin{center}
-                \textbf{Inverse Elemente}
-            \end{center}
-            <div class="equation">\exists n \in M: \forall e \in M: \exists e^{-1} \in M: e \oplus e^{-1} = n</div>
-        </section>
-    </section>
-    
-    \vspace{0.3cm}
-    
-    \noindent
-    <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-            \begin{center}
-                \textbf{Kommutativ}
-            \end{center}
-            <div class="equation">\forall a,b \in M: a \oplus b = b \oplus a</div>
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-            \begin{center}
-                \textbf{Distributiv}
-            \end{center}
-            <div class="equation">\forall a,b,c \in M: a \odot (b \oplus c) = (a \odot b) \oplus (a \odot c)</div>
-        </section>
-    </section>
-    
-    <h3>Algebraische Strukturen}
-    Die Eigenschaften der Operationen auf der Menge bestimmen die Algebraische Struktur.
-    \begin{center}
-        \begin{tikzpicture}
-            \fill[purple!20, rounded corners] (-4.7cm, 1cm) rectangle (12.3cm, -3.5cm);
+            <h2>Algebraische Strukturen</h2>
+            <h3>Beschreibung</h3>
+            Algebraische Strukturen ermöglichen es Gesetze für Operationen auf bestimmten Mengen zu formen. Sie bestehen aus einer Menge und einer oder zwei Operationen.
+            <div class="equation">(M, \oplus)</div>
+            <div class="equation">(M, \oplus, \odot)</div>
             
-            \fill[orange!20, rounded corners] (-4.6cm, 0.9cm) rectangle (12.2cm, -2.4cm);
-            \fill[orange!20, rounded corners] (-4.6cm, 0.9cm) rectangle (3.5cm, -3.3cm);
+            <h3>Eigenschaften</h3>
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <h4>Abgeschlossenheit</h4>
+                    <div class="equation">\forall a, b \in M: \exists c \in M: a \oplus b = c</div>
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <h4>Assoziativ</h4>
+                    <div class="equation">\forall a, b, c \in M: a \oplus (b \oplus c) = (a \oplus b) \oplus c</div>
+                </section>
+            </section>
             
-            \fill[cyan!20, rounded corners] (-4.5cm, 0.8cm) rectangle (12.1cm, -1.65cm);
-            \fill[cyan!20, rounded corners] (-4.5cm, 0.8cm) rectangle (3.4cm, -3.2cm);
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <h4>Neutral Element</h4>
+                    <div class="equation">\exists n \in M: \forall e \in M: e \oplus n = e</div>
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <h4>Inverse Elemente</h4>
+                    <div class="equation">\exists n \in M: \forall e \in M: \exists e^{-1} \in M: e \oplus e^{-1} = n</div>
+                </section>
+            </section>
             
-            \fill[green!20, rounded corners] (-4.4cm, 0.7cm) rectangle (3.3cm, -3.1cm);
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <h4>Kommutativ</h4>
+                    <div class="equation">\forall a,b \in M: a \oplus b = b \oplus a</div>
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <h4>Distributiv</h4>
+                    <div class="equation">\forall a,b,c \in M: a \odot (b \oplus c) = (a \odot b) \oplus (a \odot c)</div>
+                </section>
+            </section>
             
-            \fill[red!20, rounded corners] (-4.3cm, 0.6cm) rectangle (3.2cm, -2.4cm);
+            <h3>Algebraische Strukturen</h3>
+            Die Eigenschaften der Operationen auf der Menge bestimmen die Algebraische Struktur.
+            <div>
+                <canvas id="beispiel_algebraische_struktur"></canvas>
+            </div>
             
-            \fill[gray!20, rounded corners] (-4.2cm, 0.5cm) rectangle (3.1cm, -1.65cm);
+            <h3>Vektorraum</h3>
+            Über einem Körper <span class="equation">M</span> kann ein Vektorraum <span class="equation">M^n (n \in \mathbb{N})</span> definiert werden. In diesem Vektorraum sind zwei Operationen definiert.
             
-            \fill[brown!40, rounded corners] (-4.1cm, 0.4cm) rectangle (3cm, -0.8cm);
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <h4>Addition</h4>
+                    <div class="equation">\oplus: M^n \times M^n \rightarrow M^n</div>
+                    <div class="equation">\vec{a} \oplus \vec{b} \mapsto \vec{c}</div>
+                    <div style="text-align: center;"><i>(Komponentenweise addiert wie im Körper)</i></div>
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <h4>Skalarmultiplikation</h4>
+                    <div class="equation">\odot: M \times M^n \rightarrow M^n</div>
+                    <div class="equation">a \odot \vec{b} \mapsto \vec{c}</div>
+                    <div style="text-align: center;"><i>(Komponenten skaliert wie im Körper)</i></div>
+                </section>
+            </section>
             
-            \fill[brown!40, rounded corners] (3.4cm, 0.4cm) rectangle (12cm, -0.8cm);
+            <h3>Untervektorraum</h3>
+            Ein Untervektorraum ist eine Teilmenge eines Vektorraums, welche selbst ein Vektorraum ist.
             
             
-            \node [brown, anchor=west] at (0cm, 0cm) {$\oplus</span> Abgeschlossen};
-            \node [brown, anchor=west] at (0cm, -0.5cm) {$\oplus</span> Assoziativ};
-            \node [gray, anchor=west] at (0cm, -1.25cm) {$\oplus</span> Neutral Element};
-            \node [red, anchor=west] at (0cm, -2cm) {$\oplus</span> Inverse Elemente};
-            \node [green, anchor=west] at (0cm, -2.75cm) {$\oplus</span> Kommutativ};
             
-            \node [brown, anchor=west] at (3.5cm, 0cm) {$\odot</span> Abgeschlossen};
-            \node [brown, anchor=west] at (3.5cm, -0.5cm) {$\odot</span> Assoziativ};
-            \node [cyan, anchor=west] at (3.5cm, -1.25cm) {$\oplus, \odot</span> Distributiv};
-            \node [orange, anchor=west] at (3.5cm, -2cm) {$\odot</span> Kommutativ};
-            \node [purple, anchor=west] at (3.5cm, -2.75cm) {$\odot</span> Neutral Element};
-            \node [purple, anchor=west] at (3.5cm, -3.25cm) {$\odot</span> Inverse Elemente (außer 0)};
-            
-            
-            \node [brown, anchor=west] at (-4cm, 0cm) {\textit{Halb Gruppe}};
-            \node [gray, anchor=west] at (-4cm, -1.25cm) {\textit{Monoid}};
-            \node [red, anchor=west] at (-4cm, -2cm) {\textit{Gruppe}};
-            \node [green, anchor=west] at (-4cm, -2.75cm) {\textit{Kommutative Gruppe}};
-            
-            \node [brown, anchor=west] at (8.8cm, 0cm) {\textit{Halb Gruppe}};
-            \node [cyan, anchor=west] at (8.8cm, -1.25cm) {\textit{Ring}};
-            \node [orange, anchor=west] at (8.8cm, -2cm) {\textit{Kommutativer Ring}};
-            \node [purple, anchor=west] at (8.8cm, -2.75cm) {\textit{Körper}};
-            
-        \end{tikzpicture}
-    \end{center}
-    
-    
-    <h3>Vektorraum}
-    Über einem Körper <span class="equation">M</span> kann ein Vektorraum <span class="equation">M^n (n \in \mathbb{N})</span> definiert werden. In diesem Vektorraum sind zwei Operationen definiert.
-    
-    \noindent
-    <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-            \begin{center}
-                \textbf{Addition}
-                <div class="equation">\oplus: M^n \times M^n \rightarrow M</div>
-                <div class="equation">\Vec{a} \oplus \Vec{b} \mapsto \Vec{c}</div>
-                \textit{(Komponentenweise addiert wie im Körper)}
-            \end{center}
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-            \begin{center}
-                \textbf{Skalarmultiplikation}
-                <div class="equation">\odot: M \times M^n \rightarrow M</div>
-                <div class="equation">a \odot \Vec{b} \mapsto \Vec{c}</div>
-                \textit{(Komponenten skaliert wie im Körper)}
-            \end{center}
-        </section>
-    </section>
-    
-    <h3>Untervektorraum}
-    Ein Untervektorraum ist eine Teilmenge eines Vektorraums, welche selbst ein Vektorraum ist.
-     
-    
-    
         </main>
         <footer><h6>created by Anton Böhler</h6></footer>
     </body>

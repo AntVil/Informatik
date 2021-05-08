@@ -17,6 +17,24 @@ window.onresize = setup();
 
 function setup(){
     if(loaded){
+        beispiel_registermaschine();
+    }
+}
 
+function beispiel_registermaschine(){
+    let can = document.getElementById("beispiel_registermaschine");
+    can.width = can.clientWidth;
+    can.height = can.clientWidth/5;
+    ctxt = can.getContext("2d");
+    ctxt.clearRect(0, 0, can.width, can.height);
+    let k = 5;
+    for(let i=0;i<k;i++){
+        let size = can.height * 4/5;
+        rect(ctxt, (i / k) * can.width + can.width/(2*k) - size/2, (can.height - size)/2, size, size, "#FF9900", "#FFAA00", 2, can.width/30);
+        if(i != k-1){
+            text(ctxt, i, (i / k) * can.width + can.width/(2*k), can.height/2, can.width/12, "#777777");
+        }else{
+            text(ctxt, "...", (i / k) * can.width + can.width/(2*k), can.height/2, can.width/12, "#777777");
+        }
     }
 }

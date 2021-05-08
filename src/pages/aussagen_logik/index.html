@@ -57,98 +57,65 @@
 
             
 
-<h2>Aussagen Logik}
-    <h3>Beschreibung}
+<h2>Aussagen Logik</h2>
+    <h3>Beschreibung</h3>
     Eine Formel besteht aus, den Symbolen <span class="equation">0</span>, <span class="equation">1</span> den Atomen der Menge <span class="equation">\Sigma</span> (Signatur) oder Verknüpfungen von bekannten Formeln mit den fünf definieren Operationen. In Folgenden Beispielen gilt <span class="equation">\Sigma = \{\textcolor{orange}{A}, \textcolor{orange}{B}\}</span>. Die Menge aller Formeln auf <span class="equation">\Sigma</span> wird mit <span class="equation">For0_{\Sigma}</span> bezeichnet. 
     <div class="equation">0, 1 \in For0_{\Sigma}</div>
     <div class="equation">\Sigma \subseteq For0_{\Sigma}</div>
     Formeln selber sind nur Zeichenketten und können nicht umgeformt werden.
     
-    <h3>Operationen}
+    <h3>Operationen</h3>
     <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.19\textwidth}
-            \begin{center}
-                \textbf{Negation}
-                <div class="equation">\neg \textcolor{orange}{A}</div>
-                Gegenteil
-            \end{center}
+        <section style="grid-column: 1 / span 19;">
+            <h4>Negation</h4>
+            <div class="equation">\neg \textcolor{orange}{A}</div>
+            <div style="text-align: center;">Gegenteil</div>
         </section>
-        <section style="grid-column: 1 / span 99;">{0.19\textwidth}
-            \begin{center}
-                \textbf{Disjunktion}
-                <div class="equation">(\textcolor{orange}{A} \lor \textcolor{orange}{B})</div>
-                Eins von beiden Wahr
-            \end{center}
+        <section style="grid-column: 20 / span 19;">
+            <h4>Disjunktion</h4>
+            <div class="equation">(\textcolor{orange}{A} \lor \textcolor{orange}{B})</div>
+            <div style="text-align: center;">Eins von beiden Wahr</div>
         </section>
-        <section style="grid-column: 1 / span 99;">{0.19\textwidth}
-            \begin{center}
-                \textbf{Konjunktion}
-                <div class="equation">(\textcolor{orange}{A} \land \textcolor{orange}{B})</div>
-                Beide Wahr
-            \end{center}
+        <section style="grid-column: 40 / span 19;">
+            <h4>Konjunktion</h4>
+            <div class="equation">(\textcolor{orange}{A} \land \textcolor{orange}{B})</div>
+            <div style="text-align: center;">Beide Wahr</div>
         </section>
-        <section style="grid-column: 1 / span 99;">{0.19\textwidth}
-            \begin{center}
-                \textbf{Implikation}
-                <div class="equation">(\textcolor{orange}{A} \rightarrow \textcolor{orange}{B})</div>
-                <div class="equation">\neg(\textcolor{orange}{A} \land \neg \textcolor{orange}{B})</div>
-            \end{center}
+        <section style="grid-column: 60 / span 19;">
+            <h4>Implikation</h4>
+            <div class="equation">(\textcolor{orange}{A} \rightarrow \textcolor{orange}{B})</div>
+            <div class="equation">\neg(\textcolor{orange}{A} \land \neg \textcolor{orange}{B})</div>
         </section>
-        <section style="grid-column: 1 / span 99;">{0.19\textwidth}
-            \begin{center}
-                \textbf{Äquivalenz}
-                <div class="equation">(\textcolor{orange}{A} \leftrightarrow \textcolor{orange}{B})</div>
-                Gleichwertig
-            \end{center}
+        <section style="grid-column: 80 / span 19;">
+            <h4>Äquivalenz</h4>
+            <div class="equation">(\textcolor{orange}{A} \leftrightarrow \textcolor{orange}{B})</div>
+            <div style="text-align: center;">Gleichwertig</div>
         </section>
     </section>
-    \begin{center}
-        \textit{(Klammerung wichtig!)}
-    \end{center}
+    <div style="text-align: center;"><i>(Klammerung wichtig!)</i></div>
     
-    <h3>Syntaxbaum}
+    <h3>Syntaxbaum</h3>
     <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.66\textwidth}
+        <section style="grid-column: 1 / span 66;">
             Zu jeder Formel <span class="equation">F</span> kann ein Syntaxbaum erstellt werden. Mit ihm kann die Formel leicht in ihre Teilformen <span class="equation">Teilf(F)</span> zerlegen werden, wodurch sie ausgewertet werden kann.
             Um <span class="equation">Teilf(F)</span> zu erhalten geht man einfach den Syntaxbaum durch und konstruiert von jedem Knoten aus abwärts eine Teilformel.
             <div class="equation">Teilf(\neg (\textcolor{orange}{A} \land \neg \textcolor{orange}{B})) = \{\neg (\textcolor{orange}{A} \land \neg \textcolor{orange}{B}), (\textcolor{orange}{A} \land \neg \textcolor{orange}{B}), \textcolor{orange}{A}, \neg \textcolor{orange}{B}, \textcolor{orange}{B}\}</div>
         </section>
-        <section style="grid-column: 1 / span 99;">{0.33\textwidth}
-            \begin{center}
-                <div class="equation">\neg (\textcolor{orange}{A} \land \neg \textcolor{orange}{B})</div>
-                \begin{tikzpicture}
-                    \fill[purple!20, rounded corners] (-2.5cm, -3.5cm) rectangle (2.5cm, 0.5cm);
-                    \fill[orange!20, rounded corners] (-2.4cm, -3.4cm) rectangle (2.4cm, -2.5cm);
-                    \fill[orange!20, rounded corners] (-2.4cm, -3.4cm) rectangle (-1.5cm, -1.5cm);
-                    
-                    \node[purple, align=flush left] at (-1.75cm, 0cm) {\textit{Formeln}};
-                    \node[orange, align=flush left] at (0cm, -3cm) {\textit{Atome}};
-                    
-                    
-                    \node[node] (node1) at (0cm, 0cm) {$\neg$};
-                    \node[node] (node2) at (0cm, -1cm) {$\land$};
-                    \node[node, draw=orange, fill=orange!80] (node3) at (-2cm, -2cm) {$A$};
-                    \node[node] (node4) at (2cm, -2cm) {$\neg$};
-                    \node[node, draw=orange, fill=orange!80] (node5) at (2cm, -3cm) {$B$};
-                    
-                    \path[->] (node1) edge (node2);
-                    \path[->] (node2) edge (node3);
-                    \path[->] (node2) edge (node4);
-                    \path[->] (node4) edge (node5);
-                \end{tikzpicture}
-            \end{center}
+        <section style="grid-column: 67 / span 33;">
+            <div class="equation">\neg (\textcolor{orange}{A} \land \neg \textcolor{orange}{B})</div>
+            <div><canvas id="beispiel_syntaxbaum"></canvas></div>
         </section>
     </section>
     
-    <h3>Auswertung}
-    Um eine Formel auszuwerten benötigt man eine Interpretation <span class="equation">I</span>, welche den Atomen aus <span class="equation">\Sigma</span> die Werte <span class="equation">W</span> für Wahr und <span class="equation">F</span> für Falsch zuweist. Mit <span class="equation">val_I</span> wird eine Abbildung definiert die nun alle Formeln aus <span class="equation">For0_\Sigma</span> auswerten kann, durch eine Rekursive Definition der Operationen (\textit{ausgelassen}).\\
+    <h3>Auswertung</h3>
+    Um eine Formel auszuwerten benötigt man eine Interpretation <span class="equation">I</span>, welche den Atomen aus <span class="equation">\Sigma</span> die Werte <span class="equation">W</span> für Wahr und <span class="equation">F</span> für Falsch zuweist. Mit <span class="equation">val_I</span> wird eine Abbildung definiert die nun alle Formeln aus <span class="equation">For0_\Sigma</span> auswerten kann, durch eine Rekursive Definition der Operationen (<i>ausgelassen</i>).
     <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+        <section style="grid-column: 1 / span 49;">
             <div class="equation">I: \Sigma \rightarrow \{W, F\}</div>
             <div class="equation">\textcolor{orange}{A} \mapsto W</div>
             <div class="equation">\textcolor{orange}{B} \mapsto F</div>
         </section>
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+        <section style="grid-column: 50 / span 49;">
             <div class="equation">val_I: For0_\Sigma \rightarrow \{W, F\}</div>
             <div class="equation">0 \mapsto F</div>
             <div class="equation">1 \mapsto W</div>
@@ -157,44 +124,34 @@
         </section>
     </section>
     
-    \noindent
+    
     <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.33\textwidth}
-            \begin{center}
-                \textbf{Modell}\\
-                Eine Interpretation wertet die Formel zu Wahr aus.
-            \end{center}
+        <section style="grid-column: 1 / span 33;">
+            <h4>Modell</h4>
+            <div style="text-align: center;">Eine Interpretation wertet die Formel zu Wahr aus.</div>
         </section>
-        <section style="grid-column: 1 / span 99;">{0.33\textwidth}
-            \begin{center}
-                \textbf{Erfüllbar}\\
-                Mindestens eine Interpretation ist Modell.
-            \end{center}
+        <section style="grid-column: 34 / span 33;">
+            <h4>Erfüllbar</h4>
+            <div style="text-align: center;">Mindestens eine Interpretation ist Modell.</div>
         </section>
-        <section style="grid-column: 1 / span 99;">{0.33\textwidth}
-            \begin{center}
-                \textbf{Allgemeingültig}\\
-                Alle Interpretationen sind Modell.
-            \end{center}
+        <section style="grid-column: 67 / span 33;">
+            <h4>Allgemeingültig</h4>
+            <div style="text-align: center;">Alle Interpretationen sind Modell.</div>
         </section>
     </section>
     
     
-    <h3>Relationen}
+    <h3>Relationen</h3>
     <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-            \begin{center}
-                \textbf{Logische Folgerbarkeit}
-                <div class="equation">\textcolor{orange}{A} \models \textcolor{orange}{B}</div>
-                Alle Modelle für <span class="equation">\textcolor{orange}{A}</span> sind Modelle für <span class="equation">\textcolor{orange}{B}</span>
-            \end{center}
+        <section style="grid-column: 1 / span 49;">
+            <h4>Logische Folgerbarkeit</h4>
+            <div class="equation">\textcolor{orange}{A} \models \textcolor{orange}{B}</div>
+            <div style="text-align: center;">Modelle für <span class="equation">\textcolor{orange}{A}</span> sind Modelle für <span class="equation">\textcolor{orange}{B}</span></div>
         </section>
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-            \begin{center}
-                \textbf{Logische Äquivalenz}
-                <div class="equation">\textcolor{orange}{A} \equiv \textcolor{orange}{B}</div>
-                <span class="equation">\textcolor{orange}{A}</span> und <span class="equation">\textcolor{orange}{B}</span> sind logisch Äquivalent
-            \end{center}
+        <section style="grid-column: 50 / span 49;">
+            <h4>Logische Äquivalenz</h4>
+            <div class="equation">\textcolor{orange}{A} \equiv \textcolor{orange}{B}</div>
+            <div style="text-align: center;"><span class="equation">\textcolor{orange}{A}</span> und <span class="equation">\textcolor{orange}{B}</span> sind logisch Äquivalent</div>
         </section>
     </section>
 
@@ -215,17 +172,17 @@
 
 
 
-<h2>Normalform/Charakteristische Gleichung}
-    <h3>Beschreibung}
+<h2>Normalform/Charakteristische Gleichung</h2>
+    <h3>Beschreibung</h3>
     <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.75\textwidth}
+        <section style="grid-column: 1 / span 74;">
             Mit einer Wahrheitstabelle kann man eine gewünschte Schaltung ausdrücken. Der Ausgang <span class="equation">Y</span> kann auch den Wert <span class="equation">\perp</span> haben, falls diese Kombination an Eingangs-werten nicht auftritt oder irrelevant ist. Eine Wahrheitstabelle ist wie eine Partielle Abbildung.
             <div class="equation">f: \{\textcolor{WildStrawberry}{F}, \textcolor{LimeGreen}{W}\}^n \rightarrow \{\textcolor{WildStrawberry}{F}, \textcolor{LimeGreen}{W}\}^m</div>
             <div class="equation">x_1 \mapsto y_1</div>
             <div class="equation">x_2 \mapsto \perp</div>
             Mit Hilfe der Wahrheitstabelle kann man nun die Normalform bilden, welche sich leicht realisieren lässt. Man unterscheidet zwischen der DNF und KNF.
         </section>
-        <section style="grid-column: 1 / span 99;">{0.24\textwidth}
+        <section style="grid-column: 75 / span 24;">
             \begin{center}
                 \begin{tikzpicture}
                     \begin{scope}[scale=0.85]
@@ -263,9 +220,9 @@
     
     \vspace{0.1cm}
     
-    \noindent
+    
     <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+        <section style="grid-column: 1 / span 49;">
             <h3>Disjunktive NF}
             Disjunktiv-verknüpfte Minterme
             <div class="equation">DNF = (m_1 \lor m_2 \lor ...)</div>
@@ -273,7 +230,7 @@
             Konjunktiv-verknüpfte Kombinationen die <span class="equation">\textcolor{LimeGreen}{W}</span> ergeben
             <div class="equation">m_i = (A \land B \land...)</div>
         </section>
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+        <section style="grid-column: 50 / span 49;">
             <h3>Konjunktive NF}
             Konjunktiv-verknüpfte Maxterme
             <div class="equation">KNF = (M_1 \land M_2 \land ...)</div>
@@ -284,9 +241,9 @@
         <div class="equation">DNF \equiv Y \equiv KNF</div>
     </section>
     
-    \noindent
+    
     <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+        <section style="grid-column: 1 / span 49;">
             <h3>KV-Diagramm}
             \begin{center}
                 \begin{tikzpicture}
@@ -342,8 +299,8 @@
                 \end{tikzpicture}
             \end{center}
         </section>
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-            <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+        <section style="grid-column: 50 / span 49;">
+            <section style="grid-column: 1 / span 49;">
                 \textbf{Minterme}
                 \begin{itemize}
                     \color{blue}
@@ -354,7 +311,7 @@
                     \item <span class="equation">(B \land C \land D)$\\
                 \end{itemize}
             </section>
-            <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+            <section style="grid-column: 50 / span 49;">
                 \textbf{Maxterme}
                 \begin{itemize}
                     \color{gray}
@@ -371,20 +328,20 @@
     
     \vspace{0.3cm}
     
-    \noindent
+    
     Größtmögliche Rechtecke der Größe <span class="equation">2^n</span> bilden. Diese ergeben die Primimplika(n)te (minimierte Terme). Für die KNF müssen alle Eingänge noch invertiert werden.
     
     \vspace{0.2cm}
     
-    \noindent
+    
     <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+        <section style="grid-column: 1 / span 49;">{0.49\textwidth}
             <div class="equation">Y \equiv \left(\textcolor{blue}{\neg A \land C}\right) \lor \left(\textcolor{purple}{\neg A \land \neg B}\right) \lor \left(\textcolor{orange}{B \land C \land D}\right)</div>
             \begin{center}
                 \textit{(minimale DNF)}
             \end{center}
         </section>
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+        <section style="grid-column: 50 / span 49;">{0.49\textwidth}
             <div class="equation">Y \equiv (\textcolor{gray}{\neg B \lor C}) \land (\textcolor{pink}{\neg A \lor D}) \land (\textcolor{cyan}{\neg A \lor B})</div>
             \begin{center}
                 \textit{(minimale KNF)}
@@ -394,9 +351,9 @@
     
     \vspace{0.3cm}
     
-    \noindent
+    
     <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+        <section style="grid-column: 1 / span 49;">
             <h3>QMC-Verfahren (DNF)}
             \begin{enumerate}
                 \item Spalte füllen
@@ -410,7 +367,7 @@
                 \item abgleichen und Redundante entfernen
             \end{enumerate}
         </section>
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+        <section style="grid-column: 50 / span 49;">
             <h3>QMC Optimierung}
             QMC ist ein exakter Algorithmus und deswegen langsam.\\
             Ein heuristischer Algorithmus ist deutlich schneller, aber ein wenig ungenau. (ESPRESSO)\\

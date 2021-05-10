@@ -3,7 +3,7 @@
     <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title></title>
+        <title>Symboltabellen</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
 
         <link rel="stylesheet" href="../../generic-styles/style.css">
@@ -57,67 +57,48 @@
 
             
 
-<h2>Symboltabellen}
-    <h3>Beschreibung}
-    <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-            Eine Symboltabelle speichert Schlüssel-Wert-Paare. Sie ähnelt in der Funktionsweise einer Abbildung. Mit <span class="equation">put</span> wird ein Paar hinzugefügt. Mit <span class="equation">get</span> erhält man den Wert für einen Schlüssel.
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \fill[cyan, opacity=0.5, rounded corners] (-1.5cm, 0.5cm) rectangle (-0.5cm, 2.5cm);
-                    
-                    \fill[orange, opacity=0.5, rounded corners] (0.5cm, 0.5cm) rectangle (1.5cm, 2.5cm);
-                    
-                    \node[node] (node1) at (-1cm, 2cm) {$k_0$};
-                    \node[node] (node2) at (-1cm, 1cm) {$k_1$};
-                    
-                    \node[node] (node3) at (1cm, 2cm) {$v_0$};
-                    \node[node] (node4) at (1cm, 1cm) {$v_1$};
-                    
-                    \path[->] (node1) edge (node3);
-                    \path[->] (node2) edge (node4);
-                \end{tikzpicture}
-            \end{center}
-        </section>
-    </section>
-    
-    <h3>Hashtabelle}
-    <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-            Eine Hashtabelle ist eine Möglichkeit eine Symboltabelle zu realisieren. Aus einem Schlüssel wird mit einer Hashfunktion ein Index berechnet. Mit dem Index kann man den Wert in ein Array an der Stelle des Index einsetzen.
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-            <div class="equation">hash: M \rightarrow \mathbb{N}_0</div>
-            <div class="equation">m \mapsto 0</div>
-            <div class="equation">...</div>
-        </section>
-    </section>
-    
-    \noindent
-    Eine Hashfunktion ist meist nur surjektiv, also kann man für zwei verschiedene Schlüssel den selben Index erhalten. Dies nennt man eine Kollision.
-    
-    \vspace{0.3cm}
-    
-    \noindent
-    <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.3\textwidth}
-            \textbf{Lineares Sondieren}\\
-            Bei Kollision werden Werte so lange nach links verschoben, bis eine freie Stelle gefunden wird.
-        </section>
-        \hspace{0.3cm}
-        <section style="grid-column: 1 / span 99;">{0.3\textwidth}
-            \textbf{Quadratisches sondieren}\\
-            Bei Kollision werden Werte in Quadratischen Abständen (links und rechts) vom Index eingefügt.
-        </section>
-        \hspace{0.3cm}
-        <section style="grid-column: 1 / span 99;">{0.3\textwidth}
-            \textbf{Überläufer Verkettung}\\
-            Das Array verwaltet Listen.
-        </section>
-    </section>
-    
+            <h2>Symboltabellen</h2>
+            <h3>Beschreibung</h3>
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    Eine Symboltabelle speichert Schlüssel-Wert-Paare. Sie ähnelt in der Funktionsweise einer Abbildung. Mit <span class="equation">put</span> wird ein Paar hinzugefügt. Mit <span class="equation">get</span> erhält man den Wert für einen Schlüssel.
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <canvas id="beispiel_symboltabelle"></canvas>
+                </section>
+            </section>
+            
+            <h3>Hashtabelle</h3>
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    Eine Hashtabelle ist eine Möglichkeit eine Symboltabelle zu realisieren. Aus einem Schlüssel wird mit einer Hashfunktion ein Index berechnet. Mit dem Index kann man den Wert in ein Array an der Stelle des Index einsetzen.
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <div class="equation">hash: M \rightarrow \mathbb{N}_0</div>
+                    <div class="equation">m \mapsto 0</div>
+                    <div class="equation">...</div>
+                </section>
+            </section>
+            
+            
+            Eine Hashfunktion ist meist nur surjektiv, also kann man für zwei verschiedene Schlüssel den selben Index erhalten. Dies nennt man eine Kollision.
+            
+            
+            <section class="container">
+                <section style="grid-column: 1 / span 33;">
+                    <h4>Lineares Sondieren</h4>
+                    Bei Kollision werden Werte so lange nach links verschoben, bis eine freie Stelle gefunden wird.
+                </section>
+                <section style="grid-column: 34 / span 33;">
+                    <h4>Quadratisches sondieren</h4>
+                    Bei Kollision werden Werte in Quadratischen Abständen (links und rechts) vom Index eingefügt.
+                </section>
+                <section style="grid-column: 67 / span 33;">
+                    <h4>Überläufer Verkettung</h4>
+                    Das Array verwaltet Listen.
+                </section>
+            </section>
+            
 
     
         </main>

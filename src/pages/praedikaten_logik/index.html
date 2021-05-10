@@ -3,7 +3,7 @@
     <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title></title>
+        <title>Prädikaten Logik</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
 
         <link rel="stylesheet" href="../../generic-styles/style.css">
@@ -57,148 +57,90 @@
 
 
             
-<h2>Prädikaten Logik}
-    <h3>Beschreibung}
-    <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.59\textwidth}
-            Die Syntax in der Prädikaten Logik wird erweitert durch Prädikate, Terme und Variablen. \\
-            Die Signatur <span class="equation">\Sigma</span> ist nun ein Tupel und besteht aus der Menge der Prädikatssymbolen <span class="equation">P_\Sigma</span>, Funktionssymbolen <span class="equation">F_\Sigma</span>, der Abbildung <span class="equation">\alpha_\Sigma</span> und der Menge der Variablen <span class="equation">Var_\Sigma</span>.
-            <div class="equation">\Sigma = (F_\Sigma, P_\Sigma, \alpha_\Sigma, Var_\Sigma)</div>
-            Die Abbildung <span class="equation">\alpha_\Sigma</span> ordnet Elementen aus <span class="equation">F_\Sigma</span> und <span class="equation">P_\Sigma</span> eine Stelligkeit zu.\\
-            Null-stellige Prädikate verhalten sich exakt gleich wie Atome aus der Aussagen Logik. Hingegen n-stellige Prädikate erhalten n Terme als Parameter.
-            Ein Term besteht aus Variablen, n-stelligen Funktionssymbolen und Konstantensymbolen (Null-stellige Funktionssymbole).\\
-            Die Menge aller Prädikaten-logischen Formeln wird mit <span class="equation">For_\Sigma</span> bezeichnet.
-            <div class="equation">0, 1 \in For_\Sigma</div>
-            <div class="equation">AF_\Sigma \subseteq For_\Sigma</div>
-            Die Atomaren-Formeln (<span class="equation">AF_\Sigma</span>) bestehen aus Prädikaten oder Prädikaten mit Termen als Parameter.\\
-            Die Menge aller möglichen Terme auf <span class="equation">\Sigma</span> wird mit <span class="equation">Term_\Sigma</span> bezeichnet.\\
-            Mit <span class="equation">Teilf</span> erhält man alle Teilformeln von einer Formel.\\
-            Mit <span class="equation">Teilt</span> erhält man alle Teilterme von einer Formel.
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.39\textwidth}
-            <h3>Syntaxbaum}
-            <div class="equation">((\forall x \textcolor{orange}{p_1}(\textcolor{cyan}{f_1}(\textcolor{red}{x})) \land \exists y \textcolor{orange}{p_1}(\textcolor{cyan}{f_2}(\textcolor{red}{y}, \textcolor{green}{x}, \textcolor{cyan}{f_0}))) \lor \textcolor{orange}{p_0})</div>
-            \begin{center}
-                \begin{tikzpicture}
-                    \fill[purple!20, rounded corners] (-5.55cm, -5.75cm) rectangle (1.75cm, 0.5cm);
-                    \fill[orange!20, rounded corners] (-5.3cm, -5.55cm) rectangle (1.5cm, -2.5cm);
-                    \fill[orange!20, rounded corners] (0.5cm, -5.55cm) rectangle (1.5cm, -0.5cm);
-                    \fill[cyan!20, rounded corners] (-5.15cm, -5.45cm) rectangle (1.35cm, -3.45cm);
-                    \fill[green!20, rounded corners] (-4.95cm, -5.35cm) rectangle (0.35cm, -4.5cm);
-                    
-                    \node[purple, align=flush left] at (-3.95cm, 0cm) {\textit{Formeln}};
-                    \node[orange, align=flush left] at (-3.95cm, -3cm) {\textit{Atomare Formeln}};
-                    \node[cyan, align=flush left] at (-3.95cm, -4cm) {\textit{Terme}};
-                    \node[green, align=flush left] at (-3.95cm, -5cm) {\textit{Variablen}};
-                
-                    \node[node] (node1) at (0cm, 0cm) {$\lor$};
-                    
-                    \node[node] (node2) at (-1cm, -1cm) {$\land$};
-                    \node[node, draw=orange, fill=orange!80] (node3) at (1cm, -1cm) {$p_0$};
-                    
-                    \node[node] (node4) at (-2cm, -2cm) {$\textcolor{red}{\forall x}$};
-                    \node[node] (node5) at (0cm, -2cm) {$\textcolor{red}{\exists y}$};
-                    
-                    \node[node, draw=orange!80, fill=orange!40] (node6) at (-2cm, -3cm) {$p_1$};
-                    \node[node, draw=orange!80, fill=orange!40] (node7) at (0cm, -3cm) {$p_1$};
-                    
-                    \node[node, draw=cyan!80, fill=cyan!40] (node8) at (-2cm, -4cm) {$f_1$};
-                    \node[node, draw=cyan!80, fill=cyan!40] (node9) at (0cm, -4cm) {$f_3$};
-                    
-                    \node[node, draw=red!80, fill=red!40] (node10) at (-2cm, -5cm) {$x$};
-                    \node[node, draw=red!80, fill=red!40] (node11) at (-1cm, -5cm) {$y$};
-                    \node[node, draw=green!80, fill=green!40] (node12) at (0cm, -5cm) {$x$};
-                    \node[node, draw=cyan, fill=cyan!80] (node13) at (1cm, -5cm) {$f_0$};
-                    
-                    \path[->] (node1) edge (node2);
-                    \path[->] (node1) edge (node3);
-                    
-                    \path[->] (node2) edge (node4);
-                    \path[->] (node2) edge (node5);
-                    
-                    \path[->] (node4) edge (node6);
-                    
-                    \path[->] (node5) edge (node7);
-                    
-                    \path[->] (node6) edge (node8);
-                    
-                    \path[->] (node7) edge (node9);
-                    
-                    \path[->] (node8) edge (node10);
-                    
-                    \path[->] (node9) edge (node11);
-                    \path[->] (node9) edge (node12);
-                    \path[->] (node9) edge (node13);
-                    
-                    \path[->, dashed, red] (node4) edge[bend right] (node10);
-                    \path[->, dashed, red] (node5) edge[bend right] (node11);
-                    
-                    \node[red] (node14) at (-2cm, -6cm) {gebunden};
-                    \node[green] (node15) at (0cm, -6cm) {ungebunden};
-                \end{tikzpicture}\\
-                \footnotesize
-                \textit{(Indices stehen für Stelligkeit)}
-            \end{center}
-        </section>
-    </section>
-    
-    
-    
-    <h3>Quantoren (Zusätzliche Operationen)}
-    <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.66\textwidth}
-            Quantoren bringen eine Variable ein, welche in dem direkt darauf folgendem Block definiert ist. Tritt das gleiche Symbol nochmals auf handelt es sich um eine andere Variable.\\
-            Eine Formel in der alle Variablen an einen Quantoren gebunden sind heißt geschlossene Formel.\\
-            Man kann frei Auftretende Variablen durch Terme ersetzten.
-            In diesem Beispiel wird in der Formel <span class="equation">F</span>, <span class="equation">x \in Var_\Sigma</span> durch <span class="equation">t \in Term_\Sigma</span> ersetzt.
-            <div class="equation">[x/t]F</div>
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.33\textwidth}
-            \begin{center}
-                \textbf{Existenzquantor}
-                <div class="equation">\exists x F</div>
-                Es gibt ein <span class="equation">x</span> für das <span class="equation">F</span> gilt
-            \end{center}
-            \begin{center}
-                \textbf{Allquantor}
-                <div class="equation">\forall x F</div>
-                Für alle <span class="equation">x</span> gilt <span class="equation">F</span>
-            \end{center}
-        </section>
-    </section>
-    <h3>Auswertung}
-    Um eine Formel auszuwerten benötigt man eine Struktur <span class="equation">S</span>, welche aus einer Menge <span class="equation">U</span> dem Universum und einer Menge <span class="equation">I</span> der Interpretationsfunktion besteht. Zusätzlich benötigt man eine Variablenbelegung <span class="equation">v</span> wodurch man eine erweiterte Struktur erhält. Mit <span class="equation">valt_{S,v}</span> können Terme auswerten werden. Mit <span class="equation">valf_{S,v}</span> können Formeln auswerten werden.
-    <div class="equation">S = (U, I)</div>
-    \begin{center}
-        \begin{tikzpicture}
-            \node at (0cm, 0cm) {$valf_{S,v}: For_\Sigma \rightarrow \{F, W\}$};
-            \node at (0cm, -0.5cm) {$0, 1 \mapsto F, W$};
-            \node at (0cm, -1cm) {$p_0 \mapsto \textcolor{orange}{I}(p_0)$};
-            \node at (0cm, -1.5cm) {$p_n(t, ...) \mapsto (\textcolor{cyan}{valt_{S,v}}(t), ...) \in \textcolor{orange}{I}(p_n)$};
-            \node at (0cm, -2cm) {</span>...$};
-            
-            \node at (6cm, 0cm) {$\textcolor{cyan}{valt_{S,v}}: Term_\Sigma \rightarrow U$};
-            \node at (6cm, -0.5cm) {$var \mapsto \textcolor{green}{v}(var)$};
-            \node at (6cm, -1cm) {$f_0 \mapsto \textcolor{orange}{I}(f_0)$};
-            \node at (6cm, -1.5cm) {$f_n(t, ...) \mapsto (\textcolor{orange}{I}(f_n))(\textcolor{cyan}{valt_{S,v}}(t), ...)$};
+            <h2>Prädikaten Logik</h2>
+            <h3>Beschreibung</h3>
+            <section class="container">
+                <section style="grid-column: 1 / span 59;">
+                    Die Syntax in der Prädikaten Logik wird erweitert durch Prädikate, Terme und Variablen.
+                    Die Signatur <span class="equation">\Sigma</span> ist nun ein Tupel und besteht aus der Menge der Prädikatssymbolen <span class="equation">P_\Sigma</span>, Funktionssymbolen <span class="equation">F_\Sigma</span>, der Abbildung <span class="equation">\alpha_\Sigma</span> und der Menge der Variablen <span class="equation">Var_\Sigma</span>.
+                    <div class="equation">\Sigma = (F_\Sigma, P_\Sigma, \alpha_\Sigma, Var_\Sigma)</div>
+                    Die Abbildung <span class="equation">\alpha_\Sigma</span> ordnet Elementen aus <span class="equation">F_\Sigma</span> und <span class="equation">P_\Sigma</span> eine Stelligkeit zu.
+                    Null-stellige Prädikate verhalten sich exakt gleich wie Atome aus der Aussagen Logik. Hingegen n-stellige Prädikate erhalten n Terme als Parameter.
+                    Ein Term besteht aus Variablen, n-stelligen Funktionssymbolen und Konstantensymbolen (Null-stellige Funktionssymbole).
+                    Die Menge aller Prädikaten-logischen Formeln wird mit <span class="equation">For_\Sigma</span> bezeichnet.
+                    <div class="equation">0, 1 \in For_\Sigma</div>
+                    <div class="equation">AF_\Sigma \subseteq For_\Sigma</div>
+                    Die Atomaren-Formeln (<span class="equation">AF_\Sigma</span>) bestehen aus Prädikaten oder Prädikaten mit Termen als Parameter.
+                    Die Menge aller möglichen Terme auf <span class="equation">\Sigma</span> wird mit <span class="equation">Term_\Sigma</span> bezeichnet.
+                    Mit <span class="equation">Teilf</span> erhält man alle Teilformeln von einer Formel.
+                    Mit <span class="equation">Teilt</span> erhält man alle Teilterme von einer Formel.
+                </section>
+                <section style="grid-column: 60 / span 39;">
+                    <h3>Syntaxbaum</h3>
+                    <div class="equation">((\forall x \textcolor{orange}{p_1}(\textcolor{cyan}{f_1}(\textcolor{red}{x})) \land \exists y \textcolor{orange}{p_1}(\textcolor{cyan}{f_2}(\textcolor{red}{y}, \textcolor{green}{x}, \textcolor{cyan}{f_0}))) \lor \textcolor{orange}{p_0})</div>
+                    <canvas id="beispiel_syntaxbaum"></canvas>
+                    <div style="text-align: center;"><i>(Indices stehen für Stelligkeit)</i></div>
+                </section>
+            </section>
             
             
-            \node at (10cm, 0cm) {$\textcolor{green}{v}: Var_\Sigma \rightarrow U$};
-            \node at (10cm, -0.5cm) {$var \mapsto u \in U$};
             
+            <h3>Quantoren (Zusätzliche Operationen)</h3>
+            <section class="container">
+                <section style="grid-column: 1 / span 66;">
+                    Quantoren bringen eine Variable ein, welche in dem direkt darauf folgendem Block definiert ist. Tritt das gleiche Symbol nochmals auf handelt es sich um eine andere Variable.\\
+                    Eine Formel in der alle Variablen an einen Quantoren gebunden sind heißt geschlossene Formel.\\
+                    Man kann frei Auftretende Variablen durch Terme ersetzten.
+                    In diesem Beispiel wird in der Formel <span class="equation">F</span>, <span class="equation">x \in Var_\Sigma</span> durch <span class="equation">t \in Term_\Sigma</span> ersetzt.
+                    <div class="equation">[x/t]F</div>
+                </section>
+                <section class="container" style="grid-column: 67 / span 33;">
+                    <section style="grid-column: 1 / span 49;">
+                        <h4>Existenzquantor</h4>
+                        <div class="equation">\exists x F</div>
+                        Es gibt ein <span class="equation">x</span> für das <span class="equation">F</span> gilt
+                    </section>
+                    <section style="grid-column: 1 / span 49;">
+                        <h4>Allquantor</h4>
+                        <div class="equation">\forall x F</div>
+                        Für alle <span class="equation">x</span> gilt <span class="equation">F</span>
+                    </section>
+                </section>
+            </section>
+            <h3>Auswertung</h3>
+            Um eine Formel auszuwerten benötigt man eine Struktur <span class="equation">S</span>, welche aus einer Menge <span class="equation">U</span> dem Universum und einer Menge <span class="equation">I</span> der Interpretationsfunktion besteht. Zusätzlich benötigt man eine Variablenbelegung <span class="equation">v</span> wodurch man eine erweiterte Struktur erhält. Mit <span class="equation">valt_{S,v}</span> können Terme auswerten werden. Mit <span class="equation">valf_{S,v}</span> können Formeln auswerten werden.
+            <div class="equation">S = (U, I)</div>
+            <section class="container">
+                <section style="grid-column: 1 / span 24;">
+                    <div class="equation">valf_{S,v}: For_\Sigma \rightarrow \{F, W\}</div>
+                    <div class="equation">0, 1 \mapsto F, W</div>
+                    <div class="equation">p_0 \mapsto \textcolor{orange}{I}(p_0)</div>
+                    <div class="equation">p_n(t, ...) \mapsto (\textcolor{cyan}{valt_{S,v}}(t), ...) \in \textcolor{orange}{I}(p_n)</div>
+                    <div class="equation">...</div>
+                </section>
+                <section style="grid-column: 25 / span 24;">
+                    <div class="equation">\textcolor{cyan}{valt_{S,v}}: Term_\Sigma \rightarrow U</div>
+                    <div class="equation">var \mapsto \textcolor{green}{v}(var)</div>
+                    <div class="equation">f_0 \mapsto \textcolor{orange}{I}(f_0)</div>
+                    <div class="equation">f_n(t, ...) \mapsto (\textcolor{orange}{I}(f_n))(\textcolor{cyan}{valt_{S,v}}(t), ...)</div>
+                </section>
+                <section style="grid-column: 50 / span 24;">
+                    <div class="equation">\textcolor{green}{v}: Var_\Sigma \rightarrow U</div>
+                    <div class="equation">var \mapsto u \in U</div>
+                </section>
+                <section style="grid-column: 75 / span 24;">
+                    <div class="equation">\textcolor{orange}{I}: F_\Sigma \cup P_\Sigma \rightarrow ...</div>
+                    <div class="equation">p_0 \mapsto F, W</div>
+                    <div class="equation">p_n \mapsto R \subseteq U^n</div>
+                    <div class="equation">f_0 \mapsto u \in U</div>
+                    <div class="equation">f_n \mapsto g: U^n \rightarrow U</div>
+                </section>
+            </section>
             
-            \node at (14cm, 0cm) {$\textcolor{orange}{I}: F_\Sigma \cup P_\Sigma \rightarrow ...$};
-            \node at (14cm, -0.5cm) {$p_0 \mapsto F, W$};
-            \node at (14cm, -1cm) {$p_n \mapsto R \subseteq U^n$};
-            \node at (14cm, -1.5cm) {$f_0 \mapsto u \in U$};
-            \node at (14cm, -2cm) {$f_n \mapsto g: U^n \rightarrow U$};
-        \end{tikzpicture}
-    \end{center}
-    
-    <div class="equation">valf_{S, v}(\forall x F) = W\text{, wenn für alle } u \in U valf_{S, v_{x}^{u}}(F) \text{ gilt}</div>
-    <div class="equation">valf_{S, v}(\exists x F) = W\text{, wenn es für mindestens ein } u \in U valf_{S, v_{x}^{u}}(F) \text{ gilt}</div>
+            <div class="equation">valf_{S, v}(\forall x F) = W\text{, wenn für alle } u \in U valf_{S, v_{x}^{u}}(F) \text{ gilt}</div>
+            <div class="equation">valf_{S, v}(\exists x F) = W\text{, wenn es für mindestens ein } u \in U valf_{S, v_{x}^{u}}(F) \text{ gilt}</div>
 
-    
+            
         </main>
         <footer><h6>created by Anton Böhler</h6></footer>
     </body>

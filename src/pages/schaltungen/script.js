@@ -13,7 +13,7 @@ window.onload = function(){
     setup();
 }
 
-window.onresize = setup();
+window.onresize = setup;
 
 function setup(){
     if(loaded){

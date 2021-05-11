@@ -55,789 +55,554 @@
         </nav>
         <main class="scroll">
 
-
+            <h2>Einfache FlipFlops (Schaltwerk)</h2>
+            <h3>Beschreibung</h3>
+            Eine zeitabhängige Schaltung, wegen einer Gedächnisfunktion bzw. eines Zustandsspeicher, durch <b>Rückkopplung</b> von den Ausgängen zu den Eingängen.
+            <div class="equation">f(A, B, ..., Y_{n-1, 1}, ...) = (Y_{n, 1}, Y_{n, 2}, ...)</div>
             
-
-
-<h2>Einfache FlipFlops (Schaltwerk)}
-    <h3>Beschreibung}
-    Eine zeitabhängige Schaltung, wegen einer Gedächnisfunktion bzw. eines Zustandsspeicher, durch \textbf{Rückkopplung} von den Ausgängen zu den Eingängen.
-    \begin{center}
-        \begin{tikzpicture}
-            \node at (0cm, 0cm) {$f(A, B, ..., Y_{n-1, 1}, ...) = (Y_{n, 1}, Y_{n, 2}, ...)$};
+            <h3>Nicht-Taktgesteuerte FlipFlops (Basis-FlipFlop)}
+            <h4>RS NOR-Latch</h4>
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    Speichert ein Bit, durch einen Reset <span class="equation">R</span> und Set <span class="equation">S</span> Eingang. <span class="equation">R \land S</span> ist ein undefinierter Zustand.
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <canvas id="beispiel_rs_nor_latch"></canvas>
+                </section>
+            </section>
             
-            \draw[->] (1.25cm, 0.5cm) -- (1.25cm, 0.75cm) -- (-1cm, 0.75cm) -- (-1cm, 0.5cm);
-        \end{tikzpicture}
-    \end{center}
-    
-    <h3>Nicht-Taktgesteuerte FlipFlops (Basis-FlipFlop)}
-    \textbf{RS NOR-Latch}\\
-    <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.34\textwidth}
-            Speichert ein Bit, durch einen Reset <span class="equation">R</span> und Set <span class="equation">S</span> Eingang. <span class="equation">R \And S</span> ist ein undefinierter Zustand.
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.25\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \begin{scope}[scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[orange, domain=0:4] plot (\x, {max(0, round(sin(\x * 120 - 30) - 0.25))});
-                    \end{scope}
-                    
-                    \begin{scope}[shift={(0cm, -1cm)}, scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[purple, domain=0:3.5] plot (\x, {max(0, round(sin(\x * 190 + 50) - 0.25))});
-                        \draw[purple] (3.5cm, 0cm) -- (4cm, 0cm);
-                    \end{scope}
-                    
-                    \begin{scope}[shift={(0cm, -2cm)}, scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[cyan] (0cm, 1cm) -- (0.45cm, 1cm) -- (0.55cm, 0cm) -- (1.85cm, 0cm) -- (2cm, 1cm) -- (3.5cm, 1cm) -- (3.65cm, 0cm) -- (4cm, 0cm);
-                    \end{scope}
-                \end{tikzpicture}
-            \end{center}
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.075\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \node[box, align=left] (node21) at (2.75cm, 1cm) {$R</span> \hspace{0.075cm} <span class="equation">Q$\\$S</span> <span class="equation">\neg Q$};
-                \end{tikzpicture}
-            \end{center}
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.32\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \node[clear] (node1) at (-0.25cm, 2cm) {$R$};
-                    \node[clear] (node2) at (-0.25cm, 0cm) {$S$};
-                    
-                    \node[empty] (node3) at (0.5cm, 2cm) {};
-                    \node[empty] (node4) at (0.5cm, 0cm) {};
-                    
-                    \node[dot] (node5) at (2cm, 1.75cm) {};
-                    \node[empty] (node6) at (2cm, 1.1cm) {};
-                    \node[empty] (node7) at (0.3cm, 1.1cm) {};
-                    \node[empty] (node8) at (0.3cm, 0.5cm) {};
-                    \node[empty] (node9) at (0.5cm, 0.5cm) {};
-                    
-                    \node[dot] (node10) at (2cm, 0.25cm) {};
-                    \node[empty] (node11) at (2cm, 0.9cm) {};
-                    \node[empty] (node12) at (0.1cm, 0.9cm) {};
-                    \node[empty] (node13) at (0.1cm, 1.5cm) {};
-                    \node[empty] (node14) at (0.5cm, 1.5cm) {};
-                        
-                    \node[box] (node15) at (1cm, 1.75cm) {$\geq 1$};
-                    \node[boxRing] (node16) at (1.625cm, 1.75cm) {};
-                    \node[box] (node17) at (1cm, 0.25cm) {$\geq 1$};
-                    \node[boxRing] (node18) at (1.625cm, 0.25cm) {};
-                        
-                    \node[clear] (node19) at (2.5cm, 1.75cm) {$Q$};
-                    \node[clear] (node20) at (2.5cm, 0.25cm) {$\neg Q$};
-                    
-                    \path (node1) edge (node3);
-                    \path (node2) edge (node4);
-                        
-                    \path (node5) edge (node6);
-                    \path (node6) edge (node7);
-                    \path (node7) edge (node8);
-                    \path (node8) edge (node9);
-                        
-                    \path (node10) edge (node11);
-                    \path (node11) edge (node12);
-                    \path (node12) edge (node13);
-                    \path (node13) edge (node14);
-                    
-                    \path (node16) edge (node19);
-                    \path (node18) edge (node20);
-                \end{tikzpicture}
-            \end{center}
-        </section>
-    </section>
-    
-    <h3>Taktgesteuerte FlipFlops}
-    \textbf{RS-FlipFlop}\\
-    <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.34\textwidth}
-            Arbeitet wie eine RS NOR-Latch, jedoch nur wenn der Takt auf <span class="equation">\textcolor{LimeGreen}{W}</span> ist, sonst wird der Zustand gespeichert.
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.25\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \begin{scope}[scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[orange, domain=0:4] plot (\x, {max(0, round(sin(\x * 120 - 30) - 0.25))});
-                    \end{scope}
-                    
-                    \begin{scope}[shift={(0cm, -1cm)}, scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[green, domain=0:4] plot (\x, {max(0, round(sin(\x * 180) + 0.15))});
-                    \end{scope}
-                    
-                    \begin{scope}[shift={(0cm, -2cm)}, scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[purple, domain=0:3.5] plot (\x, {max(0, round(sin(\x * 190 + 50) - 0.25))});
-                        \draw[purple] (3.5cm, 0cm) -- (4cm, 0cm);
-                    \end{scope}
-                    
-                    \begin{scope}[shift={(0cm, -3cm)}, scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[cyan] (0cm, 1cm) -- (0.45cm, 1cm) -- (0.55cm, 0cm) -- (2cm, 0cm) -- (2.15cm, 1cm) -- (3.5cm, 1cm) -- (4cm, 1cm);
-                    \end{scope}
-                \end{tikzpicture}
-            \end{center}
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.075\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \node[box, align=left] at (0cm, 0cm) {$R</span> \hspace{0.075cm} <span class="equation">Q$\\$T$\\$S</span> <span class="equation">\neg Q$};
-                \end{tikzpicture}
-            \end{center}
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.32\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \node[clear] (node1) at (0cm, 1.75cm) {$R$};
-                    \node[clear] (node2) at (0cm, 1cm) {$T$};
-                    \node[clear] (node3) at (0cm, 0.25cm) {$S$};
-                    
-                    \node[empty] (node4) at (0.75cm, 1.75cm) {};
-                    \node[empty] (node5) at (0.75cm, 0.25cm) {};
-                    
-                    \node[dot] (node6) at (0.5cm, 1cm) {};
-                    \node[empty] (node7) at (0.5cm, 1.25cm) {};
-                    \node[empty] (node8) at (0.5cm, 0.75cm) {};
-                    \node[empty] (node9) at (0.75cm, 1.25cm) {};
-                    \node[empty] (node10) at (0.75cm, 0.75cm) {};
-                    
-                    \node[box] (node11) at (1.25cm, 1.5cm) {$\And$};
-                    \node[box] (node12) at (1.25cm, 0.5cm) {$\And$};
-                    
-                    \node[empty] (node13) at (1.75cm, 1.5cm) {};
-                    \node[empty] (node14) at (1.75cm, 0.5cm) {};
-                    \node[empty] (node15) at (2.25cm, 1.25cm) {};
-                    \node[empty] (node16) at (2.25cm, 0.75cm) {};
-                    
-                    \node[empty] (node17) at (3.25cm, 1.25cm) {};
-                    \node[empty] (node18) at (3.25cm, 0.75cm) {};
-                    \node[empty] (node19) at (3.75cm, 1.25cm) {$Q$};
-                    \node[empty] (node20) at (3.75cm, 0.75cm) {$\neg Q$};
-                    
-                    \node[box, align=left] (node21) at (2.75cm, 1cm) {$R</span> \hspace{0.075cm} <span class="equation">Q$\\$S</span> <span class="equation">\neg Q$};
-                    
-                    \path (node1) edge (node4);
-                    \path (node3) edge (node5);
-                    
-                    \path (node2) edge (node6);
-                    \path (node6) edge (node7);
-                    \path (node6) edge (node8);
-                    \path (node7) edge (node9);
-                    \path (node8) edge (node10);
-                    
-                    \path (node13) edge (node15);
-                    \path (node14) edge (node16);
-                    
-                    \path (node17) edge (node19);
-                    \path (node18) edge (node20);
-                \end{tikzpicture}
-            \end{center}
-        </section>
-    </section>
-    
-    \noindent
-    \textbf{D-FlipFlop}\\
-    <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.34\textwidth}
-            Übernimmt den Zustand von <span class="equation">D</span> und speichert diesen Während <span class="equation">T</span> auf <span class="equation">\textcolor{WildStrawberry}{F}</span> ist.
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.25\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \begin{scope}[scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[orange, domain=0:4] plot (\x, {max(0, round(sin(\x * 120 - 30) - 0.25))});
-                    \end{scope}
-                    
-                    \begin{scope}[shift={(0cm, -1cm)}, scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[green, domain=0:4] plot (\x, {max(0, round(sin(\x * 180) + 0.15))});
-                    \end{scope}
-                    
-                    \begin{scope}[shift={(0cm, -2cm)}, scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[cyan] (0cm, 0cm) -- (0.5cm, 0cm) -- (0.65cm, 1cm) -- (2.15cm, 1cm) -- (2.3cm, 0cm) -- (4cm, 0cm);
-                    \end{scope}
-                \end{tikzpicture}
-            \end{center}
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.075\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \node[box, align=left] at (0cm, 0cm) {$D</span> \hspace{0.075cm} <span class="equation">Q$\\$T</span> <span class="equation">\neg Q$};
-                \end{tikzpicture}
-            \end{center}
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.32\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \node[clear] (node1) at (0cm, 0.4cm) {$D$};
-                    \node[clear] (node2) at (0cm, 0cm) {$T$};
-                    
-                    \node[dot] (node3) at (0.75cm, 0.4cm) {};
-                    
-                    \node[empty] (node4) at (0.75cm, -0.4cm) {};
-                    
-                    \node[empty] (node5) at (1.25, 0.4cm) {};
-                    
-                    \node[boxRing] (node6) at (1.125, -0.4cm) {};
-                    \node[box, align=left] (node7) at (1.75cm, 0cm) {$R</span> \hspace{0.075cm} <span class="equation">Q$\\$T$\\$S</span> <span class="equation">\neg Q$};
-                    
-                    \node[empty] (node8) at (2.25, 0.25cm) {};
-                    \node[empty] (node9) at (2.75, 0.25cm) {$Q$};
-                    \node[empty] (node10) at (2.25, -0.25cm) {};
-                    \node[empty] (node11) at (2.75, -0.25cm) {$\neg Q$};
-                    
-                    \path (node2) edge (node7);
-                    
-                    \path (node1) edge (node3);
-                    \path (node3) edge (node4);
-                    \path (node3) edge (node5);
-                    \path (node4) edge (node6);
-                    
-                    \path (node8) edge (node9);
-                    \path (node10) edge (node11);
-                \end{tikzpicture}
-            \end{center}
-        </section>
-    </section>
-    
-    \noindent
-    <h3>Synthese-Tabelle}
-    <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.65\textwidth}
-            Eine Synthese-Tabelle ist eine abgewandelte Wahrheitstabelle um ein FlipFlop platzsparend zu charakterisieren.
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.34\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \begin{scope}[scale=0.8]
-                        \draw[gray] (0cm, 5cm) -- (0cm, 6cm) -- (3cm, 6cm) -- (3cm, 5cm);
-                        \draw[gray] (2cm, 5cm) -- (2cm, 6cm);
-                        
-                        \draw[gray] (0cm, 0cm) grid (3cm, 5cm);
-                        
-                        \draw (0cm, 4cm) -- (3cm, 4cm);
-                        \draw (2cm, 0cm) -- (2cm, 6cm);
-                        
-                        \node at (1cm, 5.5cm) {$t_{n}$};
-                        \node at (2.5cm, 5.5cm) {$t_{n+1}$};
+            <h3>Taktgesteuerte FlipFlops</h3>
+            <h4>RS-FlipFlop</h4>
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    Arbeitet wie eine RS NOR-Latch, jedoch nur wenn der Takt auf <span class="equation">\textcolor{LimeGreen}{W}</span> ist, sonst wird der Zustand gespeichert.
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <canvas id="beispiel_taktgesteuertes_rs_flipflop"></canvas>
+                </section>
+            </section>
+            
+            <h4>D-FlipFlop</h4>
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    Übernimmt den Zustand von <span class="equation">D</span> und speichert diesen Während <span class="equation">T</span> auf <span class="equation">\textcolor{WildStrawberry}{F}</span> ist.
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <canvas id="beispiel_taktgesteuertes_d_flipflop"></canvas>
+                </section>
+            </section>
+            
+            <h3>Synthese-Tabelle}
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    Eine Synthese-Tabelle ist eine abgewandelte Wahrheitstabelle um ein FlipFlop platzsparend zu charakterisieren.
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    \begin{center}
+                        \begin{tikzpicture}
+                            \begin{scope}[scale=0.8]
+                                \draw[gray] (0cm, 5cm) -- (0cm, 6cm) -- (3cm, 6cm) -- (3cm, 5cm);
+                                \draw[gray] (2cm, 5cm) -- (2cm, 6cm);
+                                
+                                \draw[gray] (0cm, 0cm) grid (3cm, 5cm);
+                                
+                                \draw (0cm, 4cm) -- (3cm, 4cm);
+                                \draw (2cm, 0cm) -- (2cm, 6cm);
+                                
+                                \node at (1cm, 5.5cm) {$t_{n}$};
+                                \node at (2.5cm, 5.5cm) {$t_{n+1}$};
+                                    
+                                \node at (0.5cm, 4.5cm) {$S$};
+                                \node at (1.5cm, 4.5cm) {$R$};
+                                \node at (2.5cm, 4.5cm) {$Q_{n+1}$};
+                                
+                                \node[WildStrawberry] at (0.5cm, 3.5cm) {0};
+                                \node[WildStrawberry] at (1.5cm, 3.5cm) {0};
+                                \node at (2.5cm, 3.5cm) {$Q_n$};
+                                
+                                \node[WildStrawberry] at (0.5cm, 2.5cm) {0};
+                                \node[LimeGreen] at (1.5cm, 2.5cm) {1};
+                                \node[WildStrawberry] at (2.5cm, 2.5cm) {0};
+                                
+                                \node[LimeGreen] at (0.5cm, 1.5cm) {1};
+                                \node[WildStrawberry] at (1.5cm, 1.5cm) {0};
+                                \node[LimeGreen] at (2.5cm, 1.5cm) {1};
+                                
+                                \node[LimeGreen] at (0.5cm, 0.5cm) {1};
+                                \node[LimeGreen] at (1.5cm, 0.5cm) {1};
+                                \node at (2.5cm, 0.5cm) {$-$};
+                            \end{scope}
+                        \end{tikzpicture}\\
+                        \footnotesize
+                        \textit{(RS-FlipFlop)}
+                    \end{center}
+                </section>
+            </section>
+            
+            
+            <h3>Impulsglied</h3>
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    Erkennt positive Flanken eines Signals.
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    \begin{center}
+                        \begin{tikzpicture}
+                            \begin{scope}[scale=0.8]
+                                \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
+                                
+                                \draw [orange, domain=0:4] plot (\x, {max(0, round(sin(\x * 120)))});
+                            \end{scope}
                             
-                        \node at (0.5cm, 4.5cm) {$S$};
-                        \node at (1.5cm, 4.5cm) {$R$};
-                        \node at (2.5cm, 4.5cm) {$Q_{n+1}$};
+                            \begin{scope}[shift={(0cm, -1cm)}, scale=0.8]
+                                \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
+                                
+                                \draw [cyan] (0cm, 0cm) -- (0.15cm, 0cm) -- (0.25cm, 1cm) -- (0.35cm, 0cm) -- (3.15cm, 0cm) -- (3.25cm, 1cm) -- (3.35cm, 0cm) -- (4cm, 0cm);
+                            \end{scope}
+                        \end{tikzpicture}
+                    \end{center}
+                </section>
+                <section style="grid-column: 1 / span 99;">{0.075\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}
+                            \node[box] at (0cm, 0cm) {};
+                            
+                            \draw (-0.5cm, 0.1cm) -- (-0.35cm, 0cm) -- (-0.5cm, -0.1cm) -- cycle;
+                        \end{tikzpicture}
+                    \end{center}
+                </section>
+                <section style="grid-column: 1 / span 99;">{0.32\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}
+                            \node[clear] (node1) at (-0.25cm, 0cm) {$T$};
                         
-                        \node[WildStrawberry] at (0.5cm, 3.5cm) {0};
-                        \node[WildStrawberry] at (1.5cm, 3.5cm) {0};
-                        \node at (2.5cm, 3.5cm) {$Q_n$};
-                        
-                        \node[WildStrawberry] at (0.5cm, 2.5cm) {0};
-                        \node[LimeGreen] at (1.5cm, 2.5cm) {1};
-                        \node[WildStrawberry] at (2.5cm, 2.5cm) {0};
-                        
-                        \node[LimeGreen] at (0.5cm, 1.5cm) {1};
-                        \node[WildStrawberry] at (1.5cm, 1.5cm) {0};
-                        \node[LimeGreen] at (2.5cm, 1.5cm) {1};
-                        
-                        \node[LimeGreen] at (0.5cm, 0.5cm) {1};
-                        \node[LimeGreen] at (1.5cm, 0.5cm) {1};
-                        \node at (2.5cm, 0.5cm) {$-$};
-                    \end{scope}
-                \end{tikzpicture}\\
-                \footnotesize
-                \textit{(RS-FlipFlop)}
-            \end{center}
-        </section>
-    </section>
-    
-    
-    
-    
-    <h2>Komplexere FlipFlops (Schaltwerk)}
-    <h3>Impulsglied}
-    <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.34\textwidth}
-            Erkennt positive Flanken eines Signals.
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.23\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \begin{scope}[scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw [orange, domain=0:4] plot (\x, {max(0, round(sin(\x * 120)))});
-                    \end{scope}
-                    
-                    \begin{scope}[shift={(0cm, -1cm)}, scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw [cyan] (0cm, 0cm) -- (0.15cm, 0cm) -- (0.25cm, 1cm) -- (0.35cm, 0cm) -- (3.15cm, 0cm) -- (3.25cm, 1cm) -- (3.35cm, 0cm) -- (4cm, 0cm);
-                    \end{scope}
-                \end{tikzpicture}
-            \end{center}
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.075\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \node[box] at (0cm, 0cm) {};
-                    
-                    \draw (-0.5cm, 0.1cm) -- (-0.35cm, 0cm) -- (-0.5cm, -0.1cm) -- cycle;
-                \end{tikzpicture}
-            \end{center}
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.32\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \node[clear] (node1) at (-0.25cm, 0cm) {$T$};
-                
-                    \node[dot] (node2) at (0.25cm, 0cm) {};
-                    \node[empty] (node3) at (0.25cm, 0.75cm) {};
-                    \node[empty] (node4) at (1.75cm, 0.75cm) {};
-                    \node[empty] (node5) at (1.75cm, 0.5cm) {};
-                    \node[empty] (node6) at (2.25cm, 0.5cm) {};
-                    
-                    \node[empty] (node7) at (2.25cm, 0cm) {};
-                    
-                    
-                    \node[box] (node8) at (1cm, 0cm) {$1$};
-                    \node[boxRing] (node9) at (1.625cm, 0cm) {};
-                    \node[box] (node10) at (2.75cm, 0.25cm) {$\And$};
-                    \node[empty] (node11) at (3.75cm, 0.25cm) {$F$};
-                    
-                    \path (node1) edge (node2);
-                    \path (node2) edge (node3);
-                    \path (node3) edge (node4);
-                    \path (node4) edge (node5);
-                    \path (node5) edge (node6);
-                    
-                    \path (node2) edge (node8);
-                    \path (node9) edge (node7);
-                    
-                    \path (node10) edge (node11);
-                \end{tikzpicture}
-            \end{center}
-        </section>
-    </section>
-    <h3>Einflankengesteuerte FlipFlops}
-    \noindent
-    \textbf{RS-FlipFlop}\\
-    <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.34\textwidth}
-            Arbeitet wie eine RS NOR-Latch , jedoch nur bei positiven Flanken von <span class="equation">T</span>, sonst wird der Zustand gespeichert.
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.23\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \begin{scope}[scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[orange, domain=0:4] plot (\x, {max(0, round(sin(\x * 120 + 50) - 0.25))});
-                    \end{scope}
-                    
-                    \begin{scope}[shift={(0cm, -1cm)}, scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[green, domain=0:4] plot (\x, {max(0, round(sin(\x * 180) + 0.15))});
-                    \end{scope}
-                    
-                    \begin{scope}[shift={(0cm, -2cm)}, scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[purple] (0cm, 0cm) -- (1cm, 0cm);
-                        
-                        \draw[purple, domain=1:4] plot (\x, {max(0, round(sin(\x * 190 + 50) - 0.25))});
-                    \end{scope}
-                    
-                    \begin{scope}[shift={(0cm, -3cm)}, scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[cyan] (0cm, 0cm) -- (2.15cm, 0cm) -- (2.3cm, 1cm) -- (4cm, 1cm);
-                    \end{scope}
-                \end{tikzpicture}
-            \end{center}
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.075\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \node[box, align=left] at (0cm, 0cm) {$R</span> \hspace{0.075cm} <span class="equation">Q$\\ \hspace{0.025cm} <span class="equation">T$\\$S</span> <span class="equation">\neg Q$};
-                    
-                    \draw (-0.5cm, 0.1cm) -- (-0.35cm, 0cm) -- (-0.5cm, -0.1cm) -- cycle;
-                \end{tikzpicture}
-            \end{center}
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.32\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \node[clear] (node1) at (0cm, 1.75cm) {$R$};
-                    \node[clear] (node2) at (0cm, 1cm) {$T$};
-                    \node[clear] (node3) at (0cm, 0.25cm) {$S$};
-                    
-                    \node[empty] (node4) at (0.75cm, 1.75cm) {};
-                    \node[empty] (node5) at (0.75cm, 0.25cm) {};
-                    
-                    \node[dot] (node6) at (0.5cm, 1cm) {};
-                    \node[empty] (node7) at (0.5cm, 1.25cm) {};
-                    \node[empty] (node8) at (0.5cm, 0.75cm) {};
-                    \node[empty] (node9) at (0.75cm, 1.25cm) {};
-                    \node[empty] (node10) at (0.75cm, 0.75cm) {};
-                    
-                    \node[box] (node11) at (1.25cm, 1.5cm) {$\And$};
-                    \node[box] (node12) at (1.25cm, 0.5cm) {$\And$};
-                    
-                    \node[empty] (node13) at (1.75cm, 1.5cm) {};
-                    \node[empty] (node14) at (1.75cm, 0.5cm) {};
-                    \node[empty] (node15) at (2.25cm, 1.25cm) {};
-                    \node[empty] (node16) at (2.25cm, 0.75cm) {};
-                    
-                    \node[empty] (node17) at (3.25cm, 1.25cm) {};
-                    \node[empty] (node18) at (3.25cm, 0.75cm) {};
-                    \node[empty] (node19) at (3.75cm, 1.25cm) {$Q$};
-                    \node[empty] (node20) at (3.75cm, 0.75cm) {$\neg Q$};
-                    
-                    \node[box, align=left] (node21) at (2.75cm, 1cm) {$R</span> \hspace{0.075cm} <span class="equation">Q$\\$S</span> <span class="equation">\neg Q$};
-                    
-                    \path (node1) edge (node4);
-                    \path (node3) edge (node5);
-                    
-                    \path (node2) edge (node6);
-                    \path (node6) edge (node7);
-                    \path (node6) edge (node8);
-                    \path (node7) edge (node9);
-                    \path (node8) edge (node10);
-                    
-                    \path (node13) edge (node15);
-                    \path (node14) edge (node16);
-                    
-                    \path (node17) edge (node19);
-                    \path (node18) edge (node20);
-                    
-                    \draw (0.75cm, 0.85cm) -- (0.9cm, 0.75cm) -- (0.75cm, 0.65cm) -- cycle;
-                    \draw (0.75cm, 1.35cm) -- (0.9cm, 1.25cm) -- (0.75cm, 1.15cm) -- cycle;
-                \end{tikzpicture}
-            \end{center}
-        </section>
-    </section>
-    
-    \noindent
-    \textbf{D-FlipFlop}\\
-    <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.34\textwidth}
-            Übernimmt den Zustand von <span class="equation">D</span> während der positiven Taktflanken von <span class="equation">T</span> und speichert diesen.
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.23\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \begin{scope}[scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[orange, domain=0:4] plot (\x, {max(0, round(sin(\x * 120 - 120) + 0.25))});
-                    \end{scope}
-                    
-                    \begin{scope}[shift={(0cm, -1cm)}, scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[green, domain=0:4] plot (\x, {max(0, round(sin(\x * 180) + 0.15))});
-                    \end{scope}
-                    
-                    \begin{scope}[shift={(0cm, -2cm)}, scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[cyan] (0cm, 0cm) -- (2.15cm, 0cm) -- (2.3cm, 1cm) -- (4cm, 1cm);
-                    \end{scope}
-                \end{tikzpicture}
-            \end{center}
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.075\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \node[box, align=left] at (0cm, 0cm) {$D</span> \hspace{0.075cm} <span class="equation">Q$\\ \hspace{0.025cm} <span class="equation">T</span> <span class="equation">\neg Q$};
-                    
-                    \draw (-0.5cm, -0.3cm) -- (-0.35cm, -0.2cm) -- (-0.5cm, -0.1cm) -- cycle;
-                \end{tikzpicture}
-            \end{center}
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.32\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \node[clear] (node1) at (0cm, 0.4cm) {$D$};
-                    \node[clear] (node2) at (0cm, 0cm) {$T$};
-                    
-                    \node[dot] (node3) at (0.75cm, 0.4cm) {};
-                    
-                    \node[empty] (node4) at (0.75cm, -0.4cm) {};
-                    
-                    \node[empty] (node5) at (1.25, 0.4cm) {};
-                    
-                    \node[boxRing] (node6) at (1.125, -0.4cm) {};
-                    \node[box, align=left] (node7) at (1.75cm, 0cm) {$R</span> \hspace{0.075cm} <span class="equation">Q$\\ \hspace{0.025cm} <span class="equation">T$\\$S</span> <span class="equation">\neg Q$};
-                    
-                    \node[empty] (node8) at (2.25, 0.25cm) {};
-                    \node[empty] (node9) at (2.75, 0.25cm) {$Q$};
-                    \node[empty] (node10) at (2.25, -0.25cm) {};
-                    \node[empty] (node11) at (2.75, -0.25cm) {$\neg Q$};
-                    
-                    \path (node2) edge (node7);
-                    
-                    \path (node1) edge (node3);
-                    \path (node3) edge (node4);
-                    \path (node3) edge (node5);
-                    \path (node4) edge (node6);
-                    
-                    \path (node8) edge (node9);
-                    \path (node10) edge (node11);
-                    
-                    \draw (1.25cm, 0.1cm) -- (1.4cm, 0cm) -- (1.25cm, -0.1cm) -- cycle;
-                \end{tikzpicture}
-            \end{center}
-        </section>
-    </section>
-    
-    \noindent
-    \textbf{JK-FlipFlop}\\
-    <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.34\textwidth}
-            Arbeitet genau wie ein Einflankengesteuertes RS-FlipFlop, nur, dass <span class="equation">R \And S</span> zum toggeln des gespeicherten Bit führt. (Toggle-Modus)
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.23\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \begin{scope}[scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[orange, domain=0:4] plot (\x, {max(0, round(sin(\x * 120 - 120) + 0.25))});
-                    \end{scope}
-                    
-                    \begin{scope}[shift={(0cm, -1cm)}, scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[green, domain=0:4] plot (\x, {max(0, round(sin(\x * 180) + 0.15))});
-                    \end{scope}
-                    
-                    \begin{scope}[shift={(0cm, -2cm)}, scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[purple, domain=0:4] plot (\x, {max(0, round(sin(\x * 190 + 50) - 0.25))});
-                    \end{scope}
-                    
-                    \begin{scope}[shift={(0cm, -3cm)}, scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[cyan] (0cm, 1cm) -- (2.15cm, 1cm) -- (2.3cm, 0cm) -- (4cm, 0cm);
-                    \end{scope}
-                \end{tikzpicture}
-            \end{center}
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.075\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \node[box, align=left] at (0cm, 0cm) {$J</span> \hspace{0.075cm} <span class="equation">Q$\\ \hspace{0.025cm} <span class="equation">T$\\$K</span> <span class="equation">\neg Q$};
-                    
-                    \draw (-0.5cm, 0.1cm) -- (-0.35cm, 0cm) -- (-0.5cm, -0.1cm) -- cycle;
-                \end{tikzpicture}
-            \end{center}
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.32\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \node[clear] (node1) at (0cm, 0.4cm) {$J$};
-                    \node[clear] (node2) at (0cm, 0cm) {$T$};
-                    \node[clear] (node3) at (0cm, -0.4cm) {$K$};
-                    
-                    \node[empty] (node4) at (0.75cm, 0.4cm) {};
-                    \node[empty] (node5) at (0.75cm, -0.4cm) {};
-                    
-                    \node[empty] (node6) at (0.75cm, 0.9cm) {};
-                    \node[empty] (node7) at (0.75cm, -0.9cm) {};
-                    
-                    \node[empty] (node8) at (1.75cm, 0.55cm) {};
-                    \node[empty] (node9) at (1.75cm, -0.55cm) {};
-                    
-                    \node[empty] (node10) at (2.25cm, 0.4cm) {};
-                    \node[empty] (node11) at (2.25cm, -0.4cm) {};
-                    
-                    \node[empty] (node12) at (2.25cm, 0cm) {};
-                    
-                    \node[box] (node13) at (1.25cm, 0.6cm) {$\And$};
-                    \node[box] (node14) at (1.25cm, -0.6cm) {$\And$};
-                    
-                    \node[box, align=left] (node15) at (2.75cm, 0cm) {$R</span> \hspace{0.075cm} <span class="equation">Q$\\ \hspace{0.025cm} <span class="equation">T$\\$S</span> <span class="equation">\neg Q$};
-                    
-                    \node[empty] (node16) at (3.25, 0.25cm) {};
-                    \node[dot] (node17) at (3.5, 0.25cm) {};
-                    \node[empty] (node18) at (3.75, 1.25cm) {};
-                    \node[empty] (node19) at (0.5, 1.25cm) {};
-                    \node[empty] (node20) at (0.5, 0.9cm) {};
-                    
-                    
-                    \node[empty] (node21) at (3.25, -0.25cm) {};
-                    \node[dot] (node22) at (3.75, -0.25cm) {};
-                    \node[empty] (node23) at (3.5, -1.25cm) {};
-                    \node[empty] (node24) at (0.5, -1.25cm) {};
-                    \node[empty] (node25) at (0.5, -0.9cm) {};
-                    
-                    \node[clear] (node26) at (4.25cm, 0.25cm) {$Q$};
-                    \node[clear] (node27) at (4.25cm, -0.25cm) {$\neg Q$};
-                    
-                    \path (node1) edge (node4);
-                    \path (node3) edge (node5);
-                    
-                    \path (node2) edge (node12);
-                    
-                    \path (node16) edge (node17);
-                    \path (node17) edge (node23);
-                    
-                    \path (node18) edge (node19);
-                    \path (node19) edge (node20);
-                    
-                    \path (node21) edge (node22);
-                    
-                    \path (node23) edge (node24);
-                    \path (node24) edge (node25);
-                    
-                    \path (node22) edge (node18);
-                    
-                    \path (node20) edge (node6);
-                    \path (node25) edge (node7);
-                    
-                    \path (node8) edge (node10);
-                    \path (node9) edge (node11);
-                    
-                    \path (node17) edge (node26);
-                    \path (node22) edge (node27);
-                    
-                    \draw (2.25cm, 0.1cm) -- (2.4cm, 0cm) -- (2.25cm, -0.1cm) -- cycle;
-                \end{tikzpicture}
-            \end{center}
-        </section>
-    </section>
-    
-    
-    <h3>Zweiflankengesteuerte FlipFlops}
-    \noindent
-    \textbf{JK-FlipFlop}\\
-    <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.34\textwidth}
-            Arbeitet wie ein Einflankengesteuertes JK-FlipFlop, nur, dass es erst bei der negativen Flanke von <span class="equation">T</span> das gespeicherte Bit ausgibt. (Retardierend)
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.23\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \begin{scope}[scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[orange, domain=0:4] plot (\x, {max(0, round(sin(\x * 120 - 120) + 0.25))});
-                    \end{scope}
-                    
-                    \begin{scope}[shift={(0cm, -1cm)}, scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[green, domain=0:4] plot (\x, {max(0, round(sin(\x * 180) + 0.15))});
-                    \end{scope}
-                    
-                    \begin{scope}[shift={(0cm, -2cm)}, scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[purple, domain=0:4] plot (\x, {max(0, round(sin(\x * 190 + 50) - 0.25))});
-                    \end{scope}
-                    
-                    \begin{scope}[shift={(0cm, -3cm)}, scale=0.8]
-                        \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
-                        
-                        \draw[cyan] (0cm, 0cm) -- (0.85cm, 0cm) -- (1cm, 1cm) -- (2.85cm, 1cm) -- (3cm, 0cm) -- (4cm, 0cm);
-                    \end{scope}
-                \end{tikzpicture}
-            \end{center}
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.09\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \node[box, align=left] at (0cm, 0cm) {$J</span> \hspace{0.075cm} \hspace{0.025cm}\\ <span class="equation">T$\\$K</span> \hspace{0.025cm}};
-                    
-                    \draw (-0.5cm, 0.1cm) -- (-0.35cm, 0cm) -- (-0.5cm, -0.1cm) -- cycle;
-                    
-                    \draw (0.25cm, 0.4cm) -- (0.4cm, 0.4cm) -- (0.4cm, 0.2cm);
-                    \draw (0.25cm, -0.2cm) -- (0.4cm, -0.2cm) -- (0.4cm, -0.4cm);
-                    
-                    \node[clear] (node19) at (0.85cm, 0.3cm) {$Q$};
-                    \node[clear] (node20) at (0.85cm, -0.3cm) {$\neg Q$};
-                \end{tikzpicture}
-            \end{center}
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.32\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \node[clear] (node1) at (0cm, 0.4cm) {$J$};
-                    \node[clear] (node2) at (0cm, 0cm) {$T$};
-                    \node[clear] (node3) at (0cm, -0.4cm) {$K$};
-                    
-                    \node[empty] (node4) at (0.75cm, 0.4cm) {};
-                    \node[empty] (node5) at (0.75cm, -0.4cm) {};
-                    
-                    \node[empty] (node6) at (1.75cm, 0.4cm) {};
-                    \node[empty] (node7) at (1.75cm, -0.4cm) {};
-                    
-                    \node[empty] (node8) at (2.5cm, 0.4cm) {};
-                    \node[empty] (node9) at (2.5cm, -0.4cm) {};
-                    
-                    \node[empty] (node10) at (3.5cm, 0.4cm) {};
-                    \node[empty] (node11) at (3.5cm, -0.4cm) {};
-                    
-                    \node[dot] (node12) at (0.375cm, 0cm) {};
-                    \node[empty] (node13) at (0.375cm, -0.75cm) {};
-                    \node[empty] (node14) at (2.125cm, -0.75cm) {};
-                    \node[empty] (node15) at (2.125cm, 0cm) {};
-                    
-                    \node[box, align=left] (node16) at (1.25cm, 0cm) {$J</span> \hspace{0.075cm} <span class="equation">Q$\\ \hspace{0.025cm} <span class="equation">T$\\$K</span> <span class="equation">\neg Q$};
-                    
-                    \node[boxRing] (node17) at (2.375cm, 0cm) {};                
-                    \node[box, align=left] (node18) at (3cm, 0cm) {$J</span> \hspace{0.075cm} <span class="equation">Q$\\ \hspace{0.025cm} <span class="equation">T$\\$K</span> <span class="equation">\neg Q$};
-                    
-                    \node[clear] (node19) at (4cm, 0.4cm) {$Q$};
-                    \node[clear] (node20) at (4cm, -0.4cm) {$\neg Q$};
-                    
-                    \path (node1) edge (node4);
-                    \path (node3) edge (node5);
-                    
-                    \path (node6) edge (node8);
-                    \path (node7) edge (node9);
-                    
-                    \path (node12) edge (node16);
-                    
-                    \path (node2) edge (node12);
-                    \path (node12) edge (node13);
-                    \path (node13) edge (node14);
-                    \path (node14) edge (node15);
-                    \path (node15) edge (node17);
-                    
-                    \path (node10) edge (node19);
-                    \path (node11) edge (node20);
-                    
-                    \draw (0.75cm, 0.1cm) -- (0.9cm, 0cm) -- (0.75cm, -0.1cm) -- cycle;
-                    \draw (2.5cm, 0.1cm) -- (2.65cm, 0cm) -- (2.5cm, -0.1cm) -- cycle;
-                \end{tikzpicture}
-            \end{center}
-        </section>
-    </section>
-    
-
-    
+                            \node[dot] (node2) at (0.25cm, 0cm) {};
+                            \node[empty] (node3) at (0.25cm, 0.75cm) {};
+                            \node[empty] (node4) at (1.75cm, 0.75cm) {};
+                            \node[empty] (node5) at (1.75cm, 0.5cm) {};
+                            \node[empty] (node6) at (2.25cm, 0.5cm) {};
+                            
+                            \node[empty] (node7) at (2.25cm, 0cm) {};
+                            
+                            
+                            \node[box] (node8) at (1cm, 0cm) {$1$};
+                            \node[boxRing] (node9) at (1.625cm, 0cm) {};
+                            \node[box] (node10) at (2.75cm, 0.25cm) {$\And$};
+                            \node[empty] (node11) at (3.75cm, 0.25cm) {$F$};
+                            
+                            \path (node1) edge (node2);
+                            \path (node2) edge (node3);
+                            \path (node3) edge (node4);
+                            \path (node4) edge (node5);
+                            \path (node5) edge (node6);
+                            
+                            \path (node2) edge (node8);
+                            \path (node9) edge (node7);
+                            
+                            \path (node10) edge (node11);
+                        \end{tikzpicture}
+                    \end{center}
+                </section>
+            </section>
+            <h3>Einflankengesteuerte FlipFlops</h3>
+            <h4>RS-FlipFlop</h4>
+            <section class="container">
+                <section style="grid-column: 1 / span 99;">{0.34\textwidth}
+                    Arbeitet wie eine RS NOR-Latch , jedoch nur bei positiven Flanken von <span class="equation">T</span>, sonst wird der Zustand gespeichert.
+                </section>
+                <section style="grid-column: 1 / span 99;">{0.23\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}
+                            \begin{scope}[scale=0.8]
+                                \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
+                                
+                                \draw[orange, domain=0:4] plot (\x, {max(0, round(sin(\x * 120 + 50) - 0.25))});
+                            \end{scope}
+                            
+                            \begin{scope}[shift={(0cm, -1cm)}, scale=0.8]
+                                \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
+                                
+                                \draw[green, domain=0:4] plot (\x, {max(0, round(sin(\x * 180) + 0.15))});
+                            \end{scope}
+                            
+                            \begin{scope}[shift={(0cm, -2cm)}, scale=0.8]
+                                \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
+                                
+                                \draw[purple] (0cm, 0cm) -- (1cm, 0cm);
+                                
+                                \draw[purple, domain=1:4] plot (\x, {max(0, round(sin(\x * 190 + 50) - 0.25))});
+                            \end{scope}
+                            
+                            \begin{scope}[shift={(0cm, -3cm)}, scale=0.8]
+                                \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
+                                
+                                \draw[cyan] (0cm, 0cm) -- (2.15cm, 0cm) -- (2.3cm, 1cm) -- (4cm, 1cm);
+                            \end{scope}
+                        \end{tikzpicture}
+                    \end{center}
+                </section>
+                <section style="grid-column: 1 / span 99;">{0.075\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}
+                            \node[box, align=left] at (0cm, 0cm) {$R</span> \hspace{0.075cm} <span class="equation">Q$\\ \hspace{0.025cm} <span class="equation">T$\\$S</span> <span class="equation">\neg Q$};
+                            
+                            \draw (-0.5cm, 0.1cm) -- (-0.35cm, 0cm) -- (-0.5cm, -0.1cm) -- cycle;
+                        \end{tikzpicture}
+                    \end{center}
+                </section>
+                <section style="grid-column: 1 / span 99;">{0.32\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}
+                            \node[clear] (node1) at (0cm, 1.75cm) {$R$};
+                            \node[clear] (node2) at (0cm, 1cm) {$T$};
+                            \node[clear] (node3) at (0cm, 0.25cm) {$S$};
+                            
+                            \node[empty] (node4) at (0.75cm, 1.75cm) {};
+                            \node[empty] (node5) at (0.75cm, 0.25cm) {};
+                            
+                            \node[dot] (node6) at (0.5cm, 1cm) {};
+                            \node[empty] (node7) at (0.5cm, 1.25cm) {};
+                            \node[empty] (node8) at (0.5cm, 0.75cm) {};
+                            \node[empty] (node9) at (0.75cm, 1.25cm) {};
+                            \node[empty] (node10) at (0.75cm, 0.75cm) {};
+                            
+                            \node[box] (node11) at (1.25cm, 1.5cm) {$\And$};
+                            \node[box] (node12) at (1.25cm, 0.5cm) {$\And$};
+                            
+                            \node[empty] (node13) at (1.75cm, 1.5cm) {};
+                            \node[empty] (node14) at (1.75cm, 0.5cm) {};
+                            \node[empty] (node15) at (2.25cm, 1.25cm) {};
+                            \node[empty] (node16) at (2.25cm, 0.75cm) {};
+                            
+                            \node[empty] (node17) at (3.25cm, 1.25cm) {};
+                            \node[empty] (node18) at (3.25cm, 0.75cm) {};
+                            \node[empty] (node19) at (3.75cm, 1.25cm) {$Q$};
+                            \node[empty] (node20) at (3.75cm, 0.75cm) {$\neg Q$};
+                            
+                            \node[box, align=left] (node21) at (2.75cm, 1cm) {$R</span> \hspace{0.075cm} <span class="equation">Q$\\$S</span> <span class="equation">\neg Q$};
+                            
+                            \path (node1) edge (node4);
+                            \path (node3) edge (node5);
+                            
+                            \path (node2) edge (node6);
+                            \path (node6) edge (node7);
+                            \path (node6) edge (node8);
+                            \path (node7) edge (node9);
+                            \path (node8) edge (node10);
+                            
+                            \path (node13) edge (node15);
+                            \path (node14) edge (node16);
+                            
+                            \path (node17) edge (node19);
+                            \path (node18) edge (node20);
+                            
+                            \draw (0.75cm, 0.85cm) -- (0.9cm, 0.75cm) -- (0.75cm, 0.65cm) -- cycle;
+                            \draw (0.75cm, 1.35cm) -- (0.9cm, 1.25cm) -- (0.75cm, 1.15cm) -- cycle;
+                        \end{tikzpicture}
+                    \end{center}
+                </section>
+            </section>
+            
+            \noindent
+            \textbf{D-FlipFlop}\\
+            <section class="container">
+                <section style="grid-column: 1 / span 99;">{0.34\textwidth}
+                    Übernimmt den Zustand von <span class="equation">D</span> während der positiven Taktflanken von <span class="equation">T</span> und speichert diesen.
+                </section>
+                <section style="grid-column: 1 / span 99;">{0.23\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}
+                            \begin{scope}[scale=0.8]
+                                \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
+                                
+                                \draw[orange, domain=0:4] plot (\x, {max(0, round(sin(\x * 120 - 120) + 0.25))});
+                            \end{scope}
+                            
+                            \begin{scope}[shift={(0cm, -1cm)}, scale=0.8]
+                                \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
+                                
+                                \draw[green, domain=0:4] plot (\x, {max(0, round(sin(\x * 180) + 0.15))});
+                            \end{scope}
+                            
+                            \begin{scope}[shift={(0cm, -2cm)}, scale=0.8]
+                                \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
+                                
+                                \draw[cyan] (0cm, 0cm) -- (2.15cm, 0cm) -- (2.3cm, 1cm) -- (4cm, 1cm);
+                            \end{scope}
+                        \end{tikzpicture}
+                    \end{center}
+                </section>
+                <section style="grid-column: 1 / span 99;">{0.075\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}
+                            \node[box, align=left] at (0cm, 0cm) {$D</span> \hspace{0.075cm} <span class="equation">Q$\\ \hspace{0.025cm} <span class="equation">T</span> <span class="equation">\neg Q$};
+                            
+                            \draw (-0.5cm, -0.3cm) -- (-0.35cm, -0.2cm) -- (-0.5cm, -0.1cm) -- cycle;
+                        \end{tikzpicture}
+                    \end{center}
+                </section>
+                <section style="grid-column: 1 / span 99;">{0.32\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}
+                            \node[clear] (node1) at (0cm, 0.4cm) {$D$};
+                            \node[clear] (node2) at (0cm, 0cm) {$T$};
+                            
+                            \node[dot] (node3) at (0.75cm, 0.4cm) {};
+                            
+                            \node[empty] (node4) at (0.75cm, -0.4cm) {};
+                            
+                            \node[empty] (node5) at (1.25, 0.4cm) {};
+                            
+                            \node[boxRing] (node6) at (1.125, -0.4cm) {};
+                            \node[box, align=left] (node7) at (1.75cm, 0cm) {$R</span> \hspace{0.075cm} <span class="equation">Q$\\ \hspace{0.025cm} <span class="equation">T$\\$S</span> <span class="equation">\neg Q$};
+                            
+                            \node[empty] (node8) at (2.25, 0.25cm) {};
+                            \node[empty] (node9) at (2.75, 0.25cm) {$Q$};
+                            \node[empty] (node10) at (2.25, -0.25cm) {};
+                            \node[empty] (node11) at (2.75, -0.25cm) {$\neg Q$};
+                            
+                            \path (node2) edge (node7);
+                            
+                            \path (node1) edge (node3);
+                            \path (node3) edge (node4);
+                            \path (node3) edge (node5);
+                            \path (node4) edge (node6);
+                            
+                            \path (node8) edge (node9);
+                            \path (node10) edge (node11);
+                            
+                            \draw (1.25cm, 0.1cm) -- (1.4cm, 0cm) -- (1.25cm, -0.1cm) -- cycle;
+                        \end{tikzpicture}
+                    \end{center}
+                </section>
+            </section>
+            
+            \noindent
+            \textbf{JK-FlipFlop}\\
+            <section class="container">
+                <section style="grid-column: 1 / span 99;">{0.34\textwidth}
+                    Arbeitet genau wie ein Einflankengesteuertes RS-FlipFlop, nur, dass <span class="equation">R \And S</span> zum toggeln des gespeicherten Bit führt. (Toggle-Modus)
+                </section>
+                <section style="grid-column: 1 / span 99;">{0.23\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}
+                            \begin{scope}[scale=0.8]
+                                \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
+                                
+                                \draw[orange, domain=0:4] plot (\x, {max(0, round(sin(\x * 120 - 120) + 0.25))});
+                            \end{scope}
+                            
+                            \begin{scope}[shift={(0cm, -1cm)}, scale=0.8]
+                                \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
+                                
+                                \draw[green, domain=0:4] plot (\x, {max(0, round(sin(\x * 180) + 0.15))});
+                            \end{scope}
+                            
+                            \begin{scope}[shift={(0cm, -2cm)}, scale=0.8]
+                                \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
+                                
+                                \draw[purple, domain=0:4] plot (\x, {max(0, round(sin(\x * 190 + 50) - 0.25))});
+                            \end{scope}
+                            
+                            \begin{scope}[shift={(0cm, -3cm)}, scale=0.8]
+                                \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
+                                
+                                \draw[cyan] (0cm, 1cm) -- (2.15cm, 1cm) -- (2.3cm, 0cm) -- (4cm, 0cm);
+                            \end{scope}
+                        \end{tikzpicture}
+                    \end{center}
+                </section>
+                <section style="grid-column: 1 / span 99;">{0.075\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}
+                            \node[box, align=left] at (0cm, 0cm) {$J</span> \hspace{0.075cm} <span class="equation">Q$\\ \hspace{0.025cm} <span class="equation">T$\\$K</span> <span class="equation">\neg Q$};
+                            
+                            \draw (-0.5cm, 0.1cm) -- (-0.35cm, 0cm) -- (-0.5cm, -0.1cm) -- cycle;
+                        \end{tikzpicture}
+                    \end{center}
+                </section>
+                <section style="grid-column: 1 / span 99;">{0.32\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}
+                            \node[clear] (node1) at (0cm, 0.4cm) {$J$};
+                            \node[clear] (node2) at (0cm, 0cm) {$T$};
+                            \node[clear] (node3) at (0cm, -0.4cm) {$K$};
+                            
+                            \node[empty] (node4) at (0.75cm, 0.4cm) {};
+                            \node[empty] (node5) at (0.75cm, -0.4cm) {};
+                            
+                            \node[empty] (node6) at (0.75cm, 0.9cm) {};
+                            \node[empty] (node7) at (0.75cm, -0.9cm) {};
+                            
+                            \node[empty] (node8) at (1.75cm, 0.55cm) {};
+                            \node[empty] (node9) at (1.75cm, -0.55cm) {};
+                            
+                            \node[empty] (node10) at (2.25cm, 0.4cm) {};
+                            \node[empty] (node11) at (2.25cm, -0.4cm) {};
+                            
+                            \node[empty] (node12) at (2.25cm, 0cm) {};
+                            
+                            \node[box] (node13) at (1.25cm, 0.6cm) {$\And$};
+                            \node[box] (node14) at (1.25cm, -0.6cm) {$\And$};
+                            
+                            \node[box, align=left] (node15) at (2.75cm, 0cm) {$R</span> \hspace{0.075cm} <span class="equation">Q$\\ \hspace{0.025cm} <span class="equation">T$\\$S</span> <span class="equation">\neg Q$};
+                            
+                            \node[empty] (node16) at (3.25, 0.25cm) {};
+                            \node[dot] (node17) at (3.5, 0.25cm) {};
+                            \node[empty] (node18) at (3.75, 1.25cm) {};
+                            \node[empty] (node19) at (0.5, 1.25cm) {};
+                            \node[empty] (node20) at (0.5, 0.9cm) {};
+                            
+                            
+                            \node[empty] (node21) at (3.25, -0.25cm) {};
+                            \node[dot] (node22) at (3.75, -0.25cm) {};
+                            \node[empty] (node23) at (3.5, -1.25cm) {};
+                            \node[empty] (node24) at (0.5, -1.25cm) {};
+                            \node[empty] (node25) at (0.5, -0.9cm) {};
+                            
+                            \node[clear] (node26) at (4.25cm, 0.25cm) {$Q$};
+                            \node[clear] (node27) at (4.25cm, -0.25cm) {$\neg Q$};
+                            
+                            \path (node1) edge (node4);
+                            \path (node3) edge (node5);
+                            
+                            \path (node2) edge (node12);
+                            
+                            \path (node16) edge (node17);
+                            \path (node17) edge (node23);
+                            
+                            \path (node18) edge (node19);
+                            \path (node19) edge (node20);
+                            
+                            \path (node21) edge (node22);
+                            
+                            \path (node23) edge (node24);
+                            \path (node24) edge (node25);
+                            
+                            \path (node22) edge (node18);
+                            
+                            \path (node20) edge (node6);
+                            \path (node25) edge (node7);
+                            
+                            \path (node8) edge (node10);
+                            \path (node9) edge (node11);
+                            
+                            \path (node17) edge (node26);
+                            \path (node22) edge (node27);
+                            
+                            \draw (2.25cm, 0.1cm) -- (2.4cm, 0cm) -- (2.25cm, -0.1cm) -- cycle;
+                        \end{tikzpicture}
+                    \end{center}
+                </section>
+            </section>
+            
+            
+            <h3>Zweiflankengesteuerte FlipFlops}
+            \noindent
+            \textbf{JK-FlipFlop}\\
+            <section class="container">
+                <section style="grid-column: 1 / span 99;">{0.34\textwidth}
+                    Arbeitet wie ein Einflankengesteuertes JK-FlipFlop, nur, dass es erst bei der negativen Flanke von <span class="equation">T</span> das gespeicherte Bit ausgibt. (Retardierend)
+                </section>
+                <section style="grid-column: 1 / span 99;">{0.23\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}
+                            \begin{scope}[scale=0.8]
+                                \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
+                                
+                                \draw[orange, domain=0:4] plot (\x, {max(0, round(sin(\x * 120 - 120) + 0.25))});
+                            \end{scope}
+                            
+                            \begin{scope}[shift={(0cm, -1cm)}, scale=0.8]
+                                \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
+                                
+                                \draw[green, domain=0:4] plot (\x, {max(0, round(sin(\x * 180) + 0.15))});
+                            \end{scope}
+                            
+                            \begin{scope}[shift={(0cm, -2cm)}, scale=0.8]
+                                \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
+                                
+                                \draw[purple, domain=0:4] plot (\x, {max(0, round(sin(\x * 190 + 50) - 0.25))});
+                            \end{scope}
+                            
+                            \begin{scope}[shift={(0cm, -3cm)}, scale=0.8]
+                                \draw[gray] (0cm, 0cm) grid (4cm, 1cm);
+                                
+                                \draw[cyan] (0cm, 0cm) -- (0.85cm, 0cm) -- (1cm, 1cm) -- (2.85cm, 1cm) -- (3cm, 0cm) -- (4cm, 0cm);
+                            \end{scope}
+                        \end{tikzpicture}
+                    \end{center}
+                </section>
+                <section style="grid-column: 1 / span 99;">{0.09\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}
+                            \node[box, align=left] at (0cm, 0cm) {$J</span> \hspace{0.075cm} \hspace{0.025cm}\\ <span class="equation">T$\\$K</span> \hspace{0.025cm}};
+                            
+                            \draw (-0.5cm, 0.1cm) -- (-0.35cm, 0cm) -- (-0.5cm, -0.1cm) -- cycle;
+                            
+                            \draw (0.25cm, 0.4cm) -- (0.4cm, 0.4cm) -- (0.4cm, 0.2cm);
+                            \draw (0.25cm, -0.2cm) -- (0.4cm, -0.2cm) -- (0.4cm, -0.4cm);
+                            
+                            \node[clear] (node19) at (0.85cm, 0.3cm) {$Q$};
+                            \node[clear] (node20) at (0.85cm, -0.3cm) {$\neg Q$};
+                        \end{tikzpicture}
+                    \end{center}
+                </section>
+                <section style="grid-column: 1 / span 99;">{0.32\textwidth}
+                    \begin{center}
+                        \begin{tikzpicture}
+                            \node[clear] (node1) at (0cm, 0.4cm) {$J$};
+                            \node[clear] (node2) at (0cm, 0cm) {$T$};
+                            \node[clear] (node3) at (0cm, -0.4cm) {$K$};
+                            
+                            \node[empty] (node4) at (0.75cm, 0.4cm) {};
+                            \node[empty] (node5) at (0.75cm, -0.4cm) {};
+                            
+                            \node[empty] (node6) at (1.75cm, 0.4cm) {};
+                            \node[empty] (node7) at (1.75cm, -0.4cm) {};
+                            
+                            \node[empty] (node8) at (2.5cm, 0.4cm) {};
+                            \node[empty] (node9) at (2.5cm, -0.4cm) {};
+                            
+                            \node[empty] (node10) at (3.5cm, 0.4cm) {};
+                            \node[empty] (node11) at (3.5cm, -0.4cm) {};
+                            
+                            \node[dot] (node12) at (0.375cm, 0cm) {};
+                            \node[empty] (node13) at (0.375cm, -0.75cm) {};
+                            \node[empty] (node14) at (2.125cm, -0.75cm) {};
+                            \node[empty] (node15) at (2.125cm, 0cm) {};
+                            
+                            \node[box, align=left] (node16) at (1.25cm, 0cm) {$J</span> \hspace{0.075cm} <span class="equation">Q$\\ \hspace{0.025cm} <span class="equation">T$\\$K</span> <span class="equation">\neg Q$};
+                            
+                            \node[boxRing] (node17) at (2.375cm, 0cm) {};                
+                            \node[box, align=left] (node18) at (3cm, 0cm) {$J</span> \hspace{0.075cm} <span class="equation">Q$\\ \hspace{0.025cm} <span class="equation">T$\\$K</span> <span class="equation">\neg Q$};
+                            
+                            \node[clear] (node19) at (4cm, 0.4cm) {$Q$};
+                            \node[clear] (node20) at (4cm, -0.4cm) {$\neg Q$};
+                            
+                            \path (node1) edge (node4);
+                            \path (node3) edge (node5);
+                            
+                            \path (node6) edge (node8);
+                            \path (node7) edge (node9);
+                            
+                            \path (node12) edge (node16);
+                            
+                            \path (node2) edge (node12);
+                            \path (node12) edge (node13);
+                            \path (node13) edge (node14);
+                            \path (node14) edge (node15);
+                            \path (node15) edge (node17);
+                            
+                            \path (node10) edge (node19);
+                            \path (node11) edge (node20);
+                            
+                            \draw (0.75cm, 0.1cm) -- (0.9cm, 0cm) -- (0.75cm, -0.1cm) -- cycle;
+                            \draw (2.5cm, 0.1cm) -- (2.65cm, 0cm) -- (2.5cm, -0.1cm) -- cycle;
+                        \end{tikzpicture}
+                    \end{center}
+                </section>
+            </section>
     
         </main>
         <footer><h6>created by Anton Böhler</h6></footer>

@@ -88,8 +88,8 @@
             <h3>Quantoren (Zusätzliche Operationen)</h3>
             <section class="container">
                 <section style="grid-column: 1 / span 66;">
-                    Quantoren bringen eine Variable ein, welche in dem direkt darauf folgendem Block definiert ist. Tritt das gleiche Symbol nochmals auf handelt es sich um eine andere Variable.\\
-                    Eine Formel in der alle Variablen an einen Quantoren gebunden sind heißt geschlossene Formel.\\
+                    Quantoren bringen eine Variable ein, welche in dem direkt darauf folgendem Block definiert ist. Tritt das gleiche Symbol nochmals auf handelt es sich um eine andere Variable.
+                    Eine Formel in der alle Variablen an einen Quantoren gebunden sind heißt geschlossene Formel.
                     Man kann frei Auftretende Variablen durch Terme ersetzten.
                     In diesem Beispiel wird in der Formel <span class="equation">F</span>, <span class="equation">x \in Var_\Sigma</span> durch <span class="equation">t \in Term_\Sigma</span> ersetzt.
                     <div class="equation">[x/t]F</div>
@@ -140,6 +140,10 @@
             <div class="equation">valf_{S, v}(\forall x F) = W\text{, wenn für alle } u \in U valf_{S, v_{x}^{u}}(F) \text{ gilt}</div>
             <div class="equation">valf_{S, v}(\exists x F) = W\text{, wenn es für mindestens ein } u \in U valf_{S, v_{x}^{u}}(F) \text{ gilt}</div>
 
+            <h3>Klausel</h3>
+            Eine Klausel ist eine Mengen-darstellung einer KNF, wobei diese nicht eindeutig rückgängig gemacht werden kann.
+            <div class="equation">(A \land (\neg B \lor C))</div>
+            <div class="equation">\{\{A\}, \{\neg B, C\}\}</div>
             
         </main>
         <footer><h6>created by Anton Böhler</h6></footer>

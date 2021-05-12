@@ -29,9 +29,9 @@ function beispiel_registermaschine(){
     ctxt.clearRect(0, 0, can.width, can.height);
     let k = 5;
     let size = can.height * 4/5;
-    rect(ctxt, can.width/(2*k) - size/2, (can.height - size)/2, (k+1) * size, size, "#FFCC00", "#FFDD00", 2, can.width/30);
+    rect(ctxt, can.width/(2*k) - size/2, (can.height - size)/2, (k+1) * size, size, "#0099FF", "#00CCFF", 2, can.width/30);
     for(let i=0;i<k;i++){
-        rect(ctxt, (i / k) * can.width + can.width/(2*k) - size/2, (can.height - size)/2, size, size, "#FF9900", "#FFAA00", 2, can.width/30);
+        rect(ctxt, (i / k) * can.width + can.width/(2*k) - size/2, (can.height - size)/2, size, size, "#FF9900", "#FFCC00", 2, can.width/30);
         if(i != k-1){
             text(ctxt, i, (i / k) * can.width + can.width/(2*k), can.height/2, can.width/12, "#555555");
         }else{

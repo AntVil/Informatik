@@ -57,325 +57,222 @@
 
             
 
-<h2>Aussagen Logik</h2>
-    <h3>Beschreibung</h3>
-    Eine Formel besteht aus, den Symbolen <span class="equation">0</span>, <span class="equation">1</span> den Atomen der Menge <span class="equation">\Sigma</span> (Signatur) oder Verknüpfungen von bekannten Formeln mit den fünf definieren Operationen. In Folgenden Beispielen gilt <span class="equation">\Sigma = \{\textcolor{orange}{A}, \textcolor{orange}{B}\}</span>. Die Menge aller Formeln auf <span class="equation">\Sigma</span> wird mit <span class="equation">For0_{\Sigma}</span> bezeichnet. 
-    <div class="equation">0, 1 \in For0_{\Sigma}</div>
-    <div class="equation">\Sigma \subseteq For0_{\Sigma}</div>
-    Formeln selber sind nur Zeichenketten und können nicht umgeformt werden.
-    
-    <h3>Operationen</h3>
-    <section class="container">
-        <section style="grid-column: 1 / span 19;">
-            <h4>Negation</h4>
-            <div class="equation">\neg \textcolor{orange}{A}</div>
-            <div style="text-align: center;">Gegenteil</div>
-        </section>
-        <section style="grid-column: 20 / span 19;">
-            <h4>Disjunktion</h4>
-            <div class="equation">(\textcolor{orange}{A} \lor \textcolor{orange}{B})</div>
-            <div style="text-align: center;">Eins von beiden Wahr</div>
-        </section>
-        <section style="grid-column: 40 / span 19;">
-            <h4>Konjunktion</h4>
-            <div class="equation">(\textcolor{orange}{A} \land \textcolor{orange}{B})</div>
-            <div style="text-align: center;">Beide Wahr</div>
-        </section>
-        <section style="grid-column: 60 / span 19;">
-            <h4>Implikation</h4>
-            <div class="equation">(\textcolor{orange}{A} \rightarrow \textcolor{orange}{B})</div>
-            <div class="equation">\neg(\textcolor{orange}{A} \land \neg \textcolor{orange}{B})</div>
-        </section>
-        <section style="grid-column: 80 / span 19;">
-            <h4>Äquivalenz</h4>
-            <div class="equation">(\textcolor{orange}{A} \leftrightarrow \textcolor{orange}{B})</div>
-            <div style="text-align: center;">Gleichwertig</div>
-        </section>
-    </section>
-    <div style="text-align: center;"><i>(Klammerung wichtig!)</i></div>
-    
-    <h3>Syntaxbaum</h3>
-    <section class="container">
-        <section style="grid-column: 1 / span 66;">
-            Zu jeder Formel <span class="equation">F</span> kann ein Syntaxbaum erstellt werden. Mit ihm kann die Formel leicht in ihre Teilformen <span class="equation">Teilf(F)</span> zerlegen werden, wodurch sie ausgewertet werden kann.
-            Um <span class="equation">Teilf(F)</span> zu erhalten geht man einfach den Syntaxbaum durch und konstruiert von jedem Knoten aus abwärts eine Teilformel.
-            <div class="equation">Teilf(\neg (\textcolor{orange}{A} \land \neg \textcolor{orange}{B})) = \{\neg (\textcolor{orange}{A} \land \neg \textcolor{orange}{B}), (\textcolor{orange}{A} \land \neg \textcolor{orange}{B}), \textcolor{orange}{A}, \neg \textcolor{orange}{B}, \textcolor{orange}{B}\}</div>
-        </section>
-        <section style="grid-column: 67 / span 33;">
-            <div class="equation">\neg (\textcolor{orange}{A} \land \neg \textcolor{orange}{B})</div>
-            <div><canvas id="beispiel_syntaxbaum"></canvas></div>
-        </section>
-    </section>
-    
-    <h3>Auswertung</h3>
-    Um eine Formel auszuwerten benötigt man eine Interpretation <span class="equation">I</span>, welche den Atomen aus <span class="equation">\Sigma</span> die Werte <span class="equation">W</span> für Wahr und <span class="equation">F</span> für Falsch zuweist. Mit <span class="equation">val_I</span> wird eine Abbildung definiert die nun alle Formeln aus <span class="equation">For0_\Sigma</span> auswerten kann, durch eine Rekursive Definition der Operationen (<i>ausgelassen</i>).
-    <section class="container">
-        <section style="grid-column: 1 / span 49;">
-            <div class="equation">I: \Sigma \rightarrow \{W, F\}</div>
-            <div class="equation">\textcolor{orange}{A} \mapsto W</div>
-            <div class="equation">\textcolor{orange}{B} \mapsto F</div>
-        </section>
-        <section style="grid-column: 50 / span 49;">
-            <div class="equation">val_I: For0_\Sigma \rightarrow \{W, F\}</div>
-            <div class="equation">0 \mapsto F</div>
-            <div class="equation">1 \mapsto W</div>
-            <div class="equation">\textcolor{orange}{A} \mapsto I(\textcolor{orange}{A})</div>
-            <div class="equation">...</div>
-        </section>
-    </section>
-    
-    
-    <section class="container">
-        <section style="grid-column: 1 / span 33;">
-            <h4>Modell</h4>
-            <div style="text-align: center;">Eine Interpretation wertet die Formel zu Wahr aus.</div>
-        </section>
-        <section style="grid-column: 34 / span 33;">
-            <h4>Erfüllbar</h4>
-            <div style="text-align: center;">Mindestens eine Interpretation ist Modell.</div>
-        </section>
-        <section style="grid-column: 67 / span 33;">
-            <h4>Allgemeingültig</h4>
-            <div style="text-align: center;">Alle Interpretationen sind Modell.</div>
-        </section>
-    </section>
-    
-    
-    <h3>Relationen</h3>
-    <section class="container">
-        <section style="grid-column: 1 / span 49;">
-            <h4>Logische Folgerbarkeit</h4>
-            <div class="equation">\textcolor{orange}{A} \models \textcolor{orange}{B}</div>
-            <div style="text-align: center;">Modelle für <span class="equation">\textcolor{orange}{A}</span> sind Modelle für <span class="equation">\textcolor{orange}{B}</span></div>
-        </section>
-        <section style="grid-column: 50 / span 49;">
-            <h4>Logische Äquivalenz</h4>
-            <div class="equation">\textcolor{orange}{A} \equiv \textcolor{orange}{B}</div>
-            <div style="text-align: center;"><span class="equation">\textcolor{orange}{A}</span> und <span class="equation">\textcolor{orange}{B}</span> sind logisch Äquivalent</div>
-        </section>
-    </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-<h2>Normalform/Charakteristische Gleichung</h2>
-    <h3>Beschreibung</h3>
-    <section class="container">
-        <section style="grid-column: 1 / span 74;">
-            Mit einer Wahrheitstabelle kann man eine gewünschte Schaltung ausdrücken. Der Ausgang <span class="equation">Y</span> kann auch den Wert <span class="equation">\perp</span> haben, falls diese Kombination an Eingangs-werten nicht auftritt oder irrelevant ist. Eine Wahrheitstabelle ist wie eine Partielle Abbildung.
-            <div class="equation">f: \{\textcolor{WildStrawberry}{F}, \textcolor{LimeGreen}{W}\}^n \rightarrow \{\textcolor{WildStrawberry}{F}, \textcolor{LimeGreen}{W}\}^m</div>
-            <div class="equation">x_1 \mapsto y_1</div>
-            <div class="equation">x_2 \mapsto \perp</div>
-            Mit Hilfe der Wahrheitstabelle kann man nun die Normalform bilden, welche sich leicht realisieren lässt. Man unterscheidet zwischen der DNF und KNF.
-        </section>
-        <section style="grid-column: 75 / span 24;">
-            \begin{center}
-                \begin{tikzpicture}
-                    \begin{scope}[scale=0.85]
-                        \draw[gray] (0cm, 0cm) grid (3cm, 5cm);
-                        
-                        \draw (0cm, 4cm) -- (3cm, 4cm);
-                        \draw (2cm, 0cm) -- (2cm, 5cm);
-                            
-                        \node at (0.5cm, 4.5cm) {$A$};
-                        \node at (1.5cm, 4.5cm) {$B$};
-                        \node at (2.5cm, 4.5cm) {$Y$};
-                        
-                        \node[WildStrawberry] at (0.5cm, 3.5cm) {$F$};
-                        \node[WildStrawberry] at (1.5cm, 3.5cm) {$F$};
-                        \node[LimeGreen] at (2.5cm, 3.5cm) {$W$};
-                        
-                        \node[WildStrawberry] at (0.5cm, 2.5cm) {$F$};
-                        \node[LimeGreen] at (1.5cm, 2.5cm) {$W$};
-                        \node[WildStrawberry] at (2.5cm, 2.5cm) {$F$};
-                        
-                        \node[LimeGreen] at (0.5cm, 1.5cm) {$W$};
-                        \node[WildStrawberry] at (1.5cm, 1.5cm) {$F$};
-                        \node[WildStrawberry] at (2.5cm, 1.5cm) {$F$};
-                        
-                        \node[LimeGreen] at (0.5cm, 0.5cm) {$W$};
-                        \node[LimeGreen] at (1.5cm, 0.5cm) {$W$};
-                        \node[LimeGreen] at (2.5cm, 0.5cm) {$W$};
-                    \end{scope}
-                \end{tikzpicture}\\
-                \footnotesize
-                \textit{(Äquivalenz)}
-            \end{center}
-        </section>
-    </section>
-    
-    \vspace{0.1cm}
-    
-    
-    <section class="container">
-        <section style="grid-column: 1 / span 49;">
-            <h3>Disjunktive NF}
-            Disjunktiv-verknüpfte Minterme
-            <div class="equation">DNF = (m_1 \lor m_2 \lor ...)</div>
-            \textbf{Minterm}\\
-            Konjunktiv-verknüpfte Kombinationen die <span class="equation">\textcolor{LimeGreen}{W}</span> ergeben
-            <div class="equation">m_i = (A \land B \land...)</div>
-        </section>
-        <section style="grid-column: 50 / span 49;">
-            <h3>Konjunktive NF}
-            Konjunktiv-verknüpfte Maxterme
-            <div class="equation">KNF = (M_1 \land M_2 \land ...)</div>
-            \textbf{Maxterm}\\
-            Disjunktiv-verknüpfte Kombination die eine <span class="equation">\textcolor{WildStrawberry}{F}</span> ergeben
-            <div class="equation">M_i = (A \lor B \lor...)</div>
-        </section>
-        <div class="equation">DNF \equiv Y \equiv KNF</div>
-    </section>
-    
-    
-    <section class="container">
-        <section style="grid-column: 1 / span 49;">
-            <h3>KV-Diagramm}
-            \begin{center}
-                \begin{tikzpicture}
-                    \begin{scope}[scale=0.85]
-                        \draw[gray] (0cm, 0cm) grid (6cm, 6cm);
-                        
-                        \node at (1.5cm, 5.5cm) {$A$};
-                        \node at (2.5cm, 5.5cm) {$A$};
-                        \node at (3.5cm, 5.5cm) {$\neg A$};
-                        \node at (4.5cm, 5.5cm) {$\neg A$};
-                        \node at (0.5cm, 1.5cm) {$\neg B$};
-                        \node at (0.5cm, 2.5cm) {$\neg B$};
-                        \node at (0.5cm, 3.5cm) {$B$};
-                        \node at (0.5cm, 4.5cm) {$B$};
-                            
-                        \node at (1.5cm, 0.5cm) {$C$};
-                        \node at (2.5cm, 0.5cm) {$\neg C$};
-                        \node at (3.5cm, 0.5cm) {$\neg C$};
-                        \node at (4.5cm, 0.5cm) {$C$};
-                        \node at (5.5cm, 1.5cm) {$D$};
-                        \node at (5.5cm, 2.5cm) {$\neg D$};
-                        \node at (5.5cm, 3.5cm) {$\neg D$};
-                        \node at (5.5cm, 4.5cm) {$D$};
-                            
-                        \node[WildStrawberry] at (1.5cm, 1.5cm) {$F$};
-                        \node[WildStrawberry] at (2.5cm, 1.5cm) {$F$};
-                        \node[LimeGreen] at (3.5cm, 1.5cm) {$W$};
-                        \node[LimeGreen] at (4.5cm, 1.5cm) {$W$};
-                        \node[WildStrawberry] at (1.5cm, 2.5cm) {$F$};
-                        \node[WildStrawberry] at (2.5cm, 2.5cm) {$F$};
-                        \node[LimeGreen] at (3.5cm, 2.5cm) {$W$};
-                        \node[LimeGreen] at (4.5cm, 2.5cm) {$W$};
-                        \node[WildStrawberry] at (1.5cm, 3.5cm) {$F$};
-                        \node[WildStrawberry] at (2.5cm, 3.5cm) {$F$};
-                        \node[WildStrawberry] at (3.5cm, 3.5cm) {$F$};
-                        \node[LimeGreen] at (4.5cm, 3.5cm) {$W$};
-                        \node[LimeGreen] at (1.5cm, 4.5cm) {$W$};
-                        \node[WildStrawberry] at (2.5cm, 4.5cm) {$F$};
-                        \node[WildStrawberry] at (3.5cm, 4.5cm) {$F$};
-                        \node[LimeGreen] at (4.5cm, 4.5cm) {$W$};
-                            
-                        %DNF
-                        \draw[purple, opacity=0.75, very thick] (3.2cm, 1.2cm) rectangle (4.8cm, 2.8cm);
-                        \draw[blue, opacity=0.75, very thick] (4.2cm, 1.2cm) rectangle (4.8cm, 4.8cm);
-                        \draw[orange , opacity=0.75, very thick] (5cm, 4.2cm) -- (4.2cm, 4.2cm) -- (4.2cm, 4.8cm) -- (5cm, 4.8cm);
-                        \draw[orange , opacity=0.75, very thick] (1cm, 4.2cm) -- (1.8cm, 4.2cm) -- (1.8cm, 4.8cm) -- (1cm, 4.8cm);
-                        
-                        %KNF
-                        \draw[cyan, opacity=0.75, very thick] (1.2cm, 1.2cm) rectangle (2.8cm, 2.8cm);
-                        \draw[pink, opacity=0.75, very thick] (1.2cm, 2.2cm) rectangle (2.8cm, 3.8cm);
-                        \draw[gray, opacity=0.75, very thick] (2.2cm, 3.2cm) rectangle (3.8cm, 4.8cm);
-                    \end{scope}
-                \end{tikzpicture}
-            \end{center}
-        </section>
-        <section style="grid-column: 50 / span 49;">
-            <section style="grid-column: 1 / span 49;">
-                \textbf{Minterme}
-                \begin{itemize}
-                    \color{blue}
-                    \item (<span class="equation">\neg A \land C)</span>
-                    \color{purple}
-                    \item <span class="equation">(\neg A \land \neg B)</span>
-                    \color{orange}
-                    \item <span class="equation">(B \land C \land D)$\\
-                \end{itemize}
+            <h2>Aussagen Logik</h2>
+            <h3>Beschreibung</h3>
+            Eine Formel besteht aus, den Symbolen <span class="equation">0</span>, <span class="equation">1</span> den Atomen der Menge <span class="equation">\Sigma</span> (Signatur) oder Verknüpfungen von bekannten Formeln mit den fünf definieren Operationen. In Folgenden Beispielen gilt <span class="equation">\Sigma = \{\textcolor{orange}{A}, \textcolor{orange}{B}\}</span>. Die Menge aller Formeln auf <span class="equation">\Sigma</span> wird mit <span class="equation">For0_{\Sigma}</span> bezeichnet. 
+            <div class="equation">0, 1 \in For0_{\Sigma}</div>
+            <div class="equation">\Sigma \subseteq For0_{\Sigma}</div>
+            Formeln selber sind nur Zeichenketten und können nicht umgeformt werden.
+            
+            <h3>Operationen</h3>
+            <section class="container">
+                <section style="grid-column: 1 / span 19;">
+                    <h4>Negation</h4>
+                    <div class="equation">\neg \textcolor{orange}{A}</div>
+                    <div style="text-align: center;">Gegenteil</div>
+                </section>
+                <section style="grid-column: 20 / span 19;">
+                    <h4>Disjunktion</h4>
+                    <div class="equation">(\textcolor{orange}{A} \lor \textcolor{orange}{B})</div>
+                    <div style="text-align: center;">Eins von beiden Wahr</div>
+                </section>
+                <section style="grid-column: 40 / span 19;">
+                    <h4>Konjunktion</h4>
+                    <div class="equation">(\textcolor{orange}{A} \land \textcolor{orange}{B})</div>
+                    <div style="text-align: center;">Beide Wahr</div>
+                </section>
+                <section style="grid-column: 60 / span 19;">
+                    <h4>Implikation</h4>
+                    <div class="equation">(\textcolor{orange}{A} \rightarrow \textcolor{orange}{B})</div>
+                    <div class="equation">\neg(\textcolor{orange}{A} \land \neg \textcolor{orange}{B})</div>
+                </section>
+                <section style="grid-column: 80 / span 19;">
+                    <h4>Äquivalenz</h4>
+                    <div class="equation">(\textcolor{orange}{A} \leftrightarrow \textcolor{orange}{B})</div>
+                    <div style="text-align: center;">Gleichwertig</div>
+                </section>
             </section>
-            <section style="grid-column: 50 / span 49;">
-                \textbf{Maxterme}
-                \begin{itemize}
-                    \color{gray}
-                    \item <span class="equation">(\neg B \lor \neg \neg C)</span>
-                    \color{pink}
-                    \item <span class="equation">(\neg A \lor \neg \neg D)</span>
-                    \color{cyan}
-                    \item <span class="equation">(\neg A \lor \neg \neg B)</span>
-                \end{itemize}
-                \textit{(wurde invertiert)}
+            <div style="text-align: center;"><i>(Klammerung wichtig!)</i></div>
+            
+            <h3>Syntaxbaum</h3>
+            <section class="container">
+                <section style="grid-column: 1 / span 66;">
+                    Zu jeder Formel <span class="equation">F</span> kann ein Syntaxbaum erstellt werden. Mit ihm kann die Formel leicht in ihre Teilformen <span class="equation">Teilf(F)</span> zerlegen werden, wodurch sie ausgewertet werden kann.
+                    Um <span class="equation">Teilf(F)</span> zu erhalten geht man einfach den Syntaxbaum durch und konstruiert von jedem Knoten aus abwärts eine Teilformel.
+                    <div class="equation">Teilf(\neg (\textcolor{orange}{A} \land \neg \textcolor{orange}{B})) = \{\neg (\textcolor{orange}{A} \land \neg \textcolor{orange}{B}), (\textcolor{orange}{A} \land \neg \textcolor{orange}{B}), \textcolor{orange}{A}, \neg \textcolor{orange}{B}, \textcolor{orange}{B}\}</div>
+                </section>
+                <section style="grid-column: 67 / span 33;">
+                    <div class="equation">\neg (\textcolor{orange}{A} \land \neg \textcolor{orange}{B})</div>
+                    <div><canvas id="beispiel_syntaxbaum"></canvas></div>
+                </section>
             </section>
-        </section>
-    </section>
-    
-    \vspace{0.3cm}
-    
-    
-    Größtmögliche Rechtecke der Größe <span class="equation">2^n</span> bilden. Diese ergeben die Primimplika(n)te (minimierte Terme). Für die KNF müssen alle Eingänge noch invertiert werden.
-    
-    \vspace{0.2cm}
-    
-    
-    <section class="container">
-        <section style="grid-column: 1 / span 49;">{0.49\textwidth}
-            <div class="equation">Y \equiv \left(\textcolor{blue}{\neg A \land C}\right) \lor \left(\textcolor{purple}{\neg A \land \neg B}\right) \lor \left(\textcolor{orange}{B \land C \land D}\right)</div>
-            \begin{center}
-                \textit{(minimale DNF)}
-            \end{center}
-        </section>
-        <section style="grid-column: 50 / span 49;">{0.49\textwidth}
-            <div class="equation">Y \equiv (\textcolor{gray}{\neg B \lor C}) \land (\textcolor{pink}{\neg A \lor D}) \land (\textcolor{cyan}{\neg A \lor B})</div>
-            \begin{center}
-                \textit{(minimale KNF)}
-            \end{center}
-        </section>
-    </section>
-    
-    \vspace{0.3cm}
-    
-    
-    <section class="container">
-        <section style="grid-column: 1 / span 49;">
-            <h3>QMC-Verfahren (DNF)}
-            \begin{enumerate}
-                \item Spalte füllen
-                \item um eins verschiedene Paare finden
-                \item in nächste Spalte zusammenfassen
-                \begin{itemize}
-                    \item Unterschied wird durch <span class="equation">\perp</span> ersetzt
-                \end{itemize}
-                \item wiederholen bis keine Paare mehr
-                \item Paar-lose sind Primimplika(n)te
-                \item abgleichen und Redundante entfernen
-            \end{enumerate}
-        </section>
-        <section style="grid-column: 50 / span 49;">
-            <h3>QMC Optimierung}
-            QMC ist ein exakter Algorithmus und deswegen langsam.\\
-            Ein heuristischer Algorithmus ist deutlich schneller, aber ein wenig ungenau. (ESPRESSO)\\
-            Die Ungenauigkeit bezieht sich auf die vollständige Kürzung, es entsteht trotzdem eine valide DNF, nur nicht unbedingt die minimale.
-        </section>
-    </section>
-    
-    
+            
+            <h3>Auswertung</h3>
+            Um eine Formel auszuwerten benötigt man eine Interpretation <span class="equation">I</span>, welche den Atomen aus <span class="equation">\Sigma</span> die Werte <span class="equation">\textcolor{LimeGreen}{W}</span> für Wahr und <span class="equation">\textcolor{red}{F}</span> für Falsch zuweist. Mit <span class="equation">val_I</span> wird eine Abbildung definiert die nun alle Formeln aus <span class="equation">For0_\Sigma</span> auswerten kann, durch eine Rekursive Definition der Operationen (<i>ausgelassen</i>).
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <div class="equation">I: \Sigma \rightarrow \{\textcolor{LimeGreen}{W}, \textcolor{red}{F}\}</div>
+                    <div class="equation">\textcolor{orange}{A} \mapsto \textcolor{LimeGreen}{W}</div>
+                    <div class="equation">\textcolor{orange}{B} \mapsto \textcolor{red}{F}</div>
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <div class="equation">val_I: For0_\Sigma \rightarrow \{\textcolor{LimeGreen}{W}, \textcolor{red}{F}\}</div>
+                    <div class="equation">0 \mapsto F</div>
+                    <div class="equation">1 \mapsto W</div>
+                    <div class="equation">\textcolor{orange}{A} \mapsto I(\textcolor{orange}{A})</div>
+                    <div class="equation">...</div>
+                </section>
+            </section>
+            
+            
+            <section class="container">
+                <section style="grid-column: 1 / span 33;">
+                    <h4>Modell</h4>
+                    <div style="text-align: center;">Eine Interpretation wertet die Formel zu Wahr aus.</div>
+                </section>
+                <section style="grid-column: 34 / span 33;">
+                    <h4>Erfüllbar</h4>
+                    <div style="text-align: center;">Mindestens eine Interpretation ist Modell.</div>
+                </section>
+                <section style="grid-column: 67 / span 33;">
+                    <h4>Allgemeingültig</h4>
+                    <div style="text-align: center;">Alle Interpretationen sind Modell.</div>
+                </section>
+            </section>
+            
+            
+            <h3>Relationen</h3>
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <h4>Logische Folgerbarkeit</h4>
+                    <div class="equation">\textcolor{orange}{A} \models \textcolor{orange}{B}</div>
+                    <div style="text-align: center;">Modelle für <span class="equation">\textcolor{orange}{A}</span> sind Modelle für <span class="equation">\textcolor{orange}{B}</span></div>
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <h4>Logische Äquivalenz</h4>
+                    <div class="equation">\textcolor{orange}{A} \equiv \textcolor{orange}{B}</div>
+                    <div style="text-align: center;"><span class="equation">\textcolor{orange}{A}</span> und <span class="equation">\textcolor{orange}{B}</span> sind logisch Äquivalent</div>
+                </section>
+            </section>
+
+
+
+
+
+
+            <h3>Normalform</h3>
+            <section class="container">
+                <section style="grid-column: 1 / span 74;">
+                    Mit einer Wahrheitstabelle kann man eine Aussagenlogische Formel ausdrücken. Der Ausgang <span class="equation">Y</span> kann auch den Wert <span class="equation">\perp</span> haben, falls diese Kombination an Eingangs-werten nicht auftritt oder irrelevant ist. Eine Wahrheitstabelle ist wie eine Partielle Abbildung.
+                    <div class="equation">f: \{\textcolor{red}{F}, \textcolor{LimeGreen}{W}\}^n \rightarrow \{\textcolor{red}{F}, \textcolor{LimeGreen}{W}\}^m</div>
+                    <div class="equation">x_1 \mapsto y_1</div>
+                    <div class="equation">x_2 \mapsto \perp</div>
+                    Mit Hilfe der Wahrheitstabelle kann man nun die Normalform bilden, welche sich leicht realisieren lässt. Man unterscheidet zwischen der DNF und KNF.
+                </section>
+                <section style="grid-column: 75 / span 24;">
+                    <canvas id="beispiel_wahrheitstabelle"></canvas>
+                    <div style="text-align: center;">
+                        <i>(Äquivalenz)</i>
+                    </div>
+                </section>
+            </section>
+            
+            
+            
+            
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <h3>Disjunktive NF</h3>
+                    Disjunktiv-verknüpfte Minterme
+                    <div class="equation">DNF = (m_1 \lor m_2 \lor ...)</div>
+                    <h4>Minterm</h4>
+                    Konjunktiv-verknüpfte Kombinationen die <span class="equation">\textcolor{LimeGreen}{W}</span> ergeben
+                    <div class="equation">m_i = (\textcolor{orange}{A} \land \textcolor{orange}{B} \land...)</div>
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <h3>Konjunktive NF</h3>
+                    Konjunktiv-verknüpfte Maxterme
+                    <div class="equation">KNF = (M_1 \land M_2 \land ...)</div>
+                    <h4>Maxterm</h4>
+                    Disjunktiv-verknüpfte Kombination die <span class="equation">\textcolor{red}{F}</span> ergeben
+                    <div class="equation">M_i = (\textcolor{orange}{A} \lor \textcolor{orange}{B} \lor...)</div>
+                </section>
+            </section>
+            <div class="equation">DNF \equiv Y \equiv KNF</div>
+            
+            
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <h3>KV-Diagramm</h3>
+                    <canvas id="beispiel_kv_diagramm"></canvas>
+                </section>
+                <section class="container" style="grid-column: 50 / span 49;">
+                    <section style="grid-column: 1 / span 49;">
+                        <h4>Minterme</h4>
+                        <ul>
+                            <li><span class="equation">(\textcolor{blue}{\neg A \land C})</span></li>
+                            <li><span class="equation">(\textcolor{purple}{\neg A \land \neg B})</span></li>
+                            <li><span class="equation">(\textcolor{orange}{B \land C \land D})</span></li>
+                        </ul>
+                    </section>
+                    <section style="grid-column: 50 / span 49;">
+                        <h4>Maxterme</h4>
+                        <ul>
+                            <li><span class="equation">(\textcolor{gray}{\neg B \lor \neg \neg C})</span></li>
+                            <li><span class="equation">(\textcolor{pink}{\neg A \lor \neg \neg D})</span></li>
+                            <li><span class="equation">(\textcolor{cyan}{\neg A \lor \neg \neg B})</span></li>
+                        </ul>
+                        <div style="text-align: center;">
+                            <i>(wurde invertiert)</i>
+                        </div>
+                    </section>
+                </section>
+            </section>
+            
+            
+            Größtmögliche Rechtecke der Größe <span class="equation">2^n</span> bilden. Diese ergeben die Primimplika(n)te (minimierte Terme). Für die KNF müssen alle Eingänge noch invertiert werden.
+            
+            
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <div class="equation">Y \equiv (\left(\textcolor{blue}{\neg A \land C}\right) \lor \left(\textcolor{purple}{\neg A \land \neg B}\right) \lor \left(\textcolor{orange}{B \land C \land D}\right))</div>
+                    <div style="text-align: center;">
+                        <i>(minimale DNF)</i>
+                    </div>
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <div class="equation">Y \equiv ((\textcolor{gray}{\neg B \lor C}) \land (\textcolor{pink}{\neg A \lor D}) \land (\textcolor{cyan}{\neg A \lor B}))</div>
+                    <div style="text-align: center;">
+                        <i>(minimale KNF)</i>
+                    </div>
+                </section>
+            </section>
+            
+            
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <h3>QMC-Verfahren (DNF)</h3>
+                    <ol>
+                        <li>Spalte füllen</li>
+                        <li>um eins verschiedene Paare finden</li>
+                        <li>in nächste Spalte zusammenfassen</li>
+                        <ul>
+                            <li>Unterschied wird durch <span class="equation">\perp</span> ersetzt</li>
+                        </ul>
+                        <li>wiederholen bis keine Paare mehr</li>
+                        <li>Paar-lose sind Primimplika(n)te</li>
+                        <li>abgleichen und Redundante entfernen</li>
+                    </ol>
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <h3>QMC Optimierung</h3>
+                    QMC ist ein exakter Algorithmus und deswegen langsam.
+                    Ein heuristischer Algorithmus ist deutlich schneller, aber ein wenig ungenau. (ESPRESSO)
+                    Die Ungenauigkeit bezieht sich auf die vollständige Kürzung, es entsteht trotzdem eine valide DNF, nur nicht unbedingt die minimale.
+                </section>
+            </section>
+            
+            
     
     
     

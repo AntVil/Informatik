@@ -16,6 +16,11 @@ function line(ctxt, x1, y1, x2, y2, stroke="#000000FF", lineWidth=1, radius=0, a
     ctxt.stroke();
     if(arrow_size_end > 0){
         angle = Math.asin((y2 - middleY) / Math.hypot(middleX-x2, middleY-y2));
+        if(x1-middleX > 0){
+            angle = Math.PI - angle;
+        }else{
+            console.log(angle);
+        }
         ctxt.setLineDash([]);
         ctxt.beginPath();
         ctxt.moveTo(x2, y2);

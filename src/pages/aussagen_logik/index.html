@@ -119,8 +119,8 @@
                 </section>
                 <section style="grid-column: 50 / span 49;">
                     <div class="equation">val_I: For0_\Sigma \rightarrow \{\textcolor{LimeGreen}{W}, \textcolor{red}{F}\}</div>
-                    <div class="equation">0 \mapsto F</div>
-                    <div class="equation">1 \mapsto W</div>
+                    <div class="equation">0 \mapsto \textcolor{red}{F}</div>
+                    <div class="equation">1 \mapsto \textcolor{LimeGreen}{W}</div>
                     <div class="equation">\textcolor{orange}{A} \mapsto I(\textcolor{orange}{A})</div>
                     <div class="equation">...</div>
                 </section>
@@ -212,17 +212,17 @@
                     <section style="grid-column: 1 / span 49;">
                         <h4>Minterme</h4>
                         <ul>
-                            <li><span class="equation">(\textcolor{blue}{\neg A \land C})</span></li>
-                            <li><span class="equation">(\textcolor{purple}{\neg A \land \neg B})</span></li>
-                            <li><span class="equation">(\textcolor{orange}{B \land C \land D})</span></li>
+                            <li><span class="equation">(\textcolor{#AA00FF}{\neg A \land C})</span></li>
+                            <li><span class="equation">(\textcolor{#00FFAA}{\neg A \land \neg B})</span></li>
+                            <li><span class="equation">(\textcolor{#00AAFF}{B \land C \land D})</span></li>
                         </ul>
                     </section>
                     <section style="grid-column: 50 / span 49;">
                         <h4>Maxterme</h4>
                         <ul>
-                            <li><span class="equation">(\textcolor{gray}{\neg B \lor \neg \neg C})</span></li>
-                            <li><span class="equation">(\textcolor{pink}{\neg A \lor \neg \neg D})</span></li>
-                            <li><span class="equation">(\textcolor{cyan}{\neg A \lor \neg \neg B})</span></li>
+                            <li><span class="equation">(\textcolor{#FF00AA}{\neg B \lor \neg \neg C})</span></li>
+                            <li><span class="equation">(\textcolor{#AAFF00}{\neg A \lor \neg \neg D})</span></li>
+                            <li><span class="equation">(\textcolor{#777777}{\neg A \lor \neg \neg B})</span></li>
                         </ul>
                         <div style="text-align: center;">
                             <i>(wurde invertiert)</i>
@@ -237,13 +237,13 @@
             
             <section class="container">
                 <section style="grid-column: 1 / span 49;">
-                    <div class="equation">Y \equiv (\left(\textcolor{blue}{\neg A \land C}\right) \lor \left(\textcolor{purple}{\neg A \land \neg B}\right) \lor \left(\textcolor{orange}{B \land C \land D}\right))</div>
+                    <div class="equation">Y \equiv (\left(\textcolor{#AA00FF}{\neg A \land C}\right) \lor \left(\textcolor{#00FFAA}{\neg A \land \neg B}\right) \lor \left(\textcolor{#00AAFF}{B \land C \land D}\right))</div>
                     <div style="text-align: center;">
                         <i>(minimale DNF)</i>
                     </div>
                 </section>
                 <section style="grid-column: 50 / span 49;">
-                    <div class="equation">Y \equiv ((\textcolor{gray}{\neg B \lor C}) \land (\textcolor{pink}{\neg A \lor D}) \land (\textcolor{cyan}{\neg A \lor B}))</div>
+                    <div class="equation">Y \equiv ((\textcolor{#FF00AA}{\neg B \lor C}) \land (\textcolor{#AAFF00}{\neg A \lor D}) \land (\textcolor{#777777}{\neg A \lor B}))</div>
                     <div style="text-align: center;">
                         <i>(minimale KNF)</i>
                     </div>

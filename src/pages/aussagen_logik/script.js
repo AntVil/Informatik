@@ -120,23 +120,17 @@ function beispiel_kv_diagramm(){
     text(ctxt, "F", (can.width - 2 * size)*5/12 + size, (can.height - 2 * size)*7/12 + size, can.width/15, "#FF0000");
     text(ctxt, "W", (can.width - 2 * size)*7/12 + size, (can.height - 2 * size)*7/12 + size, can.width/15, "#00FF00");
     text(ctxt, "W", (can.width - 2 * size)*9/12 + size, (can.height - 2 * size)*7/12 + size, can.width/15, "#00FF00");
-    text(ctxt, "D", (can.width - 2 * size)*11/12 + size, (can.height - 2 * size)*7/12 + size, can.width/15, "#FFAA00");
+    text(ctxt, "¬D", (can.width - 2 * size)*11/12 + size, (can.height - 2 * size)*7/12 + size, can.width/15, "#FFAA00");
 
     text(ctxt, "¬B", (can.width - 2 * size)*1/12 + size, (can.height - 2 * size)*9/12 + size, can.width/15, "#FFAA00");
     text(ctxt, "F", (can.width - 2 * size)*3/12 + size, (can.height - 2 * size)*9/12 + size, can.width/15, "#FF0000");
     text(ctxt, "F", (can.width - 2 * size)*5/12 + size, (can.height - 2 * size)*9/12 + size, can.width/15, "#FF0000");
     text(ctxt, "W", (can.width - 2 * size)*7/12 + size, (can.height - 2 * size)*9/12 + size, can.width/15, "#00FF00");
     text(ctxt, "W", (can.width - 2 * size)*9/12 + size, (can.height - 2 * size)*9/12 + size, can.width/15, "#00FF00");
-    text(ctxt, "¬D", (can.width - 2 * size)*11/12 + size, (can.height - 2 * size)*9/12 + size, can.width/15, "#FFAA00");
+    text(ctxt, "D", (can.width - 2 * size)*11/12 + size, (can.height - 2 * size)*9/12 + size, can.width/15, "#FFAA00");
 
-    //text(ctxt, "A", (can.width - 2 * size)*1/12 + size, (can.height - 2 * size)*11/12 + size, can.width/15, "#FFAA00");
     text(ctxt, "C", (can.width - 2 * size)*3/12 + size, (can.height - 2 * size)*11/12 + size, can.width/15, "#FFAA00");
     text(ctxt, "¬C", (can.width - 2 * size)*5/12 + size, (can.height - 2 * size)*11/12 + size, can.width/15, "#FFAA00");
     text(ctxt, "¬C", (can.width - 2 * size)*7/12 + size, (can.height - 2 * size)*11/12 + size, can.width/15, "#FFAA00");
-    text(ctxt, "C", (can.width - 2 * size)*9/12 + size, (can.height - 2 * size)*11/12 + size, can.width/15, "#FFAA00");
-    //text(ctxt, "A", (can.width - 2 * size)*11/12 + size, (can.height - 2 * size)*11/12 + size, can.width/15, "#FFAA00");
-
-
-
-    
+    text(ctxt, "C", (can.width - 2 * size)*9/12 + size, (can.height - 2 * size)*11/12 + size, can.width/15, "#FFAA00");    
 }

@@ -29,9 +29,10 @@ function beispiel_vektor(){
     can.height = can.clientWidth;
     ctxt = can.getContext("2d");
     ctxt.clearRect(0, 0, can.width, can.height);
+    let size = can.width * 3/5 / 7;
     line(ctxt, can.width/5, can.height/2, can.width*4/5, can.height/2, "#000000FF", 2, 0, can.width/30);
     line(ctxt, can.width/2, can.height*4/5, can.width/2, can.height/5, "#000000FF", 2, 0, can.width/30);
-    
+    line(ctxt, can.width/2, can.height/2, can.width/2 + size, can.height/2 - 2*size, "#FFAA00", 2, 0, can.width/45);
 }
 
 function beispiel_linearkombination(){
@@ -40,9 +41,21 @@ function beispiel_linearkombination(){
     can.height = can.clientWidth;
     ctxt = can.getContext("2d");
     ctxt.clearRect(0, 0, can.width, can.height);
+    let size = can.width * 3/5 / 7;
     line(ctxt, can.width/5, can.height/2, can.width*4/5, can.height/2, "#000000FF", 2, 0, can.width/30);
     line(ctxt, can.width/2, can.height*4/5, can.width/2, can.height/5, "#000000FF", 2, 0, can.width/30);
     
+    line(ctxt, can.width/2, can.height/2, can.width/2 + size, can.height/2 - 2*size, "#FFAA00", 2, 0, can.width/45);
+    
+    line(ctxt, can.width/2, can.height/2, can.width/2 + size/2, can.height/2 + size/2, "#00AAFF", 2, 0, can.width/45);
+    line(ctxt, can.width/2 + size/2, can.height/2 + size/2, can.width/2 + size, can.height/2 + size, "#00AAFF", 2, 0, can.width/45, 0, true);
+
+    line(ctxt, can.width/2 + size, can.height/2 + size, can.width/2 + 2*size, can.height/2 - size, "#FFAA00", 2, 0, can.width/45);
+
+    line(ctxt, can.width/2 + size, can.height/2 - 2*size, can.width/2 + size*3/2, can.height/2 - size*3/2, "#00AAFF", 2, 0, can.width/45);
+    line(ctxt, can.width/2 + size*3/2, can.height/2 - size*3/2, can.width/2 + 2*size, can.height/2 - size, "#00AAFF", 2, 0, can.width/45, 0, true);
+
+    line(ctxt, can.width/2, can.height/2, can.width/2 + 2*size, can.height/2 - size, "#AA00FF", 2, 0, can.width/45);
 }
 
 function beispiel_span(){
@@ -51,7 +64,11 @@ function beispiel_span(){
     can.height = can.clientWidth;
     ctxt = can.getContext("2d");
     ctxt.clearRect(0, 0, can.width, can.height);
+    let size = can.width * 3/5 / 7;
     line(ctxt, can.width/5, can.height/2, can.width*4/5, can.height/2, "#000000FF", 2, 0, can.width/30);
     line(ctxt, can.width/2, can.height*4/5, can.width/2, can.height/5, "#000000FF", 2, 0, can.width/30);
     
+    line(ctxt, can.width/2 - 1.5*size, can.height/2 + 3*size, can.width/2 + 1.5*size, can.height/2 - 3*size, "#AAFF00", 1, 0, 0, 0, true);
+    
+    line(ctxt, can.width/2, can.height/2, can.width/2 + size, can.height/2 - 2*size, "#FFAA00", 2, 0, can.width/45);
 }

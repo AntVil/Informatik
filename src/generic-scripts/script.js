@@ -3,7 +3,7 @@ function line(ctxt, x1, y1, x2, y2, stroke="#000000FF", lineWidth=1, radius=0, a
     ctxt.lineWidth = lineWidth;
     ctxt.globalAlpha = opacity;
     if(dashed){
-        ctxt.setLineDash([5, 5]);
+        ctxt.setLineDash([2, 2]);
     }else{
         ctxt.setLineDash([]);
     }
@@ -51,7 +51,7 @@ function rect(ctxt, x, y, width, height, fill="#00000000", stroke="#000000FF", l
     ctxt.lineWidth = lineWidth;
     ctxt.globalAlpha = opacity;
     if(dashed){
-        ctxt.setLineDash([5, 5]);
+        ctxt.setLineDash([2, 2]);
     }else{
         ctxt.setLineDash([]);
     }
@@ -72,7 +72,7 @@ function circle(ctxt, x, y, radius, fill="#00000000", stroke="#000000FF", lineWi
     ctxt.lineWidth = lineWidth;
     ctxt.globalAlpha = opacity;
     if(dashed){
-        ctxt.setLineDash([5, 5]);
+        ctxt.setLineDash([2, 2]);
     }else{
         ctxt.setLineDash([]);
     }

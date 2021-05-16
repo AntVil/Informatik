@@ -172,7 +172,13 @@
                     Mit Hilfe der Wahrheitstabelle kann man nun die Normalform bilden, welche sich leicht realisieren lässt. Man unterscheidet zwischen der DNF und KNF.
                 </section>
                 <section style="grid-column: 75 / span 24;">
-                    <canvas id="beispiel_wahrheitstabelle"></canvas>
+                    <div class="table" style="grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(5, 1fr);">
+                        <div class="table_bottom"><span class="equation">\textcolor{orange}{A}</span></div><div class="table_bottom table_right"><span class="equation">\textcolor{orange}{B}</span></div><div class="table_bottom table_left"><span class="equation">Y</span></div>
+                        <div class="table_top"><span class="equation">\textcolor{#FF0000}{F}</span></div><div class="table_top table_right"><span class="equation">\textcolor{#FF0000}{F}</span></div><div class="table_top table_left"><span class="equation">\textcolor{LimeGreen}{W}</span></div>
+                        <div><span class="equation">\textcolor{#FF0000}{F}</span></div><div class="table_right"><span class="equation">\textcolor{LimeGreen}{W}</span></div><div class="table_left"><span class="equation">\textcolor{#FF0000}{F}</span></div>
+                        <div><span class="equation">\textcolor{LimeGreen}{W}</span></div><div class="table_right"><span class="equation">\textcolor{#FF0000}{F}</span></div><div class="table_left"><span class="equation">\textcolor{#FF0000}{F}</span></div>
+                        <div><span class="equation">\textcolor{LimeGreen}{W}</span></div><div class="table_right"><span class="equation">\textcolor{LimeGreen}{W}</span></div><div class="table_left"><span class="equation">\textcolor{LimeGreen}{W}</span></div>
+                    </div>
                     <div style="text-align: center;">
                         <i>(Äquivalenz)</i>
                     </div>

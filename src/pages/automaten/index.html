@@ -114,7 +114,14 @@
                     Das Beispiel rechts ist ein Automat, welcher entscheiden kann, ob eine Eingabe <span class="equation">e \in \{0, 1\}^*</span> eine gerade Anzahl an <span class="equation">1</span> enthält.
                 </section>
                 <section style="grid-column: 75 / span 24;">
-                    <canvas id="beispiel_zustandsuebergangstabelle"></canvas>
+                    <div class="table" style="grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(6, 1fr);">
+                        <div class="table_right" style="grid-column: 1 / span 2;"><span class="equation">t_n</span></div><div class="table_left"><span class="equation">t_{n+1}</span></div>
+                        <div class="table_bottom"><span class="equation">X_0</span></div><div class="table_bottom table_right"><span class="equation">Z_n</span></div><div class="table_bottom table_left"><span class="equation">Z_{n+1}</span></div>
+                        <div class="table_top"><span class="equation">\textcolor{#FF0000}{F}</span></div><div class="table_top table_right"><span class="equation">z_0</span></div><div class="table_top table_left"><span class="equation">z_0</span></div>
+                        <div><span class="equation">\textcolor{LimeGreen}{W}</span></div><div class="table_right"><span class="equation">z_0</span></div><div class="table_left"><span class="equation">z_1</span></div>
+                        <div><span class="equation">\textcolor{#FF0000}{F}</span></div><div class="table_right"><span class="equation">z_1</span></div><div class="table_left"><span class="equation">z_0</span></div>
+                        <div><span class="equation">\textcolor{LimeGreen}{W}</span></div><div class="table_right"><span class="equation">z_1</span></div><div class="table_left"><span class="equation">z_1</span></div>
+                    </div>
                 </section>
             </section>
             

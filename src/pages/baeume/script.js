@@ -32,7 +32,7 @@ function setup(){
 function beispiel_baum(){
     let can = document.getElementById("beispiel_baum");
     can.width = can.clientWidth;
-    can.height = can.clientWidth*19/20;
+    can.height = can.clientWidth*3/4;
     ctxt = can.getContext("2d");
     ctxt.clearRect(0, 0, can.width, can.height);
     let size = can.width / 25;

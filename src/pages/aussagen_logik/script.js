@@ -37,16 +37,16 @@ function beispiel_syntaxbaum(){
     rect(ctxt, can.width/2 - 3 * size, can.height * 6/10 + size, 3 * size, 3 * size, "#FFAA00", "#00000000", 0, size);
     rect(ctxt, can.width/2 - 2 * size, can.height * 6/10, 3 * size, 3 * size, "#AA00FF", "#00000000", 0, size);
 
-    circle(ctxt, can.width/2, can.height/5, can.width/15, "#00CCFFFF", "#00FFFFFF");
+    circle(ctxt, can.width/2, can.height/5, can.width/15, "#CC00FF", "#FFAAFF");
     text(ctxt, "¬", can.width/2, can.height/5, can.width/15);
     
-    circle(ctxt, can.width/2, can.height*2/5, can.width/15, "#00CCFFFF", "#00FFFFFF");
+    circle(ctxt, can.width/2, can.height*2/5, can.width/15, "#CC00FF", "#FFAAFF");
     text(ctxt, "∧", can.width/2, can.height*2/5, can.width/15);
     
     circle(ctxt, can.width/4, can.height*3/5, can.width/15, "#FFCC00FF", "#FFFF00FF");
     text(ctxt, "A", can.width/4, can.height*3/5, can.width/15);
     
-    circle(ctxt, can.width*3/4, can.height*3/5, can.width/15, "#00CCFFFF", "#00FFFFFF");
+    circle(ctxt, can.width*3/4, can.height*3/5, can.width/15, "#CC00FF", "#FFAAFF");
     text(ctxt, "¬", can.width*3/4, can.height*3/5, can.width/15);
     
     circle(ctxt, can.width*3/4, can.height*4/5, can.width/15, "#FFCC00FF", "#FFFF00FF");

@@ -56,9 +56,6 @@
             </ul>
         </nav>
         <main class="scroll">
-
-            
-
             <h2>Graphen</h2>
             <h3>Beschreibung</h3>
             <section class="container">
@@ -68,54 +65,112 @@
                     Ein gewichteter Graph besitzt für jede Kante der Kantenmenge ein Gewicht.
                     <div class="equation">G = (M, R, g)</div>
                     <div class="equation">g:R \rightarrow \mathbb{R}</div>
+                    Graphen beschreiben Beziehungen zwischen Objekten. Mit der gewichtung der Kanten können zum Beispiel Kosten abgebildet werden.
                 </section>
                 <section style="grid-column: 67 / span 33;">
                     <canvas id="beispiel_graph"></canvas>
                 </section>
             </section>
             
-            <h3>Arraydarstellung</h3>
+            <h3>Darstellung</h3>
             <section class="container">
                 <section style="grid-column: 1 / span 49;">
                     <h4>Adjazenzmatrix</h4>
-                    
+                    Ein Graph kann als Matrix (Tabelle) dargestellt werden. Ob es eine Kante gibt, beziehungsweise dessen Gewicht, wird in die jeweilige Zeile und Spalte eingetragen. Der Kanten Ursprung bestimmt die Spalte, das Ziel die Zeile.
+                    <div class="equation">
+                        \begin{pmatrix}
+                            1 & 1 & 1 & 1\\
+                            1 & 1 & 0 & 1\\
+                            0 & 1 & 1 & 1\\
+                            0 & 0 & 0 & 1\\
+                        \end{pmatrix}
+                    </div>
                 </section>
                 <section style="grid-column: 50 / span 49;">
                     <h4>Adjazenzliste</h4>
-
+                    Ein Graph kann mit einer Adjazenzliste (2-dimensionale Liste) dargestellt werden. In jeder Spalte werden alle Nachbarn untereinander eingetragen, gegebenenfalls mit deren Gewicht.
+                    
+                    <div class="table" style="grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(5, 1fr);">
+                        <div class="table_bottom"><b>a</b></div><div class="table_bottom"><b>b</b></div><div class="table_bottom"><b>c</b></div><div class="table_bottom"><b>d</b></div>
+                        <div class="table_top">a</div><div class="table_top">a</div><div class="table_top">b</div><div class="table_top">d</div>
+                        <div>b</div><div>b</div><div>c</div><div></div>
+                        <div>c</div><div>d</div><div>d</div><div></div>
+                        <div>d</div><div></div><div></div><div></div>
+                    </div>
                 </section>
             </section>
             
             <h3>Eigenschaften</h3>
-            gerichtet
-            ungerichtet
-            zusammenhängend
+            <section class="container">
+                <section style="grid-column: 1 / span 33;">
+                    <h4>gerichtet</h4>
+                    Nicht alle Kanten sind beidseitig vorhanden.
+                </section>
+                <section style="grid-column: 34 / span 33;">
+                    <h4>ungerichtet</h4>
+                    Alle Kanten sind beidseitig vorhanden. (Symmetrisch)
+                </section>
+                <section style="grid-column: 67 / span 33;">
+                    <h4>zusammenhängend</h4>
+                    Es gibt einen Pfad von jedem Knoten zu jedem Knoten.
+                </section>
+            </section>
             
-            <h3>Depth-First-Search</h3>
-            Durchlaufen eines Graphen mit einem Stack, Knoten werden nur einmal besucht.
+            <h3>Suchen</h3>
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <h3>Depth-First-Search</h3>
+                    Durchlaufen eines Graphen mit einem Stack, Knoten werden nur einmal besucht.
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <h3>Breadth-First-Search</h3>
+                    Durchlaufen eines Graphen mit einer Queue, Knoten werden nur einmal besucht. Breadth-First-Search findet den Kürzesten Pfad zu einem Knoten.
+                </section>
+            </section>
             
-            <h3>Breadth-First-Search</h3>
-            Durchlaufen eines Graphen mit einer Queue, Knoten werden nur einmal besucht.
+            
+            
             
             <h3>Spannbaum</h3>
-            <h4>Algorithmus von Kruskal</h4>
-            Kanten Sortieren
-            Kanten hintereinander hinzufügen
-            Außer es entsteht ein Zyklus
-
-            <h4>Algorithmus von Prim</h4>
-            Knoten zu Spannbaum hinzufügen
-            kleinste Kante angrenzend zum Baum hinzufügen
-            Außer es entsteht ein Zyklus
-
-            <h4>Algorithmus von Dijkstra</h4>
-            Startknoten wird besucht
-            Nachbarn und Distanzen von Knoten werden gegebenenfalls überschrieben
-            Kleinster unbesuchter Nachbar wird besucht
+            Der Spannbaum eines Graphen ist ein Baum, welcher alle Knoten eines Graphen durchläuft.
+            <section class="container">
+                <section style="grid-column: 1 / span 33;">
+                    <h4>Algorithmus von Kruskal</h4>
+                    <ul>
+                        <li>Kanten Sortieren</li>
+                        <li>Kanten hintereinander hinzufügen</li>
+                        <li>Außer es entsteht ein Zyklus</li>
+                    </ul>
+                </section>
+                <section style="grid-column: 34 / span 33;">
+                    <h4>Algorithmus von Prim</h4>
+                    <ul>
+                        <li>Start-Knoten zu Spannbaum hinzufügen</li>
+                        <li>Jeweils kleinste Kante angrenzend zum Baum hinzufügen</li>
+                        <li>Außer es entsteht ein Zyklus</li>
+                    </ul>
+                </section>
+                <section style="grid-column: 67 / span 33;">
+                    <h4>Algorithmus von Dijkstra</h4>
+                    <ul>
+                        <li>Startknoten wird besucht</li>
+                        <li>Jeweils kürzester entfernter unbesuchter Nachbar wird besucht</li>
+                        <li>Vorgänger und Distanzen von Knoten werden gegebenenfalls überschrieben</li>
+                    </ul>
+                </section>
+            </section>
+            
 
             <h3>Maximaler Fluss</h3>
-            
-            <h4></h4>
+            Der Maximale Fluss beschreibt ein Problem, bei dem man versucht von einem Start-Knoten zu einem End-Knoten so viel Wasser wie möglich durch zu leiten.
+            Die Gewichte der Kanten sind dabei die maximale Kapazität die eine Leitung halten kann.
+
+            <h4>Ford-Fulkerson-Algorithmus</h4>
+            <ul>
+                <li>Vom Start-Knoten zum End-Knoten werden mögliche Pfade gesucht</li>
+                <li>Der Durchfluss auf den Pfaden wird so hoch wie die kleinste Kapazität es erlaubt gesetzt</li>
+                <li>Pfade können bereits verwendete Kanten auch Rückwerts durchlaufen, wobei dabei der Durchfluss an der Stelle verringert statt erhöht wird.</li>
+            </ul>
 
             <h4>Minimaler Schnitt</h4>
             Es wird ein Schnitt durch nur vollständig verwendete Kanten gesetzt. Die Summe der geschnittenen Kanten entspricht dem Maximalem Fluss.

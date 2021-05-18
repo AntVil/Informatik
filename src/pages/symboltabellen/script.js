@@ -30,9 +30,9 @@ function beispiel_symboltabelle(){
     rect(ctxt, can.width/7, can.height/7, can.width*1.5/7, can.height*5/7, "#00AAFFFF", "#00000000", 1, can.width/10);
     rect(ctxt, can.width*4.5/7, can.height/7, can.width*1.5/7, can.height*5/7, "#FFAA00FF", "#00000000", 1, can.width/10);
     circle(ctxt, can.width/4, can.height/4, can.width/15, "#00CCFFFF", "#00FFFFFF");
-    circle(ctxt, can.width*3/4, can.height/4, can.width/15, "#00CCFFFF", "#00FFFFFF");
+    circle(ctxt, can.width*3/4, can.height/4, can.width/15, "#FFCC00FF", "#FFFF00FF");
     circle(ctxt, can.width/4, can.height/2, can.width/15, "#00CCFFFF", "#00FFFFFF");
-    circle(ctxt, can.width*3/4, can.height/2, can.width/15, "#00CCFFFF", "#00FFFFFF");
+    circle(ctxt, can.width*3/4, can.height/2, can.width/15, "#FFCC00FF", "#FFFF00FF");
     circle(ctxt, can.width/4, can.height*3/4, can.width/15, "#00CCFFFF", "#00FFFFFF");
     text(ctxt, "a", can.width/4, can.height/4, can.width/15);
     text(ctxt, "d", can.width*3/4, can.height/4, can.width/15);

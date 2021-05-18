@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="../../lib/katex/katex.min.css">
         <script src="../../lib/katex/katex.min.js"></script>
 
+        <script src="../../generic-scripts/script.js"></script>
+
         <link rel="stylesheet" href="./style.css">
         <script src="./script.js"></script>
     </head>
@@ -54,8 +56,6 @@
             </ul>
         </nav>
         <main class="scroll">
-
-            
             <h2>Codierungen</h2>
             <h3>Beschreibung</h3>
             Ein Zeichenvorrat beschreibt die Menge aller Zeichen, welche in einem Wort verwendet werden können. 
@@ -71,11 +71,13 @@
                 <section style="grid-column: 1 / span 49;">
                     <h4>Symmetrische Codes</h4>
                     Wertebereich 0 bis 4 ergibt gespiegelt und invertiert 5 bis 9
+                    <br>
                     <i>Exzess-3-Code</i>, <i>Aiken-Code</i>
                 </section>
                 <section style="grid-column: 50 / span 49;">
                     <h4>Progressive Codes</h4>
                     Aufeinander folgende Zahlen unterscheiden sich in einem Bit
+                    <br>
                     <i>Gray-Code</i>, <i>Glixon-Code</i>
                 </section>
             </section>
@@ -83,7 +85,8 @@
             <section class="container">
                 <section style="grid-column: 1 / span 49;">
                     <h4>Gleichgewichtige Codes</h4>
-                    Jedes Wort ist gleich lang und hat die gleiche Anzahl an <span class="equation">1$
+                    Jedes Wort ist gleich lang und hat die gleiche Anzahl an <span class="equation">1</span>
+                    <br>
                     <i>Walking-Code</i>, <i>w-aus-m-Codes</i>
                 </section>
                 <section style="grid-column: 50 / span 49;">
@@ -93,61 +96,25 @@
             <h3>Fano-Bedingung</h3>
             Kein Wort einer Codierung ist ein Teil eines anderen Worts. Nur Blätter im Binärbaum werden codiert.
             <section class="container">
-                <section style="grid-column: 1 / span 49;">
-                    \begin{center}
-                        \begin{tikzpicture}
-                            \node[node] (node1) at (0cm, 0cm) {};
-                            \node[node] (node2) at (-1cm, -1cm) {$e$};
-                            \node[node] (node3) at (1cm, -1cm) {$f$};
-                            \node[node] (node4) at (-1.5cm, -2cm) {$a$};
-                            \node[node] (node5) at (-0.5cm, -2cm) {$b$};
-                            \node[node] (node6) at (0.5cm, -2cm) {$c$};
-                            \node[node] (node7) at (1.5cm, -2cm) {$d$};
-                            
-                            \path[->] (node1) edge[above] node {$0$} (node2);
-                            \path[->] (node1) edge[above] node {$1$} (node3);
-                            
-                            \path[->] (node2) edge[left] node {$0$} (node4);
-                            \path[->] (node2) edge[right] node {$1$} (node5);
-                            
-                            \path[->] (node3) edge[left] node {$0$} (node6);
-                            \path[->] (node3) edge[right] node {$1$} (node7);
-                        \end{tikzpicture}\\
-                        \begin{tabular}{c|c|c|c|c|c}
-                            <span class="equation">a</span> & <span class="equation">b</span> & <span class="equation">c</span> & <span class="equation">d</span> & <span class="equation">e</span> & <span class="equation">f$\\
-                            \hline
-                            <span class="equation">00</span> & <span class="equation">01</span> & <span class="equation">10</span> & <span class="equation">11</span> & <span class="equation">0</span> & <span class="equation">1</span>
-                        \end{tabular}\\
+                <section style="grid-column: 1 / span 48;">
+                    <canvas id="beispiel_fano_bedingung_1"></canvas>
+                    <div class="table" style="grid-template-columns: repeat(6, 1fr); grid-template-rows: repeat(2, 1fr);">
+                        <div><span class="equation">a</span></div><div><span class="equation">b</span></div><div><span class="equation">c</span></div><div><span class="equation">d</span></div><div><span class="equation">e</span></div><div><span class="equation">f</span></div>
+                        <div><span class="equation">00</span></div><div><span class="equation">01</span></div><div><span class="equation">10</span></div><div><span class="equation">11</span></div><div><span class="equation">0</span></div><div><span class="equation">1</span></div>
+                    </div>
+                    <div style="text-align: center;">
                         Erfüllt Bedingung nicht, wegen <span class="equation">e</span>, <span class="equation">f</span>.
-                    \end{center}
+                    </div>
                 </section>
-                <section style="grid-column: 50 / span 49;">
-                    \begin{center}
-                        \begin{tikzpicture}
-                            \node[node] (node1) at (0cm, 0cm) {};
-                            \node[node] (node2) at (-1cm, -1cm) {};
-                            \node[node] (node3) at (1cm, -1cm) {};
-                            \node[node] (node4) at (-1.5cm, -2cm) {$a$};
-                            \node[node] (node5) at (-0.5cm, -2cm) {$b$};
-                            \node[node] (node6) at (0.5cm, -2cm) {$c$};
-                            \node[node] (node7) at (1.5cm, -2cm) {$d$};
-                            
-                            \path[->] (node1) edge[above] node {$0$} (node2);
-                            \path[->] (node1) edge[above] node {$1$} (node3);
-                            
-                            \path[->] (node2) edge[left] node {$0$} (node4);
-                            \path[->] (node2) edge[right] node {$1$} (node5);
-                            
-                            \path[->] (node3) edge[left] node {$0$} (node6);
-                            \path[->] (node3) edge[right] node {$1$} (node7);
-                        \end{tikzpicture}\\
-                        \begin{tabular}{c|c|c|c}
-                            <span class="equation">a</span> & <span class="equation">b</span> & <span class="equation">c</span> & <span class="equation">d</span> \\
-                            \hline
-                            <span class="equation">00</span> & <span class="equation">01</span> & <span class="equation">10</span> & <span class="equation">11</span>
-                        \end{tabular}\\
+                <section style="grid-column: 51 / span 48;">
+                    <canvas id="beispiel_fano_bedingung_2"></canvas>
+                    <div class="table" style="grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 1fr);">
+                        <div><span class="equation">a</span></div><div><span class="equation">b</span></div><div><span class="equation">c</span></div><div><span class="equation">d</span></div>
+                        <div><span class="equation">00</span></div><div><span class="equation">01</span></div><div><span class="equation">10</span></div><div><span class="equation">11</span></div>
+                    </div>
+                    <div style="text-align: center;">
                         Fano-Bedingung erfüllt.
-                    \end{center}
+                    </div>
                 </section>
             </section>
             
@@ -157,16 +124,11 @@
                     Die Hamming-Distanz <span class="equation">D_n</span> beschreibt den kleinsten Unterschied zwischen allen Codierten Wörtern. Die Wörter <span class="equation">000</span> und <span class="equation">010</span> unterscheiden sich in einem Zeichen, die Distanz wäre <span class="equation">1</span>. Codes die eine Korrektur zu lassen heißen Hamming-Codes.
                 </section>
                 <section style="grid-column: 50 / span 49;">
-                    \begin{center}
-                        \begin{tabular}{c|c|c}
-                            Hamming-Distanz & Erkannte Fehler & Behebbare Fehler \\
-                            \hline
-                            \hline
-                            <span class="equation">D_n</span> (gerade) & <span class="equation">D_n - 1</span> & <span class="equation">\frac{D_n}{2} - 1</span> \\
-                            \hline
-                            <span class="equation">D_n</span> (ungerade) & <span class="equation">D_n - 1</span> & <span class="equation">\frac{(D_n - 1)}{2}</span>
-                        \end{tabular}
-                    \end{center}
+                    <div class="table" style="grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr);">
+                        <div>Hamming-Distanz</div><div>Erkannte Fehler</div><div>Behebbare Fehler</div>
+                        <div><span class="equation">D_n</span> gerade</div><div><span class="equation">D_n - 1</span></div><div><span class="equation">\frac{D_n}{2} - 1</span></div>
+                        <div><span class="equation">D_n</span> ungerade</div><div><span class="equation">D_n - 1</span></div><div><span class="equation">\frac{(D_n - 1)}{2}</span></div>
+                    </div>
                 </section>
             </section>
             

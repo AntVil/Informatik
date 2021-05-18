@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="../../lib/katex/katex.min.css">
         <script src="../../lib/katex/katex.min.js"></script>
 
+        <script src="../../generic-scripts/script.js"></script>
+
         <link rel="stylesheet" href="./style.css">
         <script src="./script.js"></script>
     </head>
@@ -59,13 +61,30 @@
 
             <h2>Graphen</h2>
             <h3>Beschreibung</h3>
-            <div class="equation">G = (M, R)</div>
+            <section class="container">
+                <section style="grid-column: 1 / span 66;">
+                    Ein Graph ist eine Relation auf einer Kantenmenge.
+                    <div class="equation">G = (M, R)</div>
+                    Ein gewichteter Graph besitzt für jede Kante der Kantenmenge ein Gewicht.
+                    <div class="equation">G = (M, R, g)</div>
+                    <div class="equation">g:R \rightarrow \mathbb{R}</div>
+                </section>
+                <section style="grid-column: 67 / span 33;">
+                    <canvas id="beispiel_graph"></canvas>
+                </section>
+            </section>
             
-            <h3>Adjazenzmatrix</h3>
-            
-            
-            <h3>Adjazenzliste</h3>
-            
+            <h3>Arraydarstellung</h3>
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <h4>Adjazenzmatrix</h4>
+                    
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <h4>Adjazenzliste</h4>
+
+                </section>
+            </section>
             
             <h3>Eigenschaften</h3>
             gerichtet
@@ -73,16 +92,33 @@
             zusammenhängend
             
             <h3>Depth-First-Search</h3>
-            
+            Durchlaufen eines Graphen mit einem Stack, Knoten werden nur einmal besucht.
             
             <h3>Breadth-First-Search</h3>
-            
+            Durchlaufen eines Graphen mit einer Queue, Knoten werden nur einmal besucht.
             
             <h3>Spannbaum</h3>
+            <h4>Algorithmus von Kruskal</h4>
+            Kanten Sortieren
+            Kanten hintereinander hinzufügen
+            Außer es entsteht ein Zyklus
 
+            <h4>Algorithmus von Prim</h4>
+            Knoten zu Spannbaum hinzufügen
+            kleinste Kante angrenzend zum Baum hinzufügen
+            Außer es entsteht ein Zyklus
+
+            <h4>Algorithmus von Dijkstra</h4>
+            Startknoten wird besucht
+            Nachbarn und Distanzen von Knoten werden gegebenenfalls überschrieben
+            Kleinster unbesuchter Nachbar wird besucht
 
             <h3>Maximaler Fluss</h3>
+            
+            <h4></h4>
 
+            <h4>Minimaler Schnitt</h4>
+            Es wird ein Schnitt durch nur vollständig verwendete Kanten gesetzt. Die Summe der geschnittenen Kanten entspricht dem Maximalem Fluss.
         
         
         </main>

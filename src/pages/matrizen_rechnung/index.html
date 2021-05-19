@@ -35,12 +35,14 @@
                 <li><a href="../automaten/index.html">Automaten</a></li>
                 <li><a href="../baeume/index.html">Bäume</a></li>
                 <li><a href="../codierungen/index.html">Codierungen</a></li>
+                <li><a href="../differenzial_rechnung/index.html">Differenzial Rechnung</a></li>
                 <li><a href="../flipflops/index.html">Flipflops</a></li>
                 <li><a href="../folgen_und_reihen/index.html">Folgen und Reihen</a></li>
                 <li><a href="../formale_sprachen/index.html">Formale Sprachen</a></li>
                 <li><a href="../ganze_zahlen/index.html">Ganze Zahlen</a></li>
                 <li><a href="../graphen/index.html">Graphen</a></li>
                 <li><a href="../hash_funktionen/index.html">Hash Funktionen</a></li>
+                <li><a href="../integral_rechnung/index.html">Integral Rechnung</a></li>
                 <li><a href="../listen/index.html">Listen</a></li>
                 <li><a href="../matrizen_rechnung/index.html">Matrizen Rechnung</a></li>
                 <li><a href="../mengen/index.html">Mengen</a></li>
@@ -92,6 +94,9 @@
                 </section>
                 <section style="grid-column: 50 / span 49;">
                     <canvas id="beispiel_lineare_abbildung"></canvas>
+                    <div style="text-align: center;">
+                        <i>Rotationsmatrix</i>
+                    </div>
                 </section>
             </section>
             <p>Eine lineare Abbildung ist eine Matrixmultiplikation. Für sie gilt, dass der Ursprung im Definitionsbereich gleich dem im Bildbereich ist und dass Linear Kombinationen im Definitionsbereich transformiert im Bildbereich erhalten bleiben.</p>
@@ -113,8 +118,17 @@
                     <div class="equation">Bild(A) = span(\vec{m_1}, \vec{m_2})</div>
                 </section>
             </section>
-            <p>Die Dimension der Ausgangsmenge entspricht der Dimension des Kerns und Bildes. Die Dimension des Bildes wird auch Rang genannt.</p>
+            <p>Die Dimension der Ausgangsmenge <span class="equation">D</span> entspricht der Dimension des Kerns und Bildes. Die Dimension des Bildes wird auch Rang genannt.</p>
             <div class="equation">dim(D) = dim(Kern(A)) + dim(Bild(A)) = dim(Kern(A)) + Rang(A)</div>
+            <h3>Determinate</h3>
+            Die Determinate ist ein Skalar und beschreibt wie sich der Inhalt der Einheitsvektoren verändert. Nur Quadratische Matrizen haben eine Determinante.
+            Die Determinate kann auch <b>negativ</b> sein.
+            Wenn sich die Dimension nach der Transformation durch die Matrix verringert, ist die Determinate 0.
+            <div class="equation">det(A) \in \mathbb{R}</div>
+            Standartmäßig berechnet man die Determinate, indem man das Gauß Verfahren anwendet. Zum Schluss multipliziert man die Einträge der Diagonalen.
+            <h4>Laplace'scher Entwicklungssatz</h4>
+            Für jedes beliebige j, gilt die folgende Formel. Wobei mit <span class="equation">A_{ij}</span> die Matrix ohne die Zeilen <span class="equation">i</span> und die Spalten <span class="equation">j</span> gemeint ist.
+            <div class="equation">dem(A) = \displaystyle\sum_{i=1}^{n}(-1)^{i+j}\cdot a_{ij} det(A_{ij})</div>
             <h3>Inverse</h3>
             <p>Eine Matrix ist invertierbar, wenn die Spalten eine Basis bilden und die Matrix quadratisch ist. Um das inverse zu erhalten wendet man wieder das Gauß Verfahren an. Danach kann die Lösung auf der rechten Seite ablesen.</p>
             <div class="equation">\left(\begin{array}{cc|cc}a & b & 1 & 0\\c & d & 0 & 1\end{array}\right)</div>

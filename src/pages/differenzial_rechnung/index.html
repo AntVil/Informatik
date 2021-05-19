@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="../../lib/katex/katex.min.css">
         <script src="../../lib/katex/katex.min.js"></script>
 
+        <script src="../../generic-scripts/script.js"></script>
+
         <link rel="stylesheet" href="./style.css">
         <script src="./script.js"></script>
     </head>
@@ -33,12 +35,14 @@
                 <li><a href="../automaten/index.html">Automaten</a></li>
                 <li><a href="../baeume/index.html">Bäume</a></li>
                 <li><a href="../codierungen/index.html">Codierungen</a></li>
+                <li><a href="../differenzial_rechnung/index.html">Differenzial Rechnung</a></li>
                 <li><a href="../flipflops/index.html">Flipflops</a></li>
                 <li><a href="../folgen_und_reihen/index.html">Folgen und Reihen</a></li>
                 <li><a href="../formale_sprachen/index.html">Formale Sprachen</a></li>
                 <li><a href="../ganze_zahlen/index.html">Ganze Zahlen</a></li>
                 <li><a href="../graphen/index.html">Graphen</a></li>
                 <li><a href="../hash_funktionen/index.html">Hash Funktionen</a></li>
+                <li><a href="../integral_rechnung/index.html">Integral Rechnung</a></li>
                 <li><a href="../listen/index.html">Listen</a></li>
                 <li><a href="../matrizen_rechnung/index.html">Matrizen Rechnung</a></li>
                 <li><a href="../mengen/index.html">Mengen</a></li>
@@ -57,81 +61,70 @@
 
             
 
-<h2>Differenzialrechnung}
-    <h3>Beschreibung}
+<h2>Differenzialrechnung</h2>
+    <h3>Beschreibung</h3>
     <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.59\textwidth}
-            Die Ableitung einer Funktion ist eine Funktion. Die Ableitung gibt die Steigung der Stammfunktion an jedem definierten Punkt an. Die Ableitung von einer Funktion <span class="equation">f</span> wird mit <span class="equation">f'</span> bezeichnet. Mit der Schreibweise <span class="equation">f^{(n)}</span> kann man die <span class="equation">n$-te Ableitung ausdrücken.
+        <section style="grid-column: 1 / span 59;">
+            Die Ableitung einer Funktion ist eine Funktion. Die Ableitung gibt die Steigung der Stammfunktion an jedem definierten Punkt an. Die Ableitung von einer Funktion <span class="equation">f</span> wird mit <span class="equation">f'</span> bezeichnet. Mit der Schreibweise <span class="equation">f^{(n)}</span> kann man die <span class="equation">n</span>-te Ableitung ausdrücken.
             <div class="equation">\textcolor{orange}{f}(x) = 1 - \frac{x^2}{2} + \frac{x^3}{16} + \frac{x^4}{16}</div>
             <div class="equation">\textcolor{cyan}{f'}(x) = -x + \frac{3x^2}{16} + \frac{x^3}{6}</div>
         </section>
-        <section style="grid-column: 1 / span 99;">{0.4\textwidth}
-            \begin{center}
-                \begin{tikzpicture}
-                    \draw[very thin, color=gray] (-3cm, -2cm) grid (3cm, 3cm);
-                    
-                    \draw[->] (0cm, -2cm) -- (0cm, 3cm);
-                    \draw[->] (-3cm, 0cm) -- (3cm, 0cm);
-                    
-                    \draw [orange, domain=-3:3, smooth] plot (\x, {1 - (\x * \x)/2 + (\x * \x * \x)/16 + (\x * \x * \x * \x)/24});
-                            
-                    \draw [cyan, domain=-3:2.95883, smooth] plot (\x, {-\x + 3 * (\x * \x)/16 + (\x * \x * \x)/6});
-                \end{tikzpicture}
-            \end{center}
+        <section style="grid-column: 60 / span 40;">
+            <canvas id="beispiel_ableitung"></canvas>
         </section>
     </section>
     
-    <h3>Ableitungen}
+    <h3>Ableitungen</h3>
     <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+        <section style="grid-column: 1 / span 49;">
             <div class="equation">(\sin(x))' = \cos(x)</div>
             <div class="equation">(\cos(x))' = -\sin(x)</div>
         </section>
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
+        <section style="grid-column: 50 / span 49;">
             <div class="equation">(e^x)' = e^x</div>
             <div class="equation">(\ln(x))' = \frac{1}{x}</div>
         </section>
     </section>
     
-    \noindent
+    
     <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.24\textwidth}
-            \textbf{Produktregel}
+        <section style="grid-column: 1 / span 24;">
+            <h4>Produktregel</h4>
             <div class="equation">f(x) = u(x) \cdot v(x)</div>
             <div class="equation">f'(x) = u'(x) \cdot v(x) + u(x) \cdot v'(x)</div>
         </section>
-        <section style="grid-column: 1 / span 99;">{0.24\textwidth}
-            \textbf{Kettenregel}
+        <section style="grid-column: 25 / span 24;">
+            <h4>Kettenregel</h4>
             <div class="equation">f(x) = u(v(x))</div>
             <div class="equation">f'(x) = v'(x) \cdot u'(v(x))</div>
         </section>
-        <section style="grid-column: 1 / span 99;">{0.24\textwidth}
-            \textbf{Logarithmisch}
+        <section style="grid-column: 50 / span 24;">
+            <h4>Logarithmisch</h4>
             <div class="equation">f(x) = u(x)^{v(x)}</div>
             <div class="equation">(\ln(f(x)))' = (v(x) \cdot \ln(u(x)))'</div>
         </section>
-        <section style="grid-column: 1 / span 99;">{0.24\textwidth}
-            \textbf{Umkehrfunktion}
+        <section style="grid-column: 75 / span 24;">
+            <h4>Umkehrfunktion</h4>
             <div class="equation">f(x) \text{ umkehrbar}</div>
             <div class="equation">f'(x) = \frac{1}{(f^{-1})'(f(x))}</div>
         </section>
     </section>
     
     
-    \noindent
+    
     <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.33\textwidth}
-            \textbf{Impliziert}
+        <section style="grid-column: 1 / span 33;">
+            <h4>Impliziert</h4>
             <div class="equation">F(x; y) = u(x) + v(y) = 0</div>
             <div class="equation">u'(x) + y' \cdot v(y) = 0</div>
         </section>
-        <section style="grid-column: 1 / span 99;">{0.33\textwidth}
-            \textbf{Parameter}
+        <section style="grid-column: 34 / span 33;">
+            <h4>Parameter</h4>
             <div class="equation">x(t) \text{, } y(t)</div>
             <div class="equation">f'(t) = \frac{y'(t)}{x'(t)}</div>
         </section>
-        <section style="grid-column: 1 / span 99;">{0.33\textwidth}
-            \textbf{Polar}
+        <section style="grid-column: 67 / span 33;">
+            <h4>Polar</h4>
             <div class="equation">r(\alpha)</div>
             <div class="equation">x(\alpha) = r(\alpha) \cdot \cos(\alpha)</div>
             <div class="equation">y(\alpha) = r(\alpha) \cdot \sin(\alpha)</div>
@@ -140,19 +133,19 @@
     </section>
     
     
-    <h3>Taylor Reihen}
+    <h3>Taylor Reihen</h3>
     Eine Taylor Reihe ist eine Potenzreihe, welche eine Funktion an der Stelle <span class="equation">x_0</span> annähert. Sie kann verwendet werden um Funktionen wie <span class="equation">\sin</span> oder <span class="equation">e^x</span> anzunähern. Desto mehr Terme addiert werden, desto genauer wird die Annäherung.
-    <div class="equation">f(x) = \sum_{n=0}^{\infty}\frac{f^{(n)}(x_0)}{n!} \cdot (x-x_0)^n</div>
+    <div class="equation">f(x) = \displaystyle\sum_{n=0}^{\infty}\frac{f^{(n)}(x_0)}{n!} \cdot (x-x_0)^n</div>
     
-    <h3>Regel von L'Hôpital}
+    <h3>Regel von L'Hôpital</h3>
     Mit Ableitungen kann man zuvor unlösbare Grenzwerte berechnen. Bedingung der Grenzwert eines Quotienten von zwei Funktionen strebt einem unbestimmbaren Wert an. (zum Beispiel <span class="equation">\frac{\infty}{\infty}</span>)
     <div class="equation">\lim_{x \rightarrow x_0}\left(\frac{f(x)}{g(x)}\right) = \lim_{x \rightarrow x_0}\left(\frac{f'(x)}{g'(x)}\right)</div>
     
-    <h3>Tangenten-verfahren (Newton)}
+    <h3>Tangenten-verfahren (Newton)</h3>
     Annäherungsverfahren für Nullstellen.
     <div class="equation">x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}</div>
     Bedingung für Startwert <span class="equation">x_0</span>.
-    <div class="equation">\left|\frac{f(x_0) \cdot f''(x_0)}{f'(x_0)}\right| < 1</div>
+    <div class="equation">\left|\frac{f(x_0) \cdot f''(x_0)}{f'(x_0)}\right| &lt; 1</div>
     
     
     

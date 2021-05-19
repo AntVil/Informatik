@@ -33,12 +33,14 @@
                 <li><a href="../automaten/index.html">Automaten</a></li>
                 <li><a href="../baeume/index.html">Bäume</a></li>
                 <li><a href="../codierungen/index.html">Codierungen</a></li>
+                <li><a href="../differenzial_rechnung/index.html">Differenzial Rechnung</a></li>
                 <li><a href="../flipflops/index.html">Flipflops</a></li>
                 <li><a href="../folgen_und_reihen/index.html">Folgen und Reihen</a></li>
                 <li><a href="../formale_sprachen/index.html">Formale Sprachen</a></li>
                 <li><a href="../ganze_zahlen/index.html">Ganze Zahlen</a></li>
                 <li><a href="../graphen/index.html">Graphen</a></li>
                 <li><a href="../hash_funktionen/index.html">Hash Funktionen</a></li>
+                <li><a href="../integral_rechnung/index.html">Integral Rechnung</a></li>
                 <li><a href="../listen/index.html">Listen</a></li>
                 <li><a href="../matrizen_rechnung/index.html">Matrizen Rechnung</a></li>
                 <li><a href="../mengen/index.html">Mengen</a></li>
@@ -54,71 +56,63 @@
             </ul>
         </nav>
         <main class="scroll">
-
+            <h2>Integralrechnung</h2>
+            <h3>Beschreibung</h3>
+            Das unbestimmte Integral einer Funktion ist einfach die Stammfunktion. (<span class="equation">C \in \mathbb{R}</span>)
+            <div class="equation">\displaystyle\int f(x) dx = F(x) + C</div>
+            Das bestimmte Integral einer Funktion zwischen zwei Werten ist ein Wert. Der Wert gibt den Flächeninhalt zwischen der Funktion und der x-Achse an (kann auch negativ sein). Das Integral wird mit Hilfe der Stammfunktion berechnet.
+            <div class="equation">\displaystyle\int_{x_0}^{x_n} f(x) dx = \left[F(x)\right]_{x_0}^{x_n} = F(x_n) - F(x_0)</div>
             
-<h2>Integralrechnung}
-    <h3>Beschreibung}
-    Das unbestimmte Integral einer Funktion ist einfach die Stammfunktion. (<span class="equation">C \in \mathbb{R}</span>)
-    <div class="equation">\int f(x) dx = F(x) + C</div>
-    Das bestimmte Integral einer Funktion zwischen zwei Werten ist ein Wert. Der Wert gibt den Flächeninhalt zwischen der Funktion und der x-Achse an (kann auch negativ sein). Das Integral wird mit Hilfe der Stammfunktion berechnet.
-    <div class="equation">\int_{x_0}^{x_n} f(x) dx = \left[F(x)\right]_{x_0}^{x_n} = F(x_n) - F(x_0)</div>
-    
-    \noindent
-    <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-            \textbf{Substitution}
-            <div class="equation">F(x) = \int f(x)dx</div>
-            <div class="equation">u := g(x)</div>
-            <div class="equation">F^*(u) = \int f^*(x, u) \cdot \frac{1}{g'(x)} du = \int f^*(u) du</div>
-            \begin{center}
-                \textit{(Rücksubstitution nicht vergessen)}
-            \end{center}
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-            \textbf{Partielle Integration}
-            <div class="equation">F(x) = \int u(x) \cdot v(x)dx</div>
-            <div class="equation">F(x) = U(x) \cdot v(x) - \int U(x) \cdot v'(x) dx + C</div>
-        </section>
-    </section>
-    
-    
-    
-    \noindent
-    \textbf{Partialbruchzerlegung}\\
-    Darstellung einer echt gebrochen rationalen Funktion als Summe. Mit <span class="equation">n_i</span> werden alle Nullstellen von <span class="equation">v(x)</span> bezeichnet von denen es <span class="equation">N</span> viele verschiedene gibt. Der Grad jeder Nullstelle von <span class="equation">v(x)</span> wird mit <span class="equation">g_i</span> bezeichnet. Mit <span class="equation">a_{i,j}</span> wird eine Konstante beschrieben.
-    <div class="equation">f(x) = \frac{u(x)}{v(x)}</div>
-    <div class="equation">v(x) = \prod_{i=0}^{N}(x-n_i)^{g_i} = \sum_{i=0}^{N}\left(\sum_{j=0}^{g_i}\left(\frac{a_{i,j}}{(x-n_i)^{j+1}}\right)\right)</div>
-    Es wird mit <span class="equation">v(x)</span> Multipliziert und auf der rechten Seite werden gemeinsame Exponenten zusammengefasst.
-    <div class="equation">f(x) \cdot v(x) = u(x) = (...) + x\cdot (...) + x^2 \cdot (...) + ...</div>
-    Nun kann ein Gleichungssystem aufgestellt werden mit trivialen Werten für <span class="equation">(...)</span>.\\
-    Nachdem die Werte für <span class="equation">a_{i,j}</span> bekannt sind kann die Funktion leicht Integriert werden.
-    
-    \noindent
-    \textbf{Trapez-regel}
-    <div class="equation">\int_{x_0}^{x_n}f(x)dx \approx \left(f(x_0) + f(x_n) + 2\cdot \sum_{i=1}^{n-1}f(x_i)\right) \cdot \frac{x_n - x_0}{2n}</div>
-    \textbf{Simpson-regel}
-    <div class="equation">\int_{x_0}^{x_n}f(x)dx \approx \left(f(x_0) + f(x_n) + 4\cdot \sum_{i=1}^{n-1}f\left(\frac{x_{i-1} + x_{i}}{2}\right) + 2\cdot \sum_{i=1}^{n-1}f(x_i)\right) \cdot \frac{x_n - x_0}{6n}</div>
-    
-    <h3>Uneigentliches integral}
-    <div class="equation">f(k) \notin \mathbb{R}</div>
-    <div class="equation">\int_{x_0}^{k}f(x)dx = \lim_{n \rightarrow k}\left(\int_{x_0}^{n}f(x)dx\right)</div>
-    <h3>Rotationskörper}
-    <section class="container">
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-            \textbf{x-Achse}
-            <div class="equation">V_x = \pi \cdot \int_{x_0}^{x_n}f(x)^2dx</div>
-        </section>
-        <section style="grid-column: 1 / span 99;">{0.49\textwidth}
-            \textbf{y-Achse}
-            <div class="equation">V_y = \pi \cdot \int_{f^{-1}(x_0)}^{f^{-1}(x_n)}f^{-1}(x)^2dx</div>
-        </section>
-    </section>
-    
-    
-    
-    
-    
-    
+            
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <h4>Substitution</h4>
+                    <div class="equation">F(x) = \displaystyle\int f(x)dx</div>
+                    <div class="equation">u := g(x)</div>
+                    <div class="equation">F^*(u) = \displaystyle\int f^*(x, u) \cdot \frac{1}{g'(x)} du = \displaystyle\int f^*(u) du</div>
+                    <div style="text-align: center;">
+                        <i>(Rücksubstitution nicht vergessen)</i>
+                    </div>
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <h4>Partielle Integration</h4>
+                    <div class="equation">F(x) = \displaystyle\int u(x) \cdot v(x)dx</div>
+                    <div class="equation">F(x) = U(x) \cdot v(x) - \displaystyle\int U(x) \cdot v'(x) dx + C</div>
+                </section>
+            </section>
+            
+            
+            
+            
+            <h3>Partialbruchzerlegung</h3>
+            Darstellung einer echt gebrochen rationalen Funktion als Summe. Mit <span class="equation">n_i</span> werden alle Nullstellen von <span class="equation">v(x)</span> bezeichnet von denen es <span class="equation">N</span> viele verschiedene gibt. Der Grad jeder Nullstelle von <span class="equation">v(x)</span> wird mit <span class="equation">g_i</span> bezeichnet. Mit <span class="equation">a_{i,j}</span> wird eine Konstante beschrieben.
+            <div class="equation">f(x) = \frac{u(x)}{v(x)}</div>
+            <div class="equation">v(x) = \displaystyle\prod_{i=0}^{N}(x-n_i)^{g_i} = \displaystyle\sum_{i=0}^{N}\left(\displaystyle\sum_{j=0}^{g_i}\left(\frac{a_{i,j}}{(x-n_i)^{j+1}}\right)\right)</div>
+            Es wird mit <span class="equation">v(x)</span> Multipliziert und auf der rechten Seite werden gemeinsame Exponenten zusammengefasst.
+            <div class="equation">f(x) \cdot v(x) = u(x) = (...) + x\cdot (...) + x^2 \cdot (...) + ...</div>
+            Nun kann ein Gleichungssystem aufgestellt werden mit trivialen Werten für <span class="equation">(...)</span>.\\
+            Nachdem die Werte für <span class="equation">a_{i,j}</span> bekannt sind kann die Funktion leicht Integriert werden.
+            
+            
+            <h3>Trapez-regel</h3>
+            <div class="equation">\displaystyle\int_{x_0}^{x_n}f(x)dx \approx \left(f(x_0) + f(x_n) + 2\cdot \displaystyle\sum_{i=1}^{n-1}f(x_i)\right) \cdot \frac{x_n - x_0}{2n}</div>
+            <h3>Simpson-regel</h3>
+            <div class="equation">\displaystyle\int_{x_0}^{x_n}f(x)dx \approx \left(f(x_0) + f(x_n) + 4\cdot \displaystyle\sum_{i=1}^{n-1}f\left(\frac{x_{i-1} + x_{i}}{2}\right) + 2\cdot \displaystyle\sum_{i=1}^{n-1}f(x_i)\right) \cdot \frac{x_n - x_0}{6n}</div>
+            
+            <h3>Uneigentliches integral</h3>
+            <div class="equation">f(k) \notin \mathbb{R}</div>
+            <div class="equation">\displaystyle\int_{x_0}^{k}f(x)dx = \lim_{n \rightarrow k}\left(\displaystyle\int_{x_0}^{n}f(x)dx\right)</div>
+            <h3>Rotationskörper</h3>
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <h4>x-Achse</h4>
+                    <div class="equation">V_x = \pi \cdot \displaystyle\int_{x_0}^{x_n}f(x)^2dx</div>
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <h4>y-Achse</h4>
+                    <div class="equation">V_y = \pi \cdot \displaystyle\int_{f^{-1}(x_0)}^{f^{-1}(x_n)}f^{-1}(x)^2dx</div>
+                </section>
+            </section>
     
         </main>
         <footer><h6>created by Anton Böhler</h6></footer>

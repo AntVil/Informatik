@@ -11,6 +11,7 @@ window.onload = function(){
     }
 
     setup();
+    requestAnimationFrame(loop);
 }
 
 window.onresize = setup;
@@ -18,8 +19,6 @@ window.onresize = setup;
 function setup(){
     if(loaded){
         beispiel_lineare_abbildung();
-
-        requestAnimationFrame(loop);
     }
 }
 
@@ -45,8 +44,16 @@ function beispiel_lineare_abbildung(){
         t = 0;
     }
 
-    x = size * Math.cos(t) + 2*size * Math.sin(t)
-    y = -size * Math.sin(t) + 2*size * Math.cos(t)
+    x = size * Math.cos(t) + 2*size * Math.sin(t);
+    y = -size * Math.sin(t) + 2*size * Math.cos(t);
 
     line(ctxt, can.width/2, can.height/2, can.width/2 + x, can.height/2 - y, "#FFAA00", 2, 0, can.width/45);
+
+    x = size * Math.cos(0) + 2*size * Math.sin(0);
+    y = -size * Math.sin(0) + 2*size * Math.cos(0);
+    line(ctxt, can.width/2, can.height/2, can.width/2 + x, can.height/2 - y, "#FFAA0099", 2, 0, can.width/45);
+
+    x = size * Math.cos(-Math.PI/2) + 2*size * Math.sin(-Math.PI/2);
+    y = -size * Math.sin(-Math.PI/2) + 2*size * Math.cos(-Math.PI/2);
+    line(ctxt, can.width/2, can.height/2, can.width/2 + x, can.height/2 - y, "#FFAA0099", 2, 0, can.width/45);
 }

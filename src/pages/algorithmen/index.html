@@ -115,21 +115,28 @@
             <section class="container">
                 <section style="grid-column: 1 / span 49;">
                     <h4>Komplexitätsklasse P</h4>
-                    Die Komplexitätsklasse P enthält alle deterministischen Algorithmen, welche in polynomieller Laufzeit arbeiten. Beispielsweise Bubble-Sort, Linear-Search.
+                    Die Komplexitätsklasse P enthält alle deterministischen Algorithmen, welche in polynomieller Laufzeit arbeiten. Beispielsweise Bubble-Sort oder Linear-Search.
                 </section>
                 <section style="grid-column: 50 / span 49;">
                     <h4>Komplexitätsklasse NP</h4>
-                    Die Komplexitätsklasse NP enthält alle nicht-deterministischen Algorithmen, welche in polynomieller Laufzeit arbeiten. 
+                    Die Komplexitätsklasse NP enthält alle nicht-deterministischen Algorithmen, welche in polynomieller Laufzeit arbeiten. Also Algorithmen, bei denen man die Lösung in polynomieller Zeit überprüfen kann.
                 </section>
             </section>
             <div class="equation">P \subseteq NP</div>
-            P (Polynomiale Laufzeit) Sortieren
-            NP () Schloss knacken: Lösung einfach überprüfbar
-            
-            
-            nicht-deterministisch
-    
-    
+            <h4>Reduktion</h4>
+            Mit der Reduktion kann man zwei Probleme auf den gleichen Kern führen. Dieser Schritt des Zusammenführen soll in polynomieller Zeit machbar sein. Wenn man ein Problem <span class="equation">A</span> auf ein Problem <span class="equation">B</span> reduzieren werden kann, ist <span class="equation">B</span> mindestens so schwer wie <span class="equation">A</span>.
+            <div class="equation">A \leq B</div>
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <h4>NP-hart</h4>
+                    Ein NP-hartes Problem ist ein Problem, welches mindestens so schwer ist wie das schwerste Problem aus NP. Ein NP-hartes Problem ist zum Beispiel <i>3SAT</i>.
+                    <div class="equation">\forall A \in NP: A \leq B</div>
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <h4>NP-vollständig</h4>
+                    Ein NP-vollständiges Problem ist NP-hart und liegt selbst in NP.
+                </section>
+            </section>
         </main>
         <footer><h6>created by Anton Böhler</h6></footer>
     </body>

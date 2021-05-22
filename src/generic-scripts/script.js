@@ -38,9 +38,9 @@ function line(ctxt, x1, y1, x2, y2, stroke="#000000FF", lineWidth=1, radius=0, a
         ctxt.setLineDash([]);
         ctxt.beginPath();
         ctxt.moveTo(x1, y1);
-        ctxt.lineTo(x1 + arrow_size_end * Math.cos(angle - Math.PI/4), y1 + arrow_size_end * Math.sin(angle - Math.PI/4));
+        ctxt.lineTo(x1 + arrow_size_start * Math.cos(angle - Math.PI/4), y1 + arrow_size_start * Math.sin(angle - Math.PI/4));
         ctxt.moveTo(x1, y1);
-        ctxt.lineTo(x1 + arrow_size_end * Math.cos(angle - Math.PI*3/4), y1 + arrow_size_end * Math.sin(angle - Math.PI*3/4));
+        ctxt.lineTo(x1 + arrow_size_start * Math.cos(angle - Math.PI*3/4), y1 + arrow_size_start * Math.sin(angle - Math.PI*3/4));
         ctxt.stroke();
     }
 }

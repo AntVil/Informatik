@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Analog Digital</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+        <link rel="stylesheet" href="../../generic-styles/style.css">
+        <link rel="stylesheet" href="../../generic-styles/layout.css">
+
+        <link rel="stylesheet" href="../../lib/katex/katex.min.css">
+        <script src="../../lib/katex/katex.min.js"></script>
+
+        <script src="../../generic-scripts/script.js"></script>
+
+        <link rel="stylesheet" href="./style.css">
+        <script src="./script.js"></script>
+    </head>
+
+    <body>
+        <header><h1><a href="../home/index.html">Informatik</a></h1></header>
+        <input id="nav_checkbox" type="checkbox" name="nav_checkbox">
+        <label id="nav_checkbox_label" for="nav_checkbox">&#8801;</label>
+        <nav class="scroll">
+            <ul>
+                <li><a href="../home/index.html">Home</a></li>
+                <li><a href="../about/index.html">About</a></li>
+                <li><a href="../quellen/index.html">Quellen</a></li>
+                <br>
+                <li><a href="../abbildungen/index.html">Abbildungen</a></li>
+                <li><a href="../algebraische_strukturen/index.html">Algebraische Strukturen</a></li>
+                <li><a href="../algorithmen/index.html">Algorithmen</a></li>
+                <li><a href="../analog_digital/index.html">Analog Digital</a></li>
+                <li><a href="../aussagen_logik/index.html">Aussagen Logik</a></li>
+                <li><a href="../automaten/index.html">Automaten</a></li>
+                <li><a href="../baeume/index.html">Bäume</a></li>
+                <li><a href="../codierungen/index.html">Codierungen</a></li>
+                <li><a href="../differenzial_rechnung/index.html">Differenzial Rechnung</a></li>
+                <li><a href="../flipflops/index.html">Flipflops</a></li>
+                <li><a href="../folgen_und_reihen/index.html">Folgen und Reihen</a></li>
+                <li><a href="../formale_sprachen/index.html">Formale Sprachen</a></li>
+                <li><a href="../ganze_zahlen/index.html">Ganze Zahlen</a></li>
+                <li><a href="../graphen/index.html">Graphen</a></li>
+                <li><a href="../hash_funktionen/index.html">Hash Funktionen</a></li>
+                <li><a href="../integral_rechnung/index.html">Integral Rechnung</a></li>
+                <li><a href="../listen/index.html">Listen</a></li>
+                <li><a href="../matrizen_rechnung/index.html">Matrizen Rechnung</a></li>
+                <li><a href="../mengen/index.html">Mengen</a></li>
+                <li><a href="../modulo_arithmetik/index.html">Modulo Arithmetik</a></li>
+                <li><a href="../natuerliche_zahlen/index.html">Natürliche Zahlen</a></li>
+                <li><a href="../praedikaten_logik/index.html">Prädikaten Logik</a></li>
+                <li><a href="../rationale_zahlen/index.html">Rationale Zahlen</a></li>
+                <li><a href="../reele_zahlen/index.html">Reele Zahlen</a></li>
+                <li><a href="../relationen/index.html">Relationen</a></li>
+                <li><a href="../schaltungen/index.html">Schaltungen</a></li>
+                <li><a href="../symboltabellen/index.html">Symboltabellen</a></li>
+                <li><a href="../vektor_rechnung/index.html">Vektor Rechnung</a></li>
+            </ul>
+        </nav>
+        <main class="scroll">
+            <h2>Analog-Digital</h2>
+            <h3>Moore's Law</h3>
+            Die Komplexität integrierter Schaltkreise verdoppelt sich regelmäßig (ca. 2 Jahre)
+
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <h3>Analoges Signal</h3>
+                    <div>Kontinuierlicher Verlauf(Kurve, Fließend)</div>
+                    <canvas id="beispiel_analog"></canvas>
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <h3>Digitales Signal</h3>
+                    <div>Diskreter Verlauf(Treppe, Abstufungen)</div>
+                    <canvas id="beispiel_digital"></canvas>
+                </section>
+            </section>
+            
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <h3>Signal Converter</h3>
+                    <div class="table" style="grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(5, 1fr);">
+                        <div class="table_right"><b>adc</b></div><div class="table_left">analog-digital-converter</div>
+                        <div class="table_right"><b>dac</b></div><div class="table_left">digital-analog-converter</div>
+                        <div class="table_right"><b>Abtastung</b></div><div class="table_left">Zeitachse diskretisieren</div>
+                        <div class="table_right"><b>Quantisierung</b></div><div class="table_left">Werteachse diskretisieren</div>
+                        <div class="table_right"><b>Auflösung</b></div><div class="table_left"><span class="equation">\frac{Werteabstand}{Stufenanzahl}</span> (Genauigkeit)</div>
+                        <div class="table_right"><b>Quantisierungsfehler</b></div><div class="table_left"><span class="equation">\pm \frac{Aufloesung}{2}</span> (Rundungsfehler)</div>
+                    </div>
+                </section>
+                <section style="grid-column: 51 / span 49;">
+                    <h3>Abtasttheorem (Nyquist-Shannon)</h3>
+                    Abtastfrequenz<span class="equation">f_A</span> muss mindestens doppelt so groß sein, wie die größte Signalfrequenz:
+                    <div class="equation">f_A \geq 2 \cdot f_{max}</div>
+                    Andernfalls können Frequenzen nicht korrekt wiedergegeben werden. (Alias Effekte)
+                </section>
+            </section>
+
+            
+                
+            
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <h3>Codierung</h3>
+                    <b>Tetraden Code</b> = Jede Ziffer mit Nibble codiert
+                    <br>
+                    <b>Maschinenwort</b> = Bitstream (Folge an Bits)
+                    <div class="table" style="grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(5, 1fr);">
+                        <div class="table_right">Nibble</div><div class="table_left">4Bits</div>
+                        <div class="table_right">Byte</div><div class="table_left">8Bits</div>
+                        <div class="table_right">kB</div><div class="table_left"><span class="equation">2^{10}</span> Bytes</div>
+                        <div class="table_right">MB</div><div class="table_left"><span class="equation">2^{20}</span> Bytes</div>
+                        <div class="table_right">GB</div><div class="table_left"><span class="equation">2^{30}</span> Bytes</div>
+                        <div class="table_right">TB</div><div class="table_left"><span class="equation">2^{40}</span> Bytes</div>
+                    </div>
+                </section>
+                <section style="grid-column: 51 / span 49;">
+                    <h3>Komma Codierung</h3>
+                    <div class="table" style="grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(5, 1fr);">
+                        <div class="table_right table_bottom">Festkomma</div><div class="table_left table_bottom">Gleitkomma</div>
+                        <div class="table_right table_top">einfach</div><div class="table_left table_top">komplex</div>
+                        <div class="table_right">ungenau</div><div class="table_left">genau</div>
+                        <div class="table_right">werte-genau</div><div class="table_left">fließend</div>
+                        <div class="table_right">eingeschränkt</div><div class="table_left">flexibel</div>
+                        <div class="table_right"><i>Komma-fest</i></div><div class="table_left"><span class="equation">\pm</span> | Exp | Mantisse</div>
+                    </div>
+                </section>
+            </section>
+
+            
+            <h3>zu Binär</h3>
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    Durch zwei mit Rest teilen bis 0 herauskommt, danach
+                    Reste von unten nach oben ablesen.
+                    
+                    <div class="equation">19 : 2 = 9 |R:1</div>
+                    <div class="equation">9 : 2 = 4 |R:1</div>
+                    <div class="equation">4 : 2 = 2 |R:0</div>
+                    <div class="equation">2 : 2 = 1 |R:0</div>
+                    <div class="equation">1 : 2 = 0 |R:1</div>
+                    <br>
+                    <div class="equation">19_{(10)} = 10011_{(2)}</div>
+                </section>
+                <section style="grid-column: 51 / span 49;">
+                    Nachkommastellen mal Zwei rechnen bis gewünschte Genauigkeit erreicht, danach von oben nach unten ganze ablesen.
+                    
+                    <div class="equation">0.41 \cdot 2 =|0|.82</div>
+                    <div class="equation">0.82 \cdot 2 =|1|.64</div>
+                    <div class="equation">0.64 \cdot 2 =|1|.28</div>
+                    <div class="equation">0.28 \cdot 2 =|0|.56</div>
+                    <div class="equation">0.56 \cdot 2 =|1|.12</div>
+                    <br>
+                    <div class="equation">0.41_{(10)} \approx 0.01101_{(2)}</div>
+                </section>
+            </section>
+            
+            
+            
+            <h3>Komplement</h3>
+            <b>Einerkomplement</b>: alles Invertiert (0 doppelt encodiert, symmetrisch)
+            <br>
+            <b>Zweierkomplement</b>: alles Invertiert plus 1 (0 einfach encodiert)
+    
+
+        </main>
+        <footer><h6>created by Anton Böhler</h6></footer>
+    </body>
+</html>

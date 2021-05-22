@@ -59,18 +59,3 @@ function beispiel_ableitung(){
         line(ctxt, x1 * can.width/5/2 + can.width/2, -y1 * can.height/5/2 + can.height/2, x2 * can.width/5/2 + can.width/2, -y2 * can.height/5/2 + can.height/2, "#00AAFF", 2);
     }
 }
-
-/*
-
-\begin{tikzpicture}
-    \draw[very thin, color=gray] (-3cm, -2cm) grid (3cm, 3cm);
-    
-    \draw[->] (0cm, -2cm) -- (0cm, 3cm);
-    \draw[->] (-3cm, 0cm) -- (3cm, 0cm);
-    
-    \draw [orange, domain=-3:3, smooth] plot (\x, {1 - (\x * \x)/2 + (\x * \x * \x)/16 + (\x * \x * \x * \x)/24});
-            
-    \draw [cyan, domain=-3:2.95883, smooth] plot (\x, {-\x + 3 * (\x * \x)/16 + (\x * \x * \x)/6});
-\end{tikzpicture}
-
-*/

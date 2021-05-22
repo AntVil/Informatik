@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="../../lib/katex/katex.min.css">
         <script src="../../lib/katex/katex.min.js"></script>
 
+        <script src="../../generic-scripts/script.js"></script>
+
         <link rel="stylesheet" href="./style.css">
         <script src="./script.js"></script>
     </head>
@@ -29,6 +31,7 @@
                 <li><a href="../abbildungen/index.html">Abbildungen</a></li>
                 <li><a href="../algebraische_strukturen/index.html">Algebraische Strukturen</a></li>
                 <li><a href="../algorithmen/index.html">Algorithmen</a></li>
+                <li><a href="../analog_digital/index.html">Analog Digital</a></li>
                 <li><a href="../aussagen_logik/index.html">Aussagen Logik</a></li>
                 <li><a href="../automaten/index.html">Automaten</a></li>
                 <li><a href="../baeume/index.html">Bäume</a></li>
@@ -63,10 +66,10 @@
             <h3>Beschreibung</h3>
             <section class="container">
                 <section style="grid-column: 1 / span 66;">
-                    <span class="equation">\textcolor{WildStrawberry}{F}</span> und <span class="equation">\textcolor{LimeGreen}{W}</span> werden definiert durch Bereiche statt durch einzelne Werte.
-                    <span class="equation">\textcolor{WildStrawberry}{F}</span> (<span class="equation">\textcolor{WildStrawberry}{LOW}</span>) ist der Bereich, welcher näher an <span class="equation">-\infty</span> liegt.
+                    <span class="equation">\textcolor{red}{F}</span> und <span class="equation">\textcolor{LimeGreen}{W}</span> werden definiert durch Bereiche statt durch einzelne Werte.
+                    <span class="equation">\textcolor{red}{F}</span> (<span class="equation">\textcolor{red}{LOW}</span>) ist der Bereich, welcher näher an <span class="equation">-\infty</span> liegt.
                     <span class="equation">\textcolor{LimeGreen}{W}</span> (<span class="equation">\textcolor{LimeGreen}{HIGH}</span>) ist der Bereich, welcher näher an <span class="equation">+\infty</span> liegt.
-                    Die beiden Bereiche werden von einander getrennt durch einen Sicherheitsabstand in welchem nicht entschieden werden kann ob der Wert <span class="equation">\textcolor{WildStrawberry}{F}</span> oder <span class="equation">\textcolor{LimeGreen}{W}</span> ist.
+                    Die beiden Bereiche werden von einander getrennt durch einen Sicherheitsabstand in welchem nicht entschieden werden kann ob der Wert <span class="equation">\textcolor{red}{F}</span> oder <span class="equation">\textcolor{LimeGreen}{W}</span> ist.
                 </section>
                 <section style="grid-column: 67 / span 33;">
                     <canvas id="beispiel_logische_bereiche"></canvas>
@@ -77,24 +80,31 @@
             <h3>Logische-Gatter</h3>
             <section class="container">
                 <section style="grid-column: 1 / span 13;">
+                    <h4 style="text-align: center;">not-Gatter</h4>
                     <canvas id="beispiel_not"></canvas>
                 </section>
                 <section style="grid-column: 14 / span 13;">
+                    <h4 style="text-align: center;">and-Gatter</h4>
                     <canvas id="beispiel_and"></canvas>
                 </section>
                 <section style="grid-column: 28 / span 13;">
+                    <h4 style="text-align: center;">or-Gatter</h4>
                     <canvas id="beispiel_or"></canvas>
                 </section>
                 <section style="grid-column: 42 / span 13;">
+                    <h4 style="text-align: center;">xor-Gatter</h4>
                     <canvas id="beispiel_xor"></canvas>
                 </section>
                 <section style="grid-column: 56 / span 13;">
+                    <h4 style="text-align: center;">nand-Gatter</h4>
                     <canvas id="beispiel_nand"></canvas>
                 </section>
                 <section style="grid-column: 70 / span 13;">
+                    <h4 style="text-align: center;">nor-Gatter</h4>
                     <canvas id="beispiel_nor"></canvas>
                 </section>
                 <section style="grid-column: 85 / span 13;">
+                    <h4 style="text-align: center;">xnor-Gatter</h4>
                     <canvas id="beispiel_xnor"></canvas>
                 </section>
             </section>
@@ -113,13 +123,13 @@
                 <section style="grid-column: 1 / span 49;">
                     <h4>Halbaddierer (HA)</h4>
                     Addiert zwei Bits
-                    <span class="equation">S</span>: Sum, <span class="equation">C</span>: Carry
+                    <div><span class="equation">S</span>: Sum, <span class="equation">C</span>: Carry</div>
                     <canvas id="beispiel_halbaddierer"></canvas>
                 </section>
                 <section style="grid-column: 50 / span 49;">
                     <h4>Volladdierer (VA)</h4>
                     Addiert drei Bits
-                    <span class="equation">S</span>: Sum, <span class="equation">C</span>: Carry
+                    <div><span class="equation">S</span>: Sum, <span class="equation">C</span>: Carry</div>
                     <canvas id="beispiel_volladdierer"></canvas>
                 </section>
             </section>

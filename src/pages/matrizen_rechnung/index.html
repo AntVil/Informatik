@@ -122,7 +122,7 @@
             <p>Die Dimension der Ausgangsmenge <span class="equation">D</span> entspricht der Dimension des Kerns und Bildes. Die Dimension des Bildes wird auch Rang genannt.</p>
             <div class="equation">dim(D) = dim(Kern(A)) + dim(Bild(A)) = dim(Kern(A)) + Rang(A)</div>
             <h3>Determinate</h3>
-            Die Determinate ist ein Skalar und beschreibt wie sich der Inhalt der Einheitsvektoren verändert. Nur Quadratische Matrizen haben eine Determinante.
+            Die Determinate ist ein Skalar und beschreibt wie sich der Inhalt, welcher von den Einheitsvektoren bestimmt wird, verändert. Nur Quadratische Matrizen haben eine Determinante.
             Die Determinate kann auch <b>negativ</b> sein.
             Wenn sich die Dimension nach der Transformation durch die Matrix verringert, ist die Determinate 0.
             <div class="equation">det(A) \in \mathbb{R}</div>
@@ -133,6 +133,14 @@
             <h3>Inverse</h3>
             <p>Eine Matrix ist invertierbar, wenn die Spalten eine Basis bilden und die Matrix quadratisch ist. Um das inverse zu erhalten wendet man wieder das Gauß Verfahren an. Danach kann die Lösung auf der rechten Seite ablesen.</p>
             <div class="equation">\left(\begin{array}{cc|cc}a & b & 1 & 0\\c & d & 0 & 1\end{array}\right)</div>
+
+            <h3>Eigenvektoren/Eigenwerte</h3>
+            Die Eigenvektoren einer linearen Abbildung <span class="equation">A</span> sind Vektoren <span class="equation">\vec{v}</span>, welche jeweils vor und nach der transformation den gleichen <b>span</b> haben und nicht der Nullvektor sind.
+            Der Eigenwert ist der Faktor <span class="equation">a</span> eines Eigenvektoren.
+            <div class="equation">A \cdot \vec{v} = a \cdot \vec{v}</div>
+            <div class="equation">(A - a \cdot E) \cdot \vec{v} = \vec{0}</div>
+            Die Eigenwerte und damit Eigenvektoren berechnet man indem man 
+            
         </main>
         <footer><h6>created by Anton Böhler</h6></footer>
     </body>

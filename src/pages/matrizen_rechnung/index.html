@@ -113,7 +113,7 @@
             <p>Der Kern einer linearen Abbildung ist die Menge aller Vektoren, welche auf den Ursprung abgebildet werden. Das Bild einer linearen Abbildung sind alle möglichen Vek</p>
             <section class="container">
                 <section style="grid-column: 1 / span 49;">
-                    <div class="equation">Kern(A) = \left\{A \cdot \vec{v}= \begin{pmatrix}0\\0\end{pmatrix}\right\}</div>
+                    <div class="equation">Kern(A) = \left\{A \cdot \vec{v}= \vec{0}\right\}</div>
                 </section>
                 <section style="grid-column: 50 / span 49;">
                     <div class="equation">Bild(A) = span(\vec{m_1}, \vec{m_2})</div>
@@ -129,7 +129,7 @@
             Standartmäßig berechnet man die Determinate, indem man das Gauß Verfahren anwendet. Zum Schluss multipliziert man die Einträge der Diagonalen.
             <h4>Laplace'scher Entwicklungssatz</h4>
             Für jedes beliebige j, gilt die folgende Formel. Wobei mit <span class="equation">A_{ij}</span> die Matrix ohne die Zeilen <span class="equation">i</span> und die Spalten <span class="equation">j</span> gemeint ist.
-            <div class="equation">dem(A) = \displaystyle\sum_{i=1}^{n}(-1)^{i+j}\cdot a_{ij} det(A_{ij})</div>
+            <div class="equation">det(A) = \displaystyle\sum_{i=1}^{n}(-1)^{i+j}\cdot a_{ij} det(A_{ij})</div>
             <h3>Inverse</h3>
             <p>Eine Matrix ist invertierbar, wenn die Spalten eine Basis bilden und die Matrix quadratisch ist. Um das inverse zu erhalten wendet man wieder das Gauß Verfahren an. Danach kann die Lösung auf der rechten Seite ablesen.</p>
             <div class="equation">\left(\begin{array}{cc|cc}a & b & 1 & 0\\c & d & 0 & 1\end{array}\right)</div>
@@ -139,8 +139,9 @@
             Der Eigenwert ist der Faktor <span class="equation">a</span> eines Eigenvektoren.
             <div class="equation">A \cdot \vec{v} = a \cdot \vec{v}</div>
             <div class="equation">(A - a \cdot E) \cdot \vec{v} = \vec{0}</div>
-            Die Eigenwerte und damit Eigenvektoren berechnet man indem man 
-            
+            Die Eigenwerte berechnet man indem man folgende Gleichung löst:
+            <div class="equation">det(A - a \cdot E) = \vec{0}</div>
+            Danach können die Eigenvektoren durch einsetzen berechnet werden.
         </main>
         <footer><h6>created by Anton Böhler</h6></footer>
     </body>

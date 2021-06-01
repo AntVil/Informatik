@@ -97,7 +97,7 @@
             </section>
             
             <h3>Fano-Bedingung</h3>
-            Kein Wort einer Codierung ist ein Teil eines anderen Worts. Nur Blätter im Binärbaum werden codiert.
+            Kein Wort einer Codierung ist ein Teil eines anderen Worts. Nur Blätter im Binärbaum werden codiert. (präfixfrei)
             <section class="container">
                 <section style="grid-column: 1 / span 48;">
                     <canvas id="beispiel_fano_bedingung_1"></canvas>
@@ -137,8 +137,6 @@
             
             <h3>Blockprüfung</h3>
             Mit der Blockprüfung kann ein Code erweitert werden, um die Position von Fehlern zu finden und zu beheben. Es ist die Kombination aus VRC und LRC.
-            
-            
             <section class="container">
                 <section style="grid-column: 1 / span 49;">
                     <h4>VRC (vertical redundancy check)</h4>
@@ -152,7 +150,23 @@
             <div style="text-align: center;">
                 <i>(Paritäts-Festlegung wird im voraus ausgemacht)</i>
             </div>
-    
+            
+            <h3>Datenkompression</h3>
+            <h4>Huffman-Code Algorithmus</h4>
+            Der Huffman-Code Algorithmus erstellt für einen Eingabetext einen Binär-Codierbaum zur codierung und decodierung des Eingabetext. Dabei wird die Häufigkeit von Symbolen gezählt. Symbole mit größster Häufigkeit werden zusammengefasst zu einem Baum.
+            <section class="container">
+                <section style="grid-column: 1 / span 49;">
+                    <div style="text-align: center;"><b>brennen</b></div>
+                    <canvas id="beispiel_huffman_1"></canvas>
+                </section>
+                <section style="grid-column: 50 / span 49;">
+                    <canvas id="beispiel_huffman_2"></canvas>
+                </section>
+            </section>
+            <h4>Informationsreduzierende Codes</h4>
+            Bei Bild-, Video- und Audiodateien können Information entfernt werden, ohne vom Menschen sicht-/hörbare unterschiede. Die Kompression kann nicht mehr rückgängig gemacht werden, ist aber in den meisten Fällen auch nicht nötig.
+            <br>
+            <i>MP3</i>, <i>JPEG</i>
         </main>
         <footer><h6>created by Anton Böhler</h6></footer>
     </body>

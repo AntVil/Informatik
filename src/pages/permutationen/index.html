@@ -3,7 +3,7 @@
     <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title>Moduloarithmetik</title>
+        <title>Permutationen</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
 
         <link rel="stylesheet" href="../../generic-styles/style.css">
@@ -57,51 +57,26 @@
             </ul>
         </nav>
         <main class="scroll">
-            <h2>Moduloarithmetik/Restklassen</h2>
+            <h2>Permutationen</h2>
             <h3>Beschreibung</h3>
-            <p>Auf der Menge <span class="equation">\mathbb{Z}</span> kann für ein gewähltes <span class="equation">n \in \mathbb{Z}</span> eine Restklasse definiert werden.</p>
-            <div class="equation">\sim_n = \{(a, b) \in \mathbb{Z} \times \mathbb{Z}| \exists c \in \mathbb{Z}: a - b = c \cdot n\}</div>
-            <div class="equation">[a]_{\sim_n} + [b]_{\sim_n} = [a + b]_{\sim_n}</div>
-            <div class="equation">[a]_{\sim_n} - [b]_{\sim_n} = [a - b]_{\sim_n}</div>
-            <div class="equation">[a]_{\sim_n} \cdot [b]_{\sim_n} = [a \cdot b]_{\sim_n}</div>
-            <p>Diese Restklassen sind Äquivalenzrelationen und können verkürzt dargestellt werden:</p>
-            <div class="equation">\mathbb{Z}/n\mathbb{Z}</div>
-            <div class="equation">a + b \equiv c \mod n</div>
-            <div class="equation">a - b \equiv c \mod n</div>
-            <div class="equation">a \cdot b \equiv c \mod n</div>
-            <p>Bei Restklassen handelt es sich um kommutative Ringe. Falls <span class="equation">n</span> eine Primzahl ist, handelt es sich bei der Restklasse sogar um einen Körper.</p>
-            
+            Eine Permutation ist eine bijektive Abbildung von einer endliche Teilmenge der Natürlichen zahlen in sich selbst.
+            <div class="equation">X \subset \mathbb{N}</div>
+            <div class="equation">|X| \in \mathbb{N}</div>
+            <div class="equation">p: X \rightarrow X</div>
+            Permutationen alternative Schreibweisen:
             <section class="container">
                 <section style="grid-column: 1 / span 49;">
-                    <h3>Nullteiler</h3>
-                    <p>Wenn <span class="equation">\mathbb{Z}/n\mathbb{Z}</span> kein Körper ist, kann es Nullteiler, von 0 verschiedene Zahlen, die multipliziert 0 ergeben, geben:</p>
-                    <div class="equation">2 \cdot 3 = 6 \equiv 0 \mod 6</div>
+                    <h4>Matrix Schreibweise</h4>
+                    <div class="equation">\left(\begin{array}{ccc}1 & 2 & 3 & 4 & 5 & 6\\2 & 3 & 1 & 5 & 4 & 6\end{array}\right)</div>
                 </section>
                 <section style="grid-column: 50 / span 49;">
-                    <h3>Multiplikativ Inverse Elemente</h3>
-                    <p>Wenn <span class="equation">\mathbb{Z}/n\mathbb{Z}</span> ein Körper ist, findet man zu einer beliebigen Zahl ein Multiplikatives Inverse:</p>
-                    <div class="equation">2 \cdot 7 = 14 \equiv 1 \mod 13</div>
+                    <h4>Zyklische Schreibweise</h4>
+                    <div class="equation">\left(\begin{array}{ccc}1 & 2 & 3\end{array}\right)\left(\begin{array}{cc}4 & 5\end{array}\right)\left(\begin{array}{c}6\end{array}\right)</div>
                 </section>
             </section>
-            
-            <h3>Euklidischer Algorithmus</h3>
-            <p>Der Euklidische Algorithmus liefert den größten gemeinsamen Teiler zweier Zahlen.</p>
-            <div class="equation">\text{gcd}(\textcolor{cyan}{128}, \textcolor{orange}{36})</div>
-            <div class="equation">\textcolor{cyan}{128} = 3 \cdot \textcolor{orange}{36} + \textcolor{purple}{20}</div>
-            <div class="equation">\textcolor{orange}{36} = 1 \cdot \textcolor{purple}{20} + \textcolor{green}{16}</div>
-            <div class="equation">\textcolor{purple}{20} = 1 \cdot \textcolor{green}{16} + \textcolor{brown}{4}</div>
-            <div class="equation">\textcolor{green}{16} = 1 \cdot \textcolor{brown}{4} + 0</div>
-            <div class="equation">\text{gcd}(\textcolor{cyan}{128}, \textcolor{orange}{36}) = \textcolor{brown}{4}</div>
-            
-            <h3>Erweiterter Euklidischer Algorithmus</h3>
-            <p>Der Erweiterter Euklidischer Algorithmus löst Gleichungen folgender Art (Linearkombination):</p>
-            <div class="equation">\text{gcd}(a, b) = x \cdot a + y \cdot b</div>
-            <p>Er wird nach dem Euklidischer Algorithmus ausgeführt.</p>
-            <div class="equation">\textcolor{brown}{4} = 1 \cdot \textcolor{purple}{20} - 1 \cdot \textcolor{green}{16}</div>
-            <div class="equation">\textcolor{brown}{4} = 1 \cdot \textcolor{purple}{20} - 1 \cdot (1 \cdot \textcolor{orange}{36} - 1 \cdot \textcolor{purple}{20})</div>
-            <div class="equation">\textcolor{brown}{4} = - 1 \cdot \textcolor{orange}{36} + 2 \cdot \textcolor{purple}{20}</div>
-            <div class="equation">\textcolor{brown}{4} = - 1 \cdot \textcolor{orange}{36} + 2 \cdot (1 \cdot \textcolor{cyan}{128} - 3 \cdot \textcolor{orange}{36})</div>
-            <div class="equation">\textcolor{brown}{4} = 2 \cdot \textcolor{cyan}{128} - 7 \cdot \textcolor{orange}{36}</div>    
+            <h3>Operationen</h3>
+            <h4>Ordnung</h4>
+            <div class="equation">ord(\left(\begin{array}{ccc}1 & 2 & 3\end{array}\right)\left(\begin{array}{cc}4 & 5\end{array}\right)\left(\begin{array}{c}6\end{array}\right)) = \text{lcm}(\left|\left(\begin{array}{ccc}1 & 2 & 3\end{array}\right)\right|, \left|\left(\begin{array}{cc}4 & 5\end{array}\right)\right|, \left|\left(\begin{array}{c}6\end{array}\right)\right|) = \text{lcm}(3, 2, 1) = 6</div>
         </main>
         <footer><h6>created by Anton Böhler</h6></footer>
     </body>

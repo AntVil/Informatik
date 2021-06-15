@@ -44,7 +44,7 @@ nav{
     position: fixed;
     display: inline-block;
     padding-right: 50px;
-    height: calc(100vh - 2 * 50px + 1px);
+    height: calc(100% - 2 * 50px + 1px);
     top: 50%;
     left: 0%;
     transform: translate(-100%, -50%);
